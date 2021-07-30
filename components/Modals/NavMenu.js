@@ -11,7 +11,7 @@ const NavMenu = ({onCloseTap}) => {
     ]
     return (<div className="absolute z-11 bg-white rounded right-5 top-5 bottom-5 left-5 lg:left-2/3"
     style={{
-        height:"95vh",
+        height:"90%",
     }}
     data-aos="fade-down"
     data-aos-easing="ease-in-out"
