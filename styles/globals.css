@@ -1,8 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css");
-
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+*{
+  font-family: 'Ubuntu', sans-serif;
+}
 .overlay{
     position: absolute;
     background: rgb(0, 0, 0, 0.6);

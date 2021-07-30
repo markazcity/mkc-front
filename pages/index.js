@@ -38,10 +38,11 @@ export default function Home() {
 <motion.main  
 className="absolute -z-1"
 style={{
-       height:"100vh",
+       height:"100%",
        width:"100%",
        backgroundImage:`url('/assets/img/${slideImages[index % slideImages.length]}')`,
        backgroundSize:"cover",
+       backgroundPosition:"center"
     }}
     animate={{opacity:1}}
     >
