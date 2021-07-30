@@ -37,7 +37,7 @@ const NavMenu = ({onCloseTap}) => {
                 {
                     menuItems.map((item)=>{
                         return (
-                            <div>
+                            <div key={item.name}>
                                 <MenuItem name={item.name} index={menuItems.indexOf(item)}/>
                               
                             </div>
