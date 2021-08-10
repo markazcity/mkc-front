@@ -4,9 +4,9 @@ import styles from '../styles/Home.module.css'
 import TextTransition, { presets } from "react-text-transition";
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
-import NavMenu from "../components/Modals/NavMenu"
+import {NavMenu, DesktopMenu} from "../components/NavMenu/NavMenu"
 import Logo from "../components/Logo"
-
+import SocialIcons from "../components/SocialIcons"
 
 export default function Home() {
   const TEXTS = [
@@ -49,8 +49,11 @@ style={{
       <Logo logo="logow" className="z-9"/>
 
       <div className="overlay"></div>
-
-      {showMenu && <NavMenu
+      {/* NAVIGATION MENU SECTION */}
+      {/* PC NAVIGATION */}
+      <div className="hidden lg:block"><DesktopMenu/></div>
+    <div className="lg:hidden">
+       {showMenu && <NavMenu
       onCloseTap={() =>{
         setShowMenu(false);
       }}/>}
@@ -61,15 +64,20 @@ style={{
       }}
  xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-</svg>
-      <div>
+</svg> </div>
+{/* NAVIGATION SECTION ENDS */}
+      <div className="flex justify-center">
        <h1 className={styles.slideTexts+"  md:w-3/6"}>
       <TextTransition
         text={ TEXTS[index % TEXTS.length] }
         springConfig={ presets.wobbly }
-        className="slideTexts text-4xl lg:text-6xl font-extrabold text-white mx-10  md:mx-16 my-60"
+        className="slideTexts text-4xl lg:text-6xl font-extrabold text-white mx-10  md:mx-16 my-40"
       />
     </h1>
+      </div>
+      <div className="absolute flex w-full justify-between bottom-4  text-white px-10">
+<div>&copy; Markaz Knowledge City</div>
+<SocialIcons/>
       </div>
       </motion.main>
 

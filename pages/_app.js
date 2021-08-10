@@ -1,5 +1,7 @@
 import '../styles/globals.css'
 import 'tailwindcss/tailwind.css'
+import 'swiper/swiper.scss';
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";

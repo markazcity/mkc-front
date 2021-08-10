@@ -1,14 +1,19 @@
 import MenuItem from './MenuItems'
 import Logo from '../Logo'
+import {useRouter } from 'next/router'
 
-const NavMenu = ({onCloseTap}) => {
-    const menuItems = [
-        {name:"Home", icon:"", to:""},
-        {name:"About", icon:"", to:""},
-        {name:"Components", icon:"", to:""},
-        {name:"Carrier", icon:"", to:""},
-        {name:"Contact", icon:"", to:""},
-    ]
+
+export  const menuItems = [
+    {name:"Home", icon:"", to:"/"},
+    {name:"About", icon:"", to:"/about"},
+    {name:"Components", icon:"", to:"/"},
+    {name:"Carrier", icon:"", to:"/"},
+    {name:"Contact", icon:"", to:"/"},
+]
+
+export const NavMenu = ({onCloseTap}) => {
+    const router = useRouter()
+
     return (<div className="absolute z-11 bg-white rounded right-5 top-5 bottom-5 left-5 lg:left-2/3"
     style={{
         height:"90%",
@@ -38,7 +43,7 @@ const NavMenu = ({onCloseTap}) => {
                     menuItems.map((item)=>{
                         return (
                             <div key={item.name}>
-                                <MenuItem name={item.name} index={menuItems.indexOf(item)}/>
+                                <MenuItem name={item.name} index={menuItems.indexOf(item)}  onClick={()=>router.push(item.to)}/>
                               
                             </div>
                         )
@@ -50,4 +55,22 @@ const NavMenu = ({onCloseTap}) => {
     </div>);
 }
  
-export default NavMenu;
+export const DesktopMenu = () => {
+ const router = useRouter()
+
+    return (
+        <nav className="absolute z-10 right-0 top-0 m-10 text-white rounded px-1">
+            {
+                menuItems.map((menuItem)=>(
+                    <a key={menuItem.name} onClick={()=>router.push(menuItem.to)}
+                    className="py-1 mx-2 border-b-4 border-transparent hover:border-yellow-600 hover:bg-white hover:bg-opacity-5"
+                    style={
+                   {
+                        transition:"0.5s ease"}
+                    }
+                    >{menuItem.name}</a>
+                ))
+            }
+        </nav>
+    )
+}
