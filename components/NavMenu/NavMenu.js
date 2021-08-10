@@ -63,7 +63,7 @@ export const DesktopMenu = () => {
             {
                 menuItems.map((menuItem)=>(
                     <a key={menuItem.name} onClick={()=>router.push(menuItem.to)}
-                    className="py-1 mx-2 border-b-4 border-transparent hover:border-yellow-600 hover:bg-white hover:bg-opacity-5"
+                    className="py-1 mx-2 border-b-4 border-transparent menu-item"
                     style={
                    {
                         transition:"0.5s ease"}

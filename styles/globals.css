@@ -27,4 +27,22 @@
  .navIcon:hover{
    background:  rgba(0, 0, 0, 0.2);
  }
- 
+ .menu-item {
+  margin-top: -10px;
+  padding-right: 35px;
+  color: #FFF;
+  text-decoration: none;  
+  display: inline-block;
+  cursor: pointer;
+}
+ .menu-item:after {
+  transition: all ease-in-out .2s;
+  background: none repeat scroll 0 0 #C0C91E;
+  content: "";
+  display: block;
+  height: 4px;
+  width: 0;
+}
+.menu-item:hover:after {
+  width: 100%;
+}
