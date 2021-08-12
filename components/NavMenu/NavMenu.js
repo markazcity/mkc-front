@@ -7,6 +7,7 @@ export  const menuItems = [
     {name:"Home", icon:"", to:"/"},
     {name:"About", icon:"", to:"/about"},
     {name:"Components", icon:"", to:"/components"},
+    {name:"Blog", icon:"", to:"/blog"},
     {name:"Carrier", icon:"", to:"/"},
     {name:"Contact", icon:"", to:"/"},
 ]

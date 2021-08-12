@@ -3,6 +3,7 @@ import OurPast from "../components/About/OurPast";
 import OurPhilosophy from "../components/About/OurPhilosophy";
 import OurLeaderShip from "../components/About/OurLeadership";
 import Who from "../components/About/Who";
+import Footer from "../components/Footer";
 
 const About = () => {
   const picBg = {
@@ -25,9 +26,7 @@ const About = () => {
         <OurLeaderShip />
         
       </section>
-      <footer className="bg-black p-4 text-center text-white">
-          &copy; markazknowledecity
-      </footer>
+      <Footer/>
     </div>
   );
 };

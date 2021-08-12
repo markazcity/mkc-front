@@ -24,10 +24,10 @@ const Education = () => {
                 educationList.map(edu=>(
                     <div className="m-0" key={edu.year}
                     data-aos="fade-up"
-                    data-aos-delay={educationList.indexOf(edu)*100}
+                    data-aos-delay={educationList.indexOf(edu)*50}
                     >
                         <div
-                        className="relative p-10"
+                        className="relative p-10 mx-10 my-4 lg:mx-0 lg:my-0"
                         style={
                             colorChange.includes(educationList.indexOf(edu))?
                             {backgroundColor:"#B6B8A7"}:

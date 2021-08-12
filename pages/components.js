@@ -3,6 +3,7 @@ import Education from "../components/Compos/Education";
 import Health from "../components/Compos/Health";
 import Commerce from "../components/Compos/Commerce";
 import CompMain from "../components/Compos/ComponentsHead";
+import Footer from "../components/Footer";
 
 const Components = () => {
   const picBg = {
@@ -25,9 +26,7 @@ const Components = () => {
         <Commerce />
         
       </section>
-      <footer className="bg-black p-4 text-center text-white">
-          &copy; markazknowledecity
-      </footer>
+      <Footer/>
     </div>
   );
 };

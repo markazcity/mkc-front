@@ -21,15 +21,15 @@ const Health = () => {
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
 laoreet dolore magna aliquam erat volutpat.  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
 laoreet dolore magna aliquam erat volutpat.    </p>
-<div className="lg:grid lg:grid-cols-3 gap-x-6 mx-64">
+<div className="grid lg:grid-cols-3 gap-x-6 lh:mx-64 mx-10">
 {
     healthItems.map(health=>(
         <div 
         key={health.text}
-        className="h-48"
+        className="h-48 my-2"
         style={{background:"#BCC61E"}}
         data-aos="fade-up-right"
-            data-aos-delay={healthItems.indexOf(health)*100}
+            data-aos-delay={healthItems.indexOf(health)*50}
         >
             
         </div>

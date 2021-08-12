@@ -25,20 +25,19 @@ const Commerce = () => {
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
 laoreet dolore magna aliquam erat volutpat.  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
 laoreet dolore magna aliquam erat volutpat.    </p>
-<div className="lg:grid lg:grid-cols-4 gap-x-1 mx-64">
+<div className="grid lg:grid-cols-4 lg:gap-x-1 lg:mx-64 mx-10">
 {
     commerceItems.map(commerce=>(
         <div 
         key={commerce.text}
-        className="h-80"
+        className="h-80 my-4"
         style={
             commerceItems.indexOf(commerce)%2==0?
-            
             {background:"#BCC61E"}:
             {background:"#A0A57C"}
             }
             data-aos="fade-up-right"
-            data-aos-delay={commerceItems.indexOf(commerce)*100}
+            data-aos-delay={commerceItems.indexOf(commerce)*50}
             >
             
         </div>
