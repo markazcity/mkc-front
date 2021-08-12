@@ -14,9 +14,9 @@ export  const menuItems = [
 export const NavMenu = ({onCloseTap}) => {
     const router = useRouter()
 
-    return (<div className="absolute z-11 bg-white rounded right-5 top-5 bottom-5 left-5 lg:left-2/3"
+    return (<div className="absolute z-11 bg-white rounded right-5 top-5  lg:left-2/3"
     style={{
-        height:"90%",
+        height:"auto",
     }}
     data-aos="fade-down"
     data-aos-easing="ease-in-out"
@@ -26,7 +26,7 @@ export const NavMenu = ({onCloseTap}) => {
         >
             <div className="absolute right-1">
             <svg 
-            className="absolute z-9 hover:bg-gray-100 navIcon right-5 top-6 h-10 text-gray-400 rounded px-1"
+            className="absolute z-9 hover:bg-gray-100 navIcon right-5 top-6 h-6 text-gray-400 rounded px-1"
             onClick={()=>{
                 onCloseTap()
             }}
@@ -34,11 +34,11 @@ export const NavMenu = ({onCloseTap}) => {
   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
 </svg>
             </div>
-            <div className="lg:hidden"><Logo logo="logob" /></div>
+            {/* <div className="lg:hidden"><Logo logo="logob" /></div> */}
             
             {/* MENU ITEMS */}
 
-            <div className="pt-4 lg:pt-20">
+            <div className="pt-14 px-4 pb-4 lg:pt-20">
                 {
                     menuItems.map((item)=>{
                         return (
