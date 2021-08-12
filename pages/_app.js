@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import 'tailwindcss/tailwind.css'
 import 'swiper/swiper.scss';
+import NextNprogress from 'nextjs-progressbar';
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -15,7 +16,18 @@ function MyApp({ Component, pageProps }) {
       offset: 50,
     });
   }, []);
-  return <Component {...pageProps} />
+  return  <div>
+  <NextNprogress
+color="#C0C91E"
+startPosition={0.3}
+stopDelayMs={200}
+height={3}
+showOnShallow={true}
+
+/>
+<Component {...pageProps} />
+</div>
+ 
  
 }
 
