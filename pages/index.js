@@ -36,7 +36,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 <motion.main  
-className="absolute -z-1"
+className="absolute -z-1 indexBg"
 style={{
        height:"100%",
        width:"100%",
@@ -63,7 +63,7 @@ style={{
         setShowMenu(true)
       }}
  xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M1 6h16M2 12h16M4 18h16" />
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 6h16M4 12h16M4 18h16" />
 </svg> </div>
 {/* NAVIGATION SECTION ENDS */}
       <div className="flex justify-center">

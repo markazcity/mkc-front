@@ -13,7 +13,7 @@ const OurPhilosophy = () => {
                 >OUR PHILOSOPHY</h1>
                 <br />
                 <p className="mx-10 lg:mx-60 text-justify lg:text-center mb-10"
-                data-aos="fade-up-right">
+                data-aos="fade-right">
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
 laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation 
 ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in 

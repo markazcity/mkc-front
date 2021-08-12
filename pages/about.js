@@ -9,8 +9,8 @@ const About = () => {
     backgroundColor: "#A17CA1",
   };
   return (
-    // 
-    <div data-aos="zoom-out-up" data-aos-delay="250">
+    
+    <div>
       <div style={{ backgroundColor: "#F8FAF8" }}>
         <Logo logo="logob" className="absolute z-9 mb-10" />
         <Who/>

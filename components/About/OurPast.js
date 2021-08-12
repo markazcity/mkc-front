@@ -31,7 +31,7 @@ const OurPast = () => {
                     data-aos-delay={pastList.indexOf(past)*100}
                     >
                         <div
-                        className="relative h-40"
+                        className="relative h-48"
                         style={{backgroundColor:"#69696D"}}
                         >
                             <h1
