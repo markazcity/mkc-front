@@ -1,8 +1,9 @@
 import Logo from "../components/Logo";
 import OurPast from "../components/About/OurPast";
 import OurPhilosophy from "../components/About/OurPhilosophy";
-import OurLeaderShip from "../components/About/OurLeaderShip";
+import OurLeaderShip from "../components/About/OurLeadership";
 import Who from "../components/About/Who";
+
 const About = () => {
   const picBg = {
     backgroundColor: "#A17CA1",
