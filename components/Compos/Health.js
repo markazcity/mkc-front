@@ -21,7 +21,7 @@ const Health = () => {
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
 laoreet dolore magna aliquam erat volutpat.  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
 laoreet dolore magna aliquam erat volutpat.    </p>
-<div className="grid lg:grid-cols-3 gap-x-6 lh:mx-64 mx-10">
+<div className="grid lg:grid-cols-3 gap-x-6 lg:mx-64 mx-10">
 {
     healthItems.map(health=>(
         <div 

@@ -12,16 +12,15 @@ const OurPhilosophy = () => {
                 data-aos="zoom-in"
                 >OUR PHILOSOPHY</h1>
                 <br />
-                <p className="mx-10 lg:mx-60 text-justify lg:text-center mb-10"
+                <p className="mx-10 lg:mx-96 text-justify lg:text-center mb-10"
                 data-aos="fade-right">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
-laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation 
-ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in 
-hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros  et <br />
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
-laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation 
-ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in 
-hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros
+                    We strive to nurture a generation of thoughts that is capable 
+                    to accommodate the spirit of the present as well as the values 
+                    of the past. To make our spaces an inclusive eco-system, 
+                    we welcome people from different walks of life who have a 
+                    spark of courage to make creative changes in our time. 
+                    We believe in the richness of tradition and the civilization 
+                    of networks that connect the people and ideas across the world. 
                 </p>
         </div>
     );

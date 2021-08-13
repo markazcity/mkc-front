@@ -17,13 +17,21 @@ const OurLeaderShip = () => {
                 data-aos="zoom-in"
                 >OUR LEADERSHIP</h1>
                 <br />
-                <p className="mx-10 lg:mx-60 text-justify lg:text-center mb-10"
+                <p className="mx-10 lg:mx-96 text-justify lg:text-center mb-10"
                 data-aos="fade-right"
                 >
-                Lorem ipsum dolor sit, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
-laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation 
-ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in 
-hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros  <br />
+                  A decade ago, <i>Shaikh Aboobacker Ahmed</i> shared his vision 
+                  about the future of education and the development of society with his 
+                  cohorts in Jamia Markaz. This led to the creation of 
+                  Markaz Knowledge City in 2009, 
+                  under the leadership of <i>Dr. Muhammed Abdul Hakeem Azhari</i>. 
+<br />
+Over the course of time, various experts in the fields of education, 
+literature, science, technology, and business have come together to sit
+ around the table and execute the vision. In addition to their endeavors,
+  many young minds also have contributed immensely to the development of 
+  Markaz Knowledge City ever since. The following are our central leadership:  
+               <br />
                 </p>
                 <section className="mx-10 lg:grid lg:grid-cols-3 lg:mx-72 items-end text-center mb-16">
         <div className="text-center lg:order-2"  data-aos="fade-down">
