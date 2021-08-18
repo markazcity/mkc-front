@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 import {NavMenu, DesktopMenu} from "../components/NavMenu/NavMenu"
 import Logo from "../components/Logo"
 import SocialIcons from "../components/SocialIcons"
+import HomeParticle from "../components/Utils/Particles"
 
 export default function Home() {
   const TEXTS = [
@@ -19,7 +20,7 @@ export default function Home() {
 "Tradition"
   ];
   const [index, setIndex] = useState(0);
-  const slideImages = ["cc1.jpg", "cc2.jpg"]
+  const slideImages = ["bg.png", "cc2.jpg"]
   const [showMenu, setShowMenu] = useState(false);
   useEffect(() => {
     const intervalId = setInterval(()=>{
@@ -76,7 +77,7 @@ style={{
         text={ TEXTS[index % TEXTS.length].toUpperCase() }
         springConfig={{ mass: 1, tension: 70, friction: 20 }}
         noOverflow = {true}
-        className="slideTexts text-4xl lg:text-7xl font-extrabold text-white mx-10"
+        className="slideTexts text-6xl lg:text-8xl font-extrabold text-white mx-10"
       />
     </h1>
       </div>
@@ -84,7 +85,9 @@ style={{
 <div>&copy; Markaz Knowledge City</div>
 <SocialIcons/>
       </div>
+
       </motion.main>
+      {/* <HomeParticle/> */}
 
     </div>
   )
