@@ -71,7 +71,7 @@ style={{
   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 6h16M4 12h16M4 18h16" />
 </svg> </div>
 {/* NAVIGATION SECTION ENDS */}
-      <div className="">
+      <div className="text-center">
        <h1 className={styles.slideTexts}>
       <TextTransition
         text={ TEXTS[index % TEXTS.length].toUpperCase() }

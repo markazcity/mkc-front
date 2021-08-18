@@ -15,7 +15,7 @@ export  const menuItems = [
 export const NavMenu = ({onCloseTap}) => {
     const router = useRouter()
 
-    return (<div className="absolute bg-white rounded right-5 top-5  lg:left-2/3"
+    return (<div className="absolute z-11 bg-white rounded right-5 top-5  lg:left-2/3"
     style={{
         height:"auto",
     }}
@@ -60,7 +60,7 @@ export const DesktopMenu = () => {
  const router = useRouter()
 
     return (
-        <nav className="absolute z-30 right-0 top-0 m-10 text-white rounded px-1">
+        <nav className="absolute z-10 right-0 top-0 m-10 text-white rounded px-1">
             {
                 menuItems.map((menuItem)=>(
                     <a key={menuItem.name} onClick={()=>router.push(menuItem.to)}
