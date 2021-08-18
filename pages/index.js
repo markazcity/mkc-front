@@ -70,11 +70,11 @@ style={{
   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 6h16M4 12h16M4 18h16" />
 </svg> </div>
 {/* NAVIGATION SECTION ENDS */}
-      <div className="flex justify-center  text-center">
+      <div className="absolte w-full h-full flex justify-center text-center">
        <h1 className={styles.slideTexts}>
       <TextTransition
         text={ TEXTS[index % TEXTS.length].toUpperCase() }
-        springConfig={ presets.wobbly }
+        springConfig={{ mass: 1, tension: 100, friction: 26 }}
         noOverflow = {true}
         
         className="slideTexts text-4xl lg:text-7xl font-extrabold text-white mx-10  md:mx-16 my-40"

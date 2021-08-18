@@ -13,14 +13,14 @@ const OurPast = () => {
     ];
     return (
         <div>
-            <h1 className="text-5xl font-extrabold mb-5 text-center"
+            <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center"
                 style={{
                     color: "#71543D",
                 }}
                 data-aos="zoom-in"
                 >THE JOURNEY SO FAR</h1>
 
-                <p className="text-center">
+                <p className="text-center mx-10">
                 Since the inception of Markaz Knowledge City in 2009, we have made many breakthroughs in our journey.
                 </p>
                 {/* LISTS STARTS HERE */}

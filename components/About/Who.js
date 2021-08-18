@@ -14,7 +14,8 @@ const WhoAreWe = () => {
         <p className="mx-10 lg:mx-96 text-justify lg:text-center mb-10"
          data-aos="fade-up-right"
         >
-         Markaz Knowledge City is an integrated township located in Calicut, Kerala, India. It is made up of eighteen distinct entities working in the realms of education, culture, health, entrepreneurship, and residence.
+         Markaz Knowledge City is an integrated township located in Calicut, Kerala, India. <br/>
+          It is made up of eighteen distinct entities working in the realms of education, culture, health, entrepreneurship, and residence.
 <br />
 Our system is envisioned to address the most pressing challenges that humanity faces, by crafting innovative ideas, creating opportunities, and developing human skills, and thus to shape a better future inspired by the past.
 <br />

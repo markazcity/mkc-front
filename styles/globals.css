@@ -1,10 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 @import url('https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css');
+
+@font-face {
+  font-family: mkcfont;
+  src: url('/assets/fonts/mkcreg.otf');
+}
+
+@font-face {
+  font-family: mkcfont;
+  src: url('/assets/fonts/mkcextra.otf');
+}
+
 *{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: mkcfont, sans-serif;
 }
 .overlay{
     position: absolute;
