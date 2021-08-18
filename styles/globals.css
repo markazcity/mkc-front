@@ -11,6 +11,7 @@
 @font-face {
   font-family: mkcfont;
   src: url('/assets/fonts/mkcextra.otf');
+  font-weight: bold;
 }
 
 *{
