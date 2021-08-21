@@ -2,6 +2,8 @@ import '../styles/globals.css'
 import 'tailwindcss/tailwind.css'
 import 'swiper/swiper.scss';
 import NextNprogress from 'nextjs-progressbar';
+import { CookiesProvider } from "react-cookie"
+
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -25,7 +27,8 @@ height={3}
 showOnShallow={true}
 
 />
-<Component {...pageProps} />
+<CookiesProvider>
+<Component {...pageProps} /></CookiesProvider>
 </div>
  
  

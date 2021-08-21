@@ -1,5 +1,6 @@
 const OurPhilosophy = () => {
     return (
+        <div id="philosophy">
         <div  data-aos="fade-up-right"
         className="py-10"
         style={{
@@ -22,7 +23,7 @@ const OurPhilosophy = () => {
                     We believe in the richness of tradition and the civilization 
                     of networks that connect the people and ideas across the world. 
                 </p>
-        </div>
+        </div></div>
     );
 }
  

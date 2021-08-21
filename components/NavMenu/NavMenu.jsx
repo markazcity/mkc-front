@@ -1,9 +1,8 @@
 import MenuItem from './MenuItems'
-import Logo from '../Logo'
 import {useRouter } from 'next/router'
 
 
-export  const menuItems = [
+export  const mainMenu = [
     {name:"Home", icon:"", to:"/"},
     {name:"About", icon:"", to:"/about"},
     {name:"Components", icon:"", to:"/components"},
@@ -12,9 +11,9 @@ export  const menuItems = [
     {name:"Contact", icon:"", to:"/"},
 ]
 
-export const NavMenu = ({onCloseTap}) => {
-    const router = useRouter()
-
+export const NavMenu = ({onCloseTap, items}) => {
+    const router = useRouter();
+    const menuItems = items != null?items:mainMenu;
     return (<div className="absolute z-11 bg-white rounded right-5 top-5  lg:left-2/3"
     style={{
         height:"auto",
@@ -56,14 +55,18 @@ export const NavMenu = ({onCloseTap}) => {
     </div>);
 }
  
-export const DesktopMenu = () => {
- const router = useRouter()
+export const DesktopMenu = ({items, textColor}) => {
+ const router = useRouter();
+ const menuItems = items != null?items:mainMenu;
+ const color = textColor==null?" text-white":textColor;
 
     return (
-        <nav className="absolute z-10 right-0 top-0 m-10 text-white rounded px-1">
+        <nav className={"absolute z-10 right-0 top-0 m-10 rounded px-1"+textColor}>
             {
                 menuItems.map((menuItem)=>(
-                    <a key={menuItem.name} onClick={()=>router.push(menuItem.to)}
+                    <a key={menuItem.name} onClick={()=>{
+                        router.push(menuItem.to)
+                    }}
                     className="py-1 mx-2 border-b-4 border-transparent menu-item"
                     style={
                    {

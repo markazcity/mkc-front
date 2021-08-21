@@ -1,6 +1,9 @@
 const CompMain = () => {
-    return ( <div
-        className="flex flex-col justify-center lg:text-center mt-20 lg:mt-40"
+    return ( 
+    
+    <div id="components">
+    <div
+        className="flex flex-col justify-center lg:text-center pt-20 lg:mt-20"
       >
         <h1
           className="text-5xl font-extrabold mb-5 text-center"
@@ -28,7 +31,7 @@ const CompMain = () => {
           aspernatur! Explicabo blanditiis et rerum, natus aliquam tempore at
           eos.
         </p>
-      </div>);
+        </div>  </div>);
 }
  
 export default CompMain;

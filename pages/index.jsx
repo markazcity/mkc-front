@@ -4,10 +4,10 @@ import styles from '../styles/Home.module.css'
 import TextTransition, { presets } from "react-text-transition";
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
-import {NavMenu, DesktopMenu} from "../components/NavMenu/NavMenu"
 import Logo from "../components/Logo"
 import SocialIcons from "../components/SocialIcons"
 import HomeParticle from "../components/Utils/Particles"
+import MenuBar from "../components/NavMenu/Menu"
 
 export default function Home() {
   const TEXTS = [
@@ -21,7 +21,6 @@ export default function Home() {
   ];
   const [index, setIndex] = useState(0);
   const slideImages = ["bg.png", "cc2.jpg"]
-  const [showMenu, setShowMenu] = useState(false);
   useEffect(() => {
     const intervalId = setInterval(()=>{
       setIndex(index => index + 1);
@@ -54,23 +53,7 @@ style={{
       <Logo logo="logow" className="z-9"/>
 
       <div className="overlay"></div>
-      {/* NAVIGATION MENU SECTION */}
-      {/* PC NAVIGATION */}
-      <div className="hidden lg:block"><DesktopMenu/></div>
-    <div className="lg:hidden">
-       {showMenu && <NavMenu
-      onCloseTap={() =>{
-        setShowMenu(false);
-      }}/>}
-      <svg 
-      className="absolute z-10 hover:bg-gray-400 navIcon right-5 top-6 h-10 text-white rounded px-1 "
-      onClick={() => {
-        setShowMenu(true)
-      }}
- xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 6h16M4 12h16M4 18h16" />
-</svg> </div>
-{/* NAVIGATION SECTION ENDS */}
+      <MenuBar/>
       <div className="text-center">
        <h1 className={styles.slideTexts}>
       <TextTransition
@@ -81,8 +64,8 @@ style={{
       />
     </h1>
       </div>
-      <div className="absolute flex w-full justify-between bottom-4  text-white px-10">
-<div>&copy; Markaz Knowledge City</div>
+      <div className="absolute flex w-full justify-between bottom-4  text-white lg:px-11 px-6">
+<div className="lg:ml-8 ml-5">&copy; Markaz Knowledge City</div>
 <SocialIcons/>
       </div>
 

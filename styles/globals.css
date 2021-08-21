@@ -17,6 +17,9 @@
 *{
   font-family: mkcfont, sans-serif;
 }
+html{
+  scroll-behavior: smooth;
+}
 .overlay{
     position: absolute;
     background: rgb(0, 0, 0, 0.6);
@@ -41,7 +44,6 @@
  .menu-item {
   margin-top: -10px;
   padding-right: 35px;
-  color: #FFF;
   text-decoration: none;  
   display: inline-block;
   cursor: pointer;

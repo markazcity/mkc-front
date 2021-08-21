@@ -1,6 +1,8 @@
 const WhoAreWe = () => {
-    return ( <div
-        className="flex flex-col justify-center lg:text-center mt-20 lg:mt-40"
+    return ( 
+    <div id="who">
+    <section
+        className="flex flex-col justify-center lg:text-center pt-20 lg:pt-40"
       >
         <h1
           className="text-5xl font-extrabold mb-5 text-center"
@@ -11,17 +13,17 @@ const WhoAreWe = () => {
         >
           WHO ARE WE?
         </h1>
-        <p className="mx-10 lg:mx-96 text-justify lg:text-center mb-10"
+        <p className="mx-10 lg:mx-96 text-left lg:text-center mb-10"
          data-aos="fade-up-right"
         >
-         Markaz Knowledge City is an integrated township located in Calicut, Kerala, India. <br/>
+         Markaz Knowledge City is an integrated township located in Calicut, Kerala, India. <span className="hidden lg:block"></span>
           It is made up of eighteen distinct entities working in the realms of education, culture, health, entrepreneurship, and residence.
-<br />
+<br /> <br />
 Our system is envisioned to address the most pressing challenges that humanity faces, by crafting innovative ideas, creating opportunities, and developing human skills, and thus to shape a better future inspired by the past.
-<br />
+<br /> <br />
 We work collaboratively with various institutions, organizations, and people across the world to find new possibilities for integration and networking. Our missions have truly been supportive of endeavors for global peace, ethical lifestyle, community empowerment, and inclusive Education.
         </p>
-      </div>);
+      </section></div>);
 }
  
 export default WhoAreWe;

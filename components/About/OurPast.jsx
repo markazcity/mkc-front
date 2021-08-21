@@ -1,14 +1,9 @@
 const OurPast = () => {
     const pastList = [
-        {"year":"2012", "text":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut", "img":""},
-        {"year":"2013", "text":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut", "img":""},
-        {"year":"2014", "text":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut", "img":""},
-        {"year":"2015", "text":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut", "img":""},
-        {"year":"2016", "text":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut", "img":""},
-        {"year":"2017", "text":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut", "img":""},
-        {"year":"2018", "text":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut", "img":""},
-        {"year":"2019", "text":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut", "img":""},
-        {"year":"2020", "text":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut", "img":""},
+        {"year":"2012", "text":"Foundation Laying", "img":""},
+        {"year":"2013", "text":"Project launching", "img":""},
+        {"year":"2014", "text":"Project launching", "img":""},
+        
         
     ];
     return (
@@ -27,7 +22,7 @@ const OurPast = () => {
                 <div className="grid lg:grid-cols-3 lg:mx-60">
             {
                 pastList.map(past=>(
-                    <div className="m-6" key={past.year}
+                    <div className="m-6" key={pastList.indexOf(past)}
                     data-aos="fade-up"
                     data-aos-delay={pastList.indexOf(past)*100}
                     >
