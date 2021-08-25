@@ -50,7 +50,7 @@ style={{
     }}
     animate={{opacity:1}}
     >
-      <Logo logo="logow" className="z-9"/>
+      <Logo logo="logow" className="z-9"/> 
 
       <div className="overlay"></div>
       <MenuBar/>
@@ -64,8 +64,9 @@ style={{
       />
     </h1>
       </div>
-      <div className="absolute flex w-full justify-between bottom-4  text-white lg:px-11 px-6">
-<div className="lg:ml-8 ml-5">&copy; Markaz Knowledge City</div>
+      <div className="absolute z-20 flex w-full justify-between bottom-4  text-white lg:px-11 px-6">
+<div className="hidden lg:block lg:ml-8 ml-5">&copy; Markaz Knowledge City</div>
+<div className="lg:hidden"></div>
 <SocialIcons/>
       </div>
 

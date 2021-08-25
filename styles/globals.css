@@ -80,3 +80,34 @@ html{
     background-size: 100%;
   }
 }
+
+/* SPALSH SCREEN ANIMATION */
+.splash{
+  animation: fadeAnim 4s;
+}
+.splash-image{
+  opacity:0;
+  animation: fadeImage 4s;
+}
+@keyframes fadeAnim {
+  0% {
+    background-color: rgba(255, 255, 255,1);
+  }
+  75% {
+    background-color: rgba(255, 255, 255,1);
+  }
+  100% {
+    background-color: rgba(255, 255, 255,0);
+  }
+}
+@keyframes fadeImage {
+  0% {
+   opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
