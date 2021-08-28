@@ -10,22 +10,23 @@ import HomeParticle from "../components/Utils/Particles"
 import MenuBar from "../components/NavMenu/Menu"
 
 export default function Home() {
-  const TEXTS = [
-    "Think",
+const TEXTS = [
+"Think",
 "Dialogue",
 "Craft",
 "Innovation",
 "Transform",
 "Network",
 "Tradition"
-  ];
+];
+
   const [index, setIndex] = useState(0);
-  const slideImages = ["bg.png","slide2.png", "cc2.jpg"]
+  const slideImages = ["slide1.jpg", "slide2.jpg", "slide3.jpg", "slide4.jpg"]
   useEffect(() => {
     const intervalId = setInterval(()=>{
       setIndex(index => index + 1);
     },
-      3000 
+      4000 
     );
     return () => clearTimeout(intervalId);
   }, []);
@@ -44,10 +45,11 @@ className="absolute -z-1 indexBg"
 style={{
        height:"100%",
        width:"100%",
-       backgroundImage:`url('/assets/img/${slideImages[index % slideImages.length]}')`,
+       backgroundImage:`url('/assets/img/slides/${slideImages[index % slideImages.length]}')`,
        backgroundSize:"cover",
        backgroundPosition:"center"
     }}
+    
     animate={{opacity:1}}
     >
       <Logo logo="logow" className="z-9"/> 
@@ -56,12 +58,19 @@ style={{
       <MenuBar/>
       <div className="text-center">
        <h1 className={styles.slideTexts}>
-      <TextTransition
+         <span className="text-6xl lg:text-8xl font-extrabold text-white mx-10">
+           <span className={styles.homeTextFade}>
+           { TEXTS[index % TEXTS.length].toUpperCase() }
+           </span>
+        
+         </span>
+
+      {/* <TextTransition
         text={ TEXTS[index % TEXTS.length].toUpperCase() }
         springConfig={{ mass: 1, tension: 70, friction: 20 }}
         noOverflow = {true}
-        className="slideTexts text-6xl lg:text-8xl font-extrabold text-white mx-10"
-      />
+        className="text-6xl lg:text-8xl font-extrabold text-white mx-10"
+      /> */}
     </h1>
       </div>
       <div className="absolute z-20 flex w-full justify-between bottom-4  text-white lg:px-11 px-6">
