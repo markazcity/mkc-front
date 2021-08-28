@@ -61,7 +61,7 @@ export const DesktopMenu = ({items, textColor}) => {
  const color = textColor==null?" text-white":textColor;
 
     return (
-        <nav className={"absolute z-10 right-0 top-0 m-10 rounded px-1"+textColor}>
+        <nav className={"absolute z-10 right-0 top-5 m-10 rounded px-1"+textColor}>
             {
                 menuItems.map((menuItem)=>(
                     <a key={menuItem.name} onClick={()=>{

@@ -1,37 +1,45 @@
 import { useCookies } from "react-cookie"
 import { parseCookies } from "../../helpers/cookies"
 import { useState } from 'react'
-
+import axios from "axios"
 
 const Login = () => {
   const [cookie, setCookie] = useCookies(["user"])
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const data = {"username":username, "password":password};
-
+  const LOGIN_URL = "http://api.markazcity.in/login.php";
 
   const handleSignIn = async () => {
-    console.log(JSON.stringify(data));
-    try {
-      fetch('http://localhost/mkc/api/login.php',
+
+    fetch(LOGIN_URL,
       {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data),
+        method: 'POST', 
+        body:JSON.stringify(
+          {
+            username: username,
+            password: password
+          }
+        ),
+        headers: { 
+          'Accept': 'application/json',
+          'Content-Type': 'application/json' 
+      }
       }
       )
-      .then(response => response.json())
-      .then(json => console.log(json))
+    .then(response => response.json())
+    .then(data => console.log(data));
+
+
+
+  // "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+   
 
       // setCookie("user", JSON.stringify(data), {
       //   path: "/",
       //   maxAge: 3600, 
       //   sameSite: true,
       // })
-    } catch (err) {
-      console.log("Error::");
-      console.log(err)
-    }
+   
   }
 
 

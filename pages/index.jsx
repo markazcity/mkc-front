@@ -20,7 +20,7 @@ export default function Home() {
 "Tradition"
   ];
   const [index, setIndex] = useState(0);
-  const slideImages = ["bg.png", "cc2.jpg"]
+  const slideImages = ["bg.png","slide2.png", "cc2.jpg"]
   useEffect(() => {
     const intervalId = setInterval(()=>{
       setIndex(index => index + 1);

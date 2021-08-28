@@ -19,7 +19,9 @@ const About = () => {
   return (
     
     <div>
-      <div style={{ backgroundColor: "#F8FAF8" }}>
+      <div style={{ backgroundColor: "#F8FAF8",
+    backgroundImage:`url('/assets/img/spikes.png')`,
+    }}>
         <Logo logo="logob" className="absolute z-9 mb-10" />
         <MenuBar
         icoColor=" text-black"
