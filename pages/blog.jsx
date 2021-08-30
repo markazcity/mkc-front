@@ -8,7 +8,7 @@ const Blog = () => {
     
     <div>
       <div className="py-5" style={{ backgroundColor: "#F8FAF8" }}>
-        <Logo logo="logob" className="absolute z-9 mb-10" />
+        <Logo logo="logob" className="z-9" />
         <h1 className="text-5xl font-extrabold mb-5 text-center"
                 style={{
                     color: "#69696D",

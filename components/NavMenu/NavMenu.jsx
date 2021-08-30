@@ -14,7 +14,7 @@ export  const mainMenu = [
 export const NavMenu = ({onCloseTap, items}) => {
     const router = useRouter();
     const menuItems = items != null?items:mainMenu;
-    return (<div className="absolute z-11 bg-white rounded right-5 top-5  lg:left-2/3"
+    return (<div className="absolute z-50 bg-white rounded right-5 top-5  lg:left-2/3"
     style={{
         height:"auto",
     }}
@@ -26,7 +26,7 @@ export const NavMenu = ({onCloseTap, items}) => {
         >
             <div className="absolute right-1">
             <svg 
-            className="absolute z-9 hover:bg-gray-100 navIcon right-5 top-6 h-6 text-gray-400 rounded px-1"
+            className="absolute z-10 hover:bg-gray-100 navIcon right-5 top-6 h-6 text-gray-400 rounded px-1"
             onClick={()=>{
                 onCloseTap()
             }}

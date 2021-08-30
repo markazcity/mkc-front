@@ -20,7 +20,7 @@ const Components = () => {
     
     <div>
       <div>
-        <Logo logo="logob" className="absolute z-9 mb-10" />
+        <Logo logo="logob" className="z-9" />
         <MenuBar
         icoColor=" text-black"
         navItems={menu}

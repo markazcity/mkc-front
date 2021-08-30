@@ -22,11 +22,12 @@ const About = () => {
       <div style={{ backgroundColor: "#F8FAF8",
     backgroundImage:`url('/assets/img/spikes.png')`,
     }}>
-        <Logo logo="logob" className="absolute z-9 mb-10" />
+        <Logo logo="logob" className="z-9" />
         <MenuBar
         icoColor=" text-black"
         navItems={menu}
         />
+        <div className="mt-10"></div>
         <Who/>
       </div>
       <section className="py-10" id="past">

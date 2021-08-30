@@ -15,7 +15,8 @@ const Education = () => {
         "text":"Markaz Law College (MLC) is envisioned to prepare a legal generation committed to protect and revive the constitution of India by ensuring justice and equality for all. MLC provides 5-year integrated law course and 3-year LLB programme with various specializations at undergraduate level, and two LLM programmes are offered at post-graduate level. Rather than being a mere centre for legal learning, MLC also functions as a unique space for advanced research in legal studies. The faculty and students restlessly undertake various comparative legal researches to champion in academia and industry.", 
         "img":"law.jpg"},
         {"title":"Malaibar Foundation for Research and Development (MFRD)", 
-        "text":"As part of its journey towards bringing innovation and development in the educational sector, Markaz Knowledge City formed Malaibar Foundation for Research and Development (MFRD) as a platform for clubbing experts in the proposed area for more creative dialogues and discussions. MFRD intends to fulfill the aim of advanced research followed by the production of new knowledge in the fields of arts, science, managements, technology, and literature.    ", "img":""},
+        "text":"As part of its journey towards bringing innovation and development in the educational sector, Markaz Knowledge City formed Malaibar Foundation for Research and Development (MFRD) as a platform for clubbing experts in the proposed area for more creative dialogues and discussions. MFRD intends to fulfill the aim of advanced research followed by the production of new knowledge in the fields of arts, science, managements, technology, and literature.    ", 
+        "img":"malaibar.jpg"},
         {"title":"Queensland", 
         "text":"Queensland is a multidisciplinary hub for women’s education, employment, and entrepreneurship. It consists of a wellness centre, studio for Quranic learning, an exclusive campus for Sharia studies, technical skill development academy, residence for professional students, digital library, and indoor sports stadium. Queensland offers higher secondary and undergraduate courses in integrated Islamic sciences under various steams of humanities, commerce, and science. ", 
         "img":"queensland.jpg"},
@@ -77,7 +78,7 @@ const Education = () => {
                             >
 
                             <h1
-                            className={`text-center font-extrabold text-2xl  py-8 px-4 lg:p-8 text-white opacity-80 
+                            className={`text-center font-extrabold text-2xl  py-8 px-4 lg:p-8 text-white
                             ${edu.title.length>24?" lg:pb-0":""}`
                         }
                            // style={{color:"#69696D"}}

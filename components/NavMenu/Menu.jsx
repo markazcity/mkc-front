@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import {NavMenu, DesktopMenu} from "./NavMenu"
 
-const MenuBar = ({icoColor, navItems}) => {
+const MenuBar = ({icoColor, navItems,}) => {
     const [showMenu, setShowMenu] = useState(false);
     const iconColor = icoColor==null?" text-white":icoColor;
     return (
