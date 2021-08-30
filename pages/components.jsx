@@ -39,7 +39,7 @@ const Components = () => {
       <section  className="pt-10" id="commerce">
         <Commerce />
       </section>
-      <section  id="residence">
+      <section  id="residence" className="overflow-hidden">
       <Residence/>
       </section>
       <Footer/>

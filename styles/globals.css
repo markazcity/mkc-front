@@ -101,6 +101,7 @@ html{
 /* SPALSH SCREEN ANIMATION */
 .splash{
   animation: fadeAnim 5s;
+  overflow: hidden;
 }
 .splash-image{
   opacity:0;

@@ -12,10 +12,8 @@ const Splash = () => {
     return (<div
     className="absolute z-50 flex justify-center items-center splash"
     style={{
-        minWidth:"100%",
-        minHeight:"100vh",
-        maxWidth:"100%",
-        maxHeight:"100vh",
+        width:"100%",
+        height:"100%",
     }}
     >
 <img src="/icon.png" alt="" style={{
