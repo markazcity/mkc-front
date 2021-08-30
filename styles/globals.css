@@ -107,6 +107,9 @@ html{
   75% {
     opacity: 1;
   }
+  95% {
+    opacity: 0;
+  }
   100% {
     opacity: 0;
   }

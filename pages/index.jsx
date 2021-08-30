@@ -34,24 +34,54 @@ const TEXTS = [
  
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Markaz Knowledge City</title>
         <meta name="description" content="Markaz Knowledge City" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 <motion.main  
-className="absolute -z-1 indexBg"
+className="absolute -z-1 bg-black"
 style={{
        height:"100%",
        width:"100%",
-       backgroundImage:`url('/assets/img/slides/${slideImages[index % slideImages.length]}')`,
-       backgroundSize:"cover",
-       backgroundPosition:"center"
     }}
     
     animate={{opacity:1}}
     >
+      {/* <section
+      className={"absolute indexBg "+styles.slideImageFade}
+      id="background"
+      style={{
+        zIndex:"-20",
+        minWidth:"100vw",
+        minHeight:"100vh",
+        maxWidth:"100vw",
+        maxHeight:"100vh",
+        backgroundImage:`url('/assets/img/slides/${slideImages[index % slideImages.length]}')`,
+        backgroundSize:"cover",
+       backgroundPosition:"center"
+
+      }}
+      >
+      </section> */}
+
+<section className="absolute h-full w-full "
+style={{
+  zIndex:"-10"
+}}
+>
+<div className={styles.slide}>
+<div style={{backgroundImage:"url(/assets/img/slides/slide1.jpg)"}}></div>
+<div style={{backgroundImage:"url(/assets/img/slides/slide2.jpg)"}}></div>
+<div style={{backgroundImage:"url(/assets/img/slides/slide3.jpg)"}}></div>
+<div style={{backgroundImage:"url(/assets/img/slides/slide4.jpg)"}}></div>
+</div>
+</section>
+
+
+
+
       <Logo logo="logow" className="z-9"/> 
 
       <div className="overlay"></div>
