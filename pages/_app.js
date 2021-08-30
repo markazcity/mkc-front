@@ -20,7 +20,8 @@ const [loading, setLoading] = useState(true);
       once: true,
       offset: 50,
     });
-setInterval(()=>setLoading(false),3950);
+const intervalId = setInterval(()=>setLoading(false),4950);
+return () => clearTimeout(intervalId);
   }, []);
   return  <div>
     {loading?<Splash/>:<></>}

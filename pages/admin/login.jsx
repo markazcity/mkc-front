@@ -7,13 +7,14 @@ const Login = () => {
   const [cookie, setCookie] = useCookies(["user"])
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const LOGIN_URL = "http://api.markazcity.in/login.php";
+  const LOGIN_URL = "https://api.markazcity.in/login.php";
 
   const handleSignIn = async () => {
 
     fetch(LOGIN_URL,
       {
         method: 'POST', 
+        //mode: 'no-cors',
         body:JSON.stringify(
           {
             username: username,
@@ -22,11 +23,11 @@ const Login = () => {
         ),
         headers: { 
           'Accept': 'application/json',
-          'Content-Type': 'application/json' 
+          'Content-Type': 'application/json'
       }
       }
       )
-    .then(response => response.json())
+    .then(response => response)
     .then(data => console.log(data));
 
 

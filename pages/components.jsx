@@ -1,10 +1,11 @@
-import Logo from "../components/Logo";
-import Education from "../components/Compos/Education";
-import Health from "../components/Compos/Health";
-import Commerce from "../components/Compos/Commerce";
-import CompMain from "../components/Compos/ComponentsHead";
-import Footer from "../components/Footer";
-import MenuBar from "../components/NavMenu/Menu"
+import Logo from "@/components/Logo";
+import Education from "@/components/Compos/Education";
+import Health from "@/components/Compos/Health";
+import Commerce from "@/components/Compos/Commerce";
+import CompMain from "@/components/Compos/ComponentsHead";
+import Residence from "@/components/Compos/Residence";
+import Footer from "@/components/Footer";
+import MenuBar from "@/components/NavMenu/Menu"
 
 
 const Components = () => {
@@ -19,7 +20,9 @@ const Components = () => {
   return (
     
     <div>
-      <div>
+       <div style={{ backgroundColor: "#F8FAF8",
+    backgroundImage:`url('/assets/img/spikes.png')`,
+    }}>
         <Logo logo="logob" className="z-9" />
         <MenuBar
         icoColor=" text-black"
@@ -27,7 +30,7 @@ const Components = () => {
         />
         <CompMain/>
       </div>
-      <section className="py-10" id="education">
+      <section id="education">
         <Education />
       </section>
       <section className="pt-10" id="health">
@@ -35,7 +38,9 @@ const Components = () => {
       </section>
       <section  className="pt-10" id="commerce">
         <Commerce />
-        
+      </section>
+      <section  id="residence">
+      <Residence/>
       </section>
       <Footer/>
     </div>

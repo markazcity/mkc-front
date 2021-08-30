@@ -6,7 +6,7 @@ const Health = () => {
     "img":"multi.jpg"
     },
         {
-            "title":"Tigris Valley Wellness Centre",
+            "title":"Tigris Valley",
             "text":"Tigris Valley is to promote a better lifestyle with traditional wellness concepts. To make people healthier and more energetic, Tigris Valley has set up many facilities inspired by different medical traditions from around the globe. ",
     "img":"multi.jpg"
     },

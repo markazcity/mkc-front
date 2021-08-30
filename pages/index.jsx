@@ -43,8 +43,10 @@ const TEXTS = [
 <motion.main  
 className="absolute -z-1 bg-black"
 style={{
-       height:"100%",
-       width:"100%",
+       minHeight:"100%",
+       minWidth:"100%",
+       maxHeight:"100%",
+       maxWidth:"100%",
     }}
     
     animate={{opacity:1}}

@@ -20,6 +20,23 @@
 html{
   scroll-behavior: smooth;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #BB7CB3; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #CDCC00; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0097C8; 
+}
+
+
 .overlay{
     position: absolute;
     background: rgb(0, 0, 0, 0.6);
@@ -83,11 +100,11 @@ html{
 
 /* SPALSH SCREEN ANIMATION */
 .splash{
-  animation: fadeAnim 4s;
+  animation: fadeAnim 5s;
 }
 .splash-image{
   opacity:0;
-  animation: fadeImage 4s;
+  animation: fadeImage 5s;
 }
 @keyframes fadeAnim {
   0% {
