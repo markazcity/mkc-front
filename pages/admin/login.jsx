@@ -1,48 +1,75 @@
-import { useCookies } from "react-cookie"
-import { parseCookies } from "../../helpers/cookies"
-import { useState } from 'react'
-import axios from "axios"
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
+import Cookies from 'js-cookie'
+import PropagateLoader from "react-spinners/PropagateLoader";
+import { css } from "@emotion/react";
+
+
+var qs = require('qs');
+
 
 const Login = () => {
-  const [cookie, setCookie] = useCookies(["user"])
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState();
+  const [logging, setLogging] = useState(false);
   const LOGIN_URL = "https://api.markazcity.in/login.php";
+  const DEV_LOGIN_URL = "http://localhost/mkc/api/login.php";
+
+  const router = useRouter();
+
+useEffect(() => {
+  console.log(Cookies.get('user'));
+}, [])
+
 
   const handleSignIn = async () => {
-
+    setLogging(true);
     fetch(LOGIN_URL,
       {
         method: 'POST', 
-        //mode: 'no-cors',
-        body:JSON.stringify(
-          {
-            username: username,
-            password: password
-          }
-        ),
+        body:
+        qs.stringify({
+            "username": username,
+            "password": password
+          })
+        ,
         headers: { 
           'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
       }
       }
       )
-    .then(response => response)
-    .then(data => console.log(data));
-
-
-
-  // "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-   
-
-      // setCookie("user", JSON.stringify(data), {
-      //   path: "/",
-      //   maxAge: 3600, 
-      //   sameSite: true,
-      // })
-   
+    .then(response => response.json())
+    .then(data =>{
+      setLogging(false);
+      if(data.status==="NoDataFound"){
+        setError("Something went wrong!");
+      }
+      else if(data.status==="NoUser"){
+        setError("No user found with this credentials.");
+      }else if(data.status==="PasswordIncorrect"){
+        setError("Password do not match");
+      }else{
+        Cookies.set('user', `${data.username}`);
+      router.push('/admin');
+      
+      }
+    });
   }
 
+  const signIn = () => {
+    if(username.length>5 && password.length>5){
+      setError("");
+    handleSignIn();
+    }else{
+      if(username.length<6){
+        setError("Please enter a valid username.");
+      }else if(password.length<6){
+        setError("Please enter a valid password.");
+      }
+    }
+  }
 
     return (<div>
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -54,8 +81,14 @@ const Login = () => {
             alt="Workflow"
           />
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in</h2>
-          
         </div>
+        { error && (<p className="bg-red-200 text-red-700 rounded px-5 py-2 text-center">
+            {error}
+          </p>)}
+          { !error && (<p className="bg-transparent text-transparent rounded px-5 py-2 text-center">
+            MKC
+          </p>)}
+        
         <form className="mt-8 space-y-6" action="#" method="POST">
           <input type="hidden" name="remember" defaultValue="true" />
           <div className="rounded-md shadow-sm -space-y-px">
@@ -117,13 +150,16 @@ const Login = () => {
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             onClick={(e) =>{
               e.preventDefault();
-              handleSignIn();
+              signIn();
             }}
             >
               <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                 <div className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true"></div>
               </span>
-              Sign in
+              { !logging?
+                <span>Sign in</span>
+              :
+            <PropagateLoader color="#fff"/> } <span className="text-transparent"> Sign In</span>
             </button>
           </div>
         </form>
