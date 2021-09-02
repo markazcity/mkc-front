@@ -7,8 +7,8 @@ export  const mainMenu = [
     {name:"About", icon:"", to:"/about"},
     {name:"Components", icon:"", to:"/components"},
     {name:"Blog", icon:"", to:"/blog"},
-    {name:"Carrier", icon:"", to:"/"},
-    {name:"Contact", icon:"", to:"/"},
+    {name:"Carreers", icon:"", to:"/careers"},
+    {name:"Contact", icon:"", to:"/contact"},
 ]
 
 export const NavMenu = ({onCloseTap, items}) => {
@@ -61,7 +61,7 @@ export const DesktopMenu = ({items, textColor}) => {
  const color = textColor==null?" text-white":textColor;
 
     return (
-        <nav className={"absolute z-10 right-0 top-5 m-10 rounded px-1"+textColor}>
+        <nav className={"absolute z-10 right-0 top-6 mx-10 my-5 rounded px-1"+textColor}>
             {
                 menuItems.map((menuItem)=>(
                     <a key={menuItem.name} onClick={()=>{

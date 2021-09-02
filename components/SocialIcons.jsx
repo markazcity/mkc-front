@@ -8,7 +8,7 @@ const SocialIcons = () => {
         ["whatsapp","http://wa.me/+916235600600"],
         ["linkedin","https://www.linkedin.com/company/markazcity"],
     ];
-    return (<div className="flex lg:mr-10">
+    return (<div className="flex">
 {
     links.map(link=>(
         <a href={link[1]} key={link[0]}> <img src={"/assets/icons/"+link[0]+".svg"} alt="" width="25px" className="mx-1" /> </a>

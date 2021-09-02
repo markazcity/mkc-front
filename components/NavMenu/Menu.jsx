@@ -18,7 +18,7 @@ const MenuBar = ({icoColor, navItems,}) => {
         setShowMenu(false);
       }}/>}
       <svg 
-      className={"absolute z-40 hover:bg-gray-400 navIcon right-5 top-10 h-10  rounded px-1 "+iconColor}
+      className={"absolute z-40 hover:bg-gray-400 navIcon right-5 top-6 h-10  rounded px-1 "+iconColor}
       onClick={() => {
         setShowMenu(true)
       }}

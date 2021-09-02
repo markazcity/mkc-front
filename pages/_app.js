@@ -20,7 +20,15 @@ const [loading, setLoading] = useState(true);
 const intervalId = setInterval(()=>setLoading(false),4950);
 return () => clearTimeout(intervalId);
   }, []);
-  return  <div>
+  return  <div
+  style={
+    loading?{
+      minHeight:"100vh",
+      maxHeight:'100vh',
+      overflow:'hidden'
+    }:{}
+    }
+  >
     {loading?<Splash/>:<></>}
   <NextNprogress
 color="#C0C91E"
