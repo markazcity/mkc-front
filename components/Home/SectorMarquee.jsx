@@ -41,9 +41,7 @@ export default SectorMarquee;
 
 const SingleItem = ({title, duration}) => {
     return (
-        <Tilt
-        trackOnWindow={true}
-        >
+       
     <div 
 className="bg-black text-white mx-4 my-2 rounded-full text-center flex justify-center items-center hover:bg-transparent hover:text-black border-4 border-black transition-all duration-300"
     style={{
@@ -57,5 +55,5 @@ className="bg-black text-white mx-4 my-2 rounded-full text-center flex justify-c
 <span className="font-bold">
 {title}
 </span>
-    </div></Tilt>)
+    </div>)
 }

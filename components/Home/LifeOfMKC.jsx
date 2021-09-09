@@ -1,4 +1,4 @@
-import Tilt from 'react-parallax-tilt';
+
 
 const LifeOfMKC = () => {
     const items = [
@@ -29,14 +29,12 @@ const LifeOfMKC = () => {
         >
              {/* <h2 className="font-semibold py-2 text-3xl text-gray-600">THE LIFE OF MKC</h2> */}
 </div>
-<div className="grid lg:grid-cols-4">
+<div className="flex w-full flex-wrap lg:flex-nowrap">
     {
         items.map(item=>
-            <Tilt
-            glareEnable={true} glareMaxOpacity={0.8} glareColor="#ffffff" glarePosition="bottom" glareBorderRadius="0px"
-            >
+            
             <div
-            className="hover:w-4/12 h-56 lg:h-96"
+            className="lifeHover h-56 lg:h-96 w-full lg:w-4/12 hover:scale-x-110"
             style={{
                 background:`url(/assets/img/life/${item.img})`,
                 backgroundSize:"cover",
@@ -45,17 +43,18 @@ const LifeOfMKC = () => {
             data-aos="fade-up"
             data-aos-delay={(items.indexOf(item)+1)*200}
             >
-                <div 
+               <div 
                 className="flex justify-center items-center h-full w-full bg-black bg-opacity-70 hover:bg-opacity-40 transition-all duration-300">
+               
                 <span
                 className="text-white font-extrabold text-2xl text-center"
                 >
                 {item.title.toUpperCase()}
                 </span>
-                </div>
+                </div> 
 
             </div>
-            </Tilt>
+           
             )
     }
 

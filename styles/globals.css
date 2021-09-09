@@ -76,6 +76,13 @@ html{
 .menu-item:hover:after {
   width: 100%;
 }
+.lifeHover{
+  
+  transition: width 1s ease;
+}
+.lifeHover:hover{
+  transform: scaleX(1.3);
+}
 
 @media screen and (min-width:1200px){
   .indexBg{

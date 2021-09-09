@@ -36,10 +36,10 @@ const [showNavbar, setShowNavBar] = useState(true);
     
       <nav
       style={{
-        background:"rgba(0,0,0,0.6)",
+        background:"rgba(0,0,0,0.0)",
         position:"fixed",
         width:"100%",
-        top:0,
+        top:5,
         zIndex:"48",
         marginTop:showNavbar?"0px":"-100px",
         transition:"all 0.5s ease"
