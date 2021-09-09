@@ -66,15 +66,13 @@ const Education = () => {
                            }
                         >
                             <div
-                            className="h-full w-full"
-                            style={ {
-                                backgroundColor:colorChange.includes(educationList.indexOf(edu))?
-                                "rgba(53, 59, 72,0.75)":
-                                //"rgba(182, 184, 167,0.8)":
-                                "rgba(113, 128, 147,0.75)",
-                                //"rgba(184, 185, 146, 0.8)",
-                        backgroundopacity:0
-                        }}
+                            
+                            className={
+                                colorChange.includes(educationList.indexOf(edu))?
+                                "h-full w-full compo1":
+                                "h-full w-full compo2"
+                            
+                            }
                             >
 
                             <h1

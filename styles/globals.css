@@ -147,3 +147,19 @@ html{
   --tw-ring-color: rgba(170, 115, 172,1) !important;
 }
 
+.compo1{
+background-color: rgba(53, 59, 72,0.65);
+transition: 0.5s ease;
+}
+.compo1:hover{
+  background-color: rgba(53, 59, 72,0.9);
+
+}
+.compo2{
+background-color: rgba(113, 128, 147,0.65);
+transition: 0.5s ease;
+}
+.compo2:hover{
+  background-color: rgba(113, 128, 147,0.9);
+
+}

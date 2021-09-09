@@ -8,12 +8,12 @@ const Health = () => {
         {
             "title":"Tigris Valley",
             "text":"Tigris Valley is to promote a better lifestyle with traditional wellness concepts. To make people healthier and more energetic, Tigris Valley has set up many facilities inspired by different medical traditions from around the globe. ",
-    "img":"multi.jpg"
+    "img":"tigris.jpg"
     },
         {
             "title":"MAZRA",
             "text":"Markaz Alliance for Zero Waste Reforestation and Agriculture (MAZRA) is an integrated project that purposes to regain the agricultural heredity of Kerala. MAZRA runs several scientific projects under the supervision of experts, cooperating with the different projects and schemes of state-central governments. MAZRA has designed seven projects blending the conventional forms of agricultural and animal husbandry in Kerala with the modern technology. ",
-    "img":"multi.jpg"
+    "img":"mazra.jpg"
     },
     ];
     return (
@@ -43,12 +43,13 @@ laoreet dolore magna aliquam erat volutpat.    </p>
         data-aos="fade-up-right"
         data-aos-delay={healthItems.indexOf(health)*50}
         >
+            <div className="h-48 mb-2">
             <div
-            className="h-48 mb-2"
+            className="h-full"
             style={{background:`url('/assets/img/components/${health.img}')`,
         backgroundSize:'cover'
         }}
-            ></div>
+            ></div></div>
                <h1
                             className={`text-center font-extrabold text-xl  py-8 px-0 lg:p-8 text-black opacity-80`
                         }

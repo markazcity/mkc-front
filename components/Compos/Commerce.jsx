@@ -2,7 +2,7 @@ const Commerce = () => {
     const educationList = [
         {"title":"Souq", 
         "text":"Souq is the physical marketplace in Markaz Knowledge City. It comes underneath the Cultural Centre with 140+ commercial spaces for different types of business such as restaurant, cloth, perfumes, and minimart. The Souq aims to promote local entrepreneurship with global standards, as well as budget consumption for the public. ", 
-        "img":"cc.jpg"},
+        "img":"souq.jpg"},
         
         {"title":"Fez inn Hotel", 
         "text":"Fez Inn is the four-star facilitated business hotel with excellent accommodation facilities in the form of fully furnished deluxe and suit rooms at the gateway of Markaz Knowledge City.  The hotel has 84 deluxe rooms, 28 suites, business desk, tour desk, restaurants, cafes, kiosks, and parking bays. It also forms as the hospitality capital of the City.", 
@@ -10,7 +10,7 @@ const Commerce = () => {
 
         {"title":"M-Tower", 
         "text":"M-Tower is the corporate signature of Markaz Knowledge City. It is set as a multi-layered service apartment that can accommodate the offices, workstations, and residences for business and other private needs. Through M-Tower we aim to furnish better hospitality for the corporate world, be it early start-ups or established ones.  ", 
-        "img":"unani.jpg"},
+        "img":"mtower.jpg"},
         {"title":"Exhibition Centre", 
         "text":"The Exhibition Center is to offer a better hospitality experience for various national and international events. With a 2000 seated hall and other amenities, the centre is used to host academic, corporate, and private events in a global standard.", 
         "img":"exhibition.jpg"},
@@ -45,15 +45,11 @@ const Commerce = () => {
                            }
                         >
                             <div
-                            className="h-full w-full"
-                            style={ {
-                                backgroundColor:colorChange.includes(educationList.indexOf(edu))?
-                                "rgba(53, 59, 72,0.75)":
-                                //"rgba(182, 184, 167,0.8)":
-                                "rgba(113, 128, 147,0.75)",
-                                //"rgba(184, 185, 146, 0.8)",
-                        backgroundopacity:0
-                        }}
+                            className={
+                                colorChange.includes(educationList.indexOf(edu))?
+                                "h-full w-full compo1":
+                                "h-full w-full compo2"
+                            }
                             >
 
                             <h1

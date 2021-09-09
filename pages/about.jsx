@@ -5,6 +5,7 @@ import OurLeaderShip from "../components/About/OurLeadership";
 import Who from "../components/About/Who";
 import Footer from "../components/Footer";
 import MenuBar from "../components/NavMenu/Menu"
+import Head from 'next/head'
 
 const About = () => {
 
@@ -19,6 +20,11 @@ const About = () => {
   return (
     
     <div>
+       <Head>
+        <title>About - Markaz Knowledge City</title>
+        <meta name="description" content="About Markaz Knowledge City" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div style={{ backgroundColor: "#F8FAF8",
     backgroundImage:`url('/assets/img/spikes.png')`,
     }}>

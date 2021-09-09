@@ -6,6 +6,7 @@ import CompMain from "@/components/Compos/ComponentsHead";
 import Residence from "@/components/Compos/Residence";
 import Footer from "@/components/Footer";
 import MenuBar from "@/components/NavMenu/Menu"
+import Head from 'next/head'
 
 
 const Components = () => {
@@ -20,6 +21,10 @@ const Components = () => {
   return (
     
     <div>
+       <Head>
+        <title>Components - Markaz Knowledge City</title>
+        <meta name="description" content="Components in Markaz Knowledge City" />
+      </Head>
        <div style={{ backgroundColor: "#F8FAF8",
     backgroundImage:`url('/assets/img/spikes.png')`,
     }}>

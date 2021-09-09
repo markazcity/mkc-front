@@ -2,7 +2,7 @@ import Logo from "../components/Logo";
 import Footer from "../components/Footer";
 import MenuBar from "../components/NavMenu/Menu"
 import SocialIcons from '../components/SocialIcons'
-import { css } from "@emotion/react";
+import Head from 'next/head'
 
 const Contact = () => {
 
@@ -17,6 +17,10 @@ const Contact = () => {
   return (
     
     <div>
+         <Head>
+        <title>Contact - Markaz Knowledge City</title>
+        <meta name="description" content="Contact Markaz Knowledge City" />
+      </Head>
       <div style={{ backgroundColor: "#F8FAF8",
     backgroundImage:`url('/assets/img/spikes.png')`,
     minHeight:"50vh"

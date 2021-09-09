@@ -1,5 +1,6 @@
 import Logo from "../components/Logo";
 import Footer from "../components/Footer";
+import Head from 'next/head'
 
 
 const Blog = () => {
@@ -7,6 +8,10 @@ const Blog = () => {
   return (
     
     <div>
+       <Head>
+        <title>Blog - Markaz Knowledge City</title>
+        <meta name="description" content="Blog of Markaz Knowledge City" />
+      </Head>
       <div className="py-5" style={{ backgroundColor: "#F8FAF8" }}>
         <Logo logo="logob" className="z-9" />
         <h1 className="text-5xl font-extrabold mb-5 text-center"
