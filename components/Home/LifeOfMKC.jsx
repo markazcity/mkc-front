@@ -29,12 +29,12 @@ const LifeOfMKC = () => {
         >
              {/* <h2 className="font-semibold py-2 text-3xl text-gray-600">THE LIFE OF MKC</h2> */}
 </div>
-<div className="flex w-full flex-wrap lg:flex-nowrap">
+<div className="md:grid md:grid-cols-8">
     {
         items.map(item=>
             
             <div
-            className="lifeHover h-56 lg:h-96 w-full lg:w-4/12 hover:scale-x-110"
+            className="lifeHover h-56 lg:h-96 w-full col-span-2 "
             style={{
                 background:`url(/assets/img/life/${item.img})`,
                 backgroundSize:"cover",

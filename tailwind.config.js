@@ -6,12 +6,22 @@ module.exports = {
       zIndex: {
        '-1': '-1',
        '11': '11',
-      }}
+      }, 
+      colors: {
+        violet: {
+         600:"#AA73AC",
+         700:"#985B99"
+        },
+      }
+    },
+      
   },
   variants: {
     extend: {
       borderWidth: ['hover', 'focus'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }

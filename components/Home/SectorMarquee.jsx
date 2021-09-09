@@ -29,7 +29,7 @@ style={{maxWidth:"100%",
     <SingleItem 
     key={sec.title}
     title={sec.title}
-    duration={(sectors.indexOf(sec)+1)*100}
+    data-aos="fade-right"
     />
     )
     }
@@ -39,18 +39,17 @@ style={{maxWidth:"100%",
  
 export default SectorMarquee;
 
-const SingleItem = ({title, duration}) => {
+const SingleItem = ({title}) => {
     return (
        
     <div 
-className="bg-black text-white mx-4 my-2 rounded-full text-center flex justify-center items-center hover:bg-transparent hover:text-black border-4 border-black transition-all duration-300"
+className="bg-black text-white mx-4 my-2 rounded-full text-center flex justify-center items-center hover:bg-transparent hover:text-black border-4 border-black transition-700 duration-300"
     style={{
         height:"160px",
         width:"160px"
         
     }}
-    data-aos="fade-right"
-    data-aos-delay={duration}
+   
     >
 <span className="font-bold">
 {title}
