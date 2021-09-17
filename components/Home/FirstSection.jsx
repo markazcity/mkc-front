@@ -5,18 +5,15 @@ import Tilt from 'react-parallax-tilt';
 
 const FirstSection = () => {
     const TEXTS = [
-        "Think",
-        "Dialogue",
-        "Craft",
-        "Innovation",
-        "Transform",
-        "Network",
-        "Tradition"
+      "A Vision for Contemporary Practices",
+      "Planting a Generation of Thoughts",
+      "The Plot of Multiplicities ",
+      "An Idea for Transformation ",
+      "Innovation and Scientific Experiments",
         ];
+
         
           const [index, setIndex] = useState(0);
-          const navRef = useRef();
-          const slideImages = ["slide1.jpg", "slide2.jpg", "slide3.jpg", "slide4.jpg"]
           useEffect(() => {
             const intervalId = setInterval(()=>{
               setIndex(index => index + 1);
@@ -45,30 +42,48 @@ style={{
   zIndex:"-10"
 }}
 >
-<div className={styles.slide}
-style={{
-  height:"100%",
-  width:"100%",
-}}
+
+<video autoPlay muted loop
+style={{ height: "100%", width: "100%", objectFit: "cover" }}
 >
-<div style={{backgroundImage:"url(/assets/img/slides/slide1.jpg)"}}></div>
-<div style={{backgroundImage:"url(/assets/img/slides/slide2.jpg)"}}></div>
-<div style={{backgroundImage:"url(/assets/img/slides/slide3.jpg)"}}></div>
-<div style={{backgroundImage:"url(/assets/img/slides/slide4.jpg)"}}></div>
-</div>
+    <source src="/assets/bgvid.mp4" type="video/mp4">
+    </source>
+</video>
+
 </section>
 
 
 <div className="overlay"></div>
     
 
- <div className="text-center">
-         <span className={"text-6xl lg:text-8xl font-extrabold text-white mx-10 "+styles.slideTexts}>
-           <span className={styles.homeTextFade}>
+ <div>
+   
+
+         <div className={"text-5xl lg:text-7xl text-white lg:ml-32 ml-10 "+styles.slideTexts}>
+         <section className="ml-1">
+     {TEXTS.map(item=>(
+       <span 
+       key={item}
+       className=
+       {
+         (TEXTS[index % TEXTS.length]==item)?
+       "bg-transparent inline-block rounded-full mr-2 opacity-50":
+       "bg-white inline-block rounded-full mr-2 opacity-50"
+       }
+       style={{height:"15px", width:"15px", border:"1px solid #fff" }}>
+       </span>
+     ))}
+   </section>
+
+           <div className={styles.homeTextFade}
+           style={{ marginRight:"50vw",
+          wordWrap:"break-word"
+          }}
+           >
              { TEXTS[index % TEXTS.length].toUpperCase() }
-           </span>
+           </div>
         
-         </span>
+         </div>
 
      
       </div>

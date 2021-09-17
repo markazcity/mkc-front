@@ -28,7 +28,7 @@ const About = () => {
       <div style={{ backgroundColor: "#F8FAF8",
     backgroundImage:`url('/assets/img/spikes.png')`,
     }}>
-        <Logo logo="logob" className="z-9" />
+        <Logo logo="logob" className="z-9 " />
         <MenuBar
         icoColor=" text-black"
         navItems={menu}

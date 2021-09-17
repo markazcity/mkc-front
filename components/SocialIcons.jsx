@@ -5,7 +5,7 @@ const SocialIcons = () => {
         ["instagram","https://www.instagram.com/markaz.city/"],
         ["twitter","https://twitter.com/markaz_city"],
         ["youtube","http://youtube.com/MarkazCity"],
-        ["whatsapp","http://wa.me/+916235600600"],
+        // ["whatsapp","http://wa.me/+916235600600"],
         ["linkedin","https://www.linkedin.com/company/markazcity"],
     ];
     return (<div className="flex">

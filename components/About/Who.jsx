@@ -2,7 +2,7 @@ const WhoAreWe = () => {
     return ( 
     <div id="who">
     <section
-        className="flex flex-col justify-center lg:text-center pt-20 lg:pt-40"
+        className="flex flex-col justify-center lg:text-center pt-20 lg:pt-16"
       >
         <h1
           className="text-5xl font-extrabold mb-5 text-center"

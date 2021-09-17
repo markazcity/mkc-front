@@ -34,29 +34,18 @@ const [showNavbar, setShowNavBar] = useState(true);
         <link rel="icon" href="/favicon.ico" />
       </Head>
     
-      <nav
-      style={{
-        background:"rgba(0,0,0,0.0)",
-        position:"fixed",
-        width:"100%",
-        top:5,
-        zIndex:"48",
-        marginTop:showNavbar?"0px":"-100px",
-        transition:"all 0.5s ease"
-      }}
+     <div
+    className="absolute top-0 flex justify-between w-full px-10 lg:px-0"
       >
      <Logo logo="logow" className="z-9"/> 
-     
       <MenuBar/>
-     </nav>
-      
-
-      
+     </div>
+    
       <FirstSection/>
      <SecondSection/>
       <LifeOfMKC/>
       <SectorMarquee/>
-      <FourthSection/>
+      {/* <FourthSection/> */}
       <Footer/>
       {/* <HomeParticle/> */}
 

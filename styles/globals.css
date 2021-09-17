@@ -2,15 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @font-face {
   font-family: mkcfont;
-  src: url('/assets/fonts/mkcreg.otf');
+  src: url('/assets/fonts/GothamLight.ttf');
 }
 
 @font-face {
   font-family: mkcfont;
-  src: url('/assets/fonts/mkcextra.otf');
+  src: url('/assets/fonts/GothamBlack.otf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: mkcfont;
+  src: url('/assets/fonts/GothamBook.ttf');
   font-weight: bold;
 }
 
@@ -22,9 +28,9 @@ html{
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  display: none;
 }
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0); 
 }
  
@@ -34,12 +40,12 @@ html{
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.6); ; 
-}
+} */
 
 
 .overlay{
     position: absolute;
-    background: rgb(0, 0, 0, 0.6);
+    background: rgb(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -163,3 +169,51 @@ transition: 0.5s ease;
   background-color: rgba(113, 128, 147,0.9);
 
 }
+
+.sectorItem:hover{
+  transform: scale(1.2,1.2);
+}
+.lifeItem{
+  min-height: 14rem;
+}
+@media (min-width: 1024px) {
+  .lifeItem {
+      height: 34rem/* 384px */;
+  }
+  .mr-50vw{
+    margin-right: 50vw;
+  }
+}
+
+
+.lifeText::after{
+  transition: all ease-in-out .2s;
+  background: none repeat scroll 0 0 #C0C91E;
+  content: "";
+  display: block;
+  height: 10px;
+  width: 0;
+  margin-top: 90%;
+}
+.lifeText:hover:after {
+  width: 100%;
+}
+@media (min-width: 1920px) {
+  .leadersMargin{
+    margin-left: 12rem;
+    margin-right: 12rem;
+  }
+}
+@media (max-width: 1024px) { 
+  .lifeItem {
+    height: 10rem;
+}
+.lifeText::after{
+  height: 5px;
+  margin-top:10px;
+
+}
+.lifeText:hover:after {
+  width: 50%;
+}
+ }

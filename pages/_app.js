@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 function MyApp({ Component, pageProps }) {
 
 const [loading, setLoading] = useState(true);
+const [showScrollTop, setScrollTop] = useState(false);
   useEffect(() => {
     AOS.init({
       easing: "ease-out-cubic",
@@ -19,7 +20,24 @@ const [loading, setLoading] = useState(true);
     });
 const intervalId = setInterval(()=>setLoading(false),4950);
 return () => clearTimeout(intervalId);
+
   }, []);
+
+useEffect(()=> { 
+//SCROLL BOTTOM
+window.addEventListener('scroll', () => {
+  const initScroll = 400;
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  if(currentScroll >initScroll) {
+    setScrollTop(true)
+  }else{
+    setScrollTop(false)
+  }
+})
+},[]);
+
+
+
   return  <div
   style={
     loading?{
@@ -38,7 +56,9 @@ height={3}
 showOnShallow={true}
 
 />
+
 <Component {...pageProps} />
+
 </div>
  
  

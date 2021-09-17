@@ -1,26 +1,39 @@
 
 import Tilt from 'react-parallax-tilt';
+import {IoWaterOutline, IoConstructOutline, IoFastFoodOutline} from 'react-icons/io5'
+import {BiBookAlt, BiPaint, BiNetworkChart,BiPyramid, BiFootball} from 'react-icons/bi'
+import {RiMentalHealthLine, RiBuilding2Line} from 'react-icons/ri'
+import {GiPalmTree, GiElectric} from 'react-icons/gi'
+import {FiCodesandbox} from 'react-icons/fi'
 
+import { useEffect } from 'react';
 
 const SectorMarquee = () => {
+
+useEffect(()=>{
+
+},[])
+
+
+
     const sectors = [
-{title:"Education",},
-{title:"Health",},
-{title:"Tourism",},
-{title:"Entertainment",},
-{title:"Entrepreneurship",},
-{title:"Design",},
-{title:"Technology",},
-{title:"Manufacturing",},
-{title:"Heritage",},
-{title:"Food",},
-{title:"Energy",},
-// {title:"Water",},
-{title:"Sports",},
+{title:"Education",icon:<BiBookAlt style={{height:"30px", width:"30px"}}/>},
+{title:"Health",icon:<RiMentalHealthLine style={{height:"30px", width:"30px"}}/>},
+{title:"Tourism",icon:<GiPalmTree style={{height:"30px", width:"30px"}}/>},
+{title:"Entertainment",icon:<BiNetworkChart style={{height:"30px", width:"30px"}}/>},
+{title:"Entrepreneurship",icon:<RiBuilding2Line style={{height:"30px", width:"30px"}}/>},
+{title:"Design",icon:<BiPaint style={{height:"30px", width:"30px"}}/>},
+{title:"Technology",icon:<FiCodesandbox style={{height:"30px", width:"30px"}}/>},
+{title:"Manufacturing",icon:<IoConstructOutline style={{height:"30px", width:"30px"}}/>},
+{title:"Heritage",icon:<BiPyramid style={{height:"30px", width:"30px"}}/>},
+{title:"Food",icon:<IoFastFoodOutline style={{height:"30px", width:"30px"}}/>},
+{title:"Energy",icon:<GiElectric style={{height:"30px", width:"30px"}}/>},
+{title:"Water",icon:<IoWaterOutline style={{height:"30px", width:"30px"}}/>},
+{title:"Sports",icon:<BiFootball style={{height:"30px", width:"30px"}}/>},
 
     ];
     return (<div>
-<div className="flex flex-wrap overflow-hidden justify-center py-20"
+<div className="flex flex-wrap overflow-hidden justify-center py-20 lg:px-72 "
 style={{maxWidth:"100%",
 }}
 >
@@ -29,6 +42,7 @@ style={{maxWidth:"100%",
     <SingleItem 
     key={sec.title}
     title={sec.title}
+    icon={sec.icon}
     data-aos="fade-right"
     />
     )
@@ -39,20 +53,22 @@ style={{maxWidth:"100%",
  
 export default SectorMarquee;
 
-const SingleItem = ({title}) => {
+const SingleItem = ({title, icon}) => {
     return (
-       
     <div 
-className="bg-black text-white mx-4 my-2 rounded-full text-center flex justify-center items-center hover:bg-transparent hover:text-black border-4 border-black transition-700 duration-300"
+className="sectorItem bg-violet-600 text-white mx-4 my-3 rounded-full text-center flex justify-center items-center hover:bg-transparent  hover:text-violet-600 border-4 border-violet-600 transition-700 duration-300"
     style={{
         height:"160px",
         width:"160px"
-        
     }}
-   
     >
-<span className="font-bold">
+       <div> 
+          <div  className="flex justify-center">
+              {icon}
+              
+              </div> 
+<span className="font-light select-none">
 {title}
-</span>
+</span></div>
     </div>)
 }

@@ -3,19 +3,19 @@
 const LifeOfMKC = () => {
     const items = [
 {
-    title:"Education for All",
+    title:<div>Education <br /> for All</div>,
     img:"education.jpg"
 },
 {
-    title:"Sustainable Environment",
+    title:<div>Sustainable <br />Environment</div>,
     img:"environment.jpg"
 },
 {
-    title:"Ethical Entrepreneurship",
+    title:<div>Ethical<br /> Entrepreneurship</div>,
     img:"entrepreneurship.jpg"
 },
 {
-    title:"Traditional Knowledge",
+    title:<div>Traditional <br />Knowledge</div>,
     img:"traditional.jpg"
 },
     ];
@@ -34,7 +34,7 @@ const LifeOfMKC = () => {
         items.map(item=>
             
             <div
-            className="lifeHover h-56 lg:h-96 w-full col-span-2 "
+            className="lifeHover lifeItem w-full col-span-2 "
             style={{
                 background:`url(/assets/img/life/${item.img})`,
                 backgroundSize:"cover",
@@ -44,12 +44,12 @@ const LifeOfMKC = () => {
             data-aos-delay={(items.indexOf(item)+1)*200}
             >
                <div 
-                className="flex justify-center items-center h-full w-full bg-black bg-opacity-70 hover:bg-opacity-40 transition-all duration-300">
+                className="h-full w-full px-16 py-20  bg-black bg-opacity-70 hover:bg-opacity-40 transition-all duration-300">
                
                 <span
-                className="text-white font-extrabold text-2xl text-center"
+                className="lifeText text-white font-extrabold lg:text-4xl text-2xl "
                 >
-                {item.title.toUpperCase()}
+                {item.title}
                 </span>
                 </div> 
 
