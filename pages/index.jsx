@@ -35,7 +35,7 @@ const [showNavbar, setShowNavBar] = useState(true);
       </Head>
     
      <div
-    className="absolute top-0 flex justify-between w-full px-10 lg:px-0"
+    className="absolute top-0 flex justify-between w-full  lg:px-0"
       >
      <Logo logo="logow" className="z-9"/> 
       <MenuBar/>

@@ -2,7 +2,7 @@ const OurPast = () => {
     const pastList = [
         {"year":"2012", "text":"Foundation Laying", "img":""},
         {"year":"2013", "text":"Project launching", "img":""},
-        {"year":"2014", "text":"Project launching", "img":""},
+        {"year":"2014", "text":"Unani Medical College Inaugration", "img":""},
         
         
     ];
@@ -28,13 +28,20 @@ const OurPast = () => {
                     >
                         <div
                         className="relative h-48"
-                        style={{backgroundColor:"#69696D"}}
+                        style={{
+                            backgroundColor:"#69696D",
+                            background:`url('/assets/img/past/${past.year}.jpg')`,
+        backgroundSize:'cover',
+        backgroundPosition:"center"
+                        
+                        }}
                         >
-                            <h1
-                            className="absolute bottom-3 w-full text-center text-white font-extrabold text-2xl"
-                            >{past.year}</h1>
+                           
                         </div>
-                        <p className="text-center mt-4 leading-5">
+                        <h1
+                            className="mt-2 w-full text-center text-gray-600 font-extrabold text-2xl"
+                            >{past.year}</h1>
+                        <p className="text-center leading-5">
                         {past.text}
                         </p>
                     </div>

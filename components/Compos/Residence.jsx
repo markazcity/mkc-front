@@ -9,7 +9,7 @@ background:"url(/assets/img/residence.jpg)",
 }}
     >
       <div>
-      <h1 className="text-5xl font-extrabold mb-5 text-center pt-10"
+      <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center pt-10"
                 style={{
                     color: "#FFF",
                 }}

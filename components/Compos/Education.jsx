@@ -42,7 +42,7 @@ const Education = () => {
     const colorChange = [0,3,4,7, 8]
     return (
         <div  style={{ backgroundColor: "#F8FAF8" }}  className="pb-20 py-5">
-            <h1 className="text-5xl font-extrabold mb-5 text-center pt-10"
+            <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center pt-10"
                 style={{
                     color: "#69696D",
                 }}

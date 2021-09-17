@@ -34,7 +34,9 @@ useEffect(()=>{
     ];
     return (<div>
 <div className="flex flex-wrap overflow-hidden justify-center py-20 lg:px-72 "
-style={{maxWidth:"100%",
+style={{
+    background:"url('/assets/img/noisew.png')",
+    maxWidth:"100%",
 }}
 >
     { 
