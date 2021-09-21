@@ -21,7 +21,7 @@
 }
 
 *{
-  font-family: mkcfont, sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 html{
   scroll-behavior: smooth;
@@ -217,3 +217,11 @@ transition: 0.5s ease;
   width: 50%;
 }
  }
+
+.component-container{
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.01);
+  transition: all 0.5s ease-in;
+} 
+.component-container:hover{
+ box-shadow: 2px 3px 20px rgba(0,0,0,0.05);
+} 

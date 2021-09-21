@@ -67,8 +67,8 @@ style={{ height: "100%", width: "100%", objectFit: "cover" }}
        className=
        {
          (TEXTS[index % TEXTS.length]==item)?
-       "bg-transparent inline-block rounded-full mr-2":
-       "bg-butter-600 inline-block rounded-full mr-2"
+       "bg-butter-600 inline-block rounded-full mr-2":
+       "bg-transparent inline-block rounded-full mr-2"
        }
        style={{height:"15px", width:"15px", border:"1px solid #CDCC00" }}>
        </span>
