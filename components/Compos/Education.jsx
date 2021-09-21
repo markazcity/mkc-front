@@ -55,13 +55,13 @@ const Education = () => {
                 <div className="grid lg:grid-cols-2 lg:mx-64">
             {
                 educationList.map(edu=>(
-                    <div className="component-container my-4  mx-6 bg-white" 
+                    <div className="component-container my-4  mx-10 lg:mx-6 bg-white" 
                     key={educationList.indexOf(edu)}
                     data-aos="fade-up"
                     data-aos-delay={educationList.indexOf(edu)*50}
                     >
                         <div
-                        className="relative  mx-10 lg:mx-0 lg:my-0 h-64"
+                        className="relative   lg:mx-0 lg:my-0 h-64"
                         style={
                            {
                         backgroundImage:`url('/assets/img/components/${edu.img}')`,
@@ -71,15 +71,15 @@ const Education = () => {
                         >
                             </div>
 
-                            <div className="flex items-center mx-6">
+                            <div className="flex items-center mx-6 mt-8 xl:mt-2">
                                 <img src="/icon.png" width="80px" alt="" />
                             <h1
-                            className={`font-extrabold text-xl  px-4 lg:p-8 text-gray-900`
+                            className={`font-extrabold text-xl  px-4 lg:p-8 text-gray-600`
                         }
                            // style={{color:"#69696D"}}
                             >{edu.title.toUpperCase() }</h1>
                             </div>
-                            <p className="mx-8 my-10 mt-4 leading-5 text-gray-600">
+                            <p className="mx-8 my-10 mt-4 leading-5 text-gray-500">
                         {edu.text}
                         </p>
                        
