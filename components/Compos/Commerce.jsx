@@ -28,15 +28,15 @@ const Commerce = () => {
                 data-aos="zoom-in"
                 >COMMERCE</h1>
                 {/* LISTS STARTS HERE */}
-                <div className="grid lg:grid-cols-2 lg:mx-64">
+                <div className="grid xl:grid-cols-4 lg:mx-64">
             {
                 educationList.map(edu=>(
-                    <div className="my-4 lg:m-0" key={educationList.indexOf(edu)}
+                    <div className="my-4 mx-10 lg:m-0 bg-white component-container" key={educationList.indexOf(edu)}
                     data-aos="fade-up"
                     data-aos-delay={educationList.indexOf(edu)*50}
                     >
                         <div
-                        className="relative  mx-10 lg:mx-0 lg:my-0 h-full"
+                        className="relative   lg:my-0 h-64"
                         style={
                            {
                         backgroundImage:`url('/assets/img/components/${edu.img}')`,
@@ -44,24 +44,21 @@ const Commerce = () => {
                         }
                            }
                         >
-                            <div
-                            className={
-                                colorChange.includes(educationList.indexOf(edu))?
-                                "h-full w-full compo1":
-                                "h-full w-full compo2"
-                            }
+                          
+                        </div>
+                        <div
+                            className="pb-4"
                             >
 
                             <h1
-                            className={`text-center font-extrabold text-2xl  py-8 px-4 lg:p-8 text-white
+                            className={`text-center font-extrabold text-2xl  px-4 py-4 lg:pt-4 text-gray-600
                             ${edu.title.length>24?" lg:pb-0":""}`
                         }
                            // style={{color:"#69696D"}}
                             >{edu.title.toUpperCase() }</h1>
-                            <p className="text-center m-10 mt-4 leading-5 text-white">
+                            <p className="mx-6 text-justify leading-5 text-gray-500">
                         {edu.text}
                         </p>
-                        </div>
                         </div>
                         
                     </div>

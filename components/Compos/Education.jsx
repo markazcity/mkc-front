@@ -1,9 +1,9 @@
 const Education = () => {
-    const cc = [
+    const cc = 
         {"title":"Cultural Centre", 
         "text":"It is one of the biggest cultural centres in India. The amenities included a spiritual enclave, library and research centre, and heritage centre. The unique architectural format of the Cultural Centre has been inspired by the classical Indo, Persian, Ottoman, and colonial traditions. This rotunda model complex represents Markaz Knowledge City’s values and vision for a world of tomorrow. ", 
-        "img":"cc.jpg"},
-    ]
+        "img":"cc.jpg"};
+    
     const educationList = [
         
         
@@ -45,6 +45,30 @@ const Education = () => {
     const colorChange = [0,3,4,7, 8]
     return (
         <div  style={{ backgroundColor: "#F8FAF8" }}  className="pb-20 py-5">
+
+<section className="grid lg:grid-cols-2 lg:mx-64 bg-white component-container">
+    <div
+    className="m-6"
+    > <h1
+    className="font-extrabold text-xl text-gray-600"
+    >{cc.title.toUpperCase()}</h1>
+    <p>{cc.text}</p>
+    </div>
+    <div className="h-72 ml-6"
+    style={{
+        background:"url('/assets/img/components/cc.jpg')",
+        backgroundPosition:"center",
+        backgroundSize:"cover"
+    }}
+    >
+       
+    </div>
+</section>
+
+
+
+
+
             <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center pt-10"
                 style={{
                     color: "#69696D",
@@ -52,10 +76,13 @@ const Education = () => {
                 data-aos="zoom-in"
                 >EDUCATION</h1>
                 {/* LISTS STARTS HERE */}
-                <div className="grid lg:grid-cols-2 lg:mx-64">
+                <div className="grid lg:grid-cols-2 mx-10 lg:mx-64">
             {
                 educationList.map(edu=>(
-                    <div className="component-container my-4  mx-10 lg:mx-6 bg-white" 
+                    <div className={
+                        (educationList.indexOf(edu)+1)%2==0?"my-4  bg-white component-container ":
+                        "my-4  bg-white lg:mr-6 component-container "
+                    }
                     key={educationList.indexOf(edu)}
                     data-aos="fade-up"
                     data-aos-delay={educationList.indexOf(edu)*50}
