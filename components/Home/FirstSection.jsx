@@ -44,7 +44,9 @@ style={{
 >
 
 <video autoPlay muted loop
-style={{ height: "100%", width: "100%", objectFit: "cover" }}
+style={{ height: "100%", width: "100%", objectFit: "cover",
+}}
+playsInline
 >
     <source src="/assets/bgvid.mp4" type="video/mp4">
     </source>
