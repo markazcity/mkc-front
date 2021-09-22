@@ -43,10 +43,10 @@ style={{
 }}
 >
 
-<video autoPlay muted loop
+<video autoPlay muted loop playsInline
 style={{ height: "100%", width: "100%", objectFit: "cover",
 }}
-playsInline
+
 >
     <source src="/assets/bgvid.mp4" type="video/mp4">
     </source>
@@ -55,7 +55,7 @@ playsInline
 </section>
 
 
-<div className="overlay"></div>
+<div className="absolute bg-black bg-opacity-50 w-full h-full"></div>
     
 
  <div>

@@ -1,5 +1,6 @@
 import MenuItem from './MenuItems'
 import {useRouter } from 'next/router'
+import SocialIcons from '@/components/SocialIcons'
 
 export  const mainMenu = [
     {name:"Home", icon:"", to:"/"},
@@ -13,24 +14,32 @@ export  const mainMenu = [
 export const NavMenu = ({items}) => {
     const router = useRouter();
     const menuItems = items != null?items:mainMenu;
-    return (<div className="absolute z-50 bg-transparent rounded right-0 top-10 mr-10"
+    return (<div className="absolute z-50 bg-violet-700 right-0 top-0 bottom-0 left-0"
     style={{
-        height:"auto",
+        height:"100vh",
+        width:"100vw",
     }}
     data-aos="fade-down"
+    // data-aos-duration="800"
     data-aos-easing="ease-in-out"
     >
         <div
-        className="relative"
+        className="relative w-full h-full"
         >
-            <div className="absolute right-1">
+            <div className="absolute right-1 ">
 
+            </div>
+            <div className="absolute left-0 bottom-0 text-white p-10">
+                <SocialIcons/>
+                <div
+                className="mt-2"
+                >&copy; markazknowledecity</div>
             </div>
             {/* <div className="lg:hidden"><Logo logo="logob" /></div> */}
             
             {/* MENU ITEMS */}
 
-            <div className="pt-14 px-4 pb-4 lg:pt-20">
+            <div className="pt-32 px-4 pb-4 lg:pt-20">
                 {
                     menuItems.map((item)=>{
                         return (
