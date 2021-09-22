@@ -1,7 +1,6 @@
 import SocialIcons from "../SocialIcons"
 import styles from '../../styles/Home.module.css'
 import { useState, useEffect, useRef } from "react"
-import Tilt from 'react-parallax-tilt';
 
 const FirstSection = () => {
     const TEXTS = [
