@@ -1,3 +1,12 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, {Pagination} from 'swiper';
+import "swiper/swiper.min.css";
+import "swiper/components/pagination/pagination.min.css";
+
+import { useEffect, useState } from 'react';
+
+SwiperCore.use([Pagination]);
+
 const Education = () => {
     const cc = 
         {"title":"Cultural Centre", 
@@ -15,7 +24,7 @@ const Education = () => {
         "text":"To ensure more secured habitual health culture, we started the first Unani medical college in Kerala. It aims to produce highly qualified medical professionals capable of strengthening the health infrastructure by providing more medical facilities. MUMC offers a well-crafted synthesis of theory-practice learning atmosphere with sophisticated infrastructure, technically advanced learning spaces, and practice-oriented curriculum for better educational experiences. ", 
         "img":"unani.jpg"},
         {"title":"Markaz Law College (MLC)", 
-        "text":"Markaz Law College (MLC) is envisioned to prepare a legal generation committed to protect and revive the constitution of India by ensuring justice and equality for all. MLC provides 5-year integrated law course and 3-year LLB programme with various specializations at undergraduate level, and two LLM programmes are offered at post-graduate level. Rather than being a mere centre for legal learning, MLC also functions as a unique space for advanced research in legal studies. The faculty and students restlessly undertake various comparative legal researches to champion in academia and industry.", 
+        "text":"Markaz Law College (MLC) is envisioned to prepare a legal generation committed to protect and revive the constitution of India. MLC provides 5-year integrated law course and 3-year LLB programme with various specializations at undergraduate level, and two LLM programmes are offered at post-graduate level. Rather than being a mere centre for legal learning, MLC also functions as a unique space for advanced research in legal studies. ", 
         "img":"law.jpg"},
         {"title":"Malaibar Foundation for Research and Development (MFRD)", 
         "text":"As part of its journey towards bringing innovation and development in the educational sector, Markaz Knowledge City formed Malaibar Foundation for Research and Development (MFRD) as a platform for clubbing experts in the proposed area for more creative dialogues and discussions. MFRD intends to fulfill the aim of advanced research followed by the production of new knowledge in the fields of arts, science, managements, technology, and literature.    ", 
@@ -42,19 +51,33 @@ const Education = () => {
    
     
     ];
+    const [isPhone, setIsphone] = useState(false)
+    function matchSlideCount(x) {
+        if (x.matches) { 
+          setIsphone(false);
+        } else {
+         setIsphone(true);
+        }
+      }
+
+    useEffect(()=>{
+        var screenSize = window.matchMedia("(min-width: 768px)")
+matchSlideCount(screenSize)
+screenSize.addListener(matchSlideCount)
+    }, []);  
     const colorChange = [0,3,4,7, 8]
     return (
-        <div  style={{ backgroundColor: "#F8FAF8" }}  className="pb-20 py-5">
+        <div  style={{ backgroundColor: "#F8FAF8" }}  className="pb-8 py-5">
 
-<section className="grid lg:grid-cols-2 lg:mx-64 bg-white component-container">
+<section className="grid lg:grid-cols-2 mx-10 lg:mx-64 bg-white component-container">
     <div
-    className="m-6"
+    className="m-6 order-2 lg:order-1"
     > <h1
     className="font-extrabold text-xl text-gray-600"
     >{cc.title.toUpperCase()}</h1>
     <p>{cc.text}</p>
     </div>
-    <div className="h-72 ml-6"
+    <div className="h-72 lg:ml-6 order-1 lg:order-2"
     style={{
         background:"url('/assets/img/components/cc.jpg')",
         backgroundPosition:"center",
@@ -75,14 +98,23 @@ const Education = () => {
                 }}
                 data-aos="zoom-in"
                 >EDUCATION</h1>
-                {/* LISTS STARTS HERE */}
-                <div className="grid lg:grid-cols-2 mx-10 lg:mx-64">
+                {/* LISTS STARTS HERE */}<div className="flex mx-10 lg:mx-64">
+                <Swiper
+    //   spaceBetween={50}
+    pagination={{
+        "dynamicBullets": true
+      }}
+      slidesPerView={isPhone?1:2}
+      className="flex items-stretch"
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+                
             {
                 educationList.map(edu=>(
-                    <div className={
-                        (educationList.indexOf(edu)+1)%2==0?"my-4  bg-white component-container ":
-                        "my-4  bg-white lg:mr-6 component-container "
-                    }
+                    <SwiperSlide className="mb-4">
+                    <div className="my-4 pb-4 mx-3  bg-white component-container "
+                        
                     key={educationList.indexOf(edu)}
                     data-aos="fade-up"
                     data-aos-delay={educationList.indexOf(edu)*50}
@@ -112,9 +144,9 @@ const Education = () => {
                        
                        
                         
-                    </div>
+                    </div></SwiperSlide>
                 ))
-            } </div>
+            }  </Swiper></div>
         </div>
     );
 }

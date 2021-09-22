@@ -56,7 +56,7 @@ const Commerce = () => {
                         }
                            // style={{color:"#69696D"}}
                             >{edu.title.toUpperCase() }</h1>
-                            <p className="mx-6 text-justify leading-5 text-gray-500">
+                            <p className="mx-6  leading-5 text-gray-500">
                         {edu.text}
                         </p>
                         </div>

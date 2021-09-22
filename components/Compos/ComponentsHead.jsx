@@ -14,18 +14,7 @@ const CompMain = () => {
         >
          COMPONENTS
         </h1>
-        <p className="mx-10 lg:mx-60 text-justify lg:text-center mb-10"
-         data-aos="fade-up-right"
-        >
-         
-          Amet eos beatae, incidunt pariatur facilis, laborum molestias dolor,
-          quibusdam repudiandae inventore perferendis dolores dicta hic quidem
-          consequuntur doloremque exercitationem deleniti. Officiis obcaecati
-          officia cum beatae ducimus repellat consequuntur vero pariatur
-          minima consequatur voluptatem ipsum culpa, dolore laudantium, facere
-          aspernatur! Explicabo blanditiis et rerum, natus aliquam tempore at
-          eos.
-        </p>
+       
         </div>  </div>);
 }
  
