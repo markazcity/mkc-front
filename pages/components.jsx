@@ -3,6 +3,8 @@ import Education from "@/components/Compos/Education";
 import Health from "@/components/Compos/Health";
 import Commerce from "@/components/Compos/Commerce";
 import CompMain from "@/components/Compos/ComponentsHead";
+import CC from "@/components/Compos/CC";
+
 import Residence from "@/components/Compos/Residence";
 import Footer from "@/components/Footer";
 import MenuBar from "@/components/NavMenu/Menu"
@@ -25,15 +27,38 @@ const Components = () => {
         <title>Components - Markaz Knowledge City</title>
         <meta name="description" content="Components in Markaz Knowledge City" />
       </Head>
-       <div style={{ backgroundColor: "#F8FAF8",
+      <section className="absolute"
+style={{
+ 
+    width:"100%",
+    height:"100%",
+  zIndex:"-1"
+}}
+>
+
+<video autoPlay muted loop playsInline
+style={{ height: "100%", width: "100%", objectFit: "cover",
+}}
+
+>
+    <source src="/assets/cc.mp4" type="video/mp4">
+    </source>
+</video>
+
+</section>
+
+       <div>
+       {/* style={{ backgroundColor: "#F8FAF8",
     backgroundImage:`url('/assets/img/spikes.png')`,
-    }}>
+    }} */}
         <Logo logo="logob" className="z-9" />
         <MenuBar
         icoColor=" text-black"
         navItems={menu}
         />
-        <CompMain/>
+        
+        <CC/>
+        <div className="xl:h-56 2xl:h-56"></div>
       </div>
       <section id="education">
         <Education />

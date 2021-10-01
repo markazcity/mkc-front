@@ -4,7 +4,7 @@ const Footer = ({showFooter}) => {
         
         {/* DESKTOP FOOTER */}
         <div className="hidden lg:flex lg:mx-32 justify-between w-full">
-       <span> &copy; markazknowledecity</span>
+       <span> &copy; markazknowledgecity</span>
        <SocialIcons/>
         </div>
    <div className="lg:hidden">
@@ -12,7 +12,7 @@ const Footer = ({showFooter}) => {
      <div></div>
  )} 
    <div className="pt-2">
-   &copy; markazknowledecity
+   &copy; markazknowledgecity
    </div>
    </div>
 </footer>);

@@ -40,7 +40,7 @@ const [cover, setCover] = useState();
             
 
 
-      <div className="mt-10 sm:mt-0 w-full xl:w-5/12">
+      <div className="mt-10 sm:mt-0 w-full xl:w-6/12">
 
         <div className="md:grid md:grid-cols-12 bg-white shadow rounded-lg">
           <div className="my-8  md:col-span-12 px-10">
@@ -52,8 +52,14 @@ const [cover, setCover] = useState();
               <div className=" overflow-hidden">
                 <div className="px-4 py-5  sm:p-6">
                   <div className="grid grid-cols-1 ">
+                    <img src="/assets/ads.jpg" alt=""
+                    className="rounded-t"
+                    style={{
+                      width: "100%",
+                    }}
+                    /> <br />
                       <h3
-                      className="font-bold text-xl text-gray-500"
+                      className="font-bold text-xl text-gray-500 text-left"
                       >Job Application Form</h3>
 
                       {/* NAME SECTION BEGINS */}

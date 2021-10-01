@@ -14,18 +14,21 @@ const FirstSection = () => {
         
           const [index, setIndex] = useState(0);
           useEffect(() => {
+              var homeVideo = document.getElementById('homeVideo');
+              homeVideo.style.minHeight=window.innerHeight + "px";
+
             const intervalId = setInterval(()=>{
               setIndex(index => index + 1);
             },
-              4000 
+              5000 
             );
             return () => clearTimeout(intervalId);
           }, []);
     return (
         <div className="relative"
+        id="homeVideo"
         style={{
-           height:"100vh",
-            maxHeight:"100vh",
+          
             width:"100%",
             overflow:"hidden"
               }}
@@ -56,11 +59,11 @@ style={{ height: "100%", width: "100%", objectFit: "cover",
 
 <div className="absolute bg-black bg-opacity-50 w-full h-full"></div>
     
-
+ 
  <div>
    
 
-         <div className={"text-5xl lg:text-7xl text-white lg:ml-32 ml-10 "+styles.slideTexts}>
+         <div className={"text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white lg:ml-32 ml-10 "+styles.slideTexts}>
          <section className="ml-1">
      {TEXTS.map(item=>(
        <span 

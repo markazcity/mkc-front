@@ -39,7 +39,7 @@
 }
 
 .homeTextFade{
-  animation: textfade 4s infinite;
+  animation: textfade 5s infinite;
 }
 
 @keyframes textfade {

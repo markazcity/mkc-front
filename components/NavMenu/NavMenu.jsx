@@ -1,6 +1,7 @@
 import MenuItem from './MenuItems'
 import {useRouter } from 'next/router'
 import SocialIcons from '@/components/SocialIcons'
+import { useEffect } from 'react'
 
 export  const mainMenu = [
     {name:"Home", icon:"", to:"/"},
@@ -12,20 +13,26 @@ export  const mainMenu = [
 ]
 
 export const NavMenu = ({items}) => {
+
+useEffect(() => {
+var menu = document.getElementById('mobile-menu');
+menu.style.minHeight=window.innerHeight + "px";
+
+},[])
+
+
     const router = useRouter();
     const menuItems = items != null?items:mainMenu;
-    return (<div className="absolute z-50 bg-violet-700 right-0 top-0 bottom-0 left-0"
-    style={{
-        height:"100vh",
-        width:"100vw",
-    }}
+    return (<div className="absolute z-50 bg-violet-700 right-0 top-0 bottom-0 left-0 "
     data-aos="fade-down"
+    id="mobile-menu"
     // data-aos-duration="800"
     data-aos-easing="ease-in-out"
     >
-        <div
+
+        {/* <div
         className="relative w-full h-full"
-        >
+        > */}
             <div className="absolute right-1 ">
 
             </div>
@@ -44,14 +51,16 @@ export const NavMenu = ({items}) => {
                     menuItems.map((item)=>{
                         return (
                             <div key={item.name}>
-                                <MenuItem name={item.name} index={menuItems.indexOf(item)}  onClick={()=>router.push(item.to)}/>
+                                <MenuItem 
+                                name={item.name} index={menuItems.indexOf(item)}  
+                                onClick={()=>router.push(item.to)}/>
                               
                             </div>
                         )
                     })
                 }
             </div>
-        </div>
+        {/* </div> */}
        
     </div>);
 }
