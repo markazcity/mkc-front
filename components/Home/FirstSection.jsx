@@ -50,7 +50,7 @@ style={{ height: "100%", width: "100%", objectFit: "cover",
 }}
 
 >
-    <source src="/assets/bgvid.mp4" type="video/mp4">
+    <source src="/assets/home.mp4" type="video/mp4">
     </source>
 </video>
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-
+import Lottie from "lottie-react";
+import intro from '../asset/intro.json'
 
 const Splash = () => {
 
@@ -16,13 +17,7 @@ const Splash = () => {
         height:"100%",
     }}
     >
-<img src="/icon.png" alt="" style={{
-    height:"200px",
-}}
-className="splash-image opacity-0"
-data-aos="fade-up"
-data-aos-duration="2000"
-/>
+<Lottie animationData={intro} />
     </div>);
 }
  

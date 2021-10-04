@@ -66,46 +66,58 @@ const Education = () => {
         }
       }
 
+     function eduHorScroll(){
+        var windowWidth = window.innerWidth;
+        var horLength = document.querySelector(".education-items-wrapper").scrollWidth;
+        var distFromTop = document.querySelector(".education-section").offsetTop;
+        var scrollDistance = distFromTop + horLength - windowWidth;
+        document.querySelector(".education-section").style.height = horLength + "px";
+        window.onscroll = function(){
+          var scrollTop = window.pageYOffset;
+          if (scrollTop >= distFromTop && scrollTop <= scrollDistance) {
+            document.querySelector(".education-items-wrapper").style.transform = "translateX(-"+(scrollTop - distFromTop+300)+"px)";
+          }
+        }
+     }
+
     useEffect(()=>{
         var screenSize = window.matchMedia("(min-width: 768px)")
 matchSlideCount(screenSize)
 screenSize.addListener(matchSlideCount)
+eduHorScroll();
     }, []);  
     const colorChange = [0,3,4,7, 8]
     return (
-        <div  style={{ backgroundColor: "#F8FAF8" }}  className="pb-8 py-5">
-
+        <div  className="education-section  pb-8 py-5">
+<div className="sticky-wrapper">
             <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center pt-10"
                 style={{
                     color: "#69696D",
                 }}
                 data-aos="zoom-in"
                 >EDUCATION</h1>
-                {/* LISTS STARTS HERE */}<div className="flex mx-10 lg:mx-64">
-                <Swiper
-    //   spaceBetween={50}
-    pagination={{
-        "dynamicBullets": true
-      }}
-      slidesPerView={isPhone?1:3}
-    
-    
-      className="flex items-stretch"
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
+                {/* LISTS STARTS HERE */}
+                
+                <section className="flex mx-10 lg:mx-64">
+              
+   
+    <div className="education-items-wrapper">
                 
             {
                 educationList.map(edu=>(
-                    <SwiperSlide className="mb-4 cursor-move">
-                    <div className="my-4 pb-4 mx-3  bg-white component-container"
+                    <div>
+                    
+                    <div className="edu-element my-4 pb-4 mx-3  bg-white component-container"
                         
                     key={educationList.indexOf(edu)}
                     data-aos="fade-up"
                     data-aos-delay={educationList.indexOf(edu)*50}
                     >
+                        <div className="relative">
+
+                        
                         <div
-                        className="relative   lg:mx-0 lg:my-0 h-72"
+                        className="lg:mx-0 lg:my-0 h-72"
                         style={
                            {
                         backgroundImage:`url('/assets/img/components/${edu.img}')`,
@@ -114,20 +126,27 @@ screenSize.addListener(matchSlideCount)
                            }
                         >
                             </div>
-
-                            <div className="flex items-center mx-6 mt-8 xl:mt-2">
-                               <div className="bg-violet-600 rounded-full
+                            <section className="absolute w-full flex justify-center"
+                            style={{ bottom:"-25px"}}
+                            >
+                            <div className=" bg-violet-600 rounded-full
                                hover:bg-violet-700 flex justify-center items-center"
                                style={{
                                    width:"56px",
-                                   height:"56px"
+                                   height:"56px",
+                                  
                                }}
                                > 
                                <h1 className="font-bold text-white text-2xl">{
                                    educationList.indexOf(edu)+1
-                                   }</h1></div>
+                                   }</h1></div></section>
+                            </div>
+                            
+
+                            <div className=" mx-6 mt-8 xl:mt-2">
+                               
                             <h1
-                            className={`font-extrabold text-xl  px-4 lg:p-8 text-gray-600`
+                            className={`font-extrabold text-xl  px-4 lg:p-8 text-gray-600 text-center`
                         }
                            // style={{color:"#69696D"}}
                             >{edu.title.toUpperCase() }</h1>
@@ -152,9 +171,16 @@ screenSize.addListener(matchSlideCount)
                        
                        
                         
-                    </div></SwiperSlide>
+                    </div>
+                   
+                    </div>
                 ))
-            }  </Swiper></div>
+            } 
+            
+            </div>
+           
+            </section>
+            </div>
         </div>
     );
 }
