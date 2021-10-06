@@ -24,18 +24,20 @@ const [cover, setCover] = useState();
     backgroundImage:`url('/assets/img/spikes.png')`,
     minHeight:"50vh"
     }}>
+
         <Logo logo="logob" className="absolute z-20" />
         {/* <MenuBar
         icoColor=" text-black"
         navItems={menu}
         /> */}
 
+
         </div>
         <div
         style={{minHeight:"890px",}}
         ></div>
       <section
-      className="absolute z-10 top-0 px-10 py-28 md:py-52 flex justify-center w-full"
+      className="absolute z-10 top-0  py-28 md:py-52 flex justify-center w-full"
       >
             
 
@@ -43,23 +45,26 @@ const [cover, setCover] = useState();
       <div className="mt-10 sm:mt-0 w-full xl:w-6/12">
 
         <div className="md:grid md:grid-cols-12 bg-white shadow rounded-lg">
-          <div className="my-8  md:col-span-12 px-10">
+          <div className="mb-8 md:col-span-12 ">
+          <img src="/assets/img/hire.jpg" alt=""
+                    className="rounded-t"
+                    style={{
+                      width: "100%",
+                    }}
+                    /> <br />
             <form action="" method="POST"
             onSubmit={(e)=>{
                 e.preventDefault();
             }}
             >
               <div className=" overflow-hidden">
-                <div className="px-4 py-5  sm:p-6">
+                <div className="  sm:p-6">
                   <div className="grid grid-cols-1 ">
-                    <img src="/assets/ads.jpg" alt=""
-                    className="rounded-t"
-                    style={{
-                      width: "100%",
-                    }}
-                    /> <br />
+                    <section>
+                  
+                      <div className="px-10">
                       <h3
-                      className="font-bold text-xl text-gray-500 text-left"
+                      className="font-bold text-xl  text-left"
                       >Job Application Form</h3>
 
                       {/* NAME SECTION BEGINS */}
@@ -71,7 +76,8 @@ const [cover, setCover] = useState();
                    <SingleTextArea name="experience" label="Experience" />
                    <SingleTextArea name="qualification" label="Qualification" />
                    <SingleTextArea name="cover-letter" label="Short cover letter" row={4} />
-                 
+                      </div>
+                   </section>
                        </div>
 
 
@@ -102,7 +108,7 @@ const [cover, setCover] = useState();
 
       </section>
       
-     
+     <div className="h-36"></div>
    
     <Footer/>
     </div>

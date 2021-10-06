@@ -1,13 +1,9 @@
-import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import intro from '../asset/intro.json'
 
 const Splash = () => {
 
-    const [loading, setLoading] = useState(true);
-    useEffect(() => {
-  setInterval(()=>setLoading(false),4000);
-    }, []);
+  
 
 
     return (<div

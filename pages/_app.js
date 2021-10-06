@@ -18,7 +18,7 @@ const [showScrollTop, setScrollTop] = useState(false);
       once: true,
       offset: 50,
     });
-const intervalId = setInterval(()=>setLoading(false),4950);
+const intervalId = setInterval(()=>setLoading(false),5000);
 return () => clearTimeout(intervalId);
 
   }, []);

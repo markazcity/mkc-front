@@ -41,22 +41,33 @@ const Contact = () => {
             
 
 
-      <div className="mt-10 sm:mt-0 w-full xl:w-8/12">
+      <div className="mt-20 lg:mt-0  w-full xl:w-8/12">
 
         <div className="md:grid md:grid-cols-12 bg-white shadow">
         <div
-        className="h-full  md:col-span-5 rounded-t md:rounded-t-none md:rounded-l px-10 py-8 md:py-16"
+        className="h-full  md:col-span-5 rounded-t md:rounded-t-none md:rounded-l pb-8 md:pb-16"
         style={{
             backgroundColor:"#AA73AC"
         }}
         >
-            <p className="text-white">
+          <div className="mb-10">
+          <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.117039572408!2d76.00567541455088!3d11.47147714911663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba66c11ab0163fb%3A0x99269df943e166ae!2sMarkaz%20Knowledge%20City!5e0!3m2!1sen!2sin!4v1633425106286!5m2!1sen!2sin" 
+          className="w-full h-64"
+          frameborder="0" 
+          style={{border:0}} 
+          allowfullscreen="" 
+          aria-hidden="false" 
+          tabindex="0"></iframe>
+
+        </div>
+            <p className=" px-10 text-white">
                 <span className="text-xl font-bold">MARKAZ KNOWLEDGE CITY</span> <br />
                 <span>Kunnoth P.O, Kaithapoyil </span> <br />
                 <span>Calicut, Kerala, IN</span>
 
             </p>
-            <div className="mt-10 text-white">
+            <div className=" px-10 mt-10 text-white">
                 <span className="ml-1 mb-2 text-sm">Connect Us</span>
             <SocialIcons/>
             </div>
@@ -149,8 +160,11 @@ const Contact = () => {
 
       </section>
       
-     
-   
+     <div style={{
+       minHeight:"30vh"
+     }}>
+
+     </div>
     <Footer/>
     </div>
   );
