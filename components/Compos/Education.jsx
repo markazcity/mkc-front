@@ -71,7 +71,7 @@ const Education = () => {
         var horLength = document.querySelector(".education-items-wrapper").scrollWidth;
         var distFromTop = document.querySelector(".education-section").offsetTop;
         var scrollDistance = distFromTop + horLength - windowWidth;
-        document.querySelector(".education-section").style.height = horLength + "px";
+        document.querySelector(".education-section").style.height = horLength-300 + "px";
         window.onscroll = function(){
           var scrollTop = window.pageYOffset;
           if (scrollTop >= distFromTop && scrollTop <= scrollDistance) {
@@ -88,8 +88,8 @@ eduHorScroll();
     }, []);  
     const colorChange = [0,3,4,7, 8]
     return (
-        <div  className="education-section  pb-8 py-5">
-<div className="sticky-wrapper">
+        <div  className="education-section pb-8 py-5">
+
             <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center pt-10"
                 style={{
                     color: "#69696D",
@@ -97,8 +97,9 @@ eduHorScroll();
                 data-aos="zoom-in"
                 >EDUCATION</h1>
                 {/* LISTS STARTS HERE */}
+                <div className="sticky-wrapper">
                 
-                <section className="flex mx-10 lg:mx-64">
+                <section className="hidden lg:flex mx-10 lg:mx-64">
               
    
     <div className="education-items-wrapper">
@@ -154,7 +155,7 @@ eduHorScroll();
                             <p className="mx-8 my-10 mt-4 leading-5 text-gray-500">
                         {edu.text}
                         <br />
-                        <div className="text-gray-500 mt-4 py-2 inline-block cursor-pointer hover:text-gray-700"
+                        <div className="text-violet-600 mt-4 py-2 inline-block cursor-pointer hover:text-violet-700"
                         onClick={
                             ()=>{
                                 window.open(edu.link, '_blank')
@@ -162,9 +163,9 @@ eduHorScroll();
                         }
                         >
                         KNOW MORE
-                        <div className="bg-gray-500 rounded-full h-2 w-2 inline-block ml-2"></div>
-                        <div className="bg-gray-500 rounded-full h-2 w-2 inline-block ml-1"></div>
-                        <div className="bg-gray-500 rounded-full h-2 w-2 inline-block ml-1"></div>
+                        <div className="bg-violet-600 rounded-full h-2 w-2 inline-block ml-2"></div>
+                        <div className="bg-violet-600 rounded-full h-2 w-2 inline-block ml-1"></div>
+                        <div className="bg-violet-600 rounded-full h-2 w-2 inline-block ml-1"></div>
                         </div>
                         
                         </p>
@@ -177,10 +178,98 @@ eduHorScroll();
                 ))
             } 
             
-            </div>
+            </div> 
            
-            </section>
-            </div>
+            </section> </div> 
+            {/* PHONE SECTION */}
+
+            <section className="block lg:hidden mx-10">
+              
+   
+             
+                          
+                      {
+                          educationList.map(edu=>(
+                              <div>
+                              
+                              <div className="w-full my-4 pb-2 mx-3  bg-white component-container"
+                                  
+                              key={educationList.indexOf(edu)}
+                              data-aos="fade-up"
+                              data-aos-delay={educationList.indexOf(edu)*50}
+                              >
+                                  <div className="relative">
+          
+                                  
+                                  <div
+                                  className=" h-72"
+                                  style={
+                                     {
+                                  backgroundImage:`url('/assets/img/components/${edu.img}')`,
+                                  backgroundSize:"cover",
+                                  }
+                                     }
+                                  >
+                                      </div>
+                                      <section className="absolute w-full flex justify-center"
+                                      style={{ bottom:"-25px"}}
+                                      >
+                                      <div className=" bg-violet-600 rounded-full
+                                         hover:bg-violet-700 flex justify-center items-center"
+                                         style={{
+                                             width:"56px",
+                                             height:"56px",
+                                            
+                                         }}
+                                         > 
+                                         <h1 className="font-bold text-white text-2xl">{
+                                             educationList.indexOf(edu)+1
+                                             }</h1></div></section>
+                                      </div>
+                                      
+          
+                                      <div className=" mx-6 mt-8 xl:mt-2">
+                                         
+                                      <h1
+                                      className={`font-extrabold text-xl  px-4 lg:p-8 text-gray-600 text-center`
+                                  }
+                                     // style={{color:"#69696D"}}
+                                      >{edu.title.toUpperCase() }</h1>
+                                      </div>
+                                      <p className="mx-8 my-10 mt-4 leading-5 text-gray-500">
+                                  {edu.text}
+                                  <br />
+                                  <div className="text-violet-600 mt-4 py-2 inline-block cursor-pointer hover:text-violet-700"
+                                  onClick={
+                                      ()=>{
+                                          window.open(edu.link, '_blank')
+                                      }
+                                  }
+                                  >
+                                  KNOW MORE
+                                  <div className="bg-violet-600 rounded-full h-2 w-2 inline-block ml-2"></div>
+                                  <div className="bg-violet-600 rounded-full h-2 w-2 inline-block ml-1"></div>
+                                  <div className="bg-violet-600 rounded-full h-2 w-2 inline-block ml-1"></div>
+                                  </div>
+                                  
+                                  </p>
+                                 
+                                 
+                                  
+                              </div>
+                             
+                              </div>
+                          ))
+                      } 
+                      
+                     
+                     
+                      </section>
+
+
+
+
+           
         </div>
     );
 }

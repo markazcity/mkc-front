@@ -249,6 +249,7 @@ transition: 0.5s ease;
 .education-items-wrapper{
   position: relative;
   display: flex;
+  margin: 0 100px;
 }
 .sticky-wrapper {
   position: sticky;
@@ -259,7 +260,7 @@ transition: 0.5s ease;
 
 .edu-element{
   width: 100%;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+ 
 }
 .education-section{
   background-color: #F8FAF8;
