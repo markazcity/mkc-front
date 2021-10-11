@@ -31,7 +31,7 @@ const Health = () => {
                 <p className="mx-10 lg:mx-80 text-justify lg:text-center mb-10"
                 data-aos="fade-right">
                    </p>
-<div className="grid lg:grid-cols-3 gap-x-6 lg:mx-64 mx-10">
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 lg:mx-64 mx-10">
 {
     healthItems.map(health=>(
         

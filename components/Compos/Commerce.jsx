@@ -28,7 +28,7 @@ const Commerce = () => {
                 data-aos="zoom-in"
                 >COMMERCE</h1>
                 {/* LISTS STARTS HERE */}
-                <div className="grid xl:grid-cols-4 lg:mx-64">
+                <div className="grid md:grid-cols-2 xl:grid-cols-4 lg:mx-64">
             {
                 educationList.map(edu=>(
                     <div className="my-4 mx-10 lg:m-0 bg-white component-container" key={educationList.indexOf(edu)}

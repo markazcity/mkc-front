@@ -183,7 +183,7 @@ eduHorScroll();
             </section> </div> 
             {/* PHONE SECTION */}
 
-            <section className="block lg:hidden mx-10">
+            <section className="block md:grid md:grid-cols-2  lg:hidden mx-10">
               
    
              
