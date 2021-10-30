@@ -265,3 +265,18 @@ transition: 0.5s ease;
 .education-section{
   background-color: #F8FAF8;
 }
+
+.know-more{
+ transition: 0.5s ease;
+ color: rgba(170, 115, 172);
+}
+.know-more:hover{
+  background: rgba(170, 115, 172);
+  color:#fff;
+  padding-left: 15px;
+  border-radius: 5px;
+}
+.know-more:hover ~ .know-more div{
+  background: #fff;
+ 
+}

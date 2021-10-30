@@ -9,7 +9,7 @@ SwiperCore.use([Pagination]);
 
 const Education = () => {
    
-    
+    const smallRound = "bg-violet-600 rounded-full h-2 w-2 inline-block ml-2";
     const educationList = [
         
         
@@ -75,7 +75,7 @@ const Education = () => {
         window.onscroll = function(){
           var scrollTop = window.pageYOffset;
           if (scrollTop >= distFromTop && scrollTop <= scrollDistance) {
-            document.querySelector(".education-items-wrapper").style.transform = "translateX(-"+(scrollTop - distFromTop+300)+"px)";
+            document.querySelector(".education-items-wrapper").style.transform = "translateX(-"+((scrollTop+300) - distFromTop)+"px)";
           }
         }
      }
@@ -86,7 +86,6 @@ matchSlideCount(screenSize)
 screenSize.addListener(matchSlideCount)
 eduHorScroll();
     }, []);  
-    const colorChange = [0,3,4,7, 8]
     return (
         <div  className="education-section pb-8 py-5">
 
@@ -153,9 +152,9 @@ eduHorScroll();
                             >{edu.title.toUpperCase() }</h1>
                             </div>
                             <p className="mx-8 my-10 mt-4 leading-5 text-gray-500">
-                        {edu.text}
+                        {edu.text.substring(0,200)}...
                         <br />
-                        <div className="text-violet-600 mt-4 py-2 inline-block cursor-pointer hover:text-violet-700"
+                        <div className="know-more  mt-4 py-2 inline-block cursor-pointer"
                         onClick={
                             ()=>{
                                 window.open(edu.link, '_blank')
@@ -173,11 +172,14 @@ eduHorScroll();
                        
                         
                     </div>
-                   
+                 
                     </div>
+                    
+
+            
                 ))
             } 
-            
+           
             </div> 
            
             </section> </div> 

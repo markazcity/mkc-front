@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 
 function MyApp({ Component, pageProps }) {
 
-const [loading, setLoading] = useState(true);
+// const [loading, setLoading] = useState(true);
 const [showScrollTop, setScrollTop] = useState(false);
   useEffect(() => {
     AOS.init({
@@ -18,8 +18,8 @@ const [showScrollTop, setScrollTop] = useState(false);
       once: true,
       offset: 50,
     });
-const intervalId = setInterval(()=>setLoading(false),5000);
-return () => clearTimeout(intervalId);
+// const intervalId = setInterval(()=>setLoading(false),5000);
+// return () => clearTimeout(intervalId);
 
   }, []);
 
@@ -34,20 +34,29 @@ window.addEventListener('scroll', () => {
     setScrollTop(false)
   }
 })
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6168e249f7c0440a591e4da0/1fi0r7sav';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
 },[]);
 
 
 
   return  <div
-  style={
-    loading?{
-      minHeight:"100vh",
-      maxHeight:'100vh',
-      overflow:'hidden'
-    }:{}
-    }
+  // style={
+  //   loading?{
+  //     minHeight:"100vh",
+  //     maxHeight:'100vh',
+  //     overflow:'hidden'
+  //   }:{}
+  //   }
   >
-    {loading?<Splash/>:<></>}
+    {/* {loading?<Splash/>:<></>} */}
   <NextNprogress
 color="#C0C91E"
 startPosition={0.3}
