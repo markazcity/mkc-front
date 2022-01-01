@@ -1,11 +1,7 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, {Pagination} from 'swiper';
-import "swiper/swiper.min.css";
-import "swiper/components/pagination/pagination.min.css";
+
 
 import { useEffect, useState } from 'react';
 
-SwiperCore.use([Pagination]);
 
 const Education = () => {
    
@@ -14,24 +10,24 @@ const Education = () => {
         
         
         {"title":"WIRAS", 
-        "text":"World Institute for Research in Advanced Sciences (WIRAS) is an institute for higher education in Islamic studies. WIRAS is committed to equipping young scholars in the field of Islamic law, theology, mysticism, medicine, and various other Islamic sciences. Along with promoting advanced studies in classical Islamic sciences, it also focuses on producing original researches in the larger domain of contemporary Islamic studies as well as on issues regarding Muslim societies in the modern world.", 
+        "text":"WIRAS – World Institute for Research in Advanced Sciences – is an institute for higher education in Islamic studies. WIRAS is committed to equipping young scholars in the field of Islamic law, theology, mysticism, medicine, and various other Islamic sciences. Along with promoting advanced studies in classical Islamic sciences, it also focuses on producing original researches in the larger domain of contemporary Islamic studies as well as on issues regarding Muslim societies in the modern world. ", 
         "img":"wiras.jpg",
     "link":"http://wiras.in/"},
 
-        {"title":"Unani Medical College", 
-        "text":"To ensure more secured habitual health culture, we started the first Unani medical college in Kerala. It aims to produce highly qualified medical professionals capable of strengthening the health infrastructure by providing more medical facilities. MUMC offers a well-crafted synthesis of theory-practice learning atmosphere with sophisticated infrastructure, technically advanced learning spaces, and practice-oriented curriculum for better educational experiences. ", 
+        {"title":"Markaz Medical College", 
+        "text":"To ensure more secured habitual health culture, we started the first Unani medical college in Kerala. It aims to produce highly qualified medical professionals capable of strengthening the health infrastructure by providing more medical facilities. Markaz Medical College offers a well-crafted synthesis of theory-practice learning atmosphere with sophisticated infrastructure, technically advanced learning spaces, and practice-oriented curriculum for better educational experiences. ", 
         "img":"unani.jpg",
     "link":"http://markazunanimedicalcollege.org/"},
         {"title":"Markaz Law College", 
-        "text":"Markaz Law College (MLC) is envisioned to prepare a legal generation committed to protect and revive the constitution of India. MLC provides 5-year integrated law course and 3-year LLB programme with various specializations at undergraduate level, and two LLM programmes are offered at post-graduate level. Rather than being a mere centre for legal learning, MLC also functions as a unique space for advanced research in legal studies. ", 
+        "text":"Markaz Law College is envisioned to prepare a legal generation committed to protect and revive the constitution of India by ensuring justice and equality for all. Markaz Law College provides 5-year integrated law and management course and 3-year LLB programme with various specializations at undergraduate level, and two LLM programmes specialized in Constitutional and Commercial law are offered at post-graduate level. Additionally, being a mere centre for legal learning, Markaz Law College also functions as a unique space for advanced research in legal studies.", 
         "img":"law.jpg",
     "link":"http://www.markazlawcollege.com/"},
         {"title":"Malaibar Foundation", 
-        "text":"As part of its journey towards bringing innovation and development in the educational sector, Markaz Knowledge City formed Malaibar Foundation for Research and Development (MFRD) as a platform for clubbing experts in the proposed area for more creative dialogues and discussions. MFRD intends to fulfill the aim of advanced research followed by the production of new knowledge in the fields of arts, science, managements, technology, and literature.    ", 
+        "text":"As part of its journey towards bringing innovation and development in the educational sector, Markaz Knowledge City formed Malaibar Foundation for Research and Development as a platform for clubbing experts in the proposed area for more creative dialogues and discussions. Malaibar Foundation intends to fulfill the aim of advanced research followed by the production of new knowledge in the fields of arts, science, managements, technology, and literature.", 
         "img":"malaibar.jpg",
     "link":"https://malaibar.org/"},
         {"title":"Queensland", 
-        "text":"Queensland is a multidisciplinary hub for women’s education, employment, and entrepreneurship. It consists of a wellness centre, studio for Quranic learning, an exclusive campus for Sharia studies, technical skill development academy, residence for professional students, digital library, and indoor sports stadium. Queensland offers higher secondary and undergraduate courses in integrated Islamic sciences under various steams of humanities, commerce, and science. ", 
+        "text":"Queensland is a multidisciplinary hub for women empowerment programmes in the fields of education, employment, and entrepreneurship. It consists of a wellness centre, studio for Quranic learning, an exclusive campus for Sharia studies, technical skill development academy, residence for professional students, digital library, and indoor sports stadium. Queensland offers higher secondary and undergraduate courses in integrated Islamic sciences under various streams of humanities, commerce, and science.", 
         "img":"queensland.jpg",
     "link":"https://markazqueensland.com/"},
     {"title":"Alif Global School",
@@ -53,7 +49,13 @@ const Education = () => {
         "text":"To empower the youth with more advanced skills in their professions, Markaz Knowledge City started a finishing school under the tittle ‘Habitus’. Through providing different short-term and long-term courses, workshops, and consultations, Habitus looks to empower the youth who in turn can build their own career with individual growth and collective support. The facilitators in Habitus include experts in different industries and academics from different parts of the world. ",
         "img":"habitus.jpg",
         "link":"http://www.habitusschool.in/"
-    }   
+    }   ,
+    {"title":"AIMER",
+    "text":"Avaan Institute of Management Education and Research is a business school with an impact located in Markaz Knowledge City. It’s a locus where great minds, visionaries, and young talents come together to develop businesses and come up with region-specific solutions to management problems.  ",
+    "img":"aimer.jpg",
+    "link":"http://www.habitusschool.in/"
+}  ,
+ 
    
     
     ];
@@ -71,11 +73,11 @@ const Education = () => {
         var horLength = document.querySelector(".education-items-wrapper").scrollWidth;
         var distFromTop = document.querySelector(".education-section").offsetTop;
         var scrollDistance = distFromTop + horLength - windowWidth;
-        document.querySelector(".education-section").style.height = horLength-300 + "px";
+        document.querySelector(".education-section").style.height = horLength -300+ "px";
         window.onscroll = function(){
           var scrollTop = window.pageYOffset;
-          if (scrollTop >= distFromTop && scrollTop <= scrollDistance) {
-            document.querySelector(".education-items-wrapper").style.transform = "translateX(-"+((scrollTop+300) - distFromTop)+"px)";
+          if (scrollTop+300 >= distFromTop && scrollTop <= scrollDistance) {
+            document.querySelector(".education-items-wrapper").style.transform = "translateX(-"+((scrollTop) - distFromTop+100)+"px)";
           }
         }
      }
@@ -86,6 +88,11 @@ matchSlideCount(screenSize)
 screenSize.addListener(matchSlideCount)
 eduHorScroll();
     }, []);  
+
+    const child   = { width: `30em`, height: `50vh`}
+    const parent  = { width: `100vw`, height: `100vh`}
+
+
     return (
         <div  className="education-section pb-8 py-5">
 
@@ -98,18 +105,25 @@ eduHorScroll();
                 {/* LISTS STARTS HERE */}
                 <div className="sticky-wrapper">
                 
-                <section className="hidden lg:flex mx-10 lg:mx-64">
-              
-   
-    <div className="education-items-wrapper">
+    
+ 
                 
+<section className="hidden lg:flex mx-10 lg:mx-12">
+    <div className="education-items-wrapper" >
+    {/* <HorizontalScroll
+    pageLock={false}
+    reverseScroll={true}
+    > */}
             {
                 educationList.map(edu=>(
-                    <div>
+                    <div 
+                    key={educationList.indexOf(edu)}
+                   
+                    >
                     
                     <div className="edu-element my-4 pb-4 mx-3  bg-white component-container"
                         
-                    key={educationList.indexOf(edu)}
+                    
                     data-aos="fade-up"
                     data-aos-delay={educationList.indexOf(edu)*50}
                     >
@@ -152,7 +166,7 @@ eduHorScroll();
                             >{edu.title.toUpperCase() }</h1>
                             </div>
                             <p className="mx-8 my-10 mt-4 leading-5 text-gray-500">
-                        {edu.text.substring(0,200)}...
+                        {edu.text.substring(0,210)}...
                         <br />
                         <div className="know-more  mt-4 py-2 inline-block cursor-pointer"
                         onClick={
@@ -179,7 +193,7 @@ eduHorScroll();
             
                 ))
             } 
-           
+           {/* </HorizontalScroll> */}
             </div> 
            
             </section> </div> 

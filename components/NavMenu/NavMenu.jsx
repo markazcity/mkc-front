@@ -7,7 +7,7 @@ export  const mainMenu = [
     {name:"Home", icon:"", to:"/"},
     {name:"About", icon:"", to:"/about"},
     {name:"Components", icon:"", to:"/components"},
-    {name:"Blog", icon:"", to:"/blog"},
+    // {name:"Blog", icon:"", to:"/blog"},
     {name:"Careers", icon:"", to:"/careers"},
     {name:"Contact", icon:"", to:"/contact"},
 ]
@@ -71,7 +71,7 @@ export const DesktopMenu = ({items, textColor}) => {
  const color = textColor==null?" text-white":textColor;
 
     return (
-        <nav className={"absolute z-10 right-0  top-2 my-5 xl:mr-24 xl:mt-16 rounded "+color}>
+        <nav className={"absolute z-30 right-0  top-2 my-5 xl:mr-24 xl:mt-16 rounded "+color}>
             {
                 menuItems.map((menuItem)=>(
                     <a key={menuItem.name} onClick={()=>{

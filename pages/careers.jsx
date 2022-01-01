@@ -2,6 +2,7 @@ import Logo from "../components/Logo";
 import Footer from "../components/Footer";
 import Head from 'next/head'
 import { useState } from "react";
+import MenuBar from "@/components/NavMenu/Menu"
 
 const Carreers = () => {
 const [fullName, setFullName] = useState();
@@ -26,10 +27,9 @@ const [cover, setCover] = useState();
     }}>
 
         <Logo logo="logob" className="absolute z-20" />
-        {/* <MenuBar
+        <MenuBar
         icoColor=" text-black"
-        navItems={menu}
-        /> */}
+        />
 
 
         </div>

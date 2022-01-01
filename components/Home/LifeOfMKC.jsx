@@ -29,7 +29,7 @@ const LifeOfMKC = () => {
         >
              {/* <h2 className="font-semibold py-2 text-3xl text-gray-600">THE LIFE OF MKC</h2> */}
 </div>
-<div className="md:grid md:grid-cols-8">
+<div className="md:grid md:grid-cols-8 ">
     {
         items.map(item=>
             

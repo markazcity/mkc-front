@@ -21,42 +21,43 @@ const Commerce = () => {
     const colorChange = [0,3,4,7, 8]
     return (
         <div  style={{ backgroundColor: "#F8F9E9" }}  className="pb-20">
-            <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center pt-10"
+            <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center py-10"
                 style={{
                     color: "#69696D",
                 }}
                 data-aos="zoom-in"
                 >COMMERCE</h1>
                 {/* LISTS STARTS HERE */}
-                <div className="grid md:grid-cols-2 xl:grid-cols-4 lg:mx-64">
+                <div className=" lg:mx-64">
             {
-                educationList.map(edu=>(
-                    <div className="my-4 mx-10 lg:m-0 bg-white component-container" key={educationList.indexOf(edu)}
+                educationList.map((edu, index)=>(
+                    <div className="my-4 mx-10 lg:m-0 bg-white component-container lg:flex" 
+                    key={index}
                     data-aos="fade-up"
-                    data-aos-delay={educationList.indexOf(edu)*50}
+                    data-aos-delay={index*50}
                     >
+                       
+
+                        <div className={ index%2==0?"h-72  lg:h-96  lg:w-6/12 comp-image":"h-72 lg:h-96 lg:w-6/12  order-2"}>
+            <div
+            className="h-full  comp-image"
+            style={{background:`url('/assets/img/components/${edu.img}')`,
+        backgroundSize:'cover'
+        }}
+            ></div></div>
+
+
                         <div
-                        className="relative   lg:my-0 h-64"
-                        style={
-                           {
-                        backgroundImage:`url('/assets/img/components/${edu.img}')`,
-                        backgroundSize:"cover",
-                        }
-                           }
-                        >
-                          
-                        </div>
-                        <div
-                            className="pb-4"
+                            className="p-10  lg:w-6/12"
                             >
 
                             <h1
-                            className={`text-center font-extrabold text-2xl  px-4 py-4 lg:pt-4 text-gray-600
+                            className={` font-extrabold text-2xl  py-4 lg:pt-4 text-gray-600
                             ${edu.title.length>24?" lg:pb-0":""}`
                         }
                            // style={{color:"#69696D"}}
                             >{edu.title.toUpperCase() }</h1>
-                            <p className="mx-6  leading-5 text-gray-500">
+                            <p className="leading-5 text-gray-500">
                         {edu.text}
                         </p>
                         </div>

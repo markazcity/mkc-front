@@ -249,7 +249,7 @@ transition: 0.5s ease;
 .education-items-wrapper{
   position: relative;
   display: flex;
-  margin: 0 100px;
+ 
 }
 .sticky-wrapper {
   position: sticky;
@@ -279,4 +279,7 @@ transition: 0.5s ease;
 .know-more:hover ~ .know-more div{
   background: #fff;
  
+}
+.comp-image:hover{
+  transform: translate(1.1);
 }

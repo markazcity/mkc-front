@@ -26,10 +26,9 @@ const Contact = () => {
     minHeight:"50vh"
     }}>
         <Logo logo="logob" className="absolute z-20" />
-        {/* <MenuBar
+        <MenuBar
         icoColor=" text-black"
-        navItems={menu}
-        /> */}
+        />
 
         </div>
         <div

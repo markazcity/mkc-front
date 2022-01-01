@@ -18,7 +18,7 @@ useEffect(()=>{
 
 
     const sectors = [
-{title:"Education",icon:<BiBookAlt style={{height:"30px", width:"30px"}}/>, link:"/components#education"},
+{title:"Education",icon:<BiBookAlt style={{height:"30px", width:"30px"}}/>, link:"/education"},
 {title:"Health",icon:<RiMentalHealthLine style={{height:"30px", width:"30px"}}/>, link:"/components#health"},
 {title:"Tourism",icon:<GiPalmTree style={{height:"30px", width:"30px"}}/>, link:null},
 {title:"Entertainment",icon:<BiNetworkChart style={{height:"30px", width:"30px"}}/>, link:null},

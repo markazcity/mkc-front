@@ -31,7 +31,7 @@ const About = () => {
         <Logo logo="logob" className="z-9 " />
         <MenuBar
         icoColor=" text-black"
-        navItems={menu}
+       
         />
         <div className="mt-10"></div>
         <Who/>

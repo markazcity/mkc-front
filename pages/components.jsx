@@ -53,7 +53,7 @@ style={{ height: "100%", width: "100%", objectFit: "cover",
         <Logo logo="logob" className="z-9" />
         <MenuBar
         icoColor=" text-white"
-        navItems={menu}
+        
         />
         
         <CC/>
