@@ -40,7 +40,7 @@ menu.style.minHeight=window.innerHeight + "px";
                 <SocialIcons/>
                 <div
                 className="mt-2"
-                >&copy; markazknowledecity</div>
+                >&copy; markazknowledgecity</div>
             </div>
             {/* <div className="lg:hidden"><Logo logo="logob" /></div> */}
             

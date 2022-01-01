@@ -18,7 +18,7 @@ const Education = () => {
         "text":"To ensure more secured habitual health culture, we started the first Unani medical college in Kerala. It aims to produce highly qualified medical professionals capable of strengthening the health infrastructure by providing more medical facilities. Markaz Medical College offers a well-crafted synthesis of theory-practice learning atmosphere with sophisticated infrastructure, technically advanced learning spaces, and practice-oriented curriculum for better educational experiences. ", 
         "img":"unani.jpg",
     "link":"http://markazunanimedicalcollege.org/"},
-        {"title":"Markaz Law College", 
+        {"title":"MIALS", 
         "text":"Markaz Law College is envisioned to prepare a legal generation committed to protect and revive the constitution of India by ensuring justice and equality for all. Markaz Law College provides 5-year integrated law and management course and 3-year LLB programme with various specializations at undergraduate level, and two LLM programmes specialized in Constitutional and Commercial law are offered at post-graduate level. Additionally, being a mere centre for legal learning, Markaz Law College also functions as a unique space for advanced research in legal studies.", 
         "img":"law.jpg",
     "link":"http://www.markazlawcollege.com/"},
@@ -76,7 +76,7 @@ const Education = () => {
         document.querySelector(".education-section").style.height = horLength -300+ "px";
         window.onscroll = function(){
           var scrollTop = window.pageYOffset;
-          if (scrollTop+300 >= distFromTop && scrollTop <= scrollDistance) {
+          if (scrollTop+300 >= distFromTop-300 && scrollTop-100 <= scrollDistance) {
             document.querySelector(".education-items-wrapper").style.transform = "translateX(-"+((scrollTop) - distFromTop+100)+"px)";
           }
         }

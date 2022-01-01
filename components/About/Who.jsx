@@ -5,7 +5,7 @@ const WhoAreWe = () => {
         className="flex flex-col justify-center lg:text-center pt-20 lg:pt-16"
       >
         <h1
-          className="text-5xl font-extrabold mb-5 text-center"
+          className="text-3xl lg:text-5xl font-extrabold mb-5 text-center"
           style={{
             color: "#61696E",
           }}

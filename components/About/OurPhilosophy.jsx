@@ -6,7 +6,7 @@ const OurPhilosophy = () => {
         style={{
             backgroundColor:"#F8F9E9"
         }}>
-             <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center"
+             <h1 className="text-2xl lg:text-5xl font-extrabold mb-5 text-center"
                 style={{
                     color: "#B279B4",
                 }}

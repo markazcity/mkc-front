@@ -283,3 +283,6 @@ transition: 0.5s ease;
 .comp-image:hover{
   transform: translate(1.1);
 }
+.bg-anim{
+  transition: all 0.5s ease-in-out;
+}

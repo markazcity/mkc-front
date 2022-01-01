@@ -11,7 +11,7 @@ const OurLeaderShip = () => {
             backgroundColor:"#E7E9E4"
         }}
         >
-             <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center"
+             <h1 className="text-2xl lg:text-5xl font-extrabold mb-5 text-center"
                 style={{
                     color: "#28062B",
                 }}
