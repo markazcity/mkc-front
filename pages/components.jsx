@@ -2,8 +2,8 @@ import Logo from "@/components/Logo";
 import Education from "@/components/Compos/Education";
 import Health from "@/components/Compos/Health";
 import Commerce from "@/components/Compos/Commerce";
-import CompMain from "@/components/Compos/ComponentsHead";
 import CC from "@/components/Compos/CC";
+import Agriculture from "@/components/Compos/Agriculture";
 
 import Residence from "@/components/Compos/Residence";
 import Footer from "@/components/Footer";
@@ -67,9 +67,13 @@ style={{ height: "100%", width: "100%", objectFit: "cover",
       <section  className="pt-10" id="commerce">
         <Commerce />
       </section>
+      <section>
+        <Agriculture/>
+      </section>
       <section  id="residence" className="overflow-hidden">
       <Residence/>
       </section>
+      
       <Footer/>
     </div>
   );

@@ -84,7 +84,7 @@ const [cover, setCover] = useState();
                    
                  
                 </div>
-                <div className="px-4 pb-3 text-right sm:px-6">
+                <div className="px-8 mr-12 mt-6 lg:mt-2 pb-3 text-right sm:px-6">
                   <button
                     type="submit"
                     className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"

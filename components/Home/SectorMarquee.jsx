@@ -18,10 +18,10 @@ useEffect(()=>{
 
 
     const sectors = [
-{title:"Education",icon:<BiBookAlt style={{height:"30px", width:"30px"}}/>, link:"/education",
+{title:"Education",icon:<BiBookAlt style={{height:"30px", width:"30px"}}/>, link:"/comp/education",
 hover:"https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
 },
-{title:"Health",icon:<RiMentalHealthLine style={{height:"30px", width:"30px"}}/>, link:"/components#health",
+{title:"Health",icon:<RiMentalHealthLine style={{height:"30px", width:"30px"}}/>, link:"/comp/health",
 hover:"https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80"
 },
 {title:"Tourism",icon:<GiPalmTree style={{height:"30px", width:"30px"}}/>, link:null,

@@ -11,7 +11,9 @@ const SocialIcons = () => {
     return (<div className="flex">
 {
     links.map(link=>(
-        <a href={link[1]} key={link[0]}> <img src={"/assets/icons/"+link[0]+".svg"} alt="" width="25px" className="mx-1" /> </a>
+        <a href={link[1]} key={link[0]}
+        className="social-ico"
+        > <img src={"/assets/icons/"+link[0]+".svg"} alt="" width="25px" className="mx-1 " /> </a>
     ))
 }
     </div>);

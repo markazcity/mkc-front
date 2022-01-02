@@ -78,7 +78,7 @@ const Education = () => {
         document.querySelector(".education-section").style.height = horLength -300+ "px";
         window.onscroll = function(){
           var scrollTop = window.pageYOffset;
-          if (scrollTop+300 >= distFromTop-300 && scrollTop-100 <= scrollDistance) {
+          if (scrollTop+400 >= distFromTop && scrollTop <= scrollDistance) {
             document.querySelector(".education-items-wrapper").style.transform = "translateX(-"+((scrollTop) - distFromTop+100)+"px)";
           }
         }
