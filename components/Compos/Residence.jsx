@@ -14,11 +14,11 @@ background:"url(/assets/img/residence.jpg)",
                     color: "#FFF",
                 }}
                 data-aos="zoom-in"
-                >RESIDENCE</h1>
+                >LIVING</h1>
                 <p className="text-white px-12 pb-10 lg:px-72 text-justify lg:text-center"
                  data-aos="fade-left"
                 >
-                Landmark Village is a twenty acres residence space of lush greenery and joyous leisure. 
+                Taiba Garden is a twenty acres residence space of lush greenery and joyous leisure. 
                 Of the large eco-friendly space, less is occupied by residential apartments and the rest of the whole area 
                 stand green with beauty. The beautiful and serene interiors can make the residents feel at home. 
                 Spacious living space, balconies that are open to the bosom of Mother Nature, and passages that ease 

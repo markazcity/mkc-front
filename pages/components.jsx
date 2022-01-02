@@ -28,9 +28,8 @@ const Components = () => {
       </Head>
       <section className="absolute"
 style={{
- 
-    width:"100%",
-    height:"100%",
+    width:"100vw",
+    height:"100vh",
   zIndex:"-1"
 }}
 >
@@ -57,7 +56,7 @@ style={{ height: "100%", width: "100%", objectFit: "cover",
         />
         
         <CC/>
-        <div className="xl:h-56 2xl:h-56"></div>
+       
       </div>
       <section id="education">
         <Education />

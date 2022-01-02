@@ -2,18 +2,26 @@ const Commerce = () => {
     const educationList = [
         {"title":"Souq", 
         "text":"Souq is the physical marketplace in Markaz Knowledge City. It comes underneath the Cultural Centre with 140+ commercial spaces for different types of business such as restaurant, cloth, perfumes, and minimart. The Souq aims to promote local entrepreneurship with global standards, as well as budget consumption for the public. ", 
-        "img":"souq.jpg"},
+        "img":"souq.jpg",
+    "link":""
+    },
         
         {"title":"Fez inn Hotel", 
         "text":"Fez Inn is the four-star facilitated business hotel with excellent accommodation facilities in the form of fully furnished deluxe and suit rooms at the gateway of Markaz Knowledge City.  The hotel has 84 deluxe rooms, 28 suites, business desk, tour desk, restaurants, cafes, kiosks, and parking bays. It also forms as the hospitality capital of the City.", 
-        "img":"fezinn.jpg"},
+        "img":"fezinn.jpg",
+    "link":""
+    },
 
         {"title":"M-Tower", 
         "text":"M-Tower is the corporate signature of Markaz Knowledge City. It is set as a multi-layered service apartment that can accommodate the offices, workstations, and residences for business and other private needs. Through M-Tower we aim to furnish better hospitality for the corporate world, be it early start-ups or established ones.  ", 
-        "img":"mtower.jpg"},
-        {"title":"Exhibition Centre", 
+        "img":"mtower.jpg",
+    "link":""
+    },
+        {"title":"Valencia Galleria", 
         "text":"The Exhibition Center is to offer a better hospitality experience for various national and international events. With a 2000 seated hall and other amenities, the centre is used to host academic, corporate, and private events in a global standard.", 
-        "img":"exhibition.jpg"},
+        "img":"exhibition.jpg",
+    "link":""
+    },
         
    
     
@@ -60,6 +68,18 @@ const Commerce = () => {
                             <p className="leading-5 text-gray-500">
                         {edu.text}
                         </p>
+                        <div className="know-more  mt-4 py-2 inline-block cursor-pointer"
+                        onClick={
+                            ()=>{
+                                window.open(edu.link, '_blank')
+                            }
+                        }
+                        >
+                        KNOW MORE
+                        <div className="bg-violet-600 rounded-full h-2 w-2 inline-block ml-2"></div>
+                        <div className="bg-violet-600 rounded-full h-2 w-2 inline-block ml-1"></div>
+                        <div className="bg-violet-600 rounded-full h-2 w-2 inline-block ml-1"></div>
+                        </div>
                         </div>
                         
                     </div>

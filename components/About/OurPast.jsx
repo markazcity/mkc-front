@@ -27,7 +27,7 @@ const OurPast = () => {
                     data-aos-delay={pastList.indexOf(past)*100}
                     >
                         <div
-                        className="relative h-48"
+                        className="relative h-48 rounded"
                         style={{
                             backgroundColor:"#69696D",
                             background:`url('/assets/img/past/${past.year}.jpg')`,

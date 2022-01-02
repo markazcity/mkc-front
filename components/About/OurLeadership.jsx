@@ -31,7 +31,7 @@ Over the course of time, various experts in the fields of education,
 literature, science, technology, and business have come together to sit
  around the table and execute the vision. In addition to their endeavors,
   many young minds also have contributed immensely to the development of 
-  Markaz Knowledge City ever since. The following are our central leadership:  
+  Markaz Knowledge City ever since.  
                <br />
                 </p>
                 <div className="leadersMargin">

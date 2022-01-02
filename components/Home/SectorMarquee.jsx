@@ -67,7 +67,7 @@ style={{
     background:`url('${bgImg}')`,
     backgroundPosition:"center",
     backgroundSize:"cover",
-   
+    backgroundColor:"#000",
     maxWidth:"100%",
 }}
 >
