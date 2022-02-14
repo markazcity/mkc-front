@@ -55,44 +55,40 @@ const Education = () => {
         "img":"meem.jpg",
         "link":"https://meemacademia.com/"
     }   ,
-   
-    
- 
-   
-    
+
     ];
-    const [isPhone, setIsphone] = useState(false)
-    function matchSlideCount(x) {
-        if (x.matches) { 
-          setIsphone(false);
-        } else {
-         setIsphone(true);
-        }
-      }
+    // const [isPhone, setIsphone] = useState(false)
+    // function matchSlideCount(x) {
+    //     if (x.matches) { 
+    //       setIsphone(false);
+    //     } else {
+    //      setIsphone(true);
+    //     }
+    //   }
 
-     function eduHorScroll(){
-        var windowWidth = window.innerWidth;
-        var horLength = document.querySelector(".education-items-wrapper").scrollWidth;
-        var distFromTop = document.querySelector(".education-section").offsetTop;
-        var scrollDistance = distFromTop + horLength - windowWidth;
-        document.querySelector(".education-section").style.height = horLength -300+ "px";
-        window.onscroll = function(){
-          var scrollTop = window.pageYOffset;
-          if (scrollTop+400 >= distFromTop && scrollTop <= scrollDistance) {
-            document.querySelector(".education-items-wrapper").style.transform = "translateX(-"+((scrollTop) - distFromTop+100)+"px)";
-          }
-        }
-     }
+    //  function eduHorScroll(){
+    //     var windowWidth = window.innerWidth;
+    //     var horLength = document.querySelector(".education-items-wrapper").scrollWidth;
+    //     var distFromTop = document.querySelector(".education-section").offsetTop;
+    //     var scrollDistance = distFromTop + horLength - windowWidth;
+    //     document.querySelector(".education-section").style.height = horLength -300+ "px";
+    //     window.onscroll = function(){
+    //       var scrollTop = window.pageYOffset;
+    //       if (scrollTop+400 >= distFromTop && scrollTop <= scrollDistance) {
+    //         document.querySelector(".education-items-wrapper").style.transform = "translateX(-"+((scrollTop) - distFromTop+100)+"px)";
+    //       }
+    //     }
+    //  }
 
-    useEffect(()=>{
-        var screenSize = window.matchMedia("(min-width: 768px)")
-matchSlideCount(screenSize)
-screenSize.addListener(matchSlideCount)
-eduHorScroll();
-    }, []);  
+//     useEffect(()=>{
+//         var screenSize = window.matchMedia("(min-width: 768px)")
+// matchSlideCount(screenSize)
+// screenSize.addListener(matchSlideCount)
+// eduHorScroll();
+//     }, []);  
 
-    const child   = { width: `30em`, height: `50vh`}
-    const parent  = { width: `100vw`, height: `100vh`}
+    // const child   = { width: `30em`, height: `50vh`}
+    // const parent  = { width: `100vw`, height: `100vh`}
 
 
     return (
@@ -105,17 +101,14 @@ eduHorScroll();
                 data-aos="zoom-in"
                 >EDUCATION</h1>
                 {/* LISTS STARTS HERE */}
-                <div className="sticky-wrapper">
+                {/* <div className="sticky-wrapper"> */}
                 
     
  
                 
-<section className="hidden lg:flex mx-10 lg:mx-12">
+{/* <section className="hidden lg:flex mx-10 lg:mx-12">
     <div className="education-items-wrapper" >
-    {/* <HorizontalScroll
-    pageLock={false}
-    reverseScroll={true}
-    > */}
+  
             {
                 educationList.map(edu=>(
                     <div 
@@ -195,13 +188,17 @@ eduHorScroll();
             
                 ))
             } 
-           {/* </HorizontalScroll> */}
+        
             </div> 
            
-            </section> </div> 
+            </section>  */}
+            
+            
+            {/* </div>  */}
+
             {/* PHONE SECTION */}
 
-            <section className="block md:grid md:grid-cols-2  lg:hidden mx-10">
+            <section className="grid md:grid-cols-2 xl:grid-cols-3 mx-10 lg:mx-32">
               
    
              
@@ -232,7 +229,7 @@ eduHorScroll();
                                       <section className="absolute w-full flex justify-center"
                                       style={{ bottom:"-25px"}}
                                       >
-                                      <div className=" bg-violet-600 rounded-full
+                                      <div className=" bg-violet-600  rounded-full
                                          hover:bg-violet-700 flex justify-center items-center"
                                          style={{
                                              width:"56px",
@@ -255,9 +252,9 @@ eduHorScroll();
                                       >{edu.title.toUpperCase() }</h1>
                                       </div>
                                       <p className="mx-8 my-10 mt-4 leading-5 text-gray-500">
-                                  {edu.text}
+                                      {edu.text.substring(0,210)}...
                                   <br />
-                                  <div className="text-violet-600 mt-4 py-2 inline-block cursor-pointer hover:text-violet-700"
+                                  <div className="know-more  mt-4 py-2 inline-block cursor-pointer"
                                   onClick={
                                       ()=>{
                                           window.open(edu.link, '_blank')

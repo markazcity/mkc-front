@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import Cookies  from 'js-cookie';
 
 const userNavigation = [
-  { name: 'Sign out', href: '#' },
+  { name: 'Sign out', href: 'logout' },
 ]
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -24,13 +24,11 @@ useEffect(() => {
     }
 }, [])
 
-
-
     const navigation = [
         { name: 'Dashboard', href: '/admin', current: props.title=='Dashboard' },
         { name: 'Blog', href: '/admin/blog', current: props.title=='Blog' },
-        { name: 'Contact', href: '#', current: props.title=='Contact' },
-        { name: 'Carrier', href: '#', current: props.title=='Carrier' },
+        { name: 'Messages', href: '/admin/messages', current: props.title=='Messages' },
+        { name: 'Career', href: '/admin/career', current: props.title=='Carrier' },
       ]
   return (
     <div>
@@ -93,6 +91,14 @@ useEffect(() => {
                               {({ active }) => (
                                 <a
                                   href={item.href}
+                                  onClick={(e) =>{
+                                    if(item.href=="logout"){
+e.preventDefault();
+Cookies.remove('user')
+router.push('/admin/login')
+
+                                    }
+                                  }}
                                   className={classNames(
                                     active ? 'bg-gray-100' : '',
                                     'block px-4 py-2 text-sm text-gray-700'

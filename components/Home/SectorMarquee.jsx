@@ -11,9 +11,13 @@ import { useRouter } from 'next/router';
 
 const SectorMarquee = () => {
 
-useEffect(()=>{
 
-},[])
+   
+
+function onHoverBg(){
+    let bg = document.getElementById('bg');
+    bg.style.opacity = 1;
+}
 
 
 
@@ -61,15 +65,27 @@ hover:"https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-1.2
     ];
     const [bgImg, setBgImg] = useState('/assets/img/noisew.png');
 
-    return (<div>
+    return (<div 
+        className="relative"
+        >
+        <div className="absolute left-0 right-0 top-0 bottom-0 -z-1"
+        id="bg"
+        style={{
+opacity:0,
+        background:`url('${bgImg}')`,
+        transition:'all 0.5s ease-in-out',
+        height:'100%',
+        width:'100%',
+        backgroundPosition:"center",
+        backgroundSize:"cover",
+        backgroundColor:"#000",
+        maxWidth:"100%",
+    }}
+        >
+
+        </div>
 <div className="flex flex-wrap overflow-hidden justify-center py-20 lg:px-72 bg-anim"
-style={{
-    background:`url('${bgImg}')`,
-    backgroundPosition:"center",
-    backgroundSize:"cover",
-    backgroundColor:"#000",
-    maxWidth:"100%",
-}}
+
 >
     { 
     sectors.map(sec=>
@@ -81,6 +97,7 @@ style={{
     data-aos="fade-right"
     onHover={()=>{
         setBgImg(sec.hover.length>2?sec.hover:"/assets/img/noisew.png");
+        onHoverBg()
 
     }}
     onHoverLeave={()=>{

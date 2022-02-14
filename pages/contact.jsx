@@ -3,17 +3,54 @@ import Footer from "../components/Footer";
 import MenuBar from "../components/NavMenu/Menu"
 import SocialIcons from '../components/SocialIcons'
 import Head from 'next/head'
+import { useState } from "react";
+var qs = require('qs');
+
 
 const Contact = () => {
+  const URL = "https://api.markazcity.in/sendMessage.php";
 
-  const menu = 
-  [
-  {name:"Home", icon:"", to:"/"},
-  {name:"Who We Are", icon:"", to:"#who"},
-  {name:"Our Past", icon:"", to:"#past"},
-  {name:"Our Philosophy", icon:"", to:"#philosophy"},
-  {name:"Our Leadership", icon:"", to:"#leadership"},
-  ];
+
+const [name, setName] = useState(null);
+const [email, setEmail] = useState(null);
+const [message, setMessage] = useState(null);
+
+const [error, setError] = useState(null);
+
+
+  const sendMessage = async (e) => {
+    fetch(URL,
+      {
+        method: 'POST', 
+        body:
+        qs.stringify({
+            "api": 'c24106bb093954188b2883e807d3bd8040cb96a9',
+            'name':name,
+            'email':email,
+            'message':message
+          })
+        ,
+        headers: { 
+          'Accept': 'application/json',
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+      }
+      }
+      )
+    .then(response => response.json())
+    .then(data =>{
+     
+      if(data.status==="success"){
+        setError("Thanks for contacting us. We will get back soon.")
+        e.target.reset()
+      }
+      else {
+        setError("Something went wrong. Please try again later.");
+      }
+    });
+  }
+
+
+
   return (
     
     <div>
@@ -75,14 +112,23 @@ const Contact = () => {
             <form action="" method="POST"
             onSubmit={(e)=>{
                 e.preventDefault();
+                sendMessage(e);
             }}
             >
               <div className=" overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5  sm:p-6">
-                  <div className="grid grid-cols-1">
+                  <div className="">
                       <h3
                       className="font-bold text-xl text-gray-500"
                       >GET IN TOUCH</h3>
+
+                      <div className={
+                        error==null?"my-1 px-4 py-2  bg-opacity-20  rounded inline-block  bg-white text-white":
+                        "my-1 px-4 py-2  bg-opacity-20  rounded inline-block  bg-violet-700 text-violet-700"
+
+                      }>{error??"Resp"}</div>
+
+
                       {/* NAME SECTION BEGINS */}
                     <div className="col-span-full sm:col-span-6 my-2">
                       <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
@@ -92,8 +138,11 @@ const Contact = () => {
                         type="text"
                         name="first-name"
                         id="first-name"
+                        onChange={(e)=>setName(e.target.value)}
                         autoComplete="given-name"
                         className="mt-1 focus:ring-blue-500 focus:border-violet-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                      
+                      required
                       />
                     </div>
                    {/* NAME SECTION ENDS */}
@@ -107,10 +156,11 @@ const Contact = () => {
                       <input
                         type="text"
                         name="email-address"
+                        onChange={(e)=>setEmail(e.target.value)}
                         id="email-address"
                         autoComplete="email"
                         className="mt-1 focus:ring-blue-500 focus:border-violet-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                      />
+                        required />
                     </div>
                    {/* EMAIL SECTION ENDS */}
 
@@ -123,10 +173,11 @@ const Contact = () => {
                         id="about"
                         name="about"
                         rows={3}
+                        onChange={(e)=>setMessage(e.target.value)}
                         className="shadow-sm focus:ring-blue-500 focus:border-violet-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                         placeholder="Drop your queries here"
                         defaultValue={''}
-                      />
+                        required />
                        </div>
                        {/* MESSAGE SECTION ENDS */}
                        </div>

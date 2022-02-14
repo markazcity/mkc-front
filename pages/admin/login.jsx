@@ -51,7 +51,7 @@ useEffect(() => {
       }else if(data.status==="PasswordIncorrect"){
         setError("Password do not match");
       }else{
-        Cookies.set('user', `${data.username}`);
+        Cookies.set('user', `${data.username}`,{ expires: 1 });
       router.push('/admin');
       
       }

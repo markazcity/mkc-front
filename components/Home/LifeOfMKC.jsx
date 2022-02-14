@@ -29,7 +29,7 @@ const LifeOfMKC = () => {
         >
              {/* <h2 className="font-semibold py-2 text-3xl text-gray-600">THE LIFE OF MKC</h2> */}
 </div>
-<div className="md:grid md:grid-cols-8 ">
+<div className="grid md:grid-cols-4 xl:grid-cols-8">
     {
         items.map(item=>
             
@@ -47,7 +47,7 @@ const LifeOfMKC = () => {
                 className="h-full w-full px-16 py-20  bg-black bg-opacity-70 hover:bg-opacity-40 transition-all duration-300">
                
                 <span
-                className="lifeText text-white font-extrabold lg:text-4xl text-2xl "
+                className="lifeText text-white font-extrabold lg:text-3xl text-2xl "
                 >
                 {item.title}
                 </span>
