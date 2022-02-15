@@ -36,6 +36,8 @@ style={{
 
 <video autoPlay muted loop playsInline
 style={{ height: "100%", width: "100%", objectFit: "cover",
+position:"top"
+
 }}
 
 >

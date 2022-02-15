@@ -12,54 +12,46 @@ import { useRouter } from 'next/router';
 const SectorMarquee = () => {
 
 
-   
+    function onHoverBg(){
+        let bg = document.getElementById('bgOverlay');
+        bg.style.backgroundColor = "rgba(0,0,0,0.6)";
+    }
 
-function onHoverBg(){
-    let bg = document.getElementById('bg');
-    bg.style.opacity = 1;
-}
+    function onReleaseBg(){
+        let bg = document.getElementById('bgOverlay');
+        bg.style.backgroundColor = "rgba(0,0,0,0)";
+    }
+
+
 
 
 
     const sectors = [
 {title:"Education",icon:<BiBookAlt style={{height:"30px", width:"30px"}}/>, link:"/comp/education",
-hover:"https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
 },
 {title:"Health",icon:<RiMentalHealthLine style={{height:"30px", width:"30px"}}/>, link:"/comp/health",
-hover:"https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80"
 },
 {title:"Tourism",icon:<GiPalmTree style={{height:"30px", width:"30px"}}/>, link:null,
-hover:"https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
 },
 {title:"Entertainment",icon:<BiNetworkChart style={{height:"30px", width:"30px"}}/>, link:null,
-hover:"https://images.unsplash.com/photo-1495017790122-c765562a8917?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
 },
 {title:"Entrepreneurship",icon:<RiBuilding2Line style={{height:"30px", width:"30px"}}/>, link:null,
-hover:"https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
 },
 {title:"Design",icon:<BiPaint style={{height:"30px", width:"30px"}}/>, link:null,
-hover:"https://images.unsplash.com/photo-1534159224451-e27efd044c3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
 },
 {title:"Technology",icon:<FiCodesandbox style={{height:"30px", width:"30px"}}/>, link:null,
-hover:"https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
 },
 {title:"Manufacturing",icon:<IoConstructOutline style={{height:"30px", width:"30px"}}/>, link:null,
-hover:"https://images.unsplash.com/photo-1611117775350-ac3950990985?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80"
 },
 {title:"Heritage",icon:<BiPyramid style={{height:"30px", width:"30px"}}/>, link:null,
-hover:"https://images.unsplash.com/photo-1451422450617-99d28523649e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1036&q=80"
 },
 {title:"Food",icon:<IoFastFoodOutline style={{height:"30px", width:"30px"}}/>, link:null,
-hover:"https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
 },
 {title:"Energy",icon:<GiElectric style={{height:"30px", width:"30px"}}/>, link:null,
-hover:"https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
 },
 {title:"Water",icon:<IoWaterOutline style={{height:"30px", width:"30px"}}/>, link:null,
-hover:"https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
 },
 {title:"Sports",icon:<BiFootball style={{height:"30px", width:"30px"}}/>, link:null,
-hover:"https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80"
 },
 
     ];
@@ -67,19 +59,37 @@ hover:"https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-1.2
 
     return (<div 
         className="relative"
+        style={{width:"100vw", 
+        minWidth:"100vw",
+        height:"100%",
+    }}
         >
-        <div className="absolute left-0 right-0 top-0 bottom-0 -z-1"
-        id="bg"
+        <div className="absolute "
+        
         style={{
-opacity:0,
-        background:`url('${bgImg}')`,
-        transition:'all 0.5s ease-in-out',
-        height:'100%',
+        backgroundImage:`url('${bgImg}')`,
         width:'100%',
-        backgroundPosition:"center",
+        height:"100%",
         backgroundSize:"cover",
+        backgroundRepeat:"no-repeat",
+        transition:'all 0.3s ease-in-out',
+        backgroundPosition:"center",
         backgroundColor:"#000",
-        maxWidth:"100%",
+        zIndex:"-2"
+        
+    }}
+        >
+
+        </div>
+        <div className="absolute "
+        id="bgOverlay"
+        style={{
+        width:'100%',
+        height:"100%",
+        transition:'all 0.3s ease-in-out',
+        backgroundColor:"rgba(0,0,0,0)",
+        zIndex:"-1"
+
     }}
         >
 
@@ -96,12 +106,13 @@ opacity:0,
     link={sec.link}
     data-aos="fade-right"
     onHover={()=>{
-        setBgImg(sec.hover.length>2?sec.hover:"/assets/img/noisew.png");
-        onHoverBg()
+        setBgImg(`/assets/img/sectors/${sec.title.toLowerCase()}.jpg`);
+       onHoverBg();
 
     }}
     onHoverLeave={()=>{
         setBgImg('/assets/img/noisew.png')
+        onReleaseBg()
     }}
     />
     )

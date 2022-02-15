@@ -13,11 +13,11 @@ style={{background:"url('/assets/img/noise.png')",
     data-aos="fade-right"
     data-aos-delay="400"
     >MARKAZ KNOWLEDGE CITY</span>
-    <h2 className="font-semibold py-2 text-3xl lg:text-5xl text-white"
+    <h2 className="font-semibold py-2 text-4xl lg:text-6xl xl:text-8xl text-white"
      data-aos="fade-right"
      data-aos-delay="550"
-    >A CITY OF NEW DREAMS</h2>
-    <p className="py-1 text-lg text-gray-400 mx-1 lg:mx-72"
+    >A CITY OF <br/> NEW DREAMS</h2>
+    <p className="py-1 text-lg text-gray-400 mx-1 lg:mx-36 xl:mx-72"
      data-aos="fade-right"
      data-aos-delay="750"
     >
