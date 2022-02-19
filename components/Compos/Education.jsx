@@ -12,7 +12,7 @@ const Education = () => {
         "text":"To ensure more secured habitual health culture, we started the first Unani medical college in Kerala. It aims to produce highly qualified medical professionals capable of strengthening the health infrastructure by providing more medical facilities. Markaz Medical College offers a well-crafted synthesis of theory-practice learning atmosphere with sophisticated infrastructure, technically advanced learning spaces, and practice-oriented curriculum for better educational experiences. ", 
         "img":"unani.jpg",
     "link":"http://markazunanimedicalcollege.org/"},
-        {"title":"MIALS", 
+        {"title":"Markaz Law College", 
         "text":"Markaz Law College is envisioned to prepare a legal generation committed to protect and revive the constitution of India by ensuring justice and equality for all. Markaz Law College provides 5-year integrated law and management course and 3-year LLB programme with various specializations at undergraduate level, and two LLM programmes specialized in Constitutional and Commercial law are offered at post-graduate level. Additionally, being a mere centre for legal learning, Markaz Law College also functions as a unique space for advanced research in legal studies.", 
         "img":"law.jpg",
     "link":"http://www.markazlawcollege.com/"},
@@ -198,7 +198,7 @@ const Education = () => {
 
             {/* PHONE SECTION */}
 
-            <section className="grid md:grid-cols-2 xl:grid-cols-3 mx-10 lg:mx-32">
+            <section className="grid md:grid-cols-2 xl:grid-cols-3 mx-10 lg:mx-32 3xl:mx-56">
               
    
              
@@ -251,8 +251,9 @@ const Education = () => {
                                      // style={{color:"#69696D"}}
                                       >{edu.title.toUpperCase() }</h1>
                                       </div>
-                                      <p className="mx-8 my-10 mt-4 leading-5 text-gray-500">
-                                      {edu.text.substring(0,210)}...
+                                      <p className="mx-8 my-10 mt-4 leading-5 text-gray-500 ">
+                                     
+                                     <div className="max-lines">{edu.text}..</div> 
                                   <br />
                                   <div className="know-more  mt-4 py-2 inline-block cursor-pointer"
                                   onClick={

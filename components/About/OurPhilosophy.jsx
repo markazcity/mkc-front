@@ -2,7 +2,7 @@ const OurPhilosophy = () => {
     return (
         <div id="philosophy">
         <div  data-aos="fade-up-right"
-        className="py-10"
+        className="py-20"
         style={{
             backgroundColor:"#F8F9E9"
         }}>

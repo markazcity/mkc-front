@@ -3,21 +3,21 @@ import HomeParticle from '@/components/Utils/Particles';
 const SecondSection = () => {
     return (
 <div className="relative"
-style={{background:"url('/assets/img/noise.png')",
+style={{background:"url('/assets/img/interlaced.png')",
 }}
 >
     <HomeParticle/>
     <div className="flex justify-center items-center px-10 lg:px-32 py-10 lg:py-32">
     <section className="text-center">
-    <span className=" font-bold tracking-widest text-butter-600"
+    {/* <span className=" font-bold tracking-widest text-butter-600"
     data-aos="fade-right"
     data-aos-delay="400"
-    >MARKAZ KNOWLEDGE CITY</span>
-    <h2 className="font-semibold py-2 text-4xl lg:text-6xl xl:text-8xl text-white"
+    >MARKAZ KNOWLEDGE CITY</span> */}
+    <h2 className="font-extrabold py-2 text-4xl lg:text-6xl xl:text-8xl text-blue-800 gradient-text"
      data-aos="fade-right"
      data-aos-delay="550"
     >A CITY OF <br/> NEW DREAMS</h2>
-    <p className="py-1 text-lg text-gray-400 mx-1 lg:mx-36 xl:mx-72"
+    <p className="py-1 text-lg text-gray-600 mx-1 lg:mx-36 xl:mx-72"
      data-aos="fade-right"
      data-aos-delay="750"
     >

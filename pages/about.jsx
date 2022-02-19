@@ -3,7 +3,7 @@ import OurPast from "../components/About/OurPast";
 import OurPhilosophy from "../components/About/OurPhilosophy";
 import OurLeaderShip from "../components/About/OurLeadership";
 import Who from "../components/About/Who";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 import MenuBar from "../components/NavMenu/Menu"
 import Head from 'next/head'
 
@@ -36,12 +36,13 @@ const About = () => {
         <div className="mt-10"></div>
         <Who/>
       </div>
+      <section className="mb-10">
+        <OurPhilosophy />
+      </section>
       <section className="py-10" id="past">
         <OurPast />
       </section>
-      <section className="mt-10">
-        <OurPhilosophy />
-      </section>
+      
       <section>
         <OurLeaderShip />
       </section>

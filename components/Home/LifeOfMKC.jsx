@@ -3,20 +3,24 @@
 const LifeOfMKC = () => {
     const items = [
 {
-    title:<div>Education <br /> for All</div>,
+    title:<div>Education </div>,
     img:"education.jpg"
 },
 {
-    title:<div>Sustainable <br />Environment</div>,
+    title:<div>Health</div>,
     img:"environment.jpg"
 },
 {
-    title:<div>Ethical<br /> Entrepreneurship</div>,
+    title:<div> Living</div>,
     img:"entrepreneurship.jpg"
 },
 {
-    title:<div>Traditional <br />Knowledge</div>,
+    title:<div>Commerce</div>,
     img:"traditional.jpg"
+},
+{
+    title:<div>Agriculture</div>,
+    img:"environment.jpg"
 },
     ];
     return (
@@ -29,7 +33,7 @@ const LifeOfMKC = () => {
         >
              {/* <h2 className="font-semibold py-2 text-3xl text-gray-600">THE LIFE OF MKC</h2> */}
 </div>
-<div className="grid md:grid-cols-4 xl:grid-cols-8">
+<div className="grid md:grid-cols-6 xl:grid-cols-10 ">
     {
         items.map(item=>
             

@@ -170,9 +170,14 @@ transition: 0.5s ease;
   background-color: rgba(113, 128, 147,0.9);
 
 }
-
+.sectorItem{
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
+  transition: 0.5s ease;
+}
 .sectorItem:hover{
+  background:#fff;
   transform: scale(1.2,1.2);
+  color:rgba(0,7,128,1);
 }
 .lifeItem{
   min-height: 14rem;
@@ -306,4 +311,19 @@ transition: 0.5s ease;
         transition:'all 0.5s ease-in-out';
         background-position:"center";
         background-color:"#000";
+}
+
+.max-lines {
+  display: block;/* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 5.3em;
+  line-height: 1.3em;
+}
+
+.gradient-text{
+  background:  linear-gradient( 63.1deg,  rgba(5,23,111,1) 16.4%, rgba(24,95,240,1) 64.5% );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

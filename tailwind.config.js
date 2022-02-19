@@ -16,7 +16,10 @@ module.exports = {
           600:"#CDCC00",
           700:"#B0B000"
          },
-      }
+      },
+      screens: {
+        '3xl': '1600px',
+      },
     },
       
   },

@@ -12,8 +12,12 @@ const SocialIcons = () => {
 {
     links.map(link=>(
         <a href={link[1]} key={link[0]}
+        target="_blank"
+        rel="noopener noreferrer"
         className="social-ico"
-        > <img src={"/assets/icons/"+link[0]+".svg"} alt="" width="25px" className="mx-1 " /> </a>
+        > <img src={"/assets/icons/"+link[0]+".svg"} alt="" width="25px" className="mx-1" 
+      
+        /> </a>
     ))
 }
     </div>);

@@ -2,7 +2,7 @@ import Logo from "@/components/Logo";
 import Education from "@/components/Compos/Education";
 
 
-import Footer from "@/components/Footer";
+import Footer from "@/components/Footer/Footer";
 import MenuBar from "@/components/NavMenu/Menu"
 import Head from 'next/head'
 

@@ -1,10 +1,9 @@
 import Head from 'next/head'
 import TextTransition, { presets } from "react-text-transition";
-import Logo from "../components/Logo"
-import Footer from "../components/Footer"
+import Logo from "@/components/Logo"
+import Footer from "@/components/Footer/Footer"
 
-import HomeParticle from "../components/Utils/Particles"
-import MenuBar from "../components/NavMenu/Menu"
+import MenuBar from "@/components/NavMenu/Menu"
 import FirstSection from "@/components/Home/FirstSection"
 import SecondSection from "@/components/Home/SecondSection"
 import SectorMarquee from "@/components/Home/SectorMarquee"

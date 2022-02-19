@@ -9,13 +9,13 @@ background:"url(/assets/img/residence.jpg)",
 }}
     >
       <div>
-      <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center pt-10"
+      <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center pt-20"
                 style={{
                     color: "#FFF",
                 }}
                 data-aos="zoom-in"
                 >LIVING</h1>
-                <p className="text-white px-12 pb-10 lg:px-72 text-justify lg:text-center"
+                <p className="text-white px-12 pb-20 lg:px-72 text-justify lg:text-center"
                  data-aos="fade-left"
                 >
                 Taiba Garden is a twenty acres residence space of lush greenery and joyous leisure. 

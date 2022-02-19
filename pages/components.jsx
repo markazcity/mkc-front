@@ -6,7 +6,7 @@ import CC from "@/components/Compos/CC";
 import Agriculture from "@/components/Compos/Agriculture";
 
 import Residence from "@/components/Compos/Residence";
-import Footer from "@/components/Footer";
+import Footer from "@/components/Footer/Footer";
 import MenuBar from "@/components/NavMenu/Menu"
 import Head from 'next/head'
 
@@ -69,12 +69,13 @@ position:"top"
       <section  className="pt-10" id="commerce">
         <Commerce />
       </section>
-      <section>
-        <Agriculture/>
-      </section>
       <section  id="residence" className="overflow-hidden">
       <Residence/>
       </section>
+      <section>
+        <Agriculture/>
+      </section>
+     
       
       <Footer/>
     </div>

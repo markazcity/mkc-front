@@ -1,7 +1,7 @@
-import Logo from "../components/Logo";
-import Footer from "../components/Footer";
-import MenuBar from "../components/NavMenu/Menu"
-import SocialIcons from '../components/SocialIcons'
+import Logo from "@/components/Logo";
+import Footer from "@/components/Footer/Footer";
+import MenuBar from "@/components/NavMenu/Menu"
+import SocialIcons from '@/components/SocialIcons'
 import Head from 'next/head'
 import { useState } from "react";
 var qs = require('qs');

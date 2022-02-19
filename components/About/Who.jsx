@@ -13,7 +13,7 @@ const WhoAreWe = () => {
         >
           WHO ARE WE?
         </h1>
-        <p className="mx-10 lg:mx-96 text-left lg:text-center mb-10"
+        <p className="mx-10 lg:mx-64 text-left lg:text-center mb-10"
          data-aos="fade-up-right"
         >
          Markaz Knowledge City is an integrated township located in Calicut, Kerala, India. <span className="hidden lg:block"></span>

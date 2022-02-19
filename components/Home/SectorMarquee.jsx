@@ -94,7 +94,7 @@ const SectorMarquee = () => {
         >
 
         </div>
-<div className="flex flex-wrap overflow-hidden justify-center py-20 lg:px-72 bg-anim"
+<div className="flex flex-wrap overflow-hidden justify-center py-20 lg:px-72 3xl:mx-36 bg-anim"
 
 >
     { 
@@ -135,9 +135,8 @@ const SingleItem = ({title, icon, link, onHover, onHoverLeave}) => {
     }}
     onMouseEnter={onHover}
     onMouseLeave={onHoverLeave}
-className="sectorItem bg-violet-600 text-white mx-4 my-3 rounded-full 
- text-center flex justify-center items-center hover:bg-white  
- hover:text-violet-600 border-4 border-violet-600 hover:border-white transition-700 duration-300"
+className="sectorItem  text-white mx-4 my-3 rounded-full 
+ text-center flex justify-center items-center  "
     style={{
         height:"160px",
         width:"160px"

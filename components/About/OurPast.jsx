@@ -1,8 +1,13 @@
+import Marquee from "react-fast-marquee";
+
 const OurPast = () => {
     const pastList = [
         {"year":"2012", "text":"Foundation Laying", "img":""},
         {"year":"2013", "text":"Project launching", "img":""},
         {"year":"2014", "text":"Unani Medical College Inaugration", "img":""},
+        {"year":"2014", "text":"Unani Medical College Inaugration", "img":""},
+        {"year":"2014", "text":"Unani Medical College Inaugration", "img":""},
+       
         
         
     ];
@@ -19,15 +24,20 @@ const OurPast = () => {
                 Since the inception of Markaz Knowledge City in 2009, we have made many breakthroughs in our journey.
                 </p>
                 {/* LISTS STARTS HERE */}
-                <div className="grid lg:grid-cols-3 lg:mx-60">
+                <div className="">
+                <Marquee 
+                gradient={false}
+                speed={30}
+                pauseOnHover={true}
+                >
             {
                 pastList.map(past=>(
-                    <div className="m-6" key={pastList.indexOf(past)}
+                    <div className="my-6 mx-10" key={pastList.indexOf(past)}
                     data-aos="fade-up"
                     data-aos-delay={pastList.indexOf(past)*100}
                     >
                         <div
-                        className="relative h-48 rounded"
+                        className="relative h-48 w-72 rounded"
                         style={{
                             backgroundColor:"#69696D",
                             background:`url('/assets/img/past/${past.year}.jpg')`,
@@ -46,7 +56,9 @@ const OurPast = () => {
                         </p>
                     </div>
                 ))
-            } </div>
+            } 
+             </Marquee>
+            </div>
         </div>
     );
 }
