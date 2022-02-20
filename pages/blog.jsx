@@ -1,5 +1,5 @@
 import Logo from "@/components/Logo";
-import Footer from "@/components/Footer/Footer/Footer";
+import Footer from "@/components/Footer/Footer";
 import Head from 'next/head'
 
 

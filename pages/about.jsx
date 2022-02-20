@@ -1,10 +1,10 @@
-import Logo from "../components/Logo";
-import OurPast from "../components/About/OurPast";
-import OurPhilosophy from "../components/About/OurPhilosophy";
-import OurLeaderShip from "../components/About/OurLeadership";
-import Who from "../components/About/Who";
-import Footer from "../components/Footer/Footer";
-import MenuBar from "../components/NavMenu/Menu"
+import Logo from "@/components/Logo";
+import OurPast from "@/components/About/OurPast";
+import OurPhilosophy from "@/components/About/OurPhilosophy";
+import OurLeaderShip from "@/components/About/OurLeadership";
+import Who from "@/components/About/Who";
+import Footer from "@/components/Footer/Footer";
+import MenuBar from "@/components/NavMenu/Menu"
 import Head from 'next/head'
 
 const About = () => {
