@@ -16,6 +16,12 @@ module.exports = {
           600:"#CDCC00",
           700:"#B0B000"
          },
+minigreen: {
+          600:"#B0B3A2",
+          700:"#7F867B",
+          800:"#6D7975"
+         },
+         
       },
       screens: {
         '3xl': '1600px',

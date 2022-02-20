@@ -1,5 +1,5 @@
 import Logo from "@/components/Logo";
-import Footer from "@/components//Footer/Footer";
+import Footer from "@/components/Footer/Footer";
 import Head from 'next/head'
 import { useState } from "react";
 import MenuBar from "@/components/NavMenu/Menu"

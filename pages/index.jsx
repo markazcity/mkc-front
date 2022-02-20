@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import TextTransition, { presets } from "react-text-transition";
 import Logo from "@/components/Logo"
 import Footer from "@/components/Footer/Footer"
 
@@ -9,7 +8,8 @@ import SecondSection from "@/components/Home/SecondSection"
 import SectorMarquee from "@/components/Home/SectorMarquee"
 import FourthSection from "@/components/Home/FourthSection"
 
-import LifeOfMKC from "@/components/Home/LifeOfMKC"
+import Categories from "@/components/Home/Categories"
+
 import { useState, useEffect } from 'react';
 
 export default function Home() {
@@ -42,7 +42,7 @@ const [showNavbar, setShowNavBar] = useState(true);
     
       <FirstSection/>
      <SecondSection/>
-      <LifeOfMKC/>
+      <Categories/>
       <SectorMarquee/>
       {/* <FourthSection/> */}
       <Footer/>

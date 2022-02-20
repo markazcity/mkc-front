@@ -94,7 +94,7 @@ const SectorMarquee = () => {
         >
 
         </div>
-<div className="flex flex-wrap overflow-hidden justify-center py-20 lg:px-72 3xl:mx-36 bg-anim"
+<div className="flex flex-wrap overflow-hidden justify-center py-20 lg:px-32 xl:px-56 3xl:mx-36 bg-anim"
 
 >
     { 

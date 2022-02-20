@@ -171,13 +171,13 @@ transition: 0.5s ease;
 
 }
 .sectorItem{
-  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
+  background: #7F867B;
   transition: 0.5s ease;
 }
 .sectorItem:hover{
   background:#fff;
   transform: scale(1.2,1.2);
-  color:rgba(0,7,128,1);
+  color:#636860;
 }
 .lifeItem{
   min-height: 14rem;
@@ -323,7 +323,18 @@ transition: 0.5s ease;
 }
 
 .gradient-text{
-  background:  linear-gradient( 63.1deg,  rgba(5,23,111,1) 16.4%, rgba(24,95,240,1) 64.5% );
+  background:  linear-gradient( 63.1deg,  rgba(109, 121, 117,1) 16.4%, rgba(176, 179, 162,1) 64.5% );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.cat-card{
+  background: #fff;
+  padding:0 2rem;
+  box-shadow: 3px 3px 20px 10px rgba(0,0,0,0.04);
+  transition:all 1s ease;
+}
+.cat-card:hover{
+  transform: scale(1.1);
+  box-shadow: 3px 3px 20px 10px rgba(0,0,0,0.07);
 }

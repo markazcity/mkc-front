@@ -10,7 +10,7 @@ const HomeParticle = () => {
 		params={{
 			"particles": {
 				"number": {
-					"value": 50,
+					"value": 100,
 					"density": {
 						"enable": false
 					}
@@ -31,7 +31,10 @@ const HomeParticle = () => {
 					"speed": 1,
 					"direction": "top",
 					"out_mode": "out"
-				}
+				},
+				"color": {
+					"value": "#6D7975"
+				  },
 			},
 			"interactivity": {
 				"events": {
