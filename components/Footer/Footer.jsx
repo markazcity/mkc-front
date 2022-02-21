@@ -1,6 +1,10 @@
 import ContactForm from './ContactForm'
 
 const Footer = ({showFooter}) => {
+
+  const linkClass = "text-gray-400 hover:text-white transition duration-500 ease-in-out";
+
+  const privacyUrl = "/policy/privacy";
     return (  <footer className="bg-black">
     <ContactForm/>    
 <div>
@@ -15,9 +19,9 @@ const Footer = ({showFooter}) => {
         <div className="hidden lg:flex lg:mx-32 justify-between w-full">
        <span> &copy; markazknowledgecity</span>
       <div className="flex">
-<a href="">Privacy Policy</a> <span className="mx-2 text-yellow-500">•</span>
-<a href="">Terms of Use</a> <span className="mx-2 text-yellow-500">•</span>
-<a href="">Cookie Policy</a>
+<a href={privacyUrl} className={linkClass}>Privacy Policy</a> <span className="mx-2 text-yellow-500">•</span>
+<a href="" className={linkClass}>Terms of Use</a> <span className="mx-2 text-yellow-500">•</span>
+<a href="" className={linkClass}>Cookie Policy</a>
       </div>
         </div>
 
@@ -26,9 +30,9 @@ const Footer = ({showFooter}) => {
      <div></div>
  )}  */}
  <div className="flex my-4">
-<a href="">Privacy Policy</a> <span className="mx-2 text-yellow-500">•</span>
-<a href="">Terms of Use</a> <span className="mx-2 text-yellow-500">•</span>
-<a href="">Cookie Policy</a>
+<a href={privacyUrl} className={linkClass}>Privacy Policy</a> <span className="mx-2 text-yellow-500">•</span>
+<a href="" className={linkClass}>Terms of Use</a> <span className="mx-2 text-yellow-500">•</span>
+<a href="" className={linkClass}>Cookie Policy</a>
       </div>
    <div className="pt-2">
    &copy; markazknowledgecity
