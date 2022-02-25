@@ -45,7 +45,7 @@ useEffect(() => {
 
 
     return (
-        <AdminLayout title="Messages">
+        <AdminLayout title="Messages" label="Messages">
           {
               messages!=null?messages.length>0?(
                 <div>

@@ -46,7 +46,7 @@ useEffect(() => {
 
 
     return (
-        <AdminLayout title="Career">
+        <AdminLayout title="Career"  label="Career">
           {
               jobApplics!=null?jobApplics.length>0?(
                 <div>

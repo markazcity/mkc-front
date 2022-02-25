@@ -25,10 +25,10 @@ useEffect(() => {
 }, [])
 
     const navigation = [
-        { name: 'Dashboard', href: '/admin', current: props.title=='Dashboard' },
-        { name: 'Blog', href: '/admin/blog', current: props.title=='Blog' },
-        { name: 'Messages', href: '/admin/messages', current: props.title=='Messages' },
-        { name: 'Career', href: '/admin/career', current: props.title=='Carrier' },
+        { name: 'Dashboard', href: '/admin', current: props.label=='Dashboard' },
+        { name: 'Blog', href: '/admin/blog', current: props.label=='Blog' },
+        { name: 'Messages', href: '/admin/messages', current: props.label=='Messages' },
+        { name: 'Career', href: '/admin/career', current: props.label=='Career' },
       ]
   return (
     <div>

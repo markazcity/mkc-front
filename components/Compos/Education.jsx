@@ -48,13 +48,23 @@ const Education = () => {
         "text":"Queensland is a multidisciplinary hub for women empowerment programmes in the fields of education, employment, and entrepreneurship. It consists of a wellness centre, studio for Quranic learning, an exclusive campus for Sharia studies, technical skill development academy, residence for professional students, digital library, and indoor sports stadium. Queensland offers higher secondary and undergraduate courses in integrated Islamic sciences under various streams of humanities, commerce, and science.", 
         "img":"queensland.jpg",
     "link":"https://markazqueensland.com/"},
-   
-   
     {"title":"MeeM",
         "text":"MeeM is the virtual platform of Markaz Knowledge City developed as part of its mission for global education. Through this, thousands of active learners from across the world are able to pursue primary to advanced level education in various disciplines. It is supported with highly qualified technical professionals and subject experts from all fields of study. MeeM is also moving ahead to achieve its unique goal of erasing the boundaries of nations for the universal dissemination of knowledge and shared human values.",
         "img":"meem.jpg",
         "link":"https://meemacademia.com/"
     }   ,
+   
+    {"title":"College of Nursing",
+        "text":"MeeM is the virtual platform of Markaz Knowledge City developed as part of its mission for global education. Through this, thousands of active learners from across the world are able to pursue primary to advanced level education in various disciplines. It is supported with highly qualified technical professionals and subject experts from all fields of study. MeeM is also moving ahead to achieve its unique goal of erasing the boundaries of nations for the universal dissemination of knowledge and shared human values.",
+        "img":"nursing.jpg",
+        "link":"https://meemacademia.com/"
+    }   ,
+    {"title":"College of Pharmacy",
+        "text":"MeeM is the virtual platform of Markaz Knowledge City developed as part of its mission for global education. Through this, thousands of active learners from across the world are able to pursue primary to advanced level education in various disciplines. It is supported with highly qualified technical professionals and subject experts from all fields of study. MeeM is also moving ahead to achieve its unique goal of erasing the boundaries of nations for the universal dissemination of knowledge and shared human values.",
+        "img":"pharmacy.jpg",
+        "link":"https://meemacademia.com/"
+    }   ,
+   
 
     ];
     // const [isPhone, setIsphone] = useState(false)
@@ -207,7 +217,7 @@ const Education = () => {
                           educationList.map(edu=>(
                               <div>
                               
-                              <div className="w-full my-4 pb-2 mx-3  bg-white component-container"
+                              <div className="w-full h-auto my-4 pb-2 mx-3  bg-white component-container"
                                   
                               key={educationList.indexOf(edu)}
                               data-aos="fade-up"
@@ -246,7 +256,10 @@ const Education = () => {
                                       <div className=" mx-6 mt-8 xl:mt-2">
                                          
                                       <h1
-                                      className={`font-extrabold text-xl  px-4 lg:p-8 text-gray-600 text-center`
+                                      className={
+                                        edu.title.length> 15?
+                                        `font-extrabold text-xl  px-4 lg:py-8  text-gray-600 text-center`: 
+                                        `font-extrabold text-xl  px-4 lg:p-8 text-gray-600 text-center`
                                   }
                                      // style={{color:"#69696D"}}
                                       >{edu.title.toUpperCase() }</h1>

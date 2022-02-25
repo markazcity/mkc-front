@@ -48,24 +48,33 @@ const Categories = () => {
     {
         items.map(item=>
             <div
-            className="w-full col-span-2 "
+            className="w-full col-span-2 cursor-pointer"
             key={item.title}
             data-aos="fade-up"
             data-aos-delay={(items.indexOf(item)+1)*200}
             >
                <div 
-                className="cat-card py-20  rounded-xl m-6 transition-all duration-300">
-             <div className="flex justify-center">
-             <div className="inline-flex justify-center mb-3 bg-minigreen-600 bg-opacity-30  rounded-full ">
+                className="cat-card pb-10 rounded-xl m-6 transition-all duration-300">
+             <div className="flex justify-center h-44 rounded-t-xl"
+             style={{
+                 background:`url('/assets/img/life/${item.title}.jpg')`,
+                    backgroundSize:"cover",
+                    backgroundPosition:"center",
+                    backgroundRepeat:"no-repeat"
+
+             }}
+             >
+
+             {/* <div className="inline-flex justify-center mb-3 bg-minigreen-600 bg-opacity-30  rounded-full ">
              {item.icon}
-             </div>
+             </div> */}
              </div>
                 <div
-                className="text-minigreen-700 font-extrabold lg:text-3xl text-2xl text-center"
+                className="text-minigreen-700 font-extrabold lg:text-3xl text-2xl text-center mt-4"
                 >
                 {item.title}
                 </div>
-                <p className="py-2 text-gray-500">
+                <p className="py-2 text-gray-500 px-10">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut quis soluta obcaecati, 
                     optio nisi qui nobis. Facilis assumenda esse a inventore.
                 </p>
