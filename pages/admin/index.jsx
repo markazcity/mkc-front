@@ -2,7 +2,7 @@ import AdminLayout from '@/components/Admin/Layout'
 
 const Admin = () => {
     return (
-        <AdminLayout title="Dashboard">
+        <AdminLayout title="Dashboard" label="Dashboard">
             <h1 className="text-5xl font-extrabold text-blue-700">
                 Markaz Knowledge City
             </h1>
