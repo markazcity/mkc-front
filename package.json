@@ -33,6 +33,8 @@
     "react-parallax-tilt": "^1.5.57",
     "react-particles-js": "^3.5.3",
     "react-quill": "^1.3.5",
+    "react-render-html": "^0.6.0",
+    "react-share": "^4.4.0",
     "react-spinners": "^0.11.0",
     "react-text-transition": "^1.3.0",
     "sass": "^1.37.5",

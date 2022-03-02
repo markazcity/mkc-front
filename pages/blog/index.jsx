@@ -1,15 +1,18 @@
 import Logo from "@/components/Logo";
+import MenuBar from "@/components/NavMenu/Menu"
+
 import Footer from "@/components/Footer/Footer";
 import Head from 'next/head'
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import {ROOT_URL} from '@/inc/Const'
 
 
 const Blog = () => {
   
 
     const router = useRouter();
-  const DATA_URL = "https://api.markazcity.in/blog.php?type=list";
+  const DATA_URL = ROOT_URL+"blog.php?type=list";
   const [blogs, setBlogs] = useState(null);
   const [featured, setFeatured] = useState(null);
   
@@ -44,6 +47,9 @@ const Blog = () => {
       </Head>
       <div className="py-5" style={{ backgroundColor: "#F8FAF8" }}>
         <Logo logo="logob" className="z-9" />
+        <MenuBar
+        icoColor=" text-black"
+        />
         <h1 className="text-5xl font-extrabold mb-5 text-center"
                 style={{
                     color: "#69696D",
@@ -51,6 +57,11 @@ const Blog = () => {
                 data-aos="zoom-in"
                 >BLOG</h1> <br />
      </div>
+     <section
+     style={{
+      minHeight:"50vh"
+    }}
+     >
      {
        blogs!=null &&
        blogs.length>0?(
@@ -71,18 +82,20 @@ delenit augue duis dolore te feugait nulla facilisi.
            <div className="lg:flex-1 bg-gray-400 lg:ml-10 h-80 order-first lg:order-last mb-6"></div>
        </div>
       </section>  */}
-      <section className="grid lg:grid-cols-2 xl:grid-cols-3 my-5 lg:my-10 lg:mx-32 xl:mx-56 gap-x-10 gap-y-10 ">
+      <section className="grid lg:grid-cols-2 xl:grid-cols-3 my-5 lg:my-10 lg:mx-32 xl:mx-56 gap-x-10 gap-y-10 "
+      
+      >
           {
               blogs.map(post=>(
                   <a  key={post}
-                  className="mx-10 lg:mx-0 bg-gray-50 shadow-md rounded-lg block cursor-pointer"
+                  className="blogItem mx-10 lg:mx-0 bg-gray-100 rounded-lg block cursor-pointer"
                   data-aos="fade-up-right"
                   data-aos-delay={blogs.indexOf(post)*50}
                   href={`/blog/${post.id}`}
                   onClick={
                       (e) => {
 e.preventDefault();
-router.push(`/blog/${post.id}`)
+router.push(`/blog/${post.blog_link}`)
 
                       }
                   }
@@ -92,13 +105,14 @@ router.push(`/blog/${post.id}`)
                   className="h-52 mb-4 rounded-t-lg"
                   style={
                    {
-                     background:`url('https://api.markazcity.in/${post.thumb}') no-repeat center center`,
+                     background:`url('${ROOT_URL+post.thumb}') no-repeat center center`,
                       backgroundSize: "cover",
                    }
                     }
                    
                   ></div>
-                  <div className="mx-4 text-center leading-5 mb-5 font-bold">{post.title}</div>
+                  <div className="mx-4 text-xl leading-5 ">{post.title}</div>
+                  <div className="text-minigreen-600  rounded inline-block mt-2 mb-5 mx-4">Read More</div>
                   </a>
               ))
           }
@@ -126,7 +140,8 @@ router.push(`/blog/${post.id}`)
          </div>
        )
      }
-<br /><br />
+     </section>
+
       <Footer/>
     </div>
   );

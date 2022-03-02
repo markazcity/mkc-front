@@ -4,6 +4,7 @@ import 'react-quill/dist/quill.snow.css';
 import axios from 'axios';
 import {API_KEY} from '@/inc/Const'
 import { useRouter } from 'next/router';
+import Head from 'next/head'
 
 const NewBlog = () => {
 
@@ -14,6 +15,7 @@ const [body, setBody] = useState(null);
 const [thumb, setThumb] = useState(null);
 
 const [error, setError] = useState(null);
+const [loading, setLoading] = useState(false);
 
 const router = useRouter();
 
@@ -40,11 +42,14 @@ const  modules = {
   function submitBlog(){
       if(title!=null && body!=null && thumb!=null){
         setError(null)
+        setLoading(true)
+
         uploadThumb().then(res=>{
             if(res.data.status=="success"){
                 addNewBlog(res.data.file).then(resnew=>{
                    
                     if(resnew.data.status=="success"){
+                      setLoading(false)
                         router.push('/admin/blog')
                     }else{
                         setError("Something went wrong. Please try again later.");
@@ -97,7 +102,9 @@ const  modules = {
 
     return (
         <AdminLayout title="New Blog"  label="Blog">
-
+<Head>
+    <title>New Blog | Markaz Knowledge City</title>
+</Head>
 
             {error && <div className="bg-red-200 text-red-700 px-3 py-2 mb-3 rounded">{error}</div>}
             <input type="text" onChange={(e) => setTitle(e.target.value)}
@@ -120,7 +127,13 @@ const  modules = {
              <button
              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded mt-3" 
              onClick={()=>submitBlog()}
-             >Add Blog</button>
+             >{loading?(
+              <span>
+                  <img src="/assets/img/loading.gif" className="mx-4" style={{height:"30px"}} alt="" />
+              </span>
+          ):(
+              <span>Add Blog</span>
+          )}</button>
              </div>
         </AdminLayout>
     );

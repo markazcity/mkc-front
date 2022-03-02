@@ -86,8 +86,18 @@ const Blog = () => {
 <div dangerouslySetInnerHTML={{__html: blg.body.substring(0,100)+"..."}}>
 </div>
 <button
+onClick={()=>{
+    window.open(`/blog/${blg.blog_link}`, '_blank').focus();
+}}
 className="bg-violet-600 hover:bg-violet-700 text-white px-4 py-1 rounded my-2"
->Read More</button>
+>Read Blog</button>
+<button
+onClick={()=>{
+    window.open(`/admin/blog/edit?id=${blg.id}`, '_blank').focus();
+}}
+className="bg-butter-600 hover:bg-butter-700 text-black px-4 py-1 rounded my-2 ml-3"
+>Edit</button>
+
 </p>
 
                                 </div>

@@ -57,7 +57,7 @@ const Categories = () => {
                 className="cat-card pb-10 rounded-xl m-6 transition-all duration-300">
              <div className="flex justify-center h-44 rounded-t-xl"
              style={{
-                 background:`url('/assets/img/life/${item.title}.jpg')`,
+                 background:`url('/assets/img/life/${item.title.toLowerCase()}.jpg')`,
                     backgroundSize:"cover",
                     backgroundPosition:"center",
                     backgroundRepeat:"no-repeat"
