@@ -51,7 +51,7 @@ const data = blogs.blogs.filter(item => item.blog_link == params.id)[0];
           <SocialShare
           title={data.post_title}
           url={`https://markazcity.in/blog/${data.blog_link}`}
-          excerpt={data.post_excerpt}
+          
           />
           <article className="lg:text-justify text-lg px-10 lg:px-0 noto" 
         //   dangerouslySetInnerHTML={createMarkup(data.post_body)}

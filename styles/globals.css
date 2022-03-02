@@ -348,3 +348,30 @@ transition: 0.5s ease;
   transform: scale(1.1);
   box-shadow: 3px 3px 20px  rgba(0,0,0,0.1);
 }
+
+.dashBox{
+  min-width: 200px;
+  transition:all .5s ease;
+  cursor:pointer;
+  color:rgb(43, 43, 43);
+}
+.dashBox:hover{
+  background:rgba(109, 121, 117,0.3);
+  color: rgba(109, 121, 117,1);
+  transform: scale(1.05);
+}
+.social-share{
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+.social-share img{
+  width: 35px;
+    height: 35px;
+    margin-right: 0.3rem;
+    transition: all .3s ease-in-out;
+}
+.social-share img:hover{
+    transform: scale(1.05);
+    filter:contrast(200%); 
+    
+}

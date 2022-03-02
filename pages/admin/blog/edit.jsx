@@ -182,7 +182,8 @@ const  modules = {
             var output = document.getElementById('thumbPreview');
             output.src = URL.createObjectURL(e.target.files[0]);
             setThumb(e.target.files[0])
-        } } />      
+        } } />  
+         <span className="text-red-600 text-sm pt-1 inline-block">Image ust be in <b>1000x600</b>px resolution.</span>      
              <br />
              <div className="flex justify-end">
              <button

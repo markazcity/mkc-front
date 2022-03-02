@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Cookies from 'js-cookie'
 import PropagateLoader from "react-spinners/PropagateLoader";
 import { css } from "@emotion/react";
-
+import Head from 'next/head'
 
 var qs = require('qs');
 
@@ -72,6 +72,9 @@ useEffect(() => {
   }
 
     return (<div>
+       <Head>
+                <title>Login - Markaz Knowledge City</title>
+            </Head>
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>

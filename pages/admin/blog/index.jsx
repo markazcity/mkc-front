@@ -3,6 +3,7 @@
 import AdminLayout from '@/components/Admin/Layout'
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import Head from 'next/head'
 
 const Blog = () => {
     const router = useRouter();
@@ -36,6 +37,10 @@ const Blog = () => {
 
     return (
         <AdminLayout title="Blog" label="Blog">
+             <Head>
+        <title>Blog - Markaz Knowledge City</title>
+        <meta name="description" content="Blog of Markaz Knowledge City" />
+      </Head>
            <div className="flex justify-between">
                <div></div>
                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
@@ -55,7 +60,7 @@ const Blog = () => {
 
                                             
                                                 <div
-                                                className="w-52 h-52  mr-4 rounded"
+                                                className="w-52 h-36  mr-4 rounded"
                                                 style={{
                                                     background: 
                                                     blg.thumb!=null && blg.thumb.length>4?
@@ -75,7 +80,7 @@ const Blog = () => {
                                 key={blg.id}
                                 className=""
                                 >
-                                    <span className="text-violet-700 text-xl font-bold  py-1 rounded inline-block my-2">
+                                    <span className="text-violet-700 text-xl font-bold  py-1 rounded inline-block my-1">
                                     {blg.title} 
                                     </span>
                                    
@@ -83,8 +88,8 @@ const Blog = () => {
                                    <hr />
 
 <p className="pt-3">
-<div dangerouslySetInnerHTML={{__html: blg.body.substring(0,100)+"..."}}>
-</div>
+{/* <div dangerouslySetInnerHTML={{__html: blg.body.substring(0,100)+"..."}}>
+</div> */}
 <button
 onClick={()=>{
     window.open(`/blog/${blg.blog_link}`, '_blank').focus();

@@ -121,7 +121,8 @@ const  modules = {
         <input type="file"
         className="w-full m2-4"
         placeholder="Thumbnail"
-        onChange={ (e)=>setThumb(e.target.files[0]) } />      
+        onChange={ (e)=>setThumb(e.target.files[0]) } />    
+        <span className="text-red-600 text-sm pt-1 inline-block">Image ust be in <b>1000x600</b>px resolution.</span>  
              <br />
              <div className="flex justify-end">
              <button
