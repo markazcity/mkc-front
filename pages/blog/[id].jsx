@@ -95,7 +95,7 @@ export async function getStaticProps({ params }) {
     const blogs = await getAllPosts()
   
     const paths = blogs.blogs.map((postItems) => ({
-      params: { id: postItems.blog_link.toString() },
+      params: { id: `${postItems.blog_link}` },
     }))
 
    

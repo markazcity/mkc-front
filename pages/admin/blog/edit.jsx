@@ -15,6 +15,8 @@ const [title, setTitle] = useState(null);
 const [body, setBody] = useState(null);
 const [thumb, setThumb] = useState(null);
 const [thumbUrl, setThumbUrl] = useState(null);
+const [link, setLink] = useState(null);
+
 
 const [blogId, setsetBlogId] = useState(null);
 
@@ -41,7 +43,7 @@ useEffect(() => {
           setTitle(dat.title);
           setBody(dat.body);
           setThumbUrl(dat.thumb);
-
+          setLink(dat.blog_link);
          
 
       })
@@ -134,6 +136,7 @@ const  modules = {
   formData.append('title',title)
   formData.append('body',body)
   formData.append('thumb',thumblink)
+  formData.append('link',link)
   return  await axios.post(URL, formData,{
       headers: {
         'Accept': 'application/json',
@@ -150,11 +153,18 @@ const  modules = {
 </Head>
 
             {error && <div className="bg-red-200 text-red-700 px-3 py-2 mb-3 rounded">{error}</div>}
-            <input type="text" onChange={(e) => setTitle(e.target.value)}
-            className="w-full mb-4"
+            <input type="text" onChange={(e) => {setTitle(e.target.value);
+        setLink(e.target.value.toLowerCase().trim().replace(/\s/g, "-"))    
+        }}
+            className="w-full"
             defaultValue={title}
             placeholder="Blog Title"
             />
+             <span className="text-blue-600 italic text-sm cursor-pointer"
+             onClick={()=>{
+                window.open(`/blog/${link}`, '_blank').focus();
+             }}
+             >https://markazcity.in/blog/{link??""}</span> <br /> <br />
       <ReactQuill  
               value={body}
               onChange={handleChange}

@@ -13,6 +13,7 @@ const ReactQuill = typeof window === 'object' ? require('react-quill') : () => f
 const [title, setTitle] = useState(null);
 const [body, setBody] = useState(null);
 const [thumb, setThumb] = useState(null);
+const [link, setLink] = useState(null);
 
 const [error, setError] = useState(null);
 const [loading, setLoading] = useState(false);
@@ -22,6 +23,8 @@ const router = useRouter();
 function handleChange(value) {
     setBody(value)
   }
+
+ 
 
 const  modules = {
     toolbar: [
@@ -91,6 +94,8 @@ const  modules = {
   formData.append('title',title)
   formData.append('body',body)
   formData.append('thumb',thumbUrl)
+  formData.append('link',link)
+
   return  await axios.post(URL, formData,{
       headers: {
         'Accept': 'application/json',
@@ -107,10 +112,13 @@ const  modules = {
 </Head>
 
             {error && <div className="bg-red-200 text-red-700 px-3 py-2 mb-3 rounded">{error}</div>}
-            <input type="text" onChange={(e) => setTitle(e.target.value)}
-            className="w-full mb-4"
+            <input type="text" onChange={(e) => {setTitle(e.target.value);
+              setLink(e.target.value.toLowerCase().trim().replace(/\s/g, "-"))}}
+            
+            className="w-full"
             placeholder="Blog Title"
             />
+             <span className="text-blue-600 italic text-sm">https://markazcity.in/blog/{link??""}</span> <br /> <br />
       <ReactQuill  
               value={body}
               onChange={handleChange}
@@ -123,7 +131,9 @@ const  modules = {
         placeholder="Thumbnail"
         onChange={ (e)=>setThumb(e.target.files[0]) } />    
         <span className="text-red-600 text-sm pt-1 inline-block">Image ust be in <b>1000x600</b>px resolution.</span>  
-             <br />
+             <br /><br />
+
+            <br />
              <div className="flex justify-end">
              <button
              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded mt-3" 
