@@ -1,12 +1,20 @@
 import Marquee from "react-fast-marquee";
 
+
+
 const OurPast = () => {
     const pastList = [
-        {"year":"2012", "text":"Foundation Laying", "img":""},
-        {"year":"2013", "text":"Project launching", "img":""},
-        {"year":"2014", "text":"Unani Medical College Inaugration", "img":""},
-        {"year":"2014", "text":"Unani Medical College Inaugration", "img":""},
-        {"year":"2014", "text":"Unani Medical College Inaugration", "img":""},
+        {"year":"2012", "text":"Foundation Laying", "img":"foundation.jpg"},
+        {"year":"2013", "text":"Project Launching", "img":"project-launch.jpg"},
+        {"year":"2014", "text":"Unani Medical College Inaugration", "img":"unani-inauguration.jpg"},
+        {"year":"2013", "text":"Markaz Law College Inauguration", "img":"inauguration-law-college.jpg"},
+        {"year":"2013", "text":"Taiba Garden Key Handing", "img":"thaiba-key-handing.jpg"},
+        {"year":"2013", "text":"Alif Global School Inauguration", "img":"alif-inauguration.jpg"},
+        {"year":"2013", "text":"Tigis Valley Welness Center Inauguration", "img":"tigris-inauguration.jpg"},
+        {"year":"2013", "text":"Valencia Galleria Inauguration", "img":"valancia-galleria-inauguration.jpg"},
+        {"year":"2013", "text":"AIMER Busines School Inaugration", "img":"aimer-inauguration.jpg"},
+
+       
        
         
         
@@ -31,16 +39,19 @@ const OurPast = () => {
                 pauseOnHover={true}
                 >
             {
-                pastList.map(past=>(
-                    <div className="my-6 mx-10" key={pastList.indexOf(past)}
+                pastList.map((past,index)=>(
+                   
+                    <div className="my-6 mx-10" key={index}
                     data-aos="fade-up"
                     data-aos-delay={pastList.indexOf(past)*100}
+                    
                     >
+                        <center>
                         <div
                         className="relative h-48 w-72 rounded"
                         style={{
                             backgroundColor:"#69696D",
-                            background:`url('/assets/img/past/${past.year}.jpg')`,
+                            background:`url('/assets/img/past/${past.img}')`,
         backgroundSize:'cover',
         backgroundPosition:"center"
                         
@@ -48,16 +59,17 @@ const OurPast = () => {
                         >
                            
                         </div>
-                        <h1
+                        </center>
+                        {/* <h1
                             className="mt-2 w-full text-center text-gray-600 font-extrabold text-2xl"
-                            >{past.year}</h1>
-                        <p className="text-center leading-5">
+                            >{past.year}</h1> */}
+                        <p className="text-center leading-5 mt-4 ">
                         {past.text}
                         </p>
                     </div>
                 ))
             } 
-             </Marquee>
+               </Marquee>
             </div>
         </div>
     );

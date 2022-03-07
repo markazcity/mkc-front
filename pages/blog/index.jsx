@@ -1,17 +1,15 @@
 import Logo from "@/components/Logo";
 import MenuBar from "@/components/NavMenu/Menu"
-
 import Footer from "@/components/Footer/Footer";
 import Head from 'next/head'
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import {ROOT_URL} from '@/inc/Const'
+import renderHTML from 'react-render-html';
 
 
 const Blog = () => {
-  
-
-    const router = useRouter();
+  const router = useRouter();
   const DATA_URL = ROOT_URL+"blog.php?type=list";
   const [blogs, setBlogs] = useState(null);
   const [featured, setFeatured] = useState(null);
@@ -21,7 +19,16 @@ const Blog = () => {
           .then(response => response.json())
           .then(data =>{
             if(data.status==="HasBlog"){
-              setBlogs(data.blogs);
+              
+              let tempBlogs = [];
+              data.blogs.forEach((blg)=>{
+                if(blg.isFeatured=='1'){
+                  setFeatured(blg);
+                }else{
+                  tempBlogs.push(blg);
+                }
+              })
+              setBlogs(tempBlogs);
             }
             else if(data.status==="EmptyBlog"){
               setBlogs([]);
@@ -32,11 +39,12 @@ const Blog = () => {
           });
         }
   
-  
-  useEffect(() => {
-      getData();
-  },[])
 
+  
+useEffect(() => {
+      getData();
+      
+  },[])
 
   return (
     
@@ -66,32 +74,50 @@ const Blog = () => {
        blogs!=null &&
        blogs.length>0?(
          <div>
-                 {/* <section className="my-10 lg:mx-64 mx-10">
-       <div className="flex lg:flex-row flex-col">
-           <div className="flex-1">
-               <h1 className="text-2xl font-extrabold text-gray-600">CULTURAL CENTER</h1>
-           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam 
-nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat 
-volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation 
-ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse 
-molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros 
-et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril 
-delenit augue duis dolore te feugait nulla facilisi. 
-           </div>
-           <div className="lg:flex-1 bg-gray-400 lg:ml-10 h-80 order-first lg:order-last mb-6"></div>
-       </div>
-      </section>  */}
-      <section className="grid lg:grid-cols-2 xl:grid-cols-3 my-5 lg:my-10 lg:mx-32 xl:mx-56 gap-x-10 gap-y-10 "
-      
-      >
+
+           {featured!=null?(
+               <section className="mb-10 lg:px-64 p-10" 
+               
+               
+               style={{ backgroundColor: "#F8FAF8" }}>
+               <div className="flex lg:flex-row flex-col">
+                   <div className="flex-1">
+                       <h1 className="text-2xl font-extrabold text-gray-600">{featured.title}</h1>
+                   <p className="hyphenate text-base">
+           {renderHTML(`<div class="noto hyphenate">${featured.body.substring(0,300)}...</div>`)}
+           </p>
+           <div className="bg-minigreen-800 hover:bg-minigreen-700 text-white  rounded inline-block mt-4 mb-5 px-4 py-2 cursor-pointer"
+           onClick={
+            (e) => 
+router.push(`/blog/${featured.blog_link}`)
+
+            
+        }
+           
+           >Read More</div>
+                   </div>
+                   <div className="lg:flex-1 bg-gray-400 lg:ml-10 h-80 order-first lg:order-last mb-6"
+                   
+                   style={{
+                  
+                    background:`url('${ROOT_URL+featured.thumb}') no-repeat center center`,
+                     backgroundSize: "cover",
+                  }}
+                   ></div>
+               </div>
+              </section> 
+           ):(
+             <span></span>
+           )}
+               
+      <section className="grid md:grid-cols-2 xl:grid-cols-3 my-5 lg:my-10 md:mx-10 lg:mx-32 xl:mx-56 lg:gap-x-10 gap-y-10 ">
           {
               blogs.map(post=>(
                   <a  key={post}
                   className="blogItem mx-10 lg:mx-0 bg-gray-100 rounded-lg block cursor-pointer"
                   data-aos="fade-up-right"
                   data-aos-delay={blogs.indexOf(post)*50}
-                  href={`/blog/${post.id}`}
+                  href={`/blog/${post.blog_link}`}
                   onClick={
                       (e) => {
 e.preventDefault();

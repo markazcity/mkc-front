@@ -330,7 +330,7 @@ transition: 0.5s ease;
 
 .cat-card{
   background: #fff;
-  
+  cursor: pointer;
   box-shadow: 3px 3px 20px  rgba(0,0,0,0.04);
   transition:all 1s ease;
 }
@@ -374,4 +374,7 @@ transition: 0.5s ease;
     transform: scale(1.05);
     filter:contrast(200%); 
     
+}
+.leader{
+  filter:drop-shadow(12px 15px 10px rgba(0,0,0,0.3));
 }

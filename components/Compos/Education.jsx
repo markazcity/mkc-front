@@ -55,14 +55,14 @@ const Education = () => {
     }   ,
    
     {"title":"College of Nursing",
-        "text":"MeeM is the virtual platform of Markaz Knowledge City developed as part of its mission for global education. Through this, thousands of active learners from across the world are able to pursue primary to advanced level education in various disciplines. It is supported with highly qualified technical professionals and subject experts from all fields of study. MeeM is also moving ahead to achieve its unique goal of erasing the boundaries of nations for the universal dissemination of knowledge and shared human values.",
+        "text":"As part of creating good medical professionals in the field of Nursing activities, we create a brand of trust and truth. Our nursing college would be at the forefront of delivering qualified experts for various medical fields. The project includes academics and field professionals in the various health sectors.",
         "img":"nursing.jpg",
-        "link":"https://meemacademia.com/"
+        "link":""
     }   ,
     {"title":"College of Pharmacy",
-        "text":"MeeM is the virtual platform of Markaz Knowledge City developed as part of its mission for global education. Through this, thousands of active learners from across the world are able to pursue primary to advanced level education in various disciplines. It is supported with highly qualified technical professionals and subject experts from all fields of study. MeeM is also moving ahead to achieve its unique goal of erasing the boundaries of nations for the universal dissemination of knowledge and shared human values.",
+        "text":"For nurturing the best professionals in the field of pharmaceuticals, we begin a centre for the study. We aim to build a better generation who has the professional capacity as well research capacity. The team of the project includes experts in different fields of knowledge and experience.",
         "img":"pharmacy.jpg",
-        "link":"https://meemacademia.com/"
+        "link":""
     }   ,
    
 
@@ -215,7 +215,7 @@ const Education = () => {
                           
                       {
                           educationList.map(edu=>(
-                              <div>
+                              
                               
                               <div className="w-full h-auto my-4 pb-2 mx-3  bg-white component-container"
                                   
@@ -266,7 +266,7 @@ const Education = () => {
                                       </div>
                                       <p className="mx-8 my-10 mt-4 leading-5 text-gray-500 ">
                                      
-                                     <div className="max-lines">{edu.text}..</div> 
+                                     <div className="">{edu.text.substring(0,200)}...</div> 
                                   <br />
                                   <div className="know-more  mt-4 py-2 inline-block cursor-pointer"
                                   onClick={
@@ -287,7 +287,7 @@ const Education = () => {
                                   
                               </div>
                              
-                              </div>
+                              
                           ))
                       } 
                       
