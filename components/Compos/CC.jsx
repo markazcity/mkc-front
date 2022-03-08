@@ -4,7 +4,7 @@ const CC = () => {
     "text":"The unique architectural format of the Cultural Centre has been inspired by the classical Indo, Persian, Saracenic, and Colonial traditions. It is one of the biggest cultural centres in India. The amenities included a spiritual enclave, library and research centre, and heritage centre. This rotunda model complex represents Markaz Knowledge City’s values and vision for a world of tomorrow. Its includes a Spiritual Enclave, Library and Research Centre, Residential Scholars Dormitory and Souk.", 
     "img":"cc.jpg"};
     return (
-        <section className="lg:w-5/12 p-10  lg:mx-48 bg-transparent xl:my-28 ">
+        <section className="lg:w-5/12 p-10  lg:mx-20 bg-transparent xl:my-28 ">
     <div
     className="w-full flex justify-center m-6 order-2 lg:order-1"
     > 

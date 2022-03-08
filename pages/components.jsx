@@ -9,9 +9,18 @@ import Residence from "@/components/Compos/Residence";
 import Footer from "@/components/Footer/Footer";
 import MenuBar from "@/components/NavMenu/Menu"
 import Head from 'next/head'
+import {  useEffect} from "react"
 
 
 const Components = () => {
+
+
+  useEffect(() => {
+    var cc = document.getElementById('cc');
+    cc.style.minHeight=window.innerHeight + "px";
+
+})
+
   const menu = 
   [
   {name:"Home", icon:"", to:"/"},
@@ -27,10 +36,11 @@ const Components = () => {
         <meta name="description" content="Components in Markaz Knowledge City" />
       </Head>
       <section className="absolute"
+      id="cc"
 style={{
     width:"100vw",
-    height:"100vh",
-  zIndex:"-1"
+  zIndex:"-1",
+    backgroundColor: "#F8FAF8",
 }}
 >
 
@@ -48,9 +58,6 @@ position:"top"
 </section>
 
        <div>
-       {/* style={{ backgroundColor: "#F8FAF8",
-    backgroundImage:`url('/assets/img/spikes.png')`,
-    }} */}
         <Logo logo="logob" className="z-9" />
         <MenuBar
         icoColor=" text-white"

@@ -266,7 +266,7 @@ const Education = () => {
                                       </div>
                                       <p className="mx-8 my-10 mt-4 leading-5 text-gray-500 ">
                                      
-                                     <div className="">{edu.text.substring(0,200)}...</div> 
+                                     <div className="">{edu.text}</div> 
                                   <br />
                                   <div className="know-more  mt-4 py-2 inline-block cursor-pointer"
                                   onClick={

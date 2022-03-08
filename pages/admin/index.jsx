@@ -2,6 +2,8 @@ import AdminLayout from '@/components/Admin/Layout'
 import {BiMessageDetail, BiBriefcase} from 'react-icons/bi'
 import {RiPagesLine} from 'react-icons/ri'
 import {AiOutlineFileAdd} from 'react-icons/ai'
+import {BsBookHalf} from 'react-icons/bs'
+
 import Head from 'next/head'
 import {useRouter} from 'next/router'
 
@@ -10,6 +12,7 @@ const Admin = () => {
     const menuItems = [
         {title:"View Blogs", icon:<RiPagesLine className={icoClass}/>, to:"/admin/blog"},
         {title:"New Blog", icon:<AiOutlineFileAdd className={icoClass}/>, to:"/admin/blog/new"},
+        {title:"CityPulse", icon:<BsBookHalf className={icoClass}/>, to:"/admin/blog/new"},
         {title:"Messages", icon:<BiMessageDetail className={icoClass}/>, to:"/admin/messages"},
         {title:"Career", icon:<BiBriefcase className={icoClass}/>, to:"/admin/career"},
     ];

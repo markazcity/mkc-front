@@ -1,12 +1,12 @@
 const Commerce = () => {
     const educationList = [
-        {"title":"Souq", 
+        {"title":"Souk", 
         "text":"Souq is the physical marketplace in Markaz Knowledge City. It comes underneath the Cultural Centre with 140+ commercial spaces for different types of business such as restaurant, cloth, perfumes, and minimart. The Souq aims to promote local entrepreneurship with global standards, as well as budget consumption for the public. ", 
         "img":"souq.jpg",
     "link":""
     },
         
-        {"title":"Fez inn Hotel", 
+        {"title":"Fezinn Hotel", 
         "text":"Fez Inn is the four-star facilitated business hotel with excellent accommodation facilities in the form of fully furnished deluxe and suit rooms at the gateway of Markaz Knowledge City.  The hotel has 84 deluxe rooms, 28 suites, business desk, tour desk, restaurants, cafes, kiosks, and parking bays. It also forms as the hospitality capital of the City.", 
         "img":"fezinn.jpg",
     "link":""

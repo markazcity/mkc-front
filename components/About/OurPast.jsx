@@ -6,13 +6,13 @@ const OurPast = () => {
     const pastList = [
         {"year":"2012", "text":"Foundation Laying", "img":"foundation.jpg"},
         {"year":"2013", "text":"Project Launching", "img":"project-launch.jpg"},
-        {"year":"2014", "text":"Unani Medical College Inaugration", "img":"unani-inauguration.jpg"},
-        {"year":"2013", "text":"Markaz Law College Inauguration", "img":"inauguration-law-college.jpg"},
-        {"year":"2013", "text":"Taiba Garden Key Handing", "img":"thaiba-key-handing.jpg"},
-        {"year":"2013", "text":"Alif Global School Inauguration", "img":"alif-inauguration.jpg"},
-        {"year":"2013", "text":"Tigis Valley Welness Center Inauguration", "img":"tigris-inauguration.jpg"},
-        {"year":"2013", "text":"Valencia Galleria Inauguration", "img":"valancia-galleria-inauguration.jpg"},
-        {"year":"2013", "text":"AIMER Busines School Inaugration", "img":"aimer-inauguration.jpg"},
+        {"year":"2014", "text":"Inauguration of Markaz Medical College", "img":"unani-inauguration.jpg"},
+        {"year":"2013", "text":"Inauguration of Markaz Law College", "img":"inauguration-law-college.jpg"},
+        {"year":"2013", "text":"Key Handing over of Taiba Garden-Residential Apartments", "img":"thaiba-key-handing.jpg"},
+        {"year":"2013", "text":"Inauguration of Alif Global School", "img":"alif-inauguration.jpg"},
+        {"year":"2013", "text":"Inauguration of Tigris Valley Wellness Center", "img":"tigris-inauguration.jpg"},
+        {"year":"2013", "text":"Inauguration of Valencia Galleria-Exhibition Centre", "img":"valancia-galleria-inauguration.jpg"},
+        {"year":"2013", "text":"Inauguration of AIMER- Business School", "img":"aimer-inauguration.jpg"},
 
        
        
@@ -63,7 +63,7 @@ const OurPast = () => {
                         {/* <h1
                             className="mt-2 w-full text-center text-gray-600 font-extrabold text-2xl"
                             >{past.year}</h1> */}
-                        <p className="text-center leading-5 mt-4 ">
+                        <p className="text-center leading-5 mt-4 text-gray-500">
                         {past.text}
                         </p>
                     </div>

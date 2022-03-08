@@ -1,6 +1,6 @@
 import SocialIcons from "../SocialIcons"
 import styles from '../../styles/Home.module.css'
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 
 const FirstSection = () => {
     const TEXTS = [

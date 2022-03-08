@@ -19,16 +19,17 @@ const Blog = () => {
           .then(response => response.json())
           .then(data =>{
             if(data.status==="HasBlog"){
-              
-              let tempBlogs = [];
-              data.blogs.forEach((blg)=>{
-                if(blg.isFeatured=='1'){
+              let tempBlog = []
+              data.blogs.map((blg, index)=>{
+                
+                if(index===0){
                   setFeatured(blg);
                 }else{
-                  tempBlogs.push(blg);
+                  tempBlog.push(blg);
                 }
               })
-              setBlogs(tempBlogs);
+              setBlogs(tempBlog)
+              
             }
             else if(data.status==="EmptyBlog"){
               setBlogs([]);
@@ -109,7 +110,9 @@ router.push(`/blog/${featured.blog_link}`)
            ):(
              <span></span>
            )}
-               
+             
+              
+              
       <section className="grid md:grid-cols-2 xl:grid-cols-3 my-5 lg:my-10 md:mx-10 lg:mx-32 xl:mx-56 lg:gap-x-10 gap-y-10 ">
           {
               blogs.map(post=>(
@@ -167,7 +170,9 @@ router.push(`/blog/${post.blog_link}`)
        )
      }
      </section>
-
+    <div className="md:mx-10 lg:mx-32 xl:mx-56 mb-5">
+      <img src="/assets/img/pulse.jpg" alt="" className="rounded-lg" />
+    </div>
       <Footer/>
     </div>
   );
