@@ -29,6 +29,8 @@ useEffect(() => {
         { name: 'Blog', href: '/admin/blog', current: props.label=='Blog' },
         { name: 'Messages', href: '/admin/messages', current: props.label=='Messages' },
         { name: 'Career', href: '/admin/career', current: props.label=='Career' },
+        { name: 'Gallery', href: '/admin/gallery', current: props.label=='Gallery' },
+        { name: 'CityPulse', href: '/admin/citypulse', current: props.label=='CityPulse' },
       ]
   return (
     <div>

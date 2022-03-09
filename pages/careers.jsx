@@ -120,6 +120,7 @@ const applyJob = async (e) => {
                    <SingleInput name="email-address" label="Email" req={true}  onChange={(e) => setEmail(e.target.value)} />
                    <SingleInput name="phone" type="number" label="Phone number" req={true}  onChange={(e) => setPhone(e.target.value)} />
                    <SingleInput name="position" label="Which position(s) are you interested in? " req={true}  onChange={(e) => setPosition(e.target.value)} />
+                   
                    <SingleInput name="salary" type="number" label="Salary Expectation" req={true}  onChange={(e) => setSalary(e.target.value)} />
                    <SingleTextArea name="experience" label="Experience"  onChange={(e) => setExperience(e.target.value)} />
                    <SingleTextArea name="qualification" label="Qualification"  onChange={(e) => setQualification(e.target.value)} />

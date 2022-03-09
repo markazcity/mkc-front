@@ -11,8 +11,12 @@ import renderHTML from 'react-render-html';
 const Blog = () => {
   const router = useRouter();
   const DATA_URL = ROOT_URL+"blog.php?type=list";
+  const CITYPULSE_URL = ROOT_URL+"CityPulse/getCityPulse.php";
   const [blogs, setBlogs] = useState(null);
   const [featured, setFeatured] = useState(null);
+  const [cityPulse, setCityPulse] = useState(null);
+
+
   
       const getData = async () => {
           fetch(DATA_URL)
@@ -38,6 +42,22 @@ const Blog = () => {
               
             }
           });
+          //CITY PULSE
+          fetch(CITYPULSE_URL)
+          .then(response => response.json())
+          .then(data =>{
+            if(data.status==="success"){
+              setCityPulse(data.data);
+            }
+            else if(data.status==="empty"){
+              setCityPulse([]);
+            }else {
+              setError("Auth Error");
+              
+            }
+          });
+
+
         }
   
 
@@ -170,9 +190,77 @@ router.push(`/blog/${post.blog_link}`)
        )
      }
      </section>
-    <div className="md:mx-10 lg:mx-32 xl:mx-56 mb-5">
-      <img src="/assets/img/pulse.jpg" alt="" className="rounded-lg" />
-    </div>
+    <section>
+{/*
+-----------------------------------------------------------------------
+------------------------  CITYPULSE SECTION  --------------------------
+-----------------------------------------------------------------------
+
+*/}
+    <h1 className="text-5xl font-extrabold mb-5 text-center"
+                style={{
+                    color: "#69696D",
+                }}
+                data-aos="zoom-in"
+                >CITYPULSE</h1>
+    {
+       cityPulse!=null &&
+       cityPulse.length>0?(
+         <div>
+
+        
+              
+              
+      <section className="grid md:grid-cols-2 xl:grid-cols-3 my-5 lg:my-10 md:mx-10 lg:mx-32 xl:mx-56 lg:gap-x-10 gap-y-10 ">
+          {
+              cityPulse.map((post, index)=>(
+                  <a  key={index}
+                  className="blogItem mx-10 lg:mx-0 bg-gray-100 rounded-lg block cursor-pointer"
+                  data-aos="fade-up-right"
+                  data-aos-delay={index*50}
+                  href={ROOT_URL+'CityPulse/'+post.cp_fileLink}
+                  download
+                  >
+                      <div
+                  className="h-52 mb-4 rounded-t-lg"
+                  style={
+                   {
+                     background:`url('${ROOT_URL+post.cp_thumb}') no-repeat center center`,
+                      backgroundSize: "cover",
+                   }
+                    }
+                   
+                  ></div>
+                  <div className="mx-4 text-xl leading-5 ">{post.cp_name}</div>
+                  <div className="text-minigreen-600  rounded inline-block mt-2 mb-5 mx-4">Download</div>
+                  </a>
+              ))
+          }
+      </section>
+         </div>
+       ):(
+         <div  className="grid lg:grid-cols-2 xl:grid-cols-3 my-5 lg:my-10 xl:mx-64 gap-x-4 gap-y-10">
+           {
+             [1,2,3,4,5,6].map(e=>{
+               return (<div  key={e}
+                
+                className="mx-10 lg:mx-0 bg-gray-300 rounded-lg"
+                data-aos="fade-up-right"
+                
+                >
+                    <div
+                className="h-52 mb-4 "
+                
+                 
+                ></div>
+                <div className="mx-4 text-transparent leading-5 mb-5 ">Markaz Knowledge City</div>
+                </div>)
+             })
+           }
+         </div>
+       )
+     }
+    </section>
       <Footer/>
     </div>
   );

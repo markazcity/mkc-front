@@ -12,7 +12,8 @@ const Admin = () => {
     const menuItems = [
         {title:"View Blogs", icon:<RiPagesLine className={icoClass}/>, to:"/admin/blog"},
         {title:"New Blog", icon:<AiOutlineFileAdd className={icoClass}/>, to:"/admin/blog/new"},
-        {title:"CityPulse", icon:<BsBookHalf className={icoClass}/>, to:"/admin/blog/new"},
+        {title:"CityPulse", icon:<BsBookHalf className={icoClass}/>, to:"/admin/citypulse"},
+        {title:"Gallery", icon:<BsBookHalf className={icoClass}/>, to:"/admin/gallery"},
         {title:"Messages", icon:<BiMessageDetail className={icoClass}/>, to:"/admin/messages"},
         {title:"Career", icon:<BiBriefcase className={icoClass}/>, to:"/admin/career"},
     ];
