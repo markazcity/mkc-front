@@ -3,10 +3,12 @@ import Footer from "@/components/Footer/Footer";
 import Head from 'next/head'
 import { useState } from "react";
 import MenuBar from "@/components/NavMenu/Menu"
+import { useEffect } from "react";
 var qs = require('qs');
 
 const Carreers = () => {
   const URL = "https://api.markazcity.in/addJob.php";
+  const DATA_URL = "https://api.markazcity.in/getJobPositions.php";
 
 const [fullName, setFullName] = useState();
 const [email, setEmail] = useState();
@@ -18,7 +20,32 @@ const [qualification, setQualification] = useState();
 const [cover, setCover] = useState();
 
 const [error, setError] = useState(null);
+const [jobPos, setPos] = useState(null);
 
+
+
+
+const getJobPositions = async ()=>{
+        fetch(DATA_URL)
+        .then(response => response.json())
+        .then(data =>{
+
+          if(data.status==="success"){
+            setPos(data.data);
+          }
+          else if(data.status==="empty"){
+            setPos([]);
+          }else {
+            setError("Auth Error");
+            
+          }
+        });
+      
+}
+
+useEffect(() => {
+  getJobPositions();
+},[])
 
 const applyJob = async (e) => {
   fetch(URL,
@@ -88,7 +115,7 @@ const applyJob = async (e) => {
 
         <div className="md:grid md:grid-cols-12 bg-white shadow rounded-lg">
           <div className="mb-8 md:col-span-12 ">
-          <img src="/assets/img/hire.jpg" alt=""
+          <img src="https://api.markazcity.in/uploads/career_banner.jpg" alt=""
                     className="rounded-t"
                     style={{
                       width: "100%",
@@ -119,7 +146,40 @@ const applyJob = async (e) => {
                    <SingleInput name="full-name" label="Full Name" req={true} onChange={(e) => setFullName(e.target.value)} />
                    <SingleInput name="email-address" label="Email" req={true}  onChange={(e) => setEmail(e.target.value)} />
                    <SingleInput name="phone" type="number" label="Phone number" req={true}  onChange={(e) => setPhone(e.target.value)} />
-                   <SingleInput name="position" label="Which position(s) are you interested in? " req={true}  onChange={(e) => setPosition(e.target.value)} />
+
+                   {
+                     jobPos!=null?(
+                      
+                         <div className="col-span-full sm:col-span-6 my-2">
+  <label htmlFor="" 
+  className="flex text-sm font-medium text-gray-700 items-center">
+   Which position are you interested in? 
+    <span className="text-red-600 block ml-1"
+    >*</span>
+  </label>
+  <select 
+    name="position" 
+    id="position" 
+    onChange={(e) => setPosition(e.target.value)}
+    autoComplete={Math.random()}
+    className="mt-1 focus:ring-blue-500 focus:border-violet-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+    required
+  >
+     <option selected disabled>Select Position</option>
+{
+  jobPos.map((pos,index)=>{
+    return (
+      <option key={index} value={pos.jp_name}>{pos.jp_name}</option>
+    );
+  })
+}
+</select>
+</div> 
+                      
+                     ):(
+                       <span></span>
+                     )
+                   }
                    
                    <SingleInput name="salary" type="number" label="Salary Expectation" req={true}  onChange={(e) => setSalary(e.target.value)} />
                    <SingleTextArea name="experience" label="Experience"  onChange={(e) => setExperience(e.target.value)} />

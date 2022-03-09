@@ -17,7 +17,7 @@ const Health = () => {
     return (
         
         <div  data-aos="fade-up-right"
-        className="py-10"
+        className="pb-10"
       >
              <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center"
                 style={{
@@ -25,7 +25,7 @@ const Health = () => {
                 }}
                 data-aos="zoom-in"
                 >HEALTH</h1>
-                <br />
+               
                 <p className="mx-10 lg:mx-80 text-justify lg:text-center mb-10"
                 data-aos="fade-right">
                    </p>

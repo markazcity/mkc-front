@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css'
 import SwiperCore, {Autoplay} from 'swiper';
+import {BsArrowRight} from 'react-icons/bs'
 
 SwiperCore.use([Autoplay]);
 
@@ -71,6 +72,12 @@ const leaders = [
                   {leader.quote} <br /><br />
                   <span className="font-bold text-xl">{leader.name}</span> <br />
                   <span className="text-gray-500">{leader.position}</span>
+                  <br />
+                  <div className="flex justify-end">
+                  <BsArrowRight
+                  className="text-2xl text-gray-700 mt-5"
+                  />
+                  </div>
                 </div>
               </div>
            

@@ -1,8 +1,9 @@
 import AdminLayout from '@/components/Admin/Layout'
-import {BiMessageDetail, BiBriefcase} from 'react-icons/bi'
-import {RiPagesLine} from 'react-icons/ri'
+import {BiMessageDetail, BiBriefcase, BiEdit} from 'react-icons/bi'
+import {RiPagesLine,RiLuggageDepositLine} from 'react-icons/ri'
 import {AiOutlineFileAdd} from 'react-icons/ai'
 import {BsBookHalf} from 'react-icons/bs'
+import {HiOutlinePhotograph} from 'react-icons/hi'
 
 import Head from 'next/head'
 import {useRouter} from 'next/router'
@@ -13,9 +14,13 @@ const Admin = () => {
         {title:"View Blogs", icon:<RiPagesLine className={icoClass}/>, to:"/admin/blog"},
         {title:"New Blog", icon:<AiOutlineFileAdd className={icoClass}/>, to:"/admin/blog/new"},
         {title:"CityPulse", icon:<BsBookHalf className={icoClass}/>, to:"/admin/citypulse"},
-        {title:"Gallery", icon:<BsBookHalf className={icoClass}/>, to:"/admin/gallery"},
+        {title:"Gallery", icon:<HiOutlinePhotograph className={icoClass}/>, to:"/admin/gallery"},
         {title:"Messages", icon:<BiMessageDetail className={icoClass}/>, to:"/admin/messages"},
         {title:"Career", icon:<BiBriefcase className={icoClass}/>, to:"/admin/career"},
+         {title:"Customize Site", icon:<BiEdit className={icoClass}/>, to:"/admin/customize"},
+         {title:"Job Positions", icon:<RiLuggageDepositLine className={icoClass}/>, to:"/admin/career/positions"},
+
+
     ];
 
 
