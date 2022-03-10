@@ -208,6 +208,7 @@ const Education = () => {
 
             {/* PHONE SECTION */}
 
+
             <section className="grid md:grid-cols-2 xl:grid-cols-3 mx-10 lg:mx-32 3xl:mx-56">
               
    

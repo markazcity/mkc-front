@@ -33,6 +33,8 @@ const OurPast = () => {
                 </p>
                 {/* LISTS STARTS HERE */}
                 <div className="">
+
+
                 <Marquee 
                 gradient={false}
                 speed={30}

@@ -19,7 +19,7 @@ background:"url(/assets/img/residence.jpg)",
                  data-aos="fade-left"
                 >
                 Taiba Garden is a twenty acres residence space of lush greenery and joyous leisure. 
-                Of the large eco-friendly space, less is occupied by residential apartments and the rest of the whole area 
+    Of the large eco-friendly space, less is occupied by residential apartments and the rest of the whole area 
                 stand green with beauty. The beautiful and serene interiors can make the residents feel at home. 
                 Spacious living space, balconies that are open to the bosom of Mother Nature, and passages that ease 
                 our day-to-day activities all make the residents spellbound. The luxurious amenities like club house,
@@ -31,3 +31,14 @@ background:"url(/assets/img/residence.jpg)",
 }
  
 export default Residence;
+
+
+// INSERT INTO `webContents` (`wc_id`, `wc_title`, `wc_body`, `wc_image`, `wc_link`, `wc_category`, `wc_addedOn`) VALUES  <br />
+// {
+//     educationList.map(edu=>(
+//         <div>
+//             (NULL, '{edu.title}', '{edu.text}', '{edu.img}', '{edu.link}', 'agriculture', current_timestamp()), <br />
+//         </div>
+//     ))
+// }
+

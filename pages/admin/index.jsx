@@ -1,6 +1,6 @@
 import AdminLayout from '@/components/Admin/Layout'
 import {BiMessageDetail, BiBriefcase, BiEdit} from 'react-icons/bi'
-import {RiPagesLine,RiLuggageDepositLine} from 'react-icons/ri'
+import {RiPagesLine,RiLuggageDepositLine, RiFileEditLine} from 'react-icons/ri'
 import {AiOutlineFileAdd} from 'react-icons/ai'
 import {BsBookHalf} from 'react-icons/bs'
 import {HiOutlinePhotograph} from 'react-icons/hi'
@@ -18,6 +18,8 @@ const Admin = () => {
         {title:"Messages", icon:<BiMessageDetail className={icoClass}/>, to:"/admin/messages"},
         {title:"Career", icon:<BiBriefcase className={icoClass}/>, to:"/admin/career"},
          {title:"Customize Site", icon:<BiEdit className={icoClass}/>, to:"/admin/customize"},
+                  {title:"Edit Contents", icon:<RiFileEditLine className={icoClass}/>, to:"/admin/customize/contents"},
+
          {title:"Job Positions", icon:<RiLuggageDepositLine className={icoClass}/>, to:"/admin/career/positions"},
 
 
@@ -52,12 +54,12 @@ export const Singletem = (props)=>{
 
 
     return (
-        <div className="dashBox p-8 shadow-lg bg-gray-50 m-3 rounded-lg  border-2 border-minigreen-800"
+        <div className="dashBox p-4 shadow-lg bg-gray-50 m-3 rounded-lg  border-2 border-minigreen-800"
         onClick={()=>
             router.push(props.to)}
         >
             {props.icon}
-            <h1 className="text-2xl font-bold rounded-lg ">{props.title}</h1>
+            <h1 className="text-xl  rounded-lg text-gray-400">{props.title}</h1>
         </div>
     )
 }

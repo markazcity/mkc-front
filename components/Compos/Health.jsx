@@ -30,6 +30,9 @@ const Health = () => {
                 data-aos="fade-right">
                    </p>
 <div className="lg:mx-64 mx-10">
+
+
+
 {
     healthItems.map((health,index)=>(
         

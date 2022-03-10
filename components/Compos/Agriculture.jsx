@@ -25,6 +25,9 @@ const Agriculture = () => {
                 >AGRICULTURE</h1>
                 {/* LISTS STARTS HERE */}
                 <div className=" lg:mx-64">
+
+
+
             {
                 educationList.map((edu, index)=>(
                     <div className="my-4 mx-10 lg:m-0 bg-white component-container lg:flex" 
