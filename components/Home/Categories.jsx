@@ -44,7 +44,7 @@ const Categories = () => {
         style={{backgroundColor: "rgba(231, 232, 227,0.2)"}}
         className="py-8"
         >
-            <h2 className="text-3xl text-center font-extrabold my-5 text-minigreen-700">LIFE AT MKC</h2>
+            <h2 className="text-3xl text-center font-extrabold my-5 text-minigreen-700">ZONES</h2>
         <div className="px-10 xl:px-96"
         
         >

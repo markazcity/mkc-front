@@ -13,7 +13,7 @@ style={{background:"url('/assets/img/interlaced.png')",
     data-aos="fade-right"
     data-aos-delay="400"
     >MARKAZ KNOWLEDGE CITY</span> */}
-    <h2 className="font-extrabold py-2 text-4xl lg:text-6xl xl:text-8xl text-blue-800 gradient-text"
+    <h2 className="font-extrabold py-2 text-5xl lg:text-6xl xl:text-8xl text-blue-800 gradient-text"
      data-aos="fade-right"
      data-aos-delay="550"
     >A CITY OF <br/> NEW DREAMS</h2>

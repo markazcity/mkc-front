@@ -6,7 +6,6 @@ import MenuBar from "@/components/NavMenu/Menu"
 import FirstSection from "@/components/Home/FirstSection"
 import SecondSection from "@/components/Home/SecondSection"
 import SectorMarquee from "@/components/Home/SectorMarquee"
-import FourthSection from "@/components/Home/FourthSection"
 
 import Categories from "@/components/Home/Categories"
 

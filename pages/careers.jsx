@@ -115,7 +115,7 @@ const applyJob = async (e) => {
 
         <div className="md:grid md:grid-cols-12 bg-white shadow rounded-lg">
           <div className="mb-8 md:col-span-12 ">
-          <img src="https://api.markazcity.in/uploads/career_banner.jpg" alt=""
+          <img src="https://api.markazcity.in/siteAssets/career_banner.jpg" alt=""
                     className="rounded-t"
                     style={{
                       width: "100%",

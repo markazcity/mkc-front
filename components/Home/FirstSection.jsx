@@ -50,7 +50,7 @@ style={{ height: "100%", width: "100%", objectFit: "cover",
 }}
 
 >
-    <source src="/assets/home.mp4" type="video/mp4">
+    <source src="https://api.markazcity.in/siteAssets/home.mp4" type="video/mp4">
     </source>
 </video>
 
