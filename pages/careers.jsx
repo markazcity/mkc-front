@@ -45,7 +45,7 @@ const getJobPositions = async ()=>{
             setError("Auth Error");
             
           }
-        });
+        }).catch(err=>alert("Network Error"));
       
 }
 

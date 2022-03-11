@@ -1,10 +1,14 @@
 import AdminLayout from '@/components/Admin/Layout'
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+
 var qs = require('qs');
 
 const Admin = () => {
 
 const [error, setError] = useState(null);
+const router = useRouter();
+
 
     const DATA_URL = "https://api.markazcity.in/getJobPositions.php";
 const [jobPos, setPos] = useState(null);
@@ -33,6 +37,13 @@ useEffect(() => {
 
     return (
         <AdminLayout title="Job Positions"  label="Job Positions">
+
+<div className="flex justify-between">
+               <div></div>
+               <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+               onClick={() => router.push('/admin/blog/new')}
+               >New Position</button>
+           </div>
           {
               jobPos!=null?jobPos.length>0?(
                 <div>

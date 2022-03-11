@@ -84,7 +84,7 @@ const CityPulse = () => {
                                         
                                     
                                     <div
-                                key={blg.id}
+                                key={blg.cp_id}
                                 className=""
                                 >
                                     <span className="text-violet-700 text-xl font-bold  py-1 rounded inline-block my-1">
@@ -104,12 +104,18 @@ onClick={()=>{
 className="bg-violet-600 hover:bg-violet-700 text-white px-4 py-1 rounded my-2"
 >View in Site</button>
 <button
+onClick={()=>{
+    window.open(`/admin/citypulse/edit?id=${blg.cp_id}`, '_blank').focus();
+}    
+}
+className="bg-green-600 hover:bg-green-700 text-white px-4 py-1 rounded my-2 ml-3"
+>Edit</button>
+<button
 onClick={()=>setDeletePulse(true)
     
 }
 className="bg-red-600 hover:bg-red-700 text-white px-4 py-1 rounded my-2 ml-3"
 >Delete</button>
-
 </p>
 {deletePulse?(
     <DeleteCityPulse 

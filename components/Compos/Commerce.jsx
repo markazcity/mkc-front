@@ -29,7 +29,7 @@ const Commerce = () => {
     const colorChange = [0,3,4,7, 8]
     return (
         <div  style={{ backgroundColor: "#F8F9E9" }}  className="pb-20">
-            <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center py-10"
+            <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center  pt-7 pb-4"
                 style={{
                     color: "#69696D",
                 }}

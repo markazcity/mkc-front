@@ -1,0 +1,28 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+<loc>https://markazknowledgecity.com/</loc>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://markazknowledgecity.com/about</loc>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://markazknowledgecity.com/components</loc>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://markazknowledgecity.com/blog</loc>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://markazknowledgecity.com/career</loc>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://markazknowledgecity.com/contact</loc>
+<priority>0.8</priority>
+</url>
+</urlset>
