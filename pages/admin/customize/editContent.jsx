@@ -134,7 +134,7 @@ useEffect(() => {
 
 
     return (
-        <AdminLayout title="Edit Blog"  label="Blog">
+        <AdminLayout title="Edit Content"  label="Dashboard">
 <Head>
     <title>Edit Content | Markaz Knowledge City</title>
 </Head>
@@ -195,7 +195,9 @@ useEffect(() => {
             output.src = URL.createObjectURL(e.target.files[0]);
             setThumb(e.target.files[0])
         } } />  
-         <span className="text-red-600 text-sm pt-1 inline-block">Image ust be in <b>1000x800</b>px resolution.</span>      
+         <span className="text-red-600 text-sm pt-1 inline-block">Image ust be in 
+             {category=="residence"?<b> 1920x1080</b>:<b>  1000x800</b>}
+            px resolution.</span>      
              <br />
              <div className="flex justify-end">
              <button
@@ -206,7 +208,7 @@ useEffect(() => {
                      <img src="/assets/img/loading.gif" className="mx-4" style={{height:"30px"}} alt="" />
                  </span>
              ):(
-                 <span>Update Blog</span>
+                 <span>Update Content</span>
              )}</button>
              </div>
              <br /><br />

@@ -1,5 +1,6 @@
 import AdminLayout from '@/components/Admin/Layout'
 import { useEffect, useState } from 'react';
+import Head from 'next/head'
 var qs = require('qs');
 
 const Admin = () => {
@@ -46,6 +47,9 @@ useEffect(() => {
 
     return (
         <AdminLayout title="Messages" label="Messages">
+           <Head>
+                <title>Messages - Markaz Knowledge City</title>
+            </Head>
           {
               messages!=null?messages.length>0?(
                 <div>

@@ -63,147 +63,68 @@ const Content = () => {
            </div>
            <br /> <br />
 
-{/* 
-========================
-EDUCATION SECTION 
-========================
-*/}
-<section><h2 className="text-violet-700 font-bold text-3xl">EDUCATION</h2> <br />
-{education!=null?education.length>0?(<div  className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-{education.map((edu)=>
-                                (<div className=" bg-gray-100 rounded  shadow hover:shadow-md" key={edu.wc_id}
-                                onClick={()=>{
-                                    window.open(`/admin/customize/editContent?id=${edu.wc_id}`, '_blank').focus();
-                                }}
-                                >
-                                <div className=" h-40  rounded-t"
-                                style={{
-                                    background: 
-                                    edu.wc_image!=null && edu.wc_image.length>4?
-                                    `url(https://api.markazcity.in/webContents/uploads/${edu.wc_image})`:
-                                    `url(https://via.placeholder.com/350x150)`,
-                                    
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    backgroundRepeat: 'no-repeat',
-                                }}></div>
-                    <span className="text-violet-700  py-1 px-3 rounded inline-block my-1" 
-                   
-                    >
-                    {edu.wc_title} 
-                    </span></div>))}</div>):(<div>No Contents</div>):(<div>Loading..</div>)
-          }
-</section>
+{/* EDUCATION SECTION */}
+<EditSection
+dataset={education}
+title="EDUCATION"
+/>
 
-{/* 
-========================
-HEALTH SECTION 
-========================
-*/}
-<section className="mt-12"><h2 className="text-violet-700 font-bold text-3xl">HEALTH</h2> <br />
-{health!=null?health.length>0?(<div  className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-{health.map((edu)=>
-                                (<div className=" bg-gray-100 rounded  shadow hover:shadow-md" key={edu.wc_id}>
-                                <div className=" h-40  rounded-t"
-                                style={{
-                                    background: 
-                                    edu.wc_image!=null && edu.wc_image.length>4?
-                                    `url(https://api.markazcity.in/webContents/uploads/${edu.wc_image})`:
-                                    `url(https://via.placeholder.com/350x150)`,
-                                    
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    backgroundRepeat: 'no-repeat',
-                                }}></div>
-                    <span className="text-violet-700  py-1 px-3 rounded inline-block my-1">
-                    {edu.wc_title} 
-                    </span></div>))}</div>):(<div>No Contents</div>):(<div>Loading..</div>)
-          }
-</section>
+{/*HEALTH SECTION */}
+<EditSection
+dataset={health}
+title="HEALTH"
+/>
 
+{/*COMMERCE SECTION */}
+<EditSection
+dataset={commerce}
+title="COMMERCE"
+/>
 
-{/* 
-========================
-COMMERCE SECTION 
-========================
-*/}
-<section className="mt-12"><h2 className="text-violet-700 font-bold text-3xl">COMMERCE</h2> <br />
-{commerce!=null?commerce.length>0?(<div  className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-{commerce.map((edu)=>
-                                (<div className=" bg-gray-100 rounded  shadow hover:shadow-md" key={edu.wc_id}>
-                                <div className=" h-40  rounded-t"
-                                style={{
-                                    background: 
-                                    edu.wc_image!=null && edu.wc_image.length>4?
-                                    `url(https://api.markazcity.in/webContents/uploads/${edu.wc_image})`:
-                                    `url(https://via.placeholder.com/350x150)`,
-                                    
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    backgroundRepeat: 'no-repeat',
-                                }}></div>
-                    <span className="text-violet-700  py-1 px-3 rounded inline-block my-1">
-                    {edu.wc_title} 
-                    </span></div>))}</div>):(<div>No Contents</div>):(<div>Loading..</div>)
-          }
-</section>
+{/*AGRICULTURE SECTION*/}
+<EditSection
+dataset={agriculture}
+title="AGRICULTURE"
+/>
 
-
-{/* 
-========================
-AGRICULTURE SECTION 
-========================
-*/}
-<section className="mt-12"><h2 className="text-violet-700 font-bold text-3xl">AGRICULTURE</h2> <br />
-{agriculture!=null?agriculture.length>0?(<div  className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-{agriculture.map((edu)=>
-                                (<div className=" bg-gray-100 rounded  shadow hover:shadow-md" key={edu.wc_id}>
-                                <div className=" h-40  rounded-t"
-                                style={{
-                                    background: 
-                                    edu.wc_image!=null && edu.wc_image.length>4?
-                                    `url(https://api.markazcity.in/webContents/uploads/${edu.wc_image})`:
-                                    `url(https://via.placeholder.com/350x150)`,
-                                    
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    backgroundRepeat: 'no-repeat',
-                                }}></div>
-                    <span className="text-violet-700  py-1 px-3 rounded inline-block my-1">
-                    {edu.wc_title} 
-                    </span></div>))}</div>):(<div>No Contents</div>):(<div>Loading..</div>)
-          }
-</section>
-
-
-{/* 
-========================
-RESIDENCE SECTION 
-========================
-*/}
-<section className="mt-12"><h2 className="text-violet-700 font-bold text-3xl">RESIDENCE</h2> <br />
-{residence!=null?residence.length>0?(<div  className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-{residence.map((edu)=>
-                                (<div className=" bg-gray-100 rounded  shadow hover:shadow-md" key={edu.wc_id}>
-                                <div className=" h-40  rounded-t"
-                                style={{
-                                    background: 
-                                    edu.wc_image!=null && edu.wc_image.length>4?
-                                    `url(https://api.markazcity.in/webContents/uploads/${edu.wc_image})`:
-                                    `url(https://via.placeholder.com/350x150)`,
-                                    
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    backgroundRepeat: 'no-repeat',
-                                }}></div>
-                    <span className="text-violet-700  py-1 px-3 rounded inline-block my-1">
-                    {edu.wc_title} 
-                    </span></div>))}</div>):(<div>No Contents</div>):(<div>Loading..</div>)
-          }
-</section>
+{/*RESIDENCE SECTION*/}
+<EditSection
+dataset={residence}
+title="RESIDENCE"
+/>
 
         </AdminLayout>
     );
 }
  
 export default Content;
+
+
+export const EditSection = ({dataset, title})=>{
+    return (
+        <section className="mt-12"><h2 className="text-violet-700 font-bold text-3xl">{title}</h2> <br />
+{dataset!=null?dataset.length>0?(<div  className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+{dataset.map((item)=>
+                                (<div className=" bg-gray-100 rounded  shadow hover:shadow-md cursor-pointer" key={item.wc_id}
+                                onClick={()=>{
+                                    window.open(`/admin/customize/editContent?id=${item.wc_id}`, '_blank').focus();
+                                }}
+                                >
+                                <div className=" h-40  rounded-t"
+                                style={{
+                                    background: 
+                                    item.wc_image!=null && item.wc_image.length>4?
+                                    `url(https://api.markazcity.in/webContents/uploads/${item.wc_image})`:
+                                    `url(https://via.placeholder.com/350x150)`,
+                                    
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center',
+                                    backgroundRepeat: 'no-repeat',
+                                }}></div>
+                    <span className="text-violet-700  py-1 px-3 rounded inline-block my-1">
+                    {item.wc_title} 
+                    </span></div>))}</div>):(<div>No Contents</div>):(<div>Loading..</div>)
+          }
+</section>
+    )
+}
