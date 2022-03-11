@@ -4,6 +4,10 @@ var qs = require('qs');
 import {API_KEY} from '@/inc/Const'
 import axios from 'axios';
 import Head from 'next/head'
+import {ROOT_URL} from '@/inc/Const'
+
+
+
 const Customize = () => {
 
 const [careerLoading, setCareerLoading] = useState(false);
@@ -14,7 +18,7 @@ const [CCVideoLoading, setCCVideoLoading] = useState(false);
 
 
 async function submitCareerBanner(file){
-    const URL = "https://api.markazcity.in/siteAssets/uploadCareerBanner.php";
+    const URL = ROOT_URL+"siteAssets/uploadCareerBanner.php";
   const formData = new FormData();
   formData.append('api',API_KEY)
   formData.append('file',file)
@@ -37,7 +41,7 @@ async function submitCareerBanner(file){
 // HOME VIDEO UPLOADING
 
 async function uploadHomeVideo(file){
-    const URL = "https://api.markazcity.in/siteAssets/uploadHomeVideo.php";
+    const URL = ROOT_URL+"siteAssets/uploadHomeVideo.php";
   const formData = new FormData();
   formData.append('api',API_KEY)
   formData.append('file',file)
@@ -59,7 +63,7 @@ async function uploadHomeVideo(file){
 }
 //CC VIDEO UPLOAD
 async function uploadCCVideo(file){
-  const URL = "https://api.markazcity.in/siteAssets/uploadCCvideo.php";
+  const URL = ROOT_URL+"siteAssets/uploadCCvideo.php";
 const formData = new FormData();
 formData.append('api',API_KEY)
 formData.append('file',file)
@@ -116,7 +120,7 @@ formData.append('file',file)
         ):(
             <span></span>
         )}
-            <img src="https://api.markazcity.in/uploads/career_banner.jpg" className="rounded-lg mt-2"
+            <img src={ROOT_URL+"siteAssets/career_banner.jpg"} className="rounded-lg mt-2"
                         id="thumbPreview"
                         style={{height:"150px"}} a alt="" />
    </section>
@@ -146,7 +150,7 @@ formData.append('file',file)
         ):(
             <span></span>
         )}
-            <video src="https://api.markazcity.in/siteAssets/home.mp4" className="rounded-lg mt-4"
+            <video src={ROOT_URL+"siteAssets/home.mp4"} className="rounded-lg mt-4"
             id="homeVideo"
             style={{width:"300px"}}
             controls
@@ -181,7 +185,7 @@ formData.append('file',file)
         ):(
             <span></span>
         )}
-          <video src="https://api.markazcity.in/siteAssets/cc.mp4" 
+          <video src={ROOT_URL+"siteAssets/cc.mp4"} 
           id="ccVideo"
           className="rounded-lg mt-4"
             style={{width:"300px"}}

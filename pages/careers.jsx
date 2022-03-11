@@ -4,11 +4,15 @@ import Head from 'next/head'
 import { useState } from "react";
 import MenuBar from "@/components/NavMenu/Menu"
 import { useEffect } from "react";
+import {API_KEY} from '@/inc/Const'
+import {ROOT_URL} from '@/inc/Const'
+import axios from 'axios';
+
 var qs = require('qs');
 
 const Carreers = () => {
-  const URL = "https://api.markazcity.in/addJob.php";
-  const DATA_URL = "https://api.markazcity.in/getJobPositions.php";
+  const URL = ROOT_URL+"addJob.php";
+  const DATA_URL = ROOT_URL+"getJobPositions.php";
 
 const [fullName, setFullName] = useState();
 const [email, setEmail] = useState();
@@ -18,9 +22,11 @@ const [salary, setSalary] = useState();
 const [experience, setExperience] = useState();
 const [qualification, setQualification] = useState();
 const [cover, setCover] = useState();
+const [resume, setResume] = useState();
 
 const [error, setError] = useState(null);
 const [jobPos, setPos] = useState(null);
+const [loading, setLoading] = useState(false);
 
 
 
@@ -47,40 +53,74 @@ useEffect(() => {
   getJobPositions();
 },[])
 
+
+
+
+async function uploadResume(){
+  const UPLOAD_URL = ROOT_URL+"resume/uploadResume.php";
+const formData = new FormData();
+formData.append('api',API_KEY)
+formData.append('file',resume)
+return  await axios.post(UPLOAD_URL, formData,{
+    headers: {
+        'content-type': 'multipart/form-data'
+    }
+});
+}
+
+
+
+
+
+
 const applyJob = async (e) => {
-  fetch(URL,
-    {
-      method: 'POST', 
-      body:
-      qs.stringify({
-          "api": 'c24106bb093954188b2883e807d3bd8040cb96a9',
-          'name':fullName,
-          'email':email,
-          'phone':phone,
-'position':position,
-'salary':salary,
-'experience':experience,
-'qualification':qualification,
-'cover':cover,
-        })
-      ,
-      headers: { 
-        'Accept': 'application/json',
-        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-    }
-    }
-    )
-  .then(response => response.json())
-  .then(data =>{
-   
-    if(data.status==="success"){
-      setError("Thanks for applying. We will connect you soon.")
-      e.target.reset()
-    }
-    else {
-      setError("Something went wrong. Please try again later.");
+  setLoading(true);
+  uploadResume().then(res=>{
+    if(res.data.status=="success"){
+      let resumeLink = res.data.file;
+
+      fetch(URL,
+        {
+          method: 'POST', 
+          body:
+          qs.stringify({
+              "api": 'c24106bb093954188b2883e807d3bd8040cb96a9',
+              'name':fullName,
+              'email':email,
+              'phone':phone,
+    'position':position,
+    'salary':salary,
+    'experience':experience,
+    'qualification':qualification,
+    'cover':cover,
+    'resume':resumeLink
+            })
+          ,
+          headers: { 
+            'Accept': 'application/json',
+            "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        }
+        }
+        )
+      .then(response => response.json())
+      .then(data =>{
+        setLoading(false);
+        document.body.scrollTop = document.documentElement.scrollTop = 10;
+
+        if(data.status==="success"){
+          
+          setError("Thanks for applying. We will connect you soon.")
+          e.target.reset()
+        }
+        else {
+          setError("Something went wrong. Please try again later.");
+        }
+      });
+    }else{
+      alert("Error Uploading!")
     }
   });
+
 }
 
 
@@ -115,7 +155,7 @@ const applyJob = async (e) => {
 
         <div className="md:grid md:grid-cols-12 bg-white shadow rounded-lg">
           <div className="mb-8 md:col-span-12 ">
-          <img src="https://api.markazcity.in/siteAssets/career_banner.jpg" alt=""
+          <img src={ROOT_URL+"siteAssets/career_banner.jpg"} alt=""
                     className="rounded-t"
                     style={{
                       width: "100%",
@@ -185,6 +225,26 @@ const applyJob = async (e) => {
                    <SingleTextArea name="experience" label="Experience"  onChange={(e) => setExperience(e.target.value)} />
                    <SingleTextArea name="qualification" label="Qualification"  onChange={(e) => setQualification(e.target.value)} />
                    <SingleTextArea name="cover-letter" label="Short cover letter" row={4}  onChange={(e) => setCover(e.target.value)} />
+
+
+                   <div className="col-span-full sm:col-span-6 my-2">
+  <label htmlFor="Resume"
+  className="flex text-sm font-medium text-gray-700 items-center">
+   Upload Resume
+    <span className="text-red-600 block ml-1"
+    >*</span>
+  </label>
+  <input
+    type="file"
+    onChange={(e)=>{
+      setResume(e.target.files[0]);
+    }}
+    accept="application/pdf"
+    className="mt-1 focus:ring-blue-500 focus:border-violet-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+    required
+  />
+</div>
+
                       </div>
                    </section>
                        </div>
@@ -198,8 +258,17 @@ const applyJob = async (e) => {
                     type="submit"
                     className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                   >
-                    Submit Application
+               {loading?(
+                  <span>
+                  <img src="/assets/img/loading.gif" className="mx-4" style={{height:"30px"}} alt="" />
+              </span>
+               ):(
+                 <span> Submit Application</span>
+               )}    
                   </button>
+
+
+                
                 </div>
               </div>
             </form>

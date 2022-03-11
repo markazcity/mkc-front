@@ -1,5 +1,9 @@
 import Marquee from "react-fast-marquee";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.min.css'
+import SwiperCore, {Autoplay} from 'swiper';
 
+SwiperCore.use([Autoplay]);
 
 
 const OurPast = () => {
@@ -35,20 +39,41 @@ const OurPast = () => {
                 <div className="">
 
 
-                <Marquee 
+                {/* <Marquee 
                 gradient={false}
                 speed={30}
-                pauseOnHover={true}
-                >
+                pauseOnClick={true}
+                > */}
+                <Swiper
+    
+    loop={true}
+    speed={5000}
+    autoplay={{
+      "delay": 1,
+      "disableOnInteraction": false
+      
+    }}
+    slidesPerView={"auto"}
+    // breakpoints={{
+    //     640: {
+    //       slidesPerView: 2,
+         
+    //     },
+        
+    //     1024: {
+    //       slidesPerView: 4,
+    //     },
+    //   }}
+    
+  >
             {
                 pastList.map((past,index)=>(
-                   
-                    <div className="my-6 mx-10" key={index}
+                    <SwiperSlide key={index} className="max-w-lg">
+                    <div className="my-6 mx-10" 
                     data-aos="fade-up"
                     data-aos-delay={pastList.indexOf(past)*100}
-                    style={{
-                        maxWidth:"20rem",
-                    }}
+                   
+                    
                     
                     >
                         <center>
@@ -64,17 +89,19 @@ const OurPast = () => {
                         >
                            
                         </div>
+                        <p className="text-center leading-5 mt-4 text-gray-500 flex justify-center w-72">
+                        {past.text}
+                        </p>
                         </center>
                         {/* <h1
                             className="mt-2 w-full text-center text-gray-600 font-extrabold text-2xl"
                             >{past.year}</h1> */}
-                        <p className="text-center leading-5 mt-4 text-gray-500">
-                        {past.text}
-                        </p>
-                    </div>
+                       
+                    </div></SwiperSlide>
                 ))
             } 
-               </Marquee>
+            </Swiper>
+               {/* </Marquee> */}
             </div>
         </div>
     );

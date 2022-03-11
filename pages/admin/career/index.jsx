@@ -1,12 +1,14 @@
 import AdminLayout from '@/components/Admin/Layout'
 import { useEffect, useState } from 'react';
+import {ROOT_URL} from '@/inc/Const'
+
 var qs = require('qs');
 
 const Admin = () => {
 
 const [error, setError] = useState(null);
 
-    const DATA_URL = "https://api.markazcity.in/jobapplications.php";
+    const DATA_URL = ROOT_URL+"jobapplications.php";
 const [jobApplics, setApplics] = useState(null);
     const getData = async () => {
         fetch(DATA_URL,
@@ -68,7 +70,12 @@ useEffect(() => {
 <div><span className="text-gray-500">Experience: </span> <p>{job.cr_experience}</p></div>
 <div><span className="text-gray-500">Qualification: </span> <p>{job.cr_qualification}</p></div>
 <div><span className="text-gray-500">Cover Letter: </span> <p>{job.cr_cover_letter}</p></div>
-
+<button
+className="bg-violet-600 hover:bg-violet-700 text-white py-2 px-3 rounded mt-2"
+onClick={()=>{
+  window.open(ROOT_URL+`resume/${job.cr_cv_link}`, '_blank').focus();
+}}
+>Download Resume</button>
                                    
                                    
 
