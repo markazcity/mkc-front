@@ -46,6 +46,9 @@ const OurPast = () => {
                     <div className="my-6 mx-10" key={index}
                     data-aos="fade-up"
                     data-aos-delay={pastList.indexOf(past)*100}
+                    style={{
+                        maxWidth:"20rem",
+                    }}
                     
                     >
                         <center>

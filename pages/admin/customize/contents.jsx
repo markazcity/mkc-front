@@ -71,7 +71,11 @@ EDUCATION SECTION
 <section><h2 className="text-violet-700 font-bold text-3xl">EDUCATION</h2> <br />
 {education!=null?education.length>0?(<div  className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
 {education.map((edu)=>
-                                (<div className=" bg-gray-100 rounded  shadow hover:shadow-md" key={edu.wc_id}>
+                                (<div className=" bg-gray-100 rounded  shadow hover:shadow-md" key={edu.wc_id}
+                                onClick={()=>{
+                                    window.open(`/admin/customize/editContent?id=${edu.wc_id}`, '_blank').focus();
+                                }}
+                                >
                                 <div className=" h-40  rounded-t"
                                 style={{
                                     background: 
