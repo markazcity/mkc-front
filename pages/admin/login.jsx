@@ -4,6 +4,7 @@ import Cookies from 'js-cookie'
 import PropagateLoader from "react-spinners/PropagateLoader";
 import { css } from "@emotion/react";
 import Head from 'next/head'
+import Dialog from '@/components/Admin/Dialog'
 
 var qs = require('qs');
 
@@ -15,7 +16,7 @@ const Login = () => {
   const [logging, setLogging] = useState(false);
   const LOGIN_URL = "https://api.markazcity.in/login.php";
   const DEV_LOGIN_URL = "http://localhost/mkc/api/login.php";
-
+const [connError, setConnError] = useState(false);
   const router = useRouter();
 
 useEffect(() => {
@@ -55,6 +56,9 @@ useEffect(() => {
       router.push('/admin');
       
       }
+    }).catch(e=>{
+      setLogging(false);
+      setConnError(true)
     });
   }
 
@@ -168,6 +172,18 @@ useEffect(() => {
         </form>
       </div>
     </div>
+
+    {
+      connError?(<Dialog
+        onClose={() =>setConnError(false)}
+        >
+          <center>Please check your connection!</center>
+        </Dialog>
+          
+          ):(
+        <span></span>
+      )
+    }
     </div>);
 }
  

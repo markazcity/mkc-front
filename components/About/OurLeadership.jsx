@@ -33,7 +33,7 @@ const leaders = [
         <div 
         className="pt-10"
         style={{
-            backgroundColor:"#E7E9E4"
+            backgroundColor:"#C6CABF"
         }}
         >
              <h1 className="text-2xl lg:text-5xl font-extrabold mb-5 text-center"
@@ -49,6 +49,7 @@ const leaders = [
     spaceBetween={0}
     slidesPerView={1}
     loop={true}
+    speed={2000}
     autoplay={{
       "delay": 3000,
       "disableOnInteraction": false
@@ -62,7 +63,7 @@ const leaders = [
           <SwiperSlide key={index}>
               <div className="flex flex-col lg:flex-row items-center justify-center px-10 lg:px-20 2xl:px-32"
               style={{
-                backgroundColor:"#E7E9E4"
+                backgroundColor:"#C6CABF"
               }}
               >
                 <div><img src={`/assets/img/${leader.img}`} 

@@ -1,5 +1,3 @@
-
-
 import AdminLayout from '@/components/Admin/Layout'
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -40,7 +38,7 @@ const Content = () => {
                 setError("Auth Error");
                 
               }
-            });
+            }).catch(err=>alert("Network Error!"));
           }
     
     

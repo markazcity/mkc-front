@@ -58,9 +58,10 @@ const SectorMarquee = () => {
     const [bgImg, setBgImg] = useState('/assets/img/noisew.png');
 
     return (<div 
-        className="relative"
+        className="relative "
         style={{width:"100vw", 
         minWidth:"100vw",
+        maxWidth:"100vw",
         height:"100%",
     }}
         >

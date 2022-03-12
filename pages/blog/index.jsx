@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import {ROOT_URL} from '@/inc/Const'
 import renderHTML from 'react-render-html';
+import Dialog from '@/components/Admin/Dialog'
 
 
 const Blog = () => {
@@ -15,6 +16,8 @@ const Blog = () => {
   const [blogs, setBlogs] = useState(null);
   const [featured, setFeatured] = useState(null);
   const [cityPulse, setCityPulse] = useState(null);
+
+  const [connError, setConnError] = useState(false);
 
 
   
@@ -41,6 +44,8 @@ const Blog = () => {
               setError("Auth Error");
               
             }
+          }).catch(e=>{
+            setConnError(true)
           });
           //CITY PULSE
           fetch(CITYPULSE_URL)
@@ -55,7 +60,7 @@ const Blog = () => {
               setError("Auth Error");
               
             }
-          });
+          }).catch(er=>console.log('Network Error'));;
 
 
         }
@@ -97,7 +102,7 @@ useEffect(() => {
          <div>
 
            {featured!=null?(
-               <section className="mb-10 lg:px-64 p-10" 
+               <section className="mb-10 lg:px-56 p-10" 
                
                
                style={{ backgroundColor: "#F8FAF8" }}>
@@ -260,7 +265,17 @@ router.push(`/blog/${post.blog_link}`)
          </div>
        )
      }
-    </section>
+    </section>{
+      connError?(<Dialog
+        onClose={() =>setConnError(false)}
+        >
+          <center>Please check your connection!</center>
+        </Dialog>
+          
+          ):(
+        <span></span>
+      )
+    }
       <Footer/>
     </div>
   );

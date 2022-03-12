@@ -68,7 +68,11 @@ const OurPast = () => {
   >
             {
                 pastList.map((past,index)=>(
-                    <SwiperSlide key={index} className="max-w-lg">
+                    <SwiperSlide key={index}
+                    style={{
+                        maxWidth:"340px"
+                    }}
+                    >
                     <div className="my-6 mx-10" 
                     data-aos="fade-up"
                     data-aos-delay={pastList.indexOf(past)*100}

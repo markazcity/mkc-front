@@ -1,4 +1,4 @@
-const Residence = () => {
+const Residence = (props) => {
     return (<div
     className="flex justify-center items-center"
     style={{

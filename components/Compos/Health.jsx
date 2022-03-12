@@ -1,15 +1,18 @@
-const Health = () => {
+import {ROOT_URL} from '@/inc/Const'
+
+
+const Health = (props) => {
     const healthItems = [
-        {"title":"MIHRAS",
-"text":"MIHRAS aims to provide excellent medical care at affordable cost. It also intends to foster a scientific health-culture among people by teaching lessons of healthcare and immunity along with prescribing remedies for different types of illnesses. Markaz Knowledge City has hired well qualified and experienced medical practitioners for the treatment and medication at the hospital.",
-"img":"multi.jpg",
-"link":"http://www.habitusschool.in/"
+        {"wc_title":"MIHRAS",
+"wc_body":"MIHRAS aims to provide excellent medical care at affordable cost. It also intends to foster a scientific health-culture among people by teaching lessons of healthcare and immunity along with prescribing remedies for different types of illnesses. Markaz Knowledge City has hired well qualified and experienced medical practitioners for the treatment and medication at the hospital.",
+"wc_image":"multi.jpg",
+"wc_link":"http://www.habitusschool.in/"
 } ,
         {
-            "title":"Tigris Valley",
-            "text":"Tigris Valley is to promote a better lifestyle with traditional wellness concepts. To make people healthier and more energetic, Tigris Valley has set up many facilities inspired by different medical traditions from around the globe. ",
-    "img":"tigris.jpg",
-    "link":"http://www.habitusschool.in/"
+            "wc_title":"Tigris Valley",
+            "wc_body":"Tigris Valley is to promote a better lifestyle with traditional wellness concepts. To make people healthier and more energetic, Tigris Valley has set up many facilities inspired by different medical traditions from around the globe. ",
+    "wc_image":"tigris.jpg",
+    "wc_link":"http://www.habitusschool.in/"
 
     },
        
@@ -29,15 +32,15 @@ const Health = () => {
                 <p className="mx-10 lg:mx-80 text-justify lg:text-center mb-10"
                 data-aos="fade-right">
                    </p>
-<div className="lg:mx-64 mx-10">
+<div className="lg:mx-36 3xl:mx-64 mx-10">
 
 
 
 {
-    healthItems.map((health,index)=>(
+    props.dataset.map((health,index)=>(
         
         <div 
-        key={health.title}
+        key={health.wc_title}
         className="block lg:flex"
         data-aos="fade-up-right"
         data-aos-delay={index*50}
@@ -45,7 +48,7 @@ const Health = () => {
             <div className={ index%2==0?"h-72 lg:h-96  lg:w-6/12 ":"h-72 lg:h-96 lg:w-6/12  order-2"}>
             <div
             className="h-full"
-            style={{background:`url('/assets/img/components/${health.img}')`,
+            style={{background:`url('${ROOT_URL}webContents/uploads/${health.wc_image}')`,
         backgroundSize:'cover'
         }}
             ></div></div>
@@ -53,12 +56,12 @@ const Health = () => {
 
                <div className="lg:w-6/12 px-10 py-10">
                <h1 className="font-extrabold text-2xl mb-2  text-black opacity-80">
-                   {health.title.toUpperCase() }</h1> 
-                   <p className="text-gray-500">{health.text}</p>
+                   {health.wc_title.toUpperCase() }</h1> 
+                   <p className="text-gray-500">{health.wc_body}</p>
                    <div className="know-more  mt-4 py-2 inline-block cursor-pointer"
                         onClick={
                             ()=>{
-                                window.open(edu.link, '_blank')
+                                window.open(edu.wc_link, '_blank')
                             }
                         }
                         > 

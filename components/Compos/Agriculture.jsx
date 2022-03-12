@@ -1,4 +1,7 @@
-const Agriculture = () => {
+import {ROOT_URL} from '@/inc/Const'
+
+
+const Agriculture = (props) => {
     const educationList = [
         {"title":"Mazra", 
         "text":"MAZRA is an integrated project that purposes to regain the agricultural heredity of Kerala. MAZRA aims several scientific projects under the supervision of experts, cooperating with the different projects and schemes of various governmental and non-governmental bodies. MAZRA has designed several projects blending the conventional forms of agricultural and animal husbandry with the modern technology. ", 
@@ -24,12 +27,12 @@ const Agriculture = () => {
                 data-aos="zoom-in"
                 >AGRICULTURE</h1>
                 {/* LISTS STARTS HERE */}
-                <div className=" lg:mx-64">
+                <div className="lg:mx-32 3xl:mx-64">
 
 
 
             {
-                educationList.map((edu, index)=>(
+                props.dataset.map((edu, index)=>(
                     <div className="my-4 mx-10 lg:m-0 bg-white component-container lg:flex" 
                     key={index}
                     data-aos="fade-up"
@@ -37,10 +40,10 @@ const Agriculture = () => {
                     >
                        
 
-                        <div className={ index%2==0?"h-72  lg:h-96  lg:w-6/12 comp-image":"h-72 lg:h-96 lg:w-6/12  order-2"}>
+                        <div className={ index%2==0?"h-72  lg:h-96  lg:w-6/12 comp-image":"h-72 xl:h-96 lg:w-6/12  order-2"}>
             <div
             className="h-full  comp-image"
-            style={{background:`url('/assets/img/components/${edu.img}')`,
+            style={{background:`url('${ROOT_URL}webContents/uploads/${edu.wc_image}')`,
         backgroundSize:'cover'
         }}
             ></div></div>
@@ -52,17 +55,17 @@ const Agriculture = () => {
 
                             <h1
                             className={` font-extrabold text-2xl  py-4 lg:pt-4 text-gray-600
-                            ${edu.title.length>24?" lg:pb-0":""}`
+                            ${edu.wc_title.length>24?" lg:pb-0":""}`
                         }
                            // style={{color:"#69696D"}}
-                            >{edu.title.toUpperCase() }</h1>
+                            >{edu.wc_title.toUpperCase() }</h1>
                             <p className="leading-5 text-gray-500">
-                        {edu.text}
+                        {edu.wc_body}
                         </p>
                         <div className="know-more  mt-4 py-2 inline-block cursor-pointer"
                         onClick={
                             ()=>{
-                                window.open(edu.link, '_blank')
+                                window.open(edu.wc_link, '_blank')
                             }
                         }
                         >

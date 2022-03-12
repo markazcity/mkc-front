@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import {API_KEY} from '@/inc/Const'
 import {ROOT_URL} from '@/inc/Const'
 import axios from 'axios';
+import Dialog from '@/components/Admin/Dialog'
 
 var qs = require('qs');
 
@@ -28,6 +29,7 @@ const [error, setError] = useState(null);
 const [jobPos, setPos] = useState(null);
 const [loading, setLoading] = useState(false);
 
+const [connError, setConnError] = useState(false);
 
 
 
@@ -45,7 +47,7 @@ const getJobPositions = async ()=>{
             setError("Auth Error");
             
           }
-        }).catch(err=>alert("Network Error"));
+        }).catch(err=>setConnError(true));
       
 }
 
@@ -65,6 +67,9 @@ return  await axios.post(UPLOAD_URL, formData,{
     headers: {
         'content-type': 'multipart/form-data'
     }
+}).catch(e=>{
+  setLoading(false);
+  setConnError(true)
 });
 }
 
@@ -115,11 +120,17 @@ const applyJob = async (e) => {
         else {
           setError("Something went wrong. Please try again later.");
         }
+      }).catch(e=>{
+        setLoading(false);
+        setConnError(true)
       });
     }else{
       alert("Error Uploading!")
     }
-  });
+  }).catch(e=>{
+    setLoading(false);
+    setConnError(true)
+  });;
 
 }
 
@@ -287,7 +298,17 @@ const applyJob = async (e) => {
       </section>
       
      <div className="h-36"></div>
-   
+     {
+      connError?(<Dialog
+        onClose={() =>setConnError(false)}
+        >
+          <center>Please check your connection!</center>
+        </Dialog>
+          
+          ):(
+        <span></span>
+      )
+    }
     <Footer/>
     </div>
   );
