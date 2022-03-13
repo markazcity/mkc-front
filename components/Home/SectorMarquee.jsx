@@ -27,9 +27,9 @@ const SectorMarquee = () => {
 
 
     const sectors = [
-{title:"Education",icon:<BiBookAlt style={{height:"30px", width:"30px"}}/>, link:"/comp/education",
+{title:"Education",icon:<BiBookAlt style={{height:"30px", width:"30px"}}/>, link:null,
 },
-{title:"Health",icon:<RiMentalHealthLine style={{height:"30px", width:"30px"}}/>, link:"/comp/health",
+{title:"Health",icon:<RiMentalHealthLine style={{height:"30px", width:"30px"}}/>, link:null,
 },
 {title:"Tourism",icon:<GiPalmTree style={{height:"30px", width:"30px"}}/>, link:null,
 },
