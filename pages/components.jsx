@@ -23,7 +23,8 @@ export async function getStaticProps () {
   return {
     props: {
       data:content
-    }
+    },
+    revalidate: 3600,
   }
 }
 
