@@ -95,7 +95,7 @@ useEffect(() => {
                 <div>
                     {
                         jobPos.map((pos)=>{
-                            return  jobPos.length>1?
+                            return  jobPos.length>0?
                             (<div key={pos.jp_id}>
                                 <div
                                 
