@@ -223,7 +223,7 @@ router.push(`/blog/${post.blog_link}`)
                   className="blogItem mx-10 lg:mx-0 bg-gray-100 rounded-lg block cursor-pointer"
                   data-aos="fade-up-right"
                   data-aos-delay={index*50}
-                  href={ROOT_URL+'CityPulse/'+post.cp_fileLink}
+                  onClick={()=>window.open(ROOT_URL+'CityPulse/'+post.cp_fileLink)}
                   download
                   >
                       <div

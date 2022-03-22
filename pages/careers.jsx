@@ -26,7 +26,7 @@ export async function getStaticProps () {
     props: {
       jobPositions:content
     },
-    revalidate: 3600,
+    revalidate: 60,
   }
 }
 
@@ -59,7 +59,6 @@ const [connError, setConnError] = useState(false);
 useEffect(() => {
   if(jobPositions!=null){
     setPos(jobPositions.data)
-    console.log(jobPositions);
   }else{
     console.log("Heyy.. its empty");
   }
