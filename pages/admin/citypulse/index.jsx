@@ -12,7 +12,8 @@ const CityPulse = () => {
     const router = useRouter();
 
     const [error, setError] = useState(null);
-        const [deletePulse, setDeletePulse] = useState(false);
+    const [deletePulse, setDeletePulse] = useState(false);
+    const [deleteId, setDeleteId] = useState(null);
 
     const DATA_URL = "https://api.markazcity.in/CityPulse/getCityPulse.php";
     const [dataset, setCityPulses] = useState(null);
@@ -111,19 +112,16 @@ onClick={()=>{
 className="bg-green-600 hover:bg-green-700 text-white px-4 py-1 rounded my-2 ml-3"
 >Edit</button>
 <button
-onClick={()=>setDeletePulse(true)
+onClick={()=>{
+    setDeletePulse(true)
+    setDeleteId(blg.cp_id)
+}
     
 }
 className="bg-red-600 hover:bg-red-700 text-white px-4 py-1 rounded my-2 ml-3"
 >Delete</button>
 </p>
-{deletePulse?(
-    <DeleteCityPulse 
-    id={blg.cp_id}
-    onClose={()=>setDeletePulse(false)}
-    onSuccess = {()=>getData()}
-    ></DeleteCityPulse>
-):(<span></span>)}
+
                                 </div>
                                 </section>
                             ):(<span></span>)
@@ -138,6 +136,16 @@ className="bg-red-600 hover:bg-red-700 text-white px-4 py-1 rounded my-2 ml-3"
           }
 </section>
 
+    <DeleteCityPulse 
+    open={deletePulse}
+    id={deleteId}
+    onClose={()=>{
+        setDeletePulse(false)
+        setDeleteId(null)
+    }}
+    onSuccess = {()=>getData()}
+    />
+
 
         </AdminLayout>
     );
@@ -150,6 +158,7 @@ export const DeleteCityPulse = (props)=>{
     const router = useRouter();
     return (
         <Dialog
+        open={props.open}
     onClose={() =>props.onClose()}
     >
         <div className="py-6 px-4">

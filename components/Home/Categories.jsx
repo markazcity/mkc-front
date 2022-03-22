@@ -50,7 +50,13 @@ const Categories = () => {
         >
              {/* <h2 className="font-semibold py-2 text-3xl text-gray-600">THE LIFE OF MKC</h2> */}
 </div>
+
+
+
+
+
 <div className="grid md:grid-cols-2 xl:grid-cols-3 mx-5 lg:mx-32 3xl:mx-64 gap-y-1">
+
     {
         items.map(item=>
             <div
@@ -90,6 +96,9 @@ const Categories = () => {
     }
 
 </div>
+
+
+
 </div>
     );
 }

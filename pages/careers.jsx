@@ -11,9 +11,34 @@ import Dialog from '@/components/Admin/Dialog'
 
 var qs = require('qs');
 
-const Carreers = () => {
+
+const DATA_URL = ROOT_URL+"jobPositions.php";
+
+const getData = async () => {
+
+ return fetch(DATA_URL)
+  .then(response => response.json());
+}
+
+export async function getStaticProps () {
+  const content = await getData()
+  return {
+    props: {
+      jobPositions:content
+    },
+    revalidate: 3600,
+  }
+}
+
+
+
+
+
+
+
+
+const Carreers = ({jobPositions}) => {
   const URL = ROOT_URL+"addJob.php";
-  const DATA_URL = ROOT_URL+"getJobPositions.php";
 
 const [fullName, setFullName] = useState();
 const [email, setEmail] = useState();
@@ -31,29 +56,36 @@ const [loading, setLoading] = useState(false);
 
 const [connError, setConnError] = useState(false);
 
-
-
-const getJobPositions = async ()=>{
-        fetch(DATA_URL)
-        .then(response => response.json())
-        .then(data =>{
-
-          if(data.status==="success"){
-            setPos(data.data);
-          }
-          else if(data.status==="empty"){
-            setPos([]);
-          }else {
-            setError("Auth Error");
-            
-          }
-        }).catch(err=>setConnError(true));
-      
-}
-
 useEffect(() => {
-  getJobPositions();
-},[])
+  if(jobPositions!=null){
+    setPos(jobPositions.data)
+    console.log(jobPositions);
+  }else{
+    console.log("Heyy.. its empty");
+  }
+},[jobPositions])
+
+// const getJobPositions = async ()=>{
+//         fetch(DATA_URL)
+//         .then(response => response.json())
+//         .then(data =>{
+
+//           if(data.status==="available"){
+//             setPos(data.data);
+//           }
+//           else if(data.status==="empty"){
+//             setPos([]);
+//           }else {
+//             setError("Auth Error");
+            
+//           }
+//         }).catch(err=>setConnError(true));
+      
+// }
+
+// useEffect(() => {
+//   getJobPositions();
+// },[])
 
 
 
