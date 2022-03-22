@@ -13,18 +13,25 @@ var qs = require('qs');
 
 
 const DATA_URL = ROOT_URL+"jobPositions.php";
+const BANNER_URL = ROOT_URL+"siteAssets/getCareerBanner.php";
 
 const getData = async () => {
-
- return fetch(DATA_URL)
+let data = await
+  fetch(DATA_URL)
   .then(response => response.json());
+  let banner = await fetch(BANNER_URL)
+  .then(response => response.json());
+  return {
+    data:data,
+    banner:banner
+  }
 }
 
 export async function getStaticProps () {
   const content = await getData()
   return {
     props: {
-      jobPositions:content
+      data:content
     },
     revalidate: 60,
   }
@@ -37,7 +44,7 @@ export async function getStaticProps () {
 
 
 
-const Carreers = ({jobPositions}) => {
+const Carreers = ({data}) => {
   const URL = ROOT_URL+"addJob.php";
 
 const [fullName, setFullName] = useState();
@@ -55,36 +62,18 @@ const [jobPos, setPos] = useState(null);
 const [loading, setLoading] = useState(false);
 
 const [connError, setConnError] = useState(false);
+const [banner, setBanner] = useState(null);
 
 useEffect(() => {
-  if(jobPositions!=null){
-    setPos(jobPositions.data)
+  if(data!=null){
+    setPos(data.data.data)
+    setBanner(data.banner.image);
   }else{
     console.log("Heyy.. its empty");
   }
-},[jobPositions])
+},[data])
 
-// const getJobPositions = async ()=>{
-//         fetch(DATA_URL)
-//         .then(response => response.json())
-//         .then(data =>{
 
-//           if(data.status==="available"){
-//             setPos(data.data);
-//           }
-//           else if(data.status==="empty"){
-//             setPos([]);
-//           }else {
-//             setError("Auth Error");
-            
-//           }
-//         }).catch(err=>setConnError(true));
-      
-// }
-
-// useEffect(() => {
-//   getJobPositions();
-// },[])
 
 
 
@@ -197,7 +186,7 @@ const applyJob = async (e) => {
 
         <div className="md:grid md:grid-cols-12 bg-white shadow rounded-lg">
           <div className="mb-8 md:col-span-12 ">
-          <img src={ROOT_URL+"siteAssets/career_banner.jpg"} alt=""
+          <img src={ROOT_URL+"siteAssets/"+banner??""} alt=""
                     className="rounded-t"
                     style={{
                       width: "100%",

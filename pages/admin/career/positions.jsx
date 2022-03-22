@@ -58,7 +58,6 @@ const getData = async () => {
           })
             )
           .then( (response)=> {
-              console.log(response.data);
             if(response.data.status=="success"){
                 toast.success("Job position updated!")
             }
@@ -195,6 +194,7 @@ getData()
 export default Admin;
 
 export const DeletePosition = (props)=>{
+    const [deleting, setDeleting] = useState(false);
 
     function  deleteItem(id){
         axios.post(DATA_URL, qs.stringify({
@@ -205,7 +205,7 @@ export const DeletePosition = (props)=>{
           })
             )
           .then( (response)=> {
-             
+            setDeleting(false)
             if(response.data.status=="success"){
                 toast.success("Job position deleted!");
                 props.onClose()
@@ -220,7 +220,6 @@ export const DeletePosition = (props)=>{
 
 
 
-    const [deleting, setDeleting] = useState(false);
     return (
         <Dialog
         open={props.open}
@@ -263,7 +262,7 @@ export const NewPosition = (props)=>{
           })
             )
           .then( (response)=> {
-             
+            setAdding(false);
             if(response.data.status=="success"){
                 toast.success("Job position added!");
                 props.onClose()

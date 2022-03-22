@@ -17,9 +17,10 @@ const Admin = () => {
         {title:"Gallery", icon:<HiOutlinePhotograph className={icoClass}/>, to:"/admin/gallery"},
         {title:"Messages", icon:<BiMessageDetail className={icoClass}/>, to:"/admin/messages"},
         {title:"Career", icon:<BiBriefcase className={icoClass}/>, to:"/admin/career"},
+        {title:"Job Positions", icon:<RiLuggageDepositLine className={icoClass}/>, to:"/admin/career/positions"},
          {title:"Customize Site", icon:<BiEdit className={icoClass}/>, to:"/admin/customize"},
           {title:"Edit Contents", icon:<RiFileEditLine className={icoClass}/>, to:"/admin/customize/contents"},
-         {title:"Job Positions", icon:<RiLuggageDepositLine className={icoClass}/>, to:"/admin/career/positions"},
+       
          {title:"Edit Homepage", icon:<BiHomeAlt className={icoClass}/>, to:"/admin/customize/home"},
 
 

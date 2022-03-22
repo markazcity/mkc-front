@@ -6,17 +6,47 @@ import Who from "@/components/About/Who";
 import Footer from "@/components/Footer/Footer";
 import MenuBar from "@/components/NavMenu/Menu"
 import Head from 'next/head'
+import {ROOT_URL} from '@/inc/Const'
+import { useEffect, useState } from "react";
 
-const About = () => {
 
-  const menu = 
-  [
-  {name:"Home", icon:"", to:"/"},
-  {name:"Who We Are", icon:"", to:"#who"},
-  {name:"Our Past", icon:"", to:"#past"},
-  {name:"Our Philosophy", icon:"", to:"#philosophy"},
-  {name:"Our Leadership", icon:"", to:"#leadership"},
-  ];
+const getData = async () => {
+  const DATA_URL = ROOT_URL+"webContents/content.php";
+
+ return fetch(DATA_URL)
+  .then(response => response.json());
+}
+
+export async function getStaticProps () {
+  const content = await getData()
+  return {
+    props: {
+      data:content
+    },
+    revalidate: 300,
+  }
+}
+
+
+
+
+const About = ({data}) => {
+
+  const [who, setWho] = useState(true);
+  const [philosophy, setPhilosophy] = useState(true);
+  const [journey, setJourney] = useState(true);
+  const [leadership, setLeadership] = useState(true);
+
+
+  useEffect(() => {
+    if(data!=null){
+      setWho(data.data.filter(item=>item.wc_category==="who"));
+      setPhilosophy(data.data.filter(item=>item.wc_category==="philosophy"));
+      setJourney(data.data.filter(item=>item.wc_category==="journey"));
+      setLeadership(data.data.filter(item=>item.wc_category==="leadership"));
+    }
+    },[data])
+
   return (
     
     <div>
@@ -34,17 +64,17 @@ const About = () => {
        
         />
         <div className="mt-10"></div>
-        <Who/>
+        <Who dataset={who}/>
       </div>
       <section className="mb-10">
-        <OurPhilosophy />
+        <OurPhilosophy dataset={philosophy} />
       </section>
       <section className="py-10" id="past">
-        <OurPast />
+        <OurPast dataset={journey} />
       </section>
       
       <section>
-        <OurLeaderShip />
+        <OurLeaderShip dataset={leadership} />
       </section>
       <Footer/>
     </div>

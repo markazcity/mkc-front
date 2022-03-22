@@ -8,11 +8,41 @@ import SecondSection from "@/components/Home/SecondSection"
 import SectorMarquee from "@/components/Home/SectorMarquee"
 
 import Categories from "@/components/Home/Categories"
-
 import { useState, useEffect } from 'react';
 
-export default function Home() {
+
+const getData = async () => {
+  const DATA_URL = "https://api.markazcity.in/webContents/content.php";
+
+ return fetch(DATA_URL)
+  .then(response => response.json());
+}
+
+export async function getStaticProps () {
+  const content = await getData()
+  return {
+    props: {
+      data:content
+    },
+    revalidate: 300,
+  }
+}
+
+
+
+
+
+export default function Home({data}) {
 const [showNavbar, setShowNavBar] = useState(true);
+const [zones, setZones] = useState([]);
+
+useEffect(() => {
+if(data!=null){
+  setZones(data.data.filter(item=>item.wc_category==="zones"));
+}
+},[data])
+
+
   useEffect(()=>{
     const initScroll = 400;
     window.addEventListener('scroll', () => {
@@ -40,8 +70,8 @@ const [showNavbar, setShowNavBar] = useState(true);
      </div>
     
       <FirstSection/>
-     <SecondSection/>
-      <Categories/>
+     <SecondSection />
+      <Categories zones={zones}/>
       <SectorMarquee/>
       {/* <FourthSection/> */}
       <Footer/>

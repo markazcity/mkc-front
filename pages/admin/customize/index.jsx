@@ -6,15 +6,37 @@ import axios from 'axios';
 import Head from 'next/head'
 import {ROOT_URL} from '@/inc/Const'
 
+const getData = async () => {
+  const DATA_URL = ROOT_URL+"webContents/content.php";
 
+ return fetch(DATA_URL)
+  .then(response => response.json());
+}
 
-const Customize = () => {
+export async function getStaticProps () {
+  const content = await getData()
+  return {
+    props: {
+      data:content
+    },
+    revalidate: 300,
+  }
+}
+
+const Customize = ({data}) => {
+
 
 const [careerLoading, setCareerLoading] = useState(false);
 const [homeVideoLoading, setHomeVideoLoading] = useState(false);
 const [CCVideoLoading, setCCVideoLoading] = useState(false);
+const [careerBanner, setCareerBanner] = useState(null);
 
-
+useEffect(() => {
+  if(data!=null){
+    setCareerBanner(data.data.filter(item=>item.wc_category==="career_banner"));
+  }
+  
+},[data])
 
 
 async function submitCareerBanner(file){
@@ -120,9 +142,14 @@ formData.append('file',file)
         ):(
             <span></span>
         )}
-            <img src={ROOT_URL+"siteAssets/career_banner.jpg"} className="rounded-lg mt-2"
-                        id="thumbPreview"
-                        style={{height:"150px"}} a alt="" />
+        {careerBanner!=null?(
+           <img src={ROOT_URL+"siteAssets/"+careerBanner[0].wc_image} className="rounded-lg mt-2"
+           id="thumbPreview"
+           style={{height:"150px"}} a alt="" />
+        ):(
+          <span></span>
+        )}
+           
    </section>
    {/*
      ----------------------------------------------------------------
