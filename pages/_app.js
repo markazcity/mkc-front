@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import 'tailwindcss/tailwind.css'
 import NextNprogress from 'nextjs-progressbar';
 import Splash from '@/components/Splash'
+import Head from 'next/head'
 
 import AOS from "aos";
 import "aos/dist/aos.css";

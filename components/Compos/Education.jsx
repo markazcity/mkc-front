@@ -67,38 +67,7 @@ const Education = (props) => {
    
 
     ];
-    // const [isPhone, setIsphone] = useState(false)
-    // function matchSlideCount(x) {
-    //     if (x.matches) { 
-    //       setIsphone(false);
-    //     } else {
-    //      setIsphone(true);
-    //     }
-    //   }
-
-    //  function eduHorScroll(){
-    //     var windowWidth = window.innerWidth;
-    //     var horLength = document.querySelector(".education-items-wrapper").scrollWidth;
-    //     var distFromTop = document.querySelector(".education-section").offsetTop;
-    //     var scrollDistance = distFromTop + horLength - windowWidth;
-    //     document.querySelector(".education-section").style.height = horLength -300+ "px";
-    //     window.onscroll = function(){
-    //       var scrollTop = window.pageYOffset;
-    //       if (scrollTop+400 >= distFromTop && scrollTop <= scrollDistance) {
-    //         document.querySelector(".education-items-wrapper").style.transform = "translateX(-"+((scrollTop) - distFromTop+100)+"px)";
-    //       }
-    //     }
-    //  }
-
-//     useEffect(()=>{
-//         var screenSize = window.matchMedia("(min-width: 768px)")
-// matchSlideCount(screenSize)
-// screenSize.addListener(matchSlideCount)
-// eduHorScroll();
-//     }, []);  
-
-    // const child   = { width: `30em`, height: `50vh`}
-    // const parent  = { width: `100vw`, height: `100vh`}
+ 
 
 
     return (
@@ -110,110 +79,11 @@ const Education = (props) => {
                 }}
                 data-aos="zoom-in"
                 >EDUCATION</h1>
-                {/* LISTS STARTS HERE */}
-                {/* <div className="sticky-wrapper"> */}
-                
-    
- 
-                
-{/* <section className="hidden lg:flex mx-10 lg:mx-12">
-    <div className="education-items-wrapper" >
-  
-            {
-                educationList.map(edu=>(
-                    <div 
-                    key={educationList.indexOf(edu)}
-                   
-                    >
-                    
-                    <div className="edu-element my-4 pb-4 mx-3  bg-white component-container"
-                        
-                    
-                    data-aos="fade-up"
-                    data-aos-delay={educationList.indexOf(edu)*50}
-                    >
-                        <div className="relative">
-
-                        
-                        <div
-                        className="lg:mx-0 lg:my-0 h-72"
-                        style={
-                           {
-                        backgroundImage:`url('/assets/img/components/${edu.img}')`,
-                        backgroundSize:"cover",
-                        }
-                           }
-                        >
-                            </div>
-                            <section className="absolute w-full flex justify-center"
-                            style={{ bottom:"-25px"}}
-                            >
-                            <div className=" bg-violet-600 rounded-full
-                               hover:bg-violet-700 flex justify-center items-center"
-                               style={{
-                                   width:"56px",
-                                   height:"56px",
-                                  
-                               }}
-                               > 
-                               <h1 className="font-bold text-white text-2xl">{
-                                   educationList.indexOf(edu)+1
-                                   }</h1></div></section>
-                            </div>
-                            
-
-                            <div className=" mx-6 mt-8 xl:mt-2">
-                               
-                            <h1
-                            className={`font-extrabold text-xl  px-4 lg:p-8 text-gray-600 text-center`
-                        }
-                           // style={{color:"#69696D"}}
-                            >{edu.wc_title.toUpperCase() }</h1>
-                            </div>
-                            <p className="mx-8 my-10 mt-4 leading-5 text-gray-500">
-                        {edu.text.substring(0,210)}...
-                        <br />
-                        <div className="know-more  mt-4 py-2 inline-block cursor-pointer"
-                        onClick={
-                            ()=>{
-                                window.open(edu.link, '_blank')
-                            }
-                        }
-                        >
-                        KNOW MORE
-                        <div className="bg-violet-600 rounded-full h-2 w-2 inline-block ml-2"></div>
-                        <div className="bg-violet-600 rounded-full h-2 w-2 inline-block ml-1"></div>
-                        <div className="bg-violet-600 rounded-full h-2 w-2 inline-block ml-1"></div>
-                        </div>
-                        
-                        </p>
-                       
-                       
-                        
-                    </div>
-                 
-                    </div>
-                    
-
-            
-                ))
-            } 
-        
-            </div> 
            
-            </section>  */}
-            
-            
-            {/* </div>  */}
-
-            {/* PHONE SECTION */}
 
 
             <section className="grid md:grid-cols-2 xl:grid-cols-3 mx-10 lg:mx-32 3xl:mx-64">
-              
-   
-             
-                          
+
                       {
                           props.dataset.map((edu,index)=>(
                               

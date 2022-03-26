@@ -13,11 +13,11 @@ style={{background:"url('/assets/img/interlaced.png')",
     data-aos="fade-right"
     data-aos-delay="400"
     >MARKAZ KNOWLEDGE CITY</span> */}
-    <h2 className="font-extrabold py-2 text-5xl lg:text-6xl xl:text-8xl text-blue-800 gradient-text"
+    <h1 className="font-extrabold py-2 text-5xl lg:text-6xl xl:text-8xl text-blue-800 gradient-text"
      data-aos="fade-right"
      data-aos-delay="550"
-    >A CITY OF <br/> NEW DREAMS</h2>
-    <p className="py-1 text-lg text-gray-600 mx-1 lg:mx-36 xl:mx-72"
+    >A CITY OF <br/> NEW DREAMS</h1>
+    <h3 className="py-1 text-lg text-gray-600 mx-1 lg:mx-36 xl:mx-72"
      data-aos="fade-right"
      data-aos-delay="750"
     >
@@ -25,7 +25,7 @@ style={{background:"url('/assets/img/interlaced.png')",
     It is a collective attempt of multiple actors - scholars, scientists, students, 
     and self-motivated representatives of new thoughts. Apart from being a distinctive space, 
     Markaz Knowledge City is also an idea of differences.
-    </p>
+    </h3>
     </section>
     </div>
     

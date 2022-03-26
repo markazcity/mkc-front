@@ -195,7 +195,7 @@ useEffect(() => {
             output.src = URL.createObjectURL(e.target.files[0]);
             setThumb(e.target.files[0])
         } } />  
-         <span className="text-red-600 text-sm pt-1 inline-block">Image ust be in 
+         <span className="text-red-600 text-sm pt-1 inline-block">Image must be in 
              {category=="residence"?<b> 1920x1080</b>:category=="zones"?<b> 1000x500</b>:<b>  1000x800</b>}
             px resolution.</span>      
              <br />

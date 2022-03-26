@@ -2,7 +2,7 @@ import Logo from "@/components/Logo";
 import Footer from "@/components/Footer/Footer";
 import MenuBar from "@/components/NavMenu/Menu"
 import SocialIcons from '@/components/SocialIcons'
-import Head from 'next/head'
+import HeadTag from "@/head"
 import { useState } from "react";
 var qs = require('qs');
 
@@ -54,10 +54,9 @@ const [error, setError] = useState(null);
   return (
     
     <div>
-         <Head>
-        <title>Contact - Markaz Knowledge City</title>
-        <meta name="description" content="Contact Markaz Knowledge City" />
-      </Head>
+         <HeadTag title="Contact - Markaz Knowledge City"/>
+        
+     
       <div style={{ backgroundColor: "#F8FAF8",
     backgroundImage:`url('/assets/img/spikes.png')`,
     minHeight:"50vh"

@@ -8,7 +8,8 @@ import Agriculture from "@/components/Compos/Agriculture";
 import Residence from "@/components/Compos/Residence";
 import Footer from "@/components/Footer/Footer";
 import MenuBar from "@/components/NavMenu/Menu"
-import Head from 'next/head'
+import HeadTag from '@/head'
+
 import {  useEffect, useState} from "react"
  
 const getData = async () => {
@@ -60,20 +61,12 @@ useEffect(() => {
 
 })
 
-  const menu = 
-  [
-  {name:"Home", icon:"", to:"/"},
-  {name:"Education", icon:"", to:"#education"},
-  {name:"Health", icon:"", to:"#health"},
-  {name:"Commerce", icon:"", to:"#commerce"},
-  ];
+ 
   return (
     
     <div>
-       <Head>
-        <title>Components - Markaz Knowledge City</title>
-        <meta name="description" content="Components in Markaz Knowledge City" />
-      </Head>
+       <HeadTag title="Components - Markaz Knowledge City"/>
+       
       <section className="absolute"
       id="cc"
 style={{

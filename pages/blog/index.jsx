@@ -1,7 +1,7 @@
 import Logo from "@/components/Logo";
 import MenuBar from "@/components/NavMenu/Menu"
 import Footer from "@/components/Footer/Footer";
-import Head from 'next/head'
+import HeadTag from '@/head'
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import {ROOT_URL} from '@/inc/Const'
@@ -75,10 +75,8 @@ useEffect(() => {
   return (
     
     <div>
-       <Head>
-        <title>Blog - Markaz Knowledge City</title>
-        <meta name="description" content="Blog of Markaz Knowledge City" />
-      </Head>
+       <HeadTag title="Blog - Markaz Knowledge City"/>
+      
       <div className="py-5" style={{ backgroundColor: "#F8FAF8" }}>
         <Logo logo="logob" className="z-9" />
         <MenuBar

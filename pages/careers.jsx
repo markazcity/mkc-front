@@ -1,6 +1,6 @@
 import Logo from "@/components/Logo";
 import Footer from "@/components/Footer/Footer";
-import Head from 'next/head'
+import HeadTag from '@/head'
 import { useState } from "react";
 import MenuBar from "@/components/NavMenu/Menu"
 import { useEffect } from "react";
@@ -36,10 +36,6 @@ export async function getStaticProps () {
     revalidate: 60,
   }
 }
-
-
-
-
 
 
 
@@ -157,10 +153,8 @@ const applyJob = async (e) => {
 
   return (
     <div>
-         <Head>
-        <title>Carreers - Markaz Knowledge City</title>
-        <meta name="description" content="Carreers Markaz Knowledge City" />
-      </Head>
+       <HeadTag title="Careers - Markaz Knowledge City"/>
+        
       <div style={{ backgroundColor: "#F8FAF8",
     backgroundImage:`url('/assets/img/spikes.png')`,
     minHeight:"50vh"

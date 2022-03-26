@@ -5,7 +5,7 @@ import OurLeaderShip from "@/components/About/OurLeadership";
 import Who from "@/components/About/Who";
 import Footer from "@/components/Footer/Footer";
 import MenuBar from "@/components/NavMenu/Menu"
-import Head from 'next/head'
+import HeadTag from '@/head'
 import {ROOT_URL} from '@/inc/Const'
 import { useEffect, useState } from "react";
 
@@ -50,11 +50,7 @@ const About = ({data}) => {
   return (
     
     <div>
-       <Head>
-        <title>About - Markaz Knowledge City</title>
-        <meta name="description" content="About Markaz Knowledge City" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <HeadTag title="About - Markaz Knowledge City"/>
       <div style={{ backgroundColor: "#F8FAF8",
     backgroundImage:`url('/assets/img/spikes.png')`,
     }}>

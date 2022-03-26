@@ -8,6 +8,8 @@ import SecondSection from "@/components/Home/SecondSection"
 import SectorMarquee from "@/components/Home/SectorMarquee"
 
 import Categories from "@/components/Home/Categories"
+import HeadTag from "@/head"
+
 import { useState, useEffect } from 'react';
 
 
@@ -56,11 +58,8 @@ if(data!=null){
   },[])
   return (
     <div>
-      <Head>
-        <title>Markaz Knowledge City</title>
-        <meta name="description" content="Markaz Knowledge City" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+<HeadTag></HeadTag>
+     
     
      <div
     className="absolute top-0 flex justify-between w-full  lg:px-0"

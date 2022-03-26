@@ -5,6 +5,8 @@ const Footer = ({showFooter}) => {
   const linkClass = "text-gray-400 hover:text-white transition duration-500 ease-in-out";
 
   const privacyUrl = "/policy/privacy";
+  const termsUrl = "/policy/privacy";
+  const cookieUrl = "/policy/privacy";
     return (  <footer className="bg-black">
     <ContactForm/>    
 <div>
@@ -20,8 +22,8 @@ const Footer = ({showFooter}) => {
        <span> &copy; markazknowledgecity</span>
       <div className="flex">
 <a href={privacyUrl} className={linkClass}>Privacy Policy</a> <span className="mx-2 text-yellow-500">•</span>
-<a href="" className={linkClass}>Terms of Use</a> <span className="mx-2 text-yellow-500">•</span>
-<a href="" className={linkClass}>Cookie Policy</a>
+<a href={termsUrl} className={linkClass}>Terms of Use</a> <span className="mx-2 text-yellow-500">•</span>
+<a href={cookieUrl} className={linkClass}>Cookie Policy</a>
       </div>
         </div>
 
@@ -31,8 +33,8 @@ const Footer = ({showFooter}) => {
  )}  */}
  <div className="flex my-4">
 <a href={privacyUrl} className={linkClass}>Privacy Policy</a> <span className="mx-2 text-yellow-500">•</span>
-<a href="" className={linkClass}>Terms of Use</a> <span className="mx-2 text-yellow-500">•</span>
-<a href="" className={linkClass}>Cookie Policy</a>
+<a href={termsUrl} className={linkClass}>Terms of Use</a> <span className="mx-2 text-yellow-500">•</span>
+<a href={cookieUrl} className={linkClass}>Cookie Policy</a>
       </div>
    <div className="pt-2">
    &copy; markazknowledgecity

@@ -11,11 +11,10 @@ import {useRouter} from 'next/router'
 const Admin = () => {
     const icoClass = "text-minigreen-700 text-3xl mb-2";
     const menuItems = [
-        {title:"View Blogs", icon:<RiPagesLine className={icoClass}/>, to:"/admin/blog"},
-        {title:"New Blog", icon:<AiOutlineFileAdd className={icoClass}/>, to:"/admin/blog/new"},
+        {title:"Messages", icon:<BiMessageDetail className={icoClass}/>, to:"/admin/messages"},
+        {title:"Blogs", icon:<RiPagesLine className={icoClass}/>, to:"/admin/blog"},
         {title:"CityPulse", icon:<BsBookHalf className={icoClass}/>, to:"/admin/citypulse"},
         {title:"Gallery", icon:<HiOutlinePhotograph className={icoClass}/>, to:"/admin/gallery"},
-        {title:"Messages", icon:<BiMessageDetail className={icoClass}/>, to:"/admin/messages"},
         {title:"Career", icon:<BiBriefcase className={icoClass}/>, to:"/admin/career"},
         {title:"Job Positions", icon:<RiLuggageDepositLine className={icoClass}/>, to:"/admin/career/positions"},
          {title:"Customize Site", icon:<BiEdit className={icoClass}/>, to:"/admin/customize"},

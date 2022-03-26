@@ -1,6 +1,7 @@
 import AdminLayout from '@/components/Admin/Layout'
 import { useEffect, useState } from 'react';
 import {ROOT_URL} from '@/inc/Const'
+import Head from 'next/head'
 
 var qs = require('qs');
 
@@ -49,6 +50,9 @@ useEffect(() => {
 
     return (
         <AdminLayout title="Career"  label="Career">
+          <Head>
+            <title>Job Applications</title>
+          </Head>
           {
               jobApplics!=null?jobApplics.length>0?(
                 <div>
