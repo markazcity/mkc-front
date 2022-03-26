@@ -2,12 +2,30 @@ import ContactForm from './ContactForm'
 
 const Footer = ({showFooter}) => {
 
-  const linkClass = "text-gray-400 hover:text-white transition duration-500 ease-in-out";
+var links = [
+  {name: 'About', url: '/about'},
+  {name: 'Components', url: '/components'},
+  {name: 'Career', url: '/career'},
+  {name: 'Contact', url: '/contact'},
+  {name: 'Blog', url: '/blog'},
 
+];
+
+  const linkClass = "text-gray-400 hover:text-white transition duration-500 ease-in-out";
   const privacyUrl = "/policy/privacy";
   const termsUrl = "/policy/privacy";
   const cookieUrl = "/policy/privacy";
     return (  <footer className="bg-black">
+    <div className="flex justify-center">
+    {
+  links.map((link) => {
+    return ( <a 
+      className="mx-1 text-xs"
+      key={link.name}
+      href={link.url}>{link.name}</a>)
+  })
+}
+    </div>
     <ContactForm/>    
 <div>
 
