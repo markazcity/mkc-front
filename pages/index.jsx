@@ -6,6 +6,7 @@ import MenuBar from "@/components/NavMenu/Menu"
 import FirstSection from "@/components/Home/FirstSection"
 import SecondSection from "@/components/Home/SecondSection"
 import SectorMarquee from "@/components/Home/SectorMarquee"
+import SEOHeading from "@/components/SEOHeadings"
 
 import Categories from "@/components/Home/Categories"
 import HeadTag from "@/head"
@@ -69,10 +70,16 @@ if(data!=null){
      </div>
     
       <FirstSection/>
+      <SEOHeading/>
      <SecondSection />
+    
       <Categories zones={zones}/>
+     
       <SectorMarquee/>
       {/* <FourthSection/> */}
+    
+      <SEOHeading/>
+      
       <Footer/>
       {/* <HomeParticle/> */}
 

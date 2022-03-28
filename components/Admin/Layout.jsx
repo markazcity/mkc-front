@@ -24,7 +24,7 @@ useEffect(() => {
     }
 }, [])
 
-    const navigation = [
+    const navigation = [ 
         { name: 'Dashboard', href: '/admin', current: props.label=='Dashboard' },
         { name: 'Blog', href: '/admin/blog', current: props.label=='Blog' },
         { name: 'Messages', href: '/admin/messages', current: props.label=='Messages' },
@@ -32,6 +32,7 @@ useEffect(() => {
         { name: 'Gallery', href: '/admin/gallery', current: props.label=='Gallery' },
         { name: 'CityPulse', href: '/admin/citypulse', current: props.label=='CityPulse' },
       ]
+      
   return (
     <div>
       <Disclosure as="nav" className="bg-gray-800">
