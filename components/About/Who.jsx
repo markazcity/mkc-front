@@ -34,7 +34,10 @@ model for smart cities. Good Health and Well-being and  Quality Education are 
 We work collaboratively with various institutions, organizations, and people across the world to find new possibilities for 
  integration and networking. Our missions have truly been supportive of endeavors for global peace, ethical lifestyle, community 
   empowerment, and inclusive Education.
+      
+      
         </p>
+
       </section></div>);
 }
  

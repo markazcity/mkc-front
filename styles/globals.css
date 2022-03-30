@@ -380,6 +380,16 @@ background: linear-gradient(160deg, #038cdb 0%, #80D0C7 100%);
   filter:drop-shadow(12px 15px 10px rgba(0,0,0,0.3));
 }
 
+@media screen and (max-width:1200px) {
+  .leader{
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+
+  }
+}
+
+
+
+
 .customize-section{
   background: #fff;
   padding: 2rem;

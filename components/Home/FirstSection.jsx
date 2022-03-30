@@ -6,8 +6,8 @@ const FirstSection = () => {
     const TEXTS = [
       "A Vision for Contemporary Practices",
       "Planting a Generation of Thoughts",
-      "The Plot of Multiplicities ",
-      "An Idea for Transformation ",
+      "The Plot of Multiplicities",
+      "An Idea for Transformation",
       "Innovation and Scientific Experiments",
         ];
 

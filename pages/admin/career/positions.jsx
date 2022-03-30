@@ -103,7 +103,7 @@ useEffect(() => {
 <input type="text"
 id={pos.jp_id}
 defaultValue={pos.jp_name}
-className="border-none bg-gray-100 w-full mr-6"
+className="border-none bg-gray-100 w-full mr-6  rounded-lg"
 onBlur={(e)=> {
     if(pos.jp_name!==e.target.value){
         updateItem(pos.jp_id,e.target.value)

@@ -1,4 +1,3 @@
 User-agent: *
 Disallow: 
-Disallow: /admin/
 Sitemap: https://markazknowledgecity.com/sitemap.xml

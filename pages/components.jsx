@@ -59,7 +59,7 @@ useEffect(() => {
     var cc = document.getElementById('cc');
     cc.style.minHeight=window.innerHeight + "px";
 
-})
+},[])
 
  
   return (

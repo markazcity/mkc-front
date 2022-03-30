@@ -1,7 +1,7 @@
 import AdminLayout from '@/components/Admin/Layout'
 import {BiMessageDetail, BiBriefcase, BiEdit,BiHomeAlt} from 'react-icons/bi'
 import {RiPagesLine,RiLuggageDepositLine, RiFileEditLine} from 'react-icons/ri'
-import {AiOutlineFileAdd} from 'react-icons/ai'
+import {AiOutlineInfoCircle} from 'react-icons/ai'
 import {BsBookHalf} from 'react-icons/bs'
 import {HiOutlinePhotograph} from 'react-icons/hi'
 
@@ -18,9 +18,9 @@ const Admin = () => {
         {title:"Career", icon:<BiBriefcase className={icoClass}/>, to:"/admin/career"},
         {title:"Job Positions", icon:<RiLuggageDepositLine className={icoClass}/>, to:"/admin/career/positions"},
          {title:"Customize Site", icon:<BiEdit className={icoClass}/>, to:"/admin/customize"},
-          {title:"Edit Contents", icon:<RiFileEditLine className={icoClass}/>, to:"/admin/customize/contents"},
-       
+        {title:"Edit Contents", icon:<RiFileEditLine className={icoClass}/>, to:"/admin/customize/contents"},
          {title:"Edit Homepage", icon:<BiHomeAlt className={icoClass}/>, to:"/admin/customize/home"},
+         {title:"Edit About Page", icon:<AiOutlineInfoCircle className={icoClass}/>, to:"/admin/customize/about"},
 
 
     ];

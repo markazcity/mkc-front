@@ -30,7 +30,7 @@ useEffect(() => {
         { name: 'Messages', href: '/admin/messages', current: props.label=='Messages' },
         { name: 'Career', href: '/admin/career', current: props.label=='Career' },
         { name: 'Gallery', href: '/admin/gallery', current: props.label=='Gallery' },
-        { name: 'CityPulse', href: '/admin/citypulse', current: props.label=='CityPulse' },
+        { name: 'Live Chat', href: '/admin/tawk', current: props.label=='Tawk' },
       ]
       
   return (
@@ -174,13 +174,13 @@ router.push('/admin/login')
           </>
         )}
       </Disclosure>
-
-      <header className="bg-white shadow">
+{props.fullScreen?props.children:(<main>
+<header className="bg-white shadow">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-gray-900">{props.title}</h1>
         </div>
       </header>
-      <main>
+      <section>
         <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           {/* Replace with your content */}
           <div className="px-4 py-6 sm:px-0">
@@ -188,7 +188,10 @@ router.push('/admin/login')
           </div>
           {/* /End replace */}
         </div>
-      </main>
+      </section>
+</main>)}
+
+     
     </div>
   )
 }
