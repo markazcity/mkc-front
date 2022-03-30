@@ -7,6 +7,9 @@ import { useRouter } from 'next/router';
 import {ROOT_URL} from '@/inc/Const'
 import Head from 'next/head'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const EditContent = () => {
 
 
@@ -16,6 +19,9 @@ const [thumb, setThumb] = useState(null);
 const [thumbUrl, setThumbUrl] = useState(null);
 const [link, setLink] = useState(null);
 const [category, setCategory] = useState(null);
+const [position, setPosition] = useState(null);
+const [video, setVideo] = useState(null);
+
 
 
 const [contentId, setContentId] = useState(null);
@@ -45,8 +51,12 @@ useEffect(() => {
           setThumbUrl(dat.wc_image);
           setLink(dat.wc_link);
           setCategory(dat.wc_category);
+          setVideo(dat.wc_video);
+          if(dat.wc_category==='about_leadership'){
+            setPosition(dat.wc_author_position);
+          }
       }).catch(err=>{
-          alert(err);
+          toast.error(err);
       })
   }
   
@@ -68,7 +78,7 @@ useEffect(() => {
                         setLoading(false)
                         if(resnew.data.status=="success"){
                            
-                            alert("Content Updated!")
+                            toast.success("Content Updated!")
                         }else{
                            
                             setError("Something went wrong. Please try again later.");
@@ -83,14 +93,11 @@ useEffect(() => {
                     updateContent(thumbUrl).then(resnew=>{
                         setLoading(false)
                         if(resnew.data.status=="success"){
-                           alert("Content Updated!")
+                            toast.success("Content Updated!")
                         }else{console.log(resnew);
                             setError("Something went wrong. Please try again later");
                         }
                     });
-               
-                
-            
         }
       
       }else{
@@ -123,6 +130,11 @@ useEffect(() => {
   formData.append('image',thumblink)
   formData.append('link',link)
   formData.append('category',category)
+    formData.append('video',video)
+
+  if(category=='about_leadership'){
+    formData.append('position',position)
+  }
 
   return  await axios.post(URL, formData,{
       headers: {
@@ -133,11 +145,37 @@ useEffect(() => {
 }
 
 
+function getImageSize(cat){
+    switch (cat) {
+        case "residence":
+            return "1920x1080";
+            case "zones":
+            return "1000x500";
+            case "about_leadership":
+                return "800x670";
+                case "about_past":
+                return "1000x530";
+        default:
+            return "1000x800";
+    }
+}
+
     return (
         <AdminLayout title="Edit Content"  label="Dashboard">
 <Head>
     <title>Edit Content | Markaz Knowledge City</title>
 </Head>
+<ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+/>
 
             {error && <div className="bg-red-200 text-red-700 px-3 py-2 mb-3 rounded">{error}</div>}
             <br />
@@ -147,32 +185,59 @@ useEffect(() => {
             defaultValue={title}
             placeholder="Title"
             />
-             <br />
-             <br />
+             <div className="my-4">
             <h4 className="text-violet-700 mb-2">Description</h4>
 <textarea className="w-full"  rows="10"
  onChange={(e) => setBody(e.target.value)}
  placeholder="Description" 
  defaultValue={body}
-></textarea>
-             <br />
-             <br />
+></textarea> </div>
+           
+             <div className="my-4">
             <h4 className="text-violet-700 mb-2">Link</h4>
             <input type="text" onChange={(e) => setLink(e.target.value)}
             className="w-full"
             defaultValue={link}
             placeholder="Direct to Link"
             />
-             <br />
-             <br />
-            <h4 className="text-violet-700 mb-2">Category</h4>
+            </div>
+
+           
+
+{
+    category==='about_leadership'?(
+        <div className="my-4">
+                 
+        <h4 className="text-violet-700 mb-2">Position</h4>
+                   <input type="text" onChange={(e) => setPosition(e.target.value)}
+                   className="w-full"
+                   defaultValue={position}
+                   placeholder="Position"
+                   />
+                    </div>
+    ):(
+        <span></span>
+    )
+}
+           <div className="my-4"> <h4 className="text-violet-700 mb-2">Video Link</h4>
+            <input type="text" onChange={(e) => setVideo(e.target.value)}
+            className="w-full"
+            defaultValue={video}
+            placeholder="Video Link"
+            />
+           </div> 
+
+
+            {/* <h4 className="text-violet-700 mb-2">Category</h4>
             <input type="text" onChange={(e) => setCategory(e.target.value)}
             className="w-full"
             defaultValue={category}
             placeholder="Category"
             />
              <br />
-              <br />
+              <br /> */}
+
+
             <h4 className="text-violet-700 mb-2">Content Image</h4>
             {
                 thumbUrl!=null?(
@@ -195,9 +260,7 @@ useEffect(() => {
             output.src = URL.createObjectURL(e.target.files[0]);
             setThumb(e.target.files[0])
         } } />  
-         <span className="text-red-600 text-sm pt-1 inline-block">Image must be in 
-             {category=="residence"?<b> 1920x1080</b>:category=="zones"?<b> 1000x500</b>:<b>  1000x800</b>}
-            px resolution.</span>      
+         <span className="text-red-600 text-sm pt-1 inline-block">Image must be in <b>{getImageSize(category)}</b> px resolution.</span>      
              <br />
              <div className="flex justify-end">
              <button

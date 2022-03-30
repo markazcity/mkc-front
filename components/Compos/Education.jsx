@@ -1,7 +1,9 @@
 
 
 import {ROOT_URL} from '@/inc/Const'
-
+import { useState } from 'react';
+import VideoModal from '@/components/Utils/VideoModal'
+import {BiVideo} from 'react-icons/bi'
 
 const Education = (props) => {
    
@@ -68,7 +70,8 @@ const Education = (props) => {
 
     ];
  
-
+    const [videoLink, setVideoLink] = useState(null);
+    const [hoverIndex, setHoverIndex] = useState(null);
 
     return (
         <div  className="education-section pb-8 py-5">
@@ -93,6 +96,17 @@ const Education = (props) => {
                               key={index}
                               data-aos="fade-up"
                               data-aos-delay={index*50}
+                              id={`${edu.wc_id}`}
+                              onMouseOver={()=>{
+                                setHoverIndex(index)
+                                if(edu.wc_video!=null && edu.wc_video.length>5){
+                                    setHoverIndex(index)
+                                }
+                                  
+                              }}
+                              onMouseOut={()=>{
+                                setHoverIndex(null)
+                            }}
                               >
                                   <div className="relative">
           
@@ -111,16 +125,22 @@ const Education = (props) => {
                                       style={{ bottom:"-25px"}}
                                       >
                                       <div className=" bg-violet-600  rounded-full
-                                         hover:bg-violet-700 flex justify-center items-center"
+                                         hover:bg-violet-700 flex justify-center items-center cursor-pointer"
                                          style={{
                                              width:"56px",
                                              height:"56px",
                                             
                                          }}
+                                         onClick={()=>{
+                                            setVideoLink("https://api.markazcity.in/siteAssets/home.mp4")
+                                             if(edu.wc_video!=null && edu.wc_video.length>5){
+                                                setVideoLink(edu.wc_video)
+                                             }
+                                         }}
                                          > 
-                                         <h1 className="font-bold text-white text-2xl">{
-                                             index+1
-                                             }</h1></div></section>
+                                         {hoverIndex==index?(<BiVideo className="text-white text-2xl"/>
+                                         ):(<h1 className="font-bold text-white text-2xl">{index+1}</h1>)}
+                                        </div></section>
                                       </div>
                                       
           
@@ -168,7 +188,14 @@ const Education = (props) => {
                       </section>
 
 
-
+{
+    videoLink!=null && videoLink.length>5?(<VideoModal
+        link={videoLink}
+        onClose={() =>setVideoLink(null)}
+        />):(
+        <></>
+    )
+}
 
            
         </div>

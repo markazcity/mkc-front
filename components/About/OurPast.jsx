@@ -25,6 +25,7 @@ const OurPast = () => {
     ];
     return (
         <div>
+
             <h1 className="text-2xl lg:text-5xl font-extrabold mb-5 text-center mx-10"
                 style={{
                     color: "#71543D",
