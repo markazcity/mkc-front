@@ -17,9 +17,9 @@ const Agriculture = (props) => {
    
     
     ];
-    const colorChange = [0,3,4,7, 8]
     return (
-        <div  style={{ backgroundColor: "rgba(187, 124, 179,0)" }}  className="pb-20">
+        <div  
+        className="pb-20 bgf8">
             <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center py-10"
                 style={{
                     color: "#69696D",

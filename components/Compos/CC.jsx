@@ -8,11 +8,11 @@ const CC = (props) => {
 
     const cc = props.dataset!=null?props.dataset[0]:cc_off;
     return (
-        <section className="lg:w-5/12 p-10  lg:mx-20 bg-transparent xl:my-28 ">
+        <section className=" lg:w-5/12 py-10 px-6 pr-20  lg:mx-20 bg-transparent xl:my-28 ">
     <div
     className="w-full flex justify-center m-6 order-2 lg:order-1"
     > 
-<div>
+<div id="cctext">
 <h1
     className="font-extrabold text-xl xl:text-3xl text-black"
 data-aos="fade-up"

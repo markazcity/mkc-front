@@ -408,3 +408,46 @@ background: linear-gradient(160deg, #038cdb 0%, #80D0C7 100%);
   height: 100%;
   overflow: hidden;
 }
+
+
+.animate-down{
+  margin-top:7rem !important;
+  transition: all 0.5s ease;
+}
+.anim-fade{
+  transition: all 0.5s ease;
+
+}
+.animate-back{
+  margin-bottom:0 !important;
+  transition: all 0.5s ease;
+}
+.videoContainer
+{
+   
+   min-height:100vh;
+   min-width:100vw;
+  overflow: hidden;
+}
+
+.videoContainer video
+{
+  min-width: 100%;
+  min-height: 100%;
+}
+.background-video{
+
+  height: 100%;
+  width: 100%;
+  float: left;
+  top: 0;
+  z-index: -100;
+  padding: none;
+  position: fixed; /* optional depending on what you want to do in your app */
+  
+  
+  }
+
+  .bgf8{
+    background: #F8FAF8;
+  }

@@ -2,33 +2,31 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css'
 import SwiperCore, {Autoplay} from 'swiper';
 import {BsArrowRight} from 'react-icons/bs'
+import {ROOT_URL} from '@/inc/Const'
 
 SwiperCore.use([Autoplay]);
 
 
-const OurLeaderShip = () => {
+const OurLeaderShip = ({dataset}) => {
+  
+  const data = Array.from(dataset);
 
-const leaders = [
+const leaders = data??[
   {
-    name:"Shaikh Aboobacker Bin Ahmed",
-    position:"Chairman, Markaz Knowledge City",
-    quote:"“Since the last four decades, Markaz has been functioning in the mission of educational empowerment and better livelihood of the locally marginalized people in different parts of India. After that successful endeavour by developing numerous potential outcomes, we started to think about making a new integration of knowledge and wisdom. This turned to the opening of Markaz Knowledge City. As we did in the past, it is also a collective attempt of different types of people, who live, grow, and contributed with us. In fact, we sincerely believe that, we made it, and it would also be a model for others, who think for creative changes in the society”."
-  ,img:"usthad.png"},
+    wc_title:"Shaikh Aboobacker Bin Ahmed",
+    wc_author_position:"Chairman, Markaz Knowledge City",
+    wc_body:"“Since the last four decades, Markaz has been functioning in the mission of educational empowerment and better livelihood of the locally marginalized people in different parts of India. After that successful endeavour by developing numerous potential outcomes, we started to think about making a new integration of knowledge and wisdom. This turned to the opening of Markaz Knowledge City. As we did in the past, it is also a collective attempt of different types of people, who live, grow, and contributed with us. In fact, we sincerely believe that, we made it, and it would also be a model for others, who think for creative changes in the society”."
+  ,wc_image:"usthad.png"},
   {
-    name:"Dr. Muhammed Abdul Hakkim Kandi",
-    position:"Managing Director, Markaz Knowledge City",
-    quote:"Markaz Knowledge City is a knowledge centric civilization that provides a sustainable and inclusive model of development irrespective of any differentiation. A culture profounded with humanitarian values and eco-friendly concepts is the heart of the city's endeavours. Being self-reliant in all its aspects, City ensures quality food and service to its inmates and visitors. Markaz Knowledge City is the latest update of Jamia Markaz knowledge expedition in and outside the nation. It gives better education, health, skill development, training, residence, food and all other basic needs in its latest updated phase. It also tries to update the community through new research and studies, which may boost the confidence of people to travel along with the time."
-  ,img:"mah.png"},
+    wc_title:"Dr. Muhammed Abdul Hakkim Kandi",
+    wc_author_position:"Managing Director, Markaz Knowledge City",
+    wc_body:"Markaz Knowledge City is a knowledge centric civilization that provides a sustainable and inclusive model of development irrespective of any differentiation. A culture profounded with humanitarian values and eco-friendly concepts is the heart of the city's endeavours. Being self-reliant in all its aspects, City ensures quality food and service to its inmates and visitors. Markaz Knowledge City is the latest update of Jamia Markaz knowledge expedition in and outside the nation. It gives better education, health, skill development, training, residence, food and all other basic needs in its latest updated phase. It also tries to update the community through new research and studies, which may boost the confidence of people to travel along with the time."
+  ,wc_image:"mah.png"},
  
 ];
 
 
-
-    const picBg = {
-        backgroundColor:"#A17CA1"
-    };
-    const picCommonStyle = "mx-2";
-    return (
+    return dataset!=null?(
       <div id="leadership">
         <div 
         className="pt-10"
@@ -66,13 +64,13 @@ const leaders = [
                 backgroundColor:"#C6CABF"
               }}
               >
-                <div><img src={`/assets/img/${leader.img}`} 
+                <div><img src={`${ROOT_URL}/webContents/uploads/${leader.wc_image}`} 
                 className="leader"
                 alt="" /></div>
                 <div className="lg:w-8/12 lg:px-10 py-4">
-                  {leader.quote} <br /><br />
-                  <span className="font-bold text-xl">{leader.name}</span> <br />
-                  <span className="text-gray-500">{leader.position}</span>
+                  {leader.wc_body} <br /><br />
+                  <span className="font-bold text-xl">{leader.wc_title}</span> <br />
+                  <span className="text-gray-500">{leader.wc_author_position}</span>
                   <br />
                   <div className="flex justify-end">
                   <BsArrowRight
@@ -92,6 +90,8 @@ const leaders = [
   </Swiper>
         </div>
         </div></div>
+    ):(
+      <span></span>
     );
 }
  

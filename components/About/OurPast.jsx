@@ -2,28 +2,32 @@ import Marquee from "react-fast-marquee";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css'
 import SwiperCore, {Autoplay} from 'swiper';
+import {ROOT_URL} from '@/inc/Const'
 
 SwiperCore.use([Autoplay]);
 
 
-const OurPast = () => {
-    const pastList = [
-        {"year":"2012", "text":"Foundation Laying", "img":"foundation.jpg"},
-        {"year":"2013", "text":"Project Launching", "img":"project-launch.jpg"},
-        {"year":"2014", "text":"Inauguration of Markaz Medical College", "img":"unani-inauguration.jpg"},
-        {"year":"2013", "text":"Inauguration of Markaz Law College", "img":"inauguration-law-college.jpg"},
-        {"year":"2013", "text":"Key Handing over of Taiba Garden-Residential Apartments", "img":"thaiba-key-handing.jpg"},
-        {"year":"2013", "text":"Inauguration of Alif Global School", "img":"alif-inauguration.jpg"},
-        {"year":"2013", "text":"Inauguration of Tigris Valley Wellness Center", "img":"tigris-inauguration.jpg"},
-        {"year":"2013", "text":"Inauguration of Valencia Galleria-Exhibition Centre", "img":"valancia-galleria-inauguration.jpg"},
-        {"year":"2013", "text":"Inauguration of AIMER- Business School", "img":"aimer-inauguration.jpg"},
+const OurPast = ({dataset,past}) => {
+
+const data = dataset[0];
+
+
+    const pastList = past??[
+        {"year":"2012", "wc_title":"Foundation Laying", "wc_image":"foundation.jpg"},
+        {"year":"2013", "wc_title":"Project Launching", "wc_image":"project-launch.jpg"},
+        {"year":"2014", "wc_title":"Inauguration of Markaz Medical College", "wc_image":"unani-inauguration.jpg"},
+        {"year":"2013", "wc_title":"Inauguration of Markaz Law College", "wc_image":"inauguration-law-college.jpg"},
+        {"year":"2013", "wc_title":"Key Handing over of Taiba Garden-Residential Apartments", "wc_image":"thaiba-key-handing.jpg"},
+        {"year":"2013", "wc_title":"Inauguration of Alif Global School", "wc_image":"alif-inauguration.jpg"},
+        {"year":"2013", "wc_title":"Inauguration of Tigris Valley Wellness Center", "wc_image":"tigris-inauguration.jpg"},
+        {"year":"2013", "wc_title":"Inauguration of Valencia Galleria-Exhibition Centre", "wc_image":"valancia-galleria-inauguration.jpg"},
+        {"year":"2013", "wc_title":"Inauguration of AIMER- Business School", "wc_image":"aimer-inauguration.jpg"},
 
        
        
         
-        
     ];
-    return (
+    return data!=null?(
         <div>
 
             <h1 className="text-2xl lg:text-5xl font-extrabold mb-5 text-center mx-10"
@@ -31,10 +35,10 @@ const OurPast = () => {
                     color: "#71543D",
                 }}
                 data-aos="zoom-in"
-                >THE JOURNEY SO FAR</h1>
+                >{data.wc_title}</h1>
 
                 <p className="text-center mx-10">
-                Since the inception of Markaz Knowledge City in 2009, we have made many breakthroughs in our journey.
+                {data.wc_body}
                 </p>
                 {/* LISTS STARTS HERE */}
                 <div className="">
@@ -86,7 +90,7 @@ const OurPast = () => {
                         className="relative h-48 w-72 rounded"
                         style={{
                             backgroundColor:"#69696D",
-                            background:`url('/assets/img/past/${past.img}')`,
+                            background:`url('${ROOT_URL}/webContents/uploads/${past.wc_image}')`,
         backgroundSize:'cover',
         backgroundPosition:"center"
                         
@@ -95,7 +99,7 @@ const OurPast = () => {
                            
                         </div>
                         <p className="text-center leading-5 mt-4 text-gray-500 flex justify-center w-72">
-                        {past.text}
+                        {past.wc_title}
                         </p>
                         </center>
                         {/* <h1
@@ -109,6 +113,8 @@ const OurPast = () => {
                {/* </Marquee> */}
             </div>
         </div>
+    ):(
+        <span></span>
     );
 }
  

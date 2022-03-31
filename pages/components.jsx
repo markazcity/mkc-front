@@ -56,8 +56,17 @@ useEffect(() => {
 },[])
 
   useEffect(() => {
-    var cc = document.getElementById('cc');
-    cc.style.minHeight=window.innerHeight + "px";
+    var ccoverlay = document.getElementById('ccoverlay');
+    window.addEventListener('scroll', () => {
+      
+         ccoverlay.style.opacity=window.scrollY/1000;
+         document.getElementById('cctext').style.color="#fff";
+       
+      
+      
+    })
+   
+    
 
 },[])
 
@@ -67,17 +76,13 @@ useEffect(() => {
     <div>
        <HeadTag title="Components - Markaz Knowledge City"/>
        
-      <section className="absolute"
-      id="cc"
-style={{
-    width:"100vw",
-  zIndex:"-1",
-    backgroundColor: "#F8FAF8",
-}}
->
+  
+
 
 <video autoPlay muted loop playsInline
-style={{ height: "100%", width: "100%", objectFit: "cover",
+className="background-video"
+style={{ 
+objectFit: "cover",
 position:"top"
 
 }}
@@ -87,28 +92,34 @@ position:"top"
     </source>
 </video>
 
-</section>
+
+  
 
        <div>
-        <Logo logo="logob" className="z-9" />
+        <Logo logo="logob" className="absolute top-0 z-9" />
         <MenuBar
         icoColor=" text-white"
         
         />
         
-        <CC  dataset={cc}/>
+        <div className="absolute top-28"><CC  dataset={cc}/></div>
        
       </div>
-
+<div className="min-h-screen min-w-full bg-black"
+id="ccoverlay"
+style={{
+  opacity: 0
+}}
+></div>
 {dataset!=null?(
   <>
   <section id="education">
         <Education dataset={education}/>
       </section>
-      <section className="pt-10" id="health">
+      <section id="health">
         <Health  dataset={health}/>
       </section>
-      <section  className="pt-10" id="commerce">
+      <section   id="commerce">
         <Commerce  dataset={commerce}/>
       </section>
       <section  id="residence" className="overflow-hidden">

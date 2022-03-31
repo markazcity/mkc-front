@@ -1,5 +1,7 @@
-const OurPhilosophy = () => {
-    return (
+const OurPhilosophy = ({dataset}) => {
+    const data = dataset[0];
+
+    return data!=null?(
         <div id="philosophy">
         <div  data-aos="fade-up-right"
         className="py-10"
@@ -11,19 +13,16 @@ const OurPhilosophy = () => {
                     color: "#B279B4",
                 }}
                 data-aos="zoom-in"
-                >OUR PHILOSOPHY</h1>
+                >{data.wc_title}</h1>
                 <br />
                 <p className="mx-10 lg:mx-96 text-justify lg:text-center"
                 data-aos="fade-right">
-                    We strive to nurture a generation of thoughts that is capable 
-                    to accommodate the spirit of the present as well as the values 
-                    of the past. To make our spaces an inclusive eco-system, 
-                    we welcome people from different walks of life who have a 
-                    spark of courage to make creative changes in our time. 
-                    We believe in the richness of tradition and the civilization 
-                    of networks that connect the people and ideas across the world. 
+                   <span dangerouslySetInnerHTML={{__html: data.wc_body}}></span>
+
                 </p>
         </div></div>
+    ):(
+        <span></span>
     );
 }
  

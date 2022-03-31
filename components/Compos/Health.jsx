@@ -20,7 +20,7 @@ const Health = (props) => {
     return (
         
         <div  data-aos="fade-up-right"
-        className="pb-10"
+        className="pb-10 bgf8 pt-10"
       >
              <h1 className="text-4xl lg:text-5xl font-extrabold mb-5 text-center"
                 style={{
@@ -41,7 +41,7 @@ const Health = (props) => {
         
         <div 
         key={health.wc_title}
-        className="block lg:flex"
+        className="block lg:flex bg-white"
         data-aos="fade-up-right"
         data-aos-delay={index*50}
         >

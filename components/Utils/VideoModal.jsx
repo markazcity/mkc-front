@@ -25,7 +25,7 @@ const VideoModal = (props) => {
             
         }}
         >
-            <div className="bg-white w-7/12 rounded-2xl "
+            <div className="bg-white w-11/12 lg:w-8/12 xl:w-7/12 rounded-2xl "
             style={{
                 zIndex:"200"
             }}

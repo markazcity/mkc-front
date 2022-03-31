@@ -3,7 +3,7 @@
 import {ROOT_URL} from '@/inc/Const'
 import { useState } from 'react';
 import VideoModal from '@/components/Utils/VideoModal'
-import {BiVideo} from 'react-icons/bi'
+import {AiOutlinePlayCircle} from 'react-icons/ai'
 
 const Education = (props) => {
    
@@ -98,14 +98,18 @@ const Education = (props) => {
                               data-aos-delay={index*50}
                               id={`${edu.wc_id}`}
                               onMouseOver={()=>{
-                                setHoverIndex(index)
+                           
                                 if(edu.wc_video!=null && edu.wc_video.length>5){
-                                    setHoverIndex(index)
-                                }
+                                    document.getElementById(`icon${index}`).classList.add('animate-back');
+                                    document.getElementById(`index${index}`).classList.add('animate-down');
+                                }                                    
+
                                   
                               }}
                               onMouseOut={()=>{
-                                setHoverIndex(null)
+                                document.getElementById(`icon${index}`).classList.remove('animate-back');
+                                document.getElementById(`index${index}`).classList.remove('animate-down');
+                                document.getElementById(`index${index}`).classList.add('anim-fade');
                             }}
                               >
                                   <div className="relative">
@@ -124,22 +128,31 @@ const Education = (props) => {
                                       <section className="absolute w-full flex justify-center"
                                       style={{ bottom:"-25px"}}
                                       >
-                                      <div className=" bg-violet-600  rounded-full
-                                         hover:bg-violet-700 flex justify-center items-center cursor-pointer"
+                                      <div className=" relative bg-violet-600  rounded-full
+                                         hover:bg-violet-700 flex justify-center items-center cursor-pointer overflow-hidden"
                                          style={{
                                              width:"56px",
                                              height:"56px",
                                             
                                          }}
                                          onClick={()=>{
-                                            setVideoLink("https://api.markazcity.in/siteAssets/home.mp4")
                                              if(edu.wc_video!=null && edu.wc_video.length>5){
                                                 setVideoLink(edu.wc_video)
                                              }
                                          }}
                                          > 
-                                         {hoverIndex==index?(<BiVideo className="text-white text-2xl"/>
-                                         ):(<h1 className="font-bold text-white text-2xl">{index+1}</h1>)}
+                                         {/* <span className="inline-block" id={`icon${index}`}>
+                                         {hoverIndex==index?(
+                                         <AiOutlinePlayCircle className="text-white text-2xl"/>
+                                         ):(<h1 className="font-bold text-red-600 text-2xl">{index+1}</h1>)}
+                                         </span> */}
+                                        
+                                         <AiOutlinePlayCircle className="absolute text-white text-2xl mb-28"  id={`icon${index}`} />
+
+                                       <h1 className="absolute font-bold text-white text-2xl "  id={`index${index}`}>{index+1}</h1>
+                                       
+                                         
+
                                         </div></section>
                                       </div>
                                       

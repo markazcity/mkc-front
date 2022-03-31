@@ -185,7 +185,7 @@ export const Philosophy = ({data, refresh}) => {
     
       useEffect(() => {
         if(data!=null){
-          let contents = data.filter(item=>item.wc_category==="about_philosphy");
+          let contents = data.filter(item=>item.wc_category==="about_philosophy");
           if(contents.length>0){
             let aboutContent = contents[0];
           setPhilosophyTitle(aboutContent.wc_title);

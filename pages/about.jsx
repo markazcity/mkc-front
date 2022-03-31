@@ -35,17 +35,22 @@ const About = ({data}) => {
   const [who, setWho] = useState(true);
   const [philosophy, setPhilosophy] = useState(true);
   const [journey, setJourney] = useState(true);
+  const [past, setPast] = useState(true);
+
   const [leadership, setLeadership] = useState(true);
 
 
   useEffect(() => {
     if(data!=null){
-      setWho(data.data.filter(item=>item.wc_category==="who"));
-      setPhilosophy(data.data.filter(item=>item.wc_category==="philosophy"));
-      setJourney(data.data.filter(item=>item.wc_category==="journey"));
-      setLeadership(data.data.filter(item=>item.wc_category==="leadership"));
+      setWho(data.data.filter(item=>item.wc_category==="about_who"));
+      setPhilosophy(data.data.filter(item=>item.wc_category==="about_philosophy"));
+      setJourney(data.data.filter(item=>item.wc_category==="about_journey"));
+      setPast(data.data.filter(item=>item.wc_category==="about_past"));
+      setLeadership(data.data.filter(item=>item.wc_category==="about_leadership"));
     }
     },[data])
+
+
 
   return (
     
@@ -66,7 +71,7 @@ const About = ({data}) => {
         <OurPhilosophy dataset={philosophy} />
       </section>
       <section className="py-10" id="past">
-        <OurPast dataset={journey} />
+        <OurPast dataset={journey} past={past} />
       </section>
       
       <section>
