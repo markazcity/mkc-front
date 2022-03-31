@@ -7,12 +7,48 @@ import { useRouter } from "next/router";
 import {ROOT_URL} from '@/inc/Const'
 import renderHTML from 'react-render-html';
 import Dialog from '@/components/Admin/Dialog'
+import PhotoModal from '@/components/Utils/PhotoModal'
 
 
-const Blog = () => {
-  const router = useRouter();
-  const DATA_URL = ROOT_URL+"blog.php?type=list";
+const getData = async () => {
+  const BLOG_URL = ROOT_URL+"blog.php?type=list";
   const CITYPULSE_URL = ROOT_URL+"CityPulse/getCityPulse.php";
+  const GALLERY_URL = ROOT_URL+"gallery/getPhotos.php";
+
+ let blogData = await fetch(BLOG_URL)
+  .then(response => response.json());
+
+  let cityPulseData = await fetch(CITYPULSE_URL)
+  .then(response => response.json());
+
+  let galleryData = await fetch(GALLERY_URL)
+  .then(response => response.json());
+
+
+
+  return {blogData, cityPulseData, galleryData}
+}
+
+
+export async function getStaticProps () {
+  const content = await getData()
+  return {
+    props: {
+      blogData:content.blogData,
+      cityPulseData:content.cityPulseData,
+      galleryData:content.galleryData
+    },
+    revalidate: 300,
+  }
+}
+
+
+
+
+
+const Blog = ({blogData, cityPulseData, galleryData}) => {
+  const router = useRouter();
+
   const [blogs, setBlogs] = useState(null);
   const [featured, setFeatured] = useState(null);
   const [cityPulse, setCityPulse] = useState(null);
@@ -20,57 +56,37 @@ const Blog = () => {
   const [connError, setConnError] = useState(false);
 
 
-  
-      const getData = async () => {
-          fetch(DATA_URL)
-          .then(response => response.json())
-          .then(data =>{
-            if(data.status==="HasBlog"){
-              let tempBlog = []
-              data.blogs.map((blg, index)=>{
-                
-                if(index===0){
-                  setFeatured(blg);
-                }else{
-                  tempBlog.push(blg);
-                }
-              })
-              setBlogs(tempBlog)
-              
-            }
-            else if(data.status==="EmptyBlog"){
-              setBlogs([]);
-            }else {
-              setError("Auth Error");
-              
-            }
-          }).catch(e=>{
-            setConnError(true)
-          });
-          //CITY PULSE
-          fetch(CITYPULSE_URL)
-          .then(response => response.json())
-          .then(data =>{
-            if(data.status==="success"){
-              setCityPulse(data.data);
-            }
-            else if(data.status==="empty"){
-              setCityPulse([]);
-            }else {
-              setError("Auth Error");
-              
-            }
-          }).catch(er=>console.log('Network Error'));;
-
-
-        }
-  
 
   
 useEffect(() => {
-      getData();
+if(blogData!=null){
+  if(blogData.status==="HasBlog"){
+    let tempBlog = []
+    blogData.blogs.map((blg, index)=>{
+      if(index===0){
+        setFeatured(blg);
+      }else{
+        tempBlog.push(blg);
+      }
+    })
+    setBlogs(tempBlog)
+    
+  }
+  else{
+    setBlogs([]);
+  }
+}
+if(cityPulseData.status==="success"){
+  setCityPulse(cityPulseData.data);
+}
+else{
+  setCityPulse([]);
+}  
+
+
       
   },[])
+  console.log(galleryData);
 
   return (
     
@@ -274,9 +290,90 @@ router.push(`/blog/${post.blog_link}`)
         <span></span>
       )
     }
+    <Gallery dataset = {galleryData}/>
       <Footer/>
     </div>
   );
 };
 
+
+
 export default Blog;
+
+
+export const Gallery = ({dataset})=>{
+
+  const [photoLink, setPhotoLink]= useState(null);
+
+  const gallery = dataset.data;
+  return   (
+    <div>
+       <h1 className="text-5xl font-extrabold mb-5 text-center"
+  style={{
+      color: "#69696D",
+  }}
+  data-aos="zoom-in"
+  >GALLERY</h1>
+{
+dataset!=null && gallery !=null & gallery.length>0?
+
+(
+<div>
+
+
+<section className="grid md:grid-cols-2 xl:grid-cols-3 my-5 lg:my-10 md:mx-10 lg:mx-32 xl:mx-56 lg:gap-x-10 gap-y-10 ">
+{
+gallery.map((post, index)=>(
+    <a  key={index}
+    className="blogItem mx-10 lg:mx-0 bg-gray-100 rounded-lg block cursor-pointer"
+    data-aos="fade-up-right"
+    data-aos-delay={index*50}
+    onClick={()=>setPhotoLink(ROOT_URL+'gallery/'+post.g_fileLink) }
+    download
+    >
+        <div
+    className="h-52 mb-4 rounded-lg"
+    style={
+     {
+       background:`url('${ROOT_URL+'gallery/'+post.g_fileLink}') no-repeat center center`,
+        backgroundSize: "cover",
+     }
+      }
+     
+    ></div>
+  
+    </a>
+))
+}
+</section>
+{
+  photoLink!=null?(<PhotoModal link={photoLink} onClose={()=>setPhotoLink(null)}/>):(
+    <span></span>
+  )
+}
+</div>
+):(
+<div  className="grid lg:grid-cols-2 xl:grid-cols-3 my-5 lg:my-10 xl:mx-64 gap-x-4 gap-y-10">
+{
+[1,2,3,4,5,6].map(e=>{
+ return (<div  key={e}
+  
+  className="mx-10 lg:mx-0 bg-gray-300 rounded-lg"
+  data-aos="fade-up-right"
+  
+  >
+      <div
+  className="h-52 mb-4 "
+  
+   
+  ></div>
+  <div className="mx-4 text-transparent leading-5 mb-5 ">Markaz Knowledge City</div>
+  </div>)
+})
+}
+</div>
+)
+}
+    </div>
+  )
+}

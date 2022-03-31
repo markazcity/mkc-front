@@ -60,7 +60,6 @@ useEffect(() => {
     window.addEventListener('scroll', () => {
       
          ccoverlay.style.opacity=window.scrollY/1000;
-         document.getElementById('cctext').style.color="#fff";
        
       
       

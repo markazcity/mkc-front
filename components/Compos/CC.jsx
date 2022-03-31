@@ -12,7 +12,7 @@ const CC = (props) => {
     <div
     className="w-full flex justify-center m-6 order-2 lg:order-1"
     > 
-<div id="cctext">
+<div>
 <h1
     className="font-extrabold text-xl xl:text-3xl text-black"
 data-aos="fade-up"

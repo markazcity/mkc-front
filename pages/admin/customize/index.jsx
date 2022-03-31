@@ -5,6 +5,8 @@ import {API_KEY} from '@/inc/Const'
 import axios from 'axios';
 import Head from 'next/head'
 import {ROOT_URL} from '@/inc/Const'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const getData = async () => {
   const DATA_URL = ROOT_URL+"webContents/content.php";
@@ -51,13 +53,13 @@ async function submitCareerBanner(file){
   }).then(res=>{
     setCareerLoading(false)
       if(res.data.status=="success"){
-        alert("Uploaded!");
+        toast.success("Banner uploaded!");
       }else{
-        alert("Something went wrong. Please try again later.1");
+        toast.error("Something went wrong. Please try again later.1");
       }
   }).catch(err=>{
         setCareerLoading(false)
-        alert(err);
+        toast.error(err);
   });
 }
 // HOME VIDEO UPLOADING
@@ -74,13 +76,13 @@ async function uploadHomeVideo(file){
   }).then(res=>{
     setHomeVideoLoading(false)
       if(res.data.status=="success"){
-        alert("Home Video Uploaded!");
+        toast.success("Home Video Uploaded!");
       }else{
-        alert("Something went wrong. Please try again later.1");
+        toast.error("Something went wrong. Please try again later.1");
       }
   }).catch(err=>{
     setHomeVideoLoading(false)
-        alert(err);
+        toast.error(err);
   });
 }
 //CC VIDEO UPLOAD
@@ -96,13 +98,13 @@ formData.append('file',file)
 }).then(res=>{
   setCCVideoLoading(false)
     if(res.data.status=="success"){
-      alert("CC Video Uploaded!");
+      toast.success("CC Video Uploaded!");
     }else{
-      alert("Something went wrong. Please try again later.1");
+      toast.error("Something went wrong. Please try again later.1");
     }
 }).catch(err=>{
   setCCVideoLoading(false)
-      alert(err);
+      toast.error(err);
 });
 }
 
@@ -219,7 +221,17 @@ formData.append('file',file)
             controls
             ></video>
    </section>
-
+   <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+/>
         </AdminLayout>
     );
 }
