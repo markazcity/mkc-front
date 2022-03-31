@@ -32,7 +32,7 @@ const PhotoModal = (props) => {
             onClick={(e)=>e.stopPropagation()}
             >
                 <div className="flex justify-center">
-             <img src={props.link} alt="" />
+             <img src={props.link} alt="Markaz Knowledge City" className="rounded-lg" />
                 </div>
             
             </div>

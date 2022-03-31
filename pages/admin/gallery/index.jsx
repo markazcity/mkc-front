@@ -14,7 +14,8 @@ const Gallery = () => {
     const [error, setError] = useState(null);
     const DATA_URL = ROOT_URL+"gallery/getPhotos.php";
     const [blogs, setGallerys] = useState(null);
-    const [deletePhoto, setDeletePhoto] = useState(null);
+    const [deletePhoto, setDeletePhoto] = useState(false);
+    const [selectId, setSelectId] = useState(null);
 
     
         const getData = async () => {
@@ -51,13 +52,13 @@ const Gallery = () => {
                onClick={() => router.push('/admin/gallery/new')}
                >Upload Photo</button>
            </div>
-<section className="grid lg:grid-cols-2 xl:grid-cols-3">
+<section >
 {
               blogs!=null?blogs.length>0?(
-                <div>
+                <div className="grid lg:grid-cols-2 xl:grid-cols-3">
                     {
                         blogs.map((blg)=>{
-                            return  (<section>
+                            return  (<section className="mx-4">
                                 <div className="flex bg-gray-100 rounded-lg my-4 px-4 py-2 shadow hover:shadow-md h-52"
                                 style={{
                                     backgroundImage:`url('${ROOT_URL+"gallery/"+blg.g_fileLink}')`,
@@ -70,19 +71,23 @@ const Gallery = () => {
                                 <div>
                                     {blg.g_name} <br />
                                     <button
-onClick={()=>setDeletePhoto(true)
+onClick={()=>{
+    setDeletePhoto(true)
+    setSelectId(blg.g_id)
+}
 }
 className="bg-red-600 hover:bg-red-700 text-white px-4 py-1 rounded my-2 "
 >Delete</button>
                                 </div>
-                                {deletePhoto?(
+                               
+                                   
     <DeletePhoto 
-    id={blg.g_id}
+    id={selectId}
+    open={deletePhoto}
     onClose={()=>setDeletePhoto(false)}
     onSuccess = {()=>getData()}
-    ></DeletePhoto>
-):(<span></span>)}
-                            </section>
+    />
+</section>
                                 )
                             
                         })
@@ -107,7 +112,9 @@ export const DeletePhoto = (props)=>{
     const [deleting, setDeleting] = useState(false);
     const router = useRouter();
     return (
-        <Dialog
+        <div>
+            <Dialog
+            open={props.open}
     onClose={() =>props.onClose()}
     >
         <div className="py-6 px-4">
@@ -140,5 +147,6 @@ export const DeletePhoto = (props)=>{
     <span></span>
 )}
         </Dialog>
+        </div>
     );
 }
