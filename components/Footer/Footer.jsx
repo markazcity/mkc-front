@@ -5,7 +5,7 @@ const Footer = ({showFooter}) => {
 var links = [
   {name: 'About', url: '/about'},
   {name: 'Components', url: '/components'},
-  {name: 'Career', url: '/career'},
+  {name: 'Career', url: '/careers'},
   {name: 'Contact', url: '/contact'},
   {name: 'Blog', url: '/blog'},
 

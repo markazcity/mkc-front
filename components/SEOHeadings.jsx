@@ -30,7 +30,7 @@ const headings =
     return (
         <div style={{maxHeight:'0px', overflow: 'hidden'}}>
 {
-    headings.map((heading, index) => (<h1 key={index}>{heading}</h1>))
+    headings.map((heading, index) => (<h2 key={index}>{heading}</h2>))
 }
         </div>
     );

@@ -21,6 +21,10 @@ const [link, setLink] = useState(null);
 const [category, setCategory] = useState(null);
 const [position, setPosition] = useState(null);
 const [video, setVideo] = useState(null);
+const [videoUrl, setVideoUrl] = useState(null);
+const [videoUploadPercent, setVideoUploadPercent] = useState(0);
+
+const [homeVideoLoading, setHomeVideoLoading] = useState(false);
 
 
 
@@ -51,7 +55,7 @@ useEffect(() => {
           setThumbUrl(dat.wc_image);
           setLink(dat.wc_link);
           setCategory(dat.wc_category);
-          setVideo(dat.wc_video);
+          setVideoUrl(dat.wc_video);
           if(dat.wc_category==='about_leadership'){
             setPosition(dat.wc_author_position);
           }
@@ -120,6 +124,29 @@ useEffect(() => {
     });
   }
 
+
+  async function uploadVideo(file){
+  
+    const URL = "https://api.markazcity.in/webContents/uploadVideo.php";
+  const formData = new FormData();
+  formData.append('api',API_KEY)
+  formData.append('file',file)
+   axios.post(URL, formData,{
+      headers: {
+          'content-type': 'multipart/form-data'
+      },
+      onUploadProgress: function (progressEvent) {
+        let progress = (progressEvent.loaded / progressEvent.total) * 100;
+        setVideoUploadPercent(progress)
+      },
+  }).then((res)=>{
+    setVideoUrl(res.data.file);
+    setHomeVideoLoading(false)
+    toast.success("Video Uploaded successfully!")
+  });
+}
+
+
   async function updateContent(thumblink){
     const URL = "https://api.markazcity.in/webContents/updateContent.php";
   const formData = new FormData();
@@ -130,7 +157,7 @@ useEffect(() => {
   formData.append('image',thumblink)
   formData.append('link',link)
   formData.append('category',category)
-    formData.append('video',video)
+    formData.append('video',videoUrl)
 
   if(category=='about_leadership'){
     formData.append('position',position)
@@ -219,13 +246,39 @@ pauseOnHover
         <span></span>
     )
 }
-           <div className="my-4"> <h4 className="text-violet-700 mb-2">Video Link</h4>
-            <input type="text" onChange={(e) => setVideo(e.target.value)}
-            className="w-full"
-            defaultValue={video}
-            placeholder="Video Link"
-            />
-           </div> 
+         
+
+
+           <section className="mb-5">
+           <h4 className="text-violet-700 mb-2">Video</h4>
+        <input type="file"
+        className="w-full m2-4"
+        placeholder="Photo"
+        onChange={ (e)=>{
+          setHomeVideoLoading(true);
+             let output = document.getElementById('video');
+             output.src = URL.createObjectURL(e.target.files[0]);
+             uploadVideo(e.target.files[0]);
+        }} 
+        accept="video/mp4"
+        />   <br />
+     
+       {
+           videoUrl!=null && videoUrl.length>8?( 
+           <video src={ROOT_URL+"webContents/uploads/"+videoUrl} className="rounded-lg mt-4"
+           id="video"
+           style={{width:"300px"}}
+           controls
+           ></video>):(<></>)
+       }    
+            
+   </section>
+
+
+
+
+
+
 
 
             {/* <h4 className="text-violet-700 mb-2">Category</h4>
@@ -275,8 +328,26 @@ pauseOnHover
              )}</button>
              </div>
              <br /><br />
+            
+            {
+                homeVideoLoading?(
+                    <div className="fixed top-0 left-0 right-0 bg-green-800 p-4 text-white flex items-center">
+            Uploading Video 
+            <div className="w-4"></div> 
+            <div className="h-full">
+            <div className="absolute bg-white bg-opacity-25 h-2 rounded-lg" style={{width:`200px`}}></div>
+            <div className="absolute bg-white h-2 rounded-lg" style={{width:`${videoUploadPercent*2}px`}}></div>
+            </div>
+        </div>
+                ):(
+                    <span></span>
+                )
+            }
+             
         </AdminLayout>
     );
 }
  
 export default EditContent;
+
+

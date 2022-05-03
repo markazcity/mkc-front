@@ -99,7 +99,7 @@ const Education = (props) => {
                               id={`${edu.wc_id}`}
                               onMouseOver={()=>{
                            
-                                if(edu.wc_video!=null && edu.wc_video.length>5){
+                                if(edu.wc_video!=null && edu.wc_video.length>8){
                                     document.getElementById(`icon${index}`).classList.add('animate-back');
                                     document.getElementById(`index${index}`).classList.add('animate-down');
                                 }                                    
