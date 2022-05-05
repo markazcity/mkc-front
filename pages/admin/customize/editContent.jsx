@@ -25,6 +25,7 @@ const [videoUrl, setVideoUrl] = useState(null);
 const [videoUploadPercent, setVideoUploadPercent] = useState(0);
 
 const [homeVideoLoading, setHomeVideoLoading] = useState(false);
+const [videoSelected, setVideoSelected] = useState(false);
 
 
 
@@ -255,22 +256,23 @@ pauseOnHover
         className="w-full m2-4"
         placeholder="Photo"
         onChange={ (e)=>{
+           
           setHomeVideoLoading(true);
-             let output = document.getElementById('video');
+             let output = document.getElementById('thumbvideo');
              output.src = URL.createObjectURL(e.target.files[0]);
              uploadVideo(e.target.files[0]);
         }} 
         accept="video/mp4"
         />   <br />
      
-       {
-           videoUrl!=null && videoUrl.length>8?( 
+    
+            
            <video src={ROOT_URL+"webContents/uploads/"+videoUrl} className="rounded-lg mt-4"
-           id="video"
+           id="thumbvideo"
            style={{width:"300px"}}
            controls
-           ></video>):(<></>)
-       }    
+           ></video>
+        
             
    </section>
 

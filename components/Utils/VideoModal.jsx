@@ -26,6 +26,7 @@ const VideoModal = (props) => {
         }}
         >
             <div className="bg-white w-11/12 lg:w-8/12 xl:w-7/12 rounded-2xl "
+                data-aos="zoom-in"
             style={{
                 zIndex:"200"
             }}

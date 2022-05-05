@@ -451,3 +451,13 @@ background: linear-gradient(160deg, #038cdb 0%, #80D0C7 100%);
   .bgf8{
     background: #F8FAF8;
   }
+
+
+  .blur-bg{
+    background: rgba(0, 0, 0, 0.25);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }

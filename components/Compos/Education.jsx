@@ -104,7 +104,6 @@ const Education = (props) => {
                                     document.getElementById(`index${index}`).classList.add('animate-down');
                                 }                                    
 
-                                  
                               }}
                               onMouseOut={()=>{
                                 document.getElementById(`icon${index}`).classList.remove('animate-back');
@@ -137,7 +136,7 @@ const Education = (props) => {
                                          }}
                                          onClick={()=>{
                                              if(edu.wc_video!=null && edu.wc_video.length>5){
-                                                setVideoLink(edu.wc_video)
+                                                setVideoLink(ROOT_URL+"webContents/uploads/"+edu.wc_video);
                                              }
                                          }}
                                          > 
