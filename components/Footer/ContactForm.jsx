@@ -6,7 +6,7 @@ const ContactForm = () => {
         className="lg:px-32 py-16 flex justify-center lg:justify-start"
         >
            <div>
-           <h2 className="lg:text-2xl text-center text-gray-600">Get Connected With Us</h2>
+           <h2 className="lg:text-2xl text-center text-gray-600">Get Connected With us</h2>
             <p className="py-2">
             <SocialIcons/>
             </p>
