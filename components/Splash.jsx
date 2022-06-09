@@ -3,9 +3,6 @@ import intro from '../asset/intro.json'
 
 const Splash = () => {
 
-  
-
-
     return (<div
     className="absolute z-50 flex justify-center items-center splash"
     style={{

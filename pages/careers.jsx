@@ -173,9 +173,6 @@ const applyJob = async (e) => {
       <section
       className="absolute z-10 top-0  py-28 md:py-52 flex justify-center w-full"
       >
-            
-
-
       <div className="mt-10 sm:mt-0 w-full xl:w-6/12">
 
         <div className="md:grid md:grid-cols-12 bg-white shadow rounded-lg">

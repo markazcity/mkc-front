@@ -51,7 +51,6 @@ const About = ({data}) => {
     },[data])
 
 
-
   return (
     
     <div>
