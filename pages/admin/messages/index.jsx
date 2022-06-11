@@ -55,6 +55,7 @@ useEffect(() => {
                 <div>
                     {
                         messages.map((msg)=>{
+                          console.log(msg);
                             return  msg.message.length>1?
                             (
                                 <div
@@ -64,12 +65,19 @@ useEffect(() => {
                                     <span className="bg-violet-700 bg-opacity-25 text-violet-700 px-2 py-1 rounded inline-block my-2">
                                     {msg.name} 
                                     </span>
-                                   
-                                    <a className="italic text-gray-500 block mb-2"
+                                    <br/>
+                                    <span className="bg-butter-700  px-2 py-1 rounded inline-block my-2">
+                                    {msg.sentOn.split(/(\s+)/)[0]} 
+                                    </span>
+                                    <br/>
+                                    <div className="flex">
+                                   Send Direct Message ---
+                                    <a className=" italic text-gray-500 hover:text-gray-700 block mb-2"
                                     href={`mailto:${msg.email}`}
                                     target="_blank"
                                     rel="noreferrer"
                                     > {msg.email}</a>
+                                    </div>
                                    <hr />
 
 <p className="pt-3">
