@@ -27,7 +27,7 @@ const Footer2 = () => {
   return (
     <footer className="bg-black footer">
       <div className="flex-row justify-center items-center  p-6 md:p-12 lg:pb-6 lg:pl-1 lg:pr-0 lg:pt-6  text-center text-white border-t-yellow-900 ">
-        <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 lg:px-32 lg:py-16 sm:pb-0 lg:gap-10 sm:gap-y-5 footer-grid">
+        <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 lg:px-32 lg:py-16 sm:pb-0 lg:gap-0 sm:gap-y-5 footer-grid">
           <div className="col-span-2 ">
             <div className=" flex lg:flex-rows sm:flex-cols justify-around  getconnected">
               <div className="text-left ">
