@@ -1,18 +1,18 @@
-import SocialIcons from '../SocialIcons'
+import SocialIcons from "../SocialIcons";
 
 const ContactForm = () => {
-    return (
-        <section
-        className="lg:px-32 py-16 flex justify-center lg:justify-start"
-        >
-           <div>
-           <h2 className="lg:text-2xl text-center text-gray-600">Get Connected</h2>
-            <p className="py-2">
-            <SocialIcons/>
-            </p>
-           </div>
-        </section>
-    );
-}
- 
+  return (
+    <section className="pb-10 flex lg:justify-start lg:item-left sm:item-center  sm:justify-center socialIcons  ">
+      <div className="text-center socialIconsDiv">
+        <h2 className="lg:text-2xl text-left flex flex-cols item-center ">
+          Get Connected
+        </h2>
+        <p className="py-2">
+          <SocialIcons />
+        </p>
+      </div>
+    </section>
+  );
+};
+
 export default ContactForm;
