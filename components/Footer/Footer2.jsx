@@ -148,7 +148,7 @@ const Footer2 = () => {
                 <MdEmail className="mr-4 text-2xl " />
                 info@markazknowledgecity.com
               </span>
-              <div className="items-left mt-4 " data-aos="fade-right">
+              <div className="items-left mt-4 ">
                 <ContactForm />
               </div>
             </div>
