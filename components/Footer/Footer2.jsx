@@ -142,7 +142,7 @@ const Footer2 = () => {
               </span>
               <span className="flex items-center justify-center mb-3 my-3 text-gray-400 hover:text-white transition duration-500 ease-in-out">
                 <IoMdCall className="mr-4 text-2xl" />
-                +91 9847 00 00 00
+                +91 6235600600
               </span>
               <span className="flex items-center justify-center mb-3 my-3 text-gray-400 hover:text-white transition duration-500 ease-in-out">
                 <MdEmail className="mr-4 text-2xl " />
