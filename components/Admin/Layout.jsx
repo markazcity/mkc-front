@@ -1,38 +1,42 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import {  MenuIcon, XIcon } from '@heroicons/react/outline'
-import {useRouter } from 'next/router'
-import { useEffect } from 'react';
-import Cookies  from 'js-cookie';
+import { Fragment } from "react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import Cookies from "js-cookie";
 
-const userNavigation = [
-  { name: 'Sign out', href: 'logout' },
-]
+const userNavigation = [{ name: "Sign out", href: "logout" }];
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function AdminLayout(props) {
+  const router = useRouter();
 
-
-const router = useRouter();
-
-useEffect(() => {
-    const userName = Cookies.get('user');
-    if(userName==undefined || userName!=="mkcadmin"){
-        router.push('/admin/login')
+  useEffect(() => {
+    const userName = Cookies.get("user");
+    if (userName == undefined || userName !== "mkcadmin") {
+      router.push("/admin/login");
     }
-}, [])
+  }, []);
 
-    const navigation = [ 
-        { name: 'Dashboard', href: '/admin', current: props.label=='Dashboard' },
-        { name: 'Blog', href: '/admin/blog', current: props.label=='Blog' },
-        { name: 'Messages', href: '/admin/messages', current: props.label=='Messages' },
-        { name: 'Career', href: '/admin/career', current: props.label=='Career' },
-        { name: 'Gallery', href: '/admin/gallery', current: props.label=='Gallery' },
-        { name: 'Live Chat', href: '/admin/tawk', current: props.label=='Tawk' },
-      ]
-      
+  const navigation = [
+    { name: "Dashboard", href: "/admin", current: props.label == "Dashboard" },
+    { name: "Blog", href: "/admin/blog", current: props.label == "Blog" },
+    {
+      name: "Messages",
+      href: "/admin/messages",
+      current: props.label == "Messages",
+    },
+    { name: "Career", href: "/admin/career", current: props.label == "Career" },
+    {
+      name: "Gallery",
+      href: "/admin/gallery",
+      current: props.label == "Gallery",
+    },
+    { name: "Live Chat", href: "/admin/tawk", current: props.label == "Tawk" },
+  ];
+
   return (
     <div>
       <Disclosure as="nav" className="bg-gray-800">
@@ -42,11 +46,7 @@ useEffect(() => {
               <div className="flex items-center justify-between h-16">
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
-                    <img
-                      className="h-8 w-8"
-                      src="/icon.png"
-                      alt="Workflow"
-                    />
+                    <img className="h-8 w-8" src="/icon.png" alt="Workflow" />
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
@@ -56,11 +56,11 @@ useEffect(() => {
                           onClick={() => router.push(item.href)}
                           className={classNames(
                             item.current
-                              ? 'bg-gray-900 text-white'
-                              : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                            'px-3 py-2 rounded-md text-sm font-medium cursor-pointer'
+                              ? "bg-gray-900 text-white"
+                              : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                            "px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
                           )}
-                          aria-current={item.current ? 'page' : undefined}
+                          aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
                         </a>
@@ -70,7 +70,6 @@ useEffect(() => {
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-4 flex items-center md:ml-6">
-
                     {/* Profile dropdown */}
                     <Menu as="div" className="ml-3 relative">
                       <div>
@@ -94,17 +93,16 @@ useEffect(() => {
                               {({ active }) => (
                                 <a
                                   href={item.href}
-                                  onClick={(e) =>{
-                                    if(item.href=="logout"){
-e.preventDefault();
-Cookies.remove('user')
-router.push('/admin/login')
-
+                                  onClick={(e) => {
+                                    if (item.href == "logout") {
+                                      e.preventDefault();
+                                      Cookies.remove("user");
+                                      router.push("/admin/login");
                                     }
                                   }}
                                   className={classNames(
-                                    active ? 'bg-gray-100' : '',
-                                    'block px-4 py-2 text-sm text-gray-700'
+                                    active ? "bg-gray-100" : "",
+                                    "block px-4 py-2 text-sm text-gray-700"
                                   )}
                                 >
                                   {item.name}
@@ -138,10 +136,12 @@ router.push('/admin/login')
                     key={item.name}
                     onClick={() => router.push(item.href)}
                     className={classNames(
-                      item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'block px-3 py-2 rounded-md text-base font-medium'
+                      item.current
+                        ? "bg-gray-900 text-white"
+                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                      "block px-3 py-2 rounded-md text-base font-medium"
                     )}
-                    aria-current={item.current ? 'page' : undefined}
+                    aria-current={item.current ? "page" : undefined}
                   >
                     {item.name}
                   </a>
@@ -149,14 +149,15 @@ router.push('/admin/login')
               </div>
               <div className="pt-4 pb-3 border-t border-gray-700">
                 <div className="flex items-center px-5">
-                  <div className="flex-shrink-0">
-                    {account}
-                  </div>
+                  <div className="flex-shrink-0">{account}</div>
                   <div className="ml-3">
-                    <div className="text-base font-medium leading-none text-white">{"user.name"}</div>
-                    <div className="text-sm font-medium leading-none text-gray-400">{"user.email"}</div>
+                    <div className="text-base font-medium leading-none text-white">
+                      {"user.name"}
+                    </div>
+                    <div className="text-sm font-medium leading-none text-gray-400">
+                      {"user.email"}
+                    </div>
                   </div>
-                  
                 </div>
                 <div className="mt-3 px-2 space-y-1">
                   {userNavigation.map((item) => (
@@ -174,32 +175,43 @@ router.push('/admin/login')
           </>
         )}
       </Disclosure>
-{props.fullScreen?props.children:(<main>
-<header className="bg-white shadow">
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-gray-900">{props.title}</h1>
-        </div>
-      </header>
-      <section>
-        <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-          {/* Replace with your content */}
-          <div className="px-4 py-6 sm:px-0">
-           {props.children}
-          </div>
-          {/* /End replace */}
-        </div>
-      </section>
-</main>)}
-
-     
+      {props.fullScreen ? (
+        props.children
+      ) : (
+        <main>
+          <header className="bg-white shadow">
+            <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+              <h1 className="text-3xl font-bold text-gray-900">
+                {props.title}
+              </h1>
+            </div>
+          </header>
+          <section>
+            <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+              {/* Replace with your content */}
+              <div className="px-4 py-6 sm:px-0">{props.children}</div>
+              {/* /End replace */}
+            </div>
+          </section>
+        </main>
+      )}
     </div>
-  )
+  );
 }
 
-
-
-
-
-export const account = <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-</svg>
+export const account = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6 text-white"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+    />
+  </svg>
+);

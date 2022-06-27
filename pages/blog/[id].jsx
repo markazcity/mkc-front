@@ -5,6 +5,7 @@ import Logo from "@/components/Logo";
 import Head from "next/head";
 import MenuBar from "@/components/NavMenu/Menu";
 import Footer from "@/components/Footer/Footer";
+import Footer2 from "@/components/Footer/Footer2";
 
 const SingleBlog = ({ params, blogs }) => {
   console.log(blogs.blogs);
@@ -41,7 +42,7 @@ const SingleBlog = ({ params, blogs }) => {
         </article>
       </div>
 
-      <Footer />
+      <Footer2 />
     </div>
   );
 };
