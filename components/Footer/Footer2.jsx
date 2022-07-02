@@ -94,7 +94,7 @@ const Footer2 = () => {
                         transition={{ duration: 0.3, delay: i * 0.2 }}
                         variants={{
                           visible: { opacity: 1, translateX: 0 },
-                          hidden: { opacity: 0, translateX: 50 },
+                          hidden: { opacity: 0, translateX: 30 },
                         }}
                         className="flex my-3 "
                       >
@@ -116,7 +116,7 @@ const Footer2 = () => {
                         transition={{ duration: 0.3, delay: i * 0.2 }}
                         variants={{
                           visible: { opacity: 1, translateX: 0 },
-                          hidden: { opacity: 0, translateX: 50 },
+                          hidden: { opacity: 0, translateX: 0 },
                         }}
                         className="flex my-3 "
                       >
@@ -131,8 +131,9 @@ const Footer2 = () => {
             </div>
           </div>
           <div
-            className=" flex justify-center items-center  p-6 lg:pl-1 lg:pr-0 lg:py-6   text-white lg:col-span-2 md:col-span-6 sm:col-span-2"
-            data-aos="fade-left"
+            className=" flex  justify-center items-center  p-6 lg:pl-1 lg:pr-0 lg:py-6   text-white lg:col-span-2 md:col-span-6 sm:col-span-2"
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom"
           >
             <div className=" flex flex-col	 lg:items-start lg:pl-12 md:pl-0 s:pl-0 md:items-center">
               <h2 className="mb-4 lg:text-2xl ">Contact Us</h2>
