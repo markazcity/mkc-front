@@ -88,6 +88,7 @@ const Customize = ({ data }) => {
         toast.error(err);
       });
   }
+
   //CC VIDEO UPLOAD
   async function uploadCCVideo(file) {
     const URL = ROOT_URL + "siteAssets/uploadCCvideo.php";

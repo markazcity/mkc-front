@@ -8,6 +8,7 @@ export const mainMenu = [
   { name: "About", icon: "", to: "/about" },
   { name: "Components", icon: "", to: "/components" },
   { name: "Blog", icon: "", to: "/blog" },
+  // { name: "News", icon: "", to: "/news" },
   { name: "Careers", icon: "", to: "/careers" },
   // {name:"Contact", icon:"", to:"/contact"},
 ];
