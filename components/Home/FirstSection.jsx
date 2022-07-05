@@ -47,7 +47,8 @@ const FirstSection = () => {
             style={{ height: "100%", width: "100%", objectFit: "cover" }}
           >
             <source
-              src="https://api.markazcity.in/siteAssets/home.mp4"
+              // src="https://api.markazcity.in/siteAssets/home.mp4"
+              src="assets/homeNew.mp4"
               type="video/mp4"
             ></source>
           </video>
