@@ -47,14 +47,12 @@ const NewsSlider = ({ show }) => {
                         src={news.imgUrl}
                         alt={news?.title}
                         width="200px"
-                        height="200px"
+                        height="180px"
                         style={{
                           objectFit: "cover",
-                          backgroundColor: "black",
-                          opacity: "0.7",
                         }}
                         // layout="fill"
-                        className="pointer-events-none w-[200px]"
+                        className="pointer-events-none w-[200px] "
                       />
                       <span className="mt-5 text-gray-700">
                         {news?.title.toUpperCase()}
