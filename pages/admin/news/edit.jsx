@@ -4,21 +4,49 @@ import "react-quill/dist/quill.snow.css";
 import axios from "axios";
 import { API_KEY } from "@/inc/Const";
 import { useRouter } from "next/router";
+import { ROOT_URL } from "@/inc/Const";
 import Head from "next/head";
 
-const NewBlog = () => {
+const EditNews = () => {
   const ReactQuill =
     typeof window === "object" ? require("react-quill") : () => false;
 
   const [title, setTitle] = useState(null);
   const [body, setBody] = useState(null);
   const [thumb, setThumb] = useState(null);
+  const [thumbUrl, setThumbUrl] = useState(null);
   const [link, setLink] = useState(null);
+
+  const [newsId, setsetNewsId] = useState(null);
 
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
+
+  useEffect(() => {
+    if (!router.isReady) return;
+    const query = router.query;
+    setsetNewsId(query.id);
+  }, [router.isReady, router.query]);
+
+  useEffect(() => {
+    if (newsId != null) {
+      getNewsData();
+    }
+  }, [newsId]);
+
+  function getNewsData() {
+    fetch(ROOT_URL + "news/news.php?type=single&id=" + newsId)
+      .then((res) => res.json())
+      .then((data) => {
+        let dat = data.newses[0];
+        setTitle(dat.title);
+        setBody(dat.body);
+        setThumbUrl(dat.thumb);
+        setLink(dat.blog_link);
+      });
+  }
 
   function handleChange(value) {
     setBody(value);
@@ -44,31 +72,39 @@ const NewBlog = () => {
     },
   };
 
-  function submitBlog() {
-    if (title != null && body != null && thumb != null) {
+  function submitNews() {
+    if (title != null && body != null) {
       setError(null);
       setLoading(true);
 
-      uploadThumb().then((res) => {
-        if (res.data.status == "success") {
-          addNewBlog(res.data.file).then((resnew) => {
-            if (resnew.data.status == "success") {
+      if (thumb != null) {
+        uploadThumb().then((res) => {
+          if (res.data.status == "success") {
+            updateNews(res.data.file).then((resnew) => {
               setLoading(false);
-              router.push("/admin/blog");
-            } else {
-              setError("Something went wrong. Please try again later.");
-            }
-          });
-        } else {
-          setError(res.data.message);
-        }
-      });
-    } else {
-      if (title == null || body == null) {
-        setError("Please fill all the fields");
+              if (resnew.data.status == "success") {
+                alert("News Updated!");
+              } else {
+                setError("Something went wrong. Please try again later.");
+              }
+            });
+          } else {
+            setError(res.data.message);
+          }
+        });
       } else {
-        setError("Please upload a thumbnail.");
+        updateNews(thumbUrl).then((resnew) => {
+          setLoading(false);
+          if (resnew.data.status == "success") {
+            alert("News Updated!");
+          } else {
+            console.log(resnew);
+            setError("Something went wrong. Please try again later");
+          }
+        });
       }
+    } else {
+      setError("Please fill all the fields");
     }
   }
 
@@ -84,15 +120,15 @@ const NewBlog = () => {
     });
   }
 
-  async function addNewBlog(thumbUrl) {
-    const URL = "https://api.markazcity.in/newBlog.php";
+  async function updateNews(thumblink) {
+    const URL = "https://api.markazcity.in/updateNews.php";
     const formData = new FormData();
     formData.append("api", API_KEY);
+    formData.append("id", newsId);
     formData.append("title", title);
     formData.append("body", body);
-    formData.append("thumb", thumbUrl);
+    formData.append("thumb", thumblink);
     formData.append("link", link);
-    console.log(formData);
     return await axios.post(URL, formData, {
       headers: {
         Accept: "application/json",
@@ -102,9 +138,9 @@ const NewBlog = () => {
   }
 
   return (
-    <AdminLayout title="New Blog" label="Blog">
+    <AdminLayout title="Edit News" label="News">
       <Head>
-        <title>New Blog | Markaz Knowledge City</title>
+        <title>Edit News | Markaz Knowledge City</title>
       </Head>
       {error && (
         <div className="bg-red-200 text-red-700 px-3 py-2 mb-3 rounded">
@@ -118,32 +154,53 @@ const NewBlog = () => {
           setLink(e.target.value.toLowerCase().trim().replace(/\s/g, "-"));
         }}
         className="w-full"
-        placeholder="Blog Title"
+        defaultValue={title}
+        placeholder="News Title"
       />
-      <span className="text-blue-600 italic text-sm">
-        https://markazcity.in/blog/{link ?? ""}
+      <span
+        className="text-blue-600 italic text-sm cursor-pointer"
+        onClick={() => {
+          window.open(`/news/${link}`, "_blank").focus();
+        }}
+      >
+        https://markazcity.in/news/{link ?? ""}
       </span>{" "}
       <br /> <br />
       <ReactQuill value={body} onChange={handleChange} modules={modules} />
       <br />
-      <h4 className="text-violet-700 mb-2">Blog Thumbnail</h4>
+      <h4 className="text-violet-700 mb-2">News Thumbnail</h4>
+      {thumbUrl != null ? (
+        <div className="my-2">
+          <img
+            src={ROOT_URL + thumbUrl}
+            className="rounded-lg"
+            id="thumbPreview"
+            style={{ height: "200px" }}
+            alt=""
+          />
+        </div>
+      ) : (
+        <span></span>
+      )}
       <input
         type="file"
         className="w-full m2-4"
+        accept="image/*"
         placeholder="Thumbnail"
-        onChange={(e) => setThumb(e.target.files[0])}
-        accept="image/jpeg,image/png"
+        onChange={(e) => {
+          var output = document.getElementById("thumbPreview");
+          output.src = URL.createObjectURL(e.target.files[0]);
+          setThumb(e.target.files[0]);
+        }}
       />
       <span className="text-red-600 text-sm pt-1 inline-block">
         Image ust be in <b>1000x600</b>px resolution.
       </span>
       <br />
-      <br />
-      <br />
       <div className="flex justify-end">
         <button
           className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded mt-3"
-          onClick={() => submitBlog()}
+          onClick={() => submitNews()}
         >
           {loading ? (
             <span>
@@ -155,12 +212,14 @@ const NewBlog = () => {
               />
             </span>
           ) : (
-            <span>Add Blog</span>
+            <span>Update News</span>
           )}
         </button>
       </div>
+      <br />
+      <br />
     </AdminLayout>
   );
 };
 
-export default NewBlog;
+export default EditNews;

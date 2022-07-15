@@ -1,11 +1,16 @@
 import React from "react";
 import HeadTag from "@/head";
-import Logo from "@/components/Logo";
-import MenuBar from "@/components/NavMenu/Menu";
+import Link from "next/link";
 import Image from "next/image";
+import newses from "@/lib/news";
+import Logo from "@/components/Logo";
+import renderHTML from "react-render-html";
+import MenuBar from "@/components/NavMenu/Menu";
 import Footer2 from "@/components/Footer/Footer2";
-import { MdArrowRightAlt } from "react-icons/md";
+import { IoIosArrowForward } from "react-icons/io";
+
 const News = () => {
+  const firstElement = newses.slice(-1)[0];
   return (
     <div>
       <HeadTag title="News - Markaz Knowledge City" />
@@ -23,35 +28,103 @@ const News = () => {
         </h1>{" "}
         <br />
       </div>
-      <div>
-        <div className="grid grid-col-3">
-          <div className="flex flex-col">
-            <div>
-              <img
-                src="https://www.neom.com/content/dam/neom/newsroom/neom-mclaren-racing-partnership/neom-mclaren-racing-partnership-thumb.jpg"
-                alt=""
-                width="500px"
-                height="300px"
-              />
+      <div className="mb-10 lg:px-56 p-10">
+        {/* SINGLE ONE */}
+        <div className="grid xl:grid-cols-3 lg:grid-cols-2  sm:grid-cols-2 xl:gap-14 lg:gap-14 md:gap-0  my-8">
+          <div className="col-span-2">
+            <Image
+              src={firstElement.imgUrl}
+              alt=""
+              width="800px"
+              height="500px"
+              className="transform transition duration-500 hover:scale-110 col-span-2
+              items-center"
+            />
+          </div>
+          <div className="xl:col-span-1 lg:col-span-2 md:col-span-2 sm:col-span-2">
+            <div className="mt-2">
+              <span className="text-xs">{firstElement.date}</span>
             </div>
-            <div>
-              <span className="text-sm">June 27, 2022</span>
-            </div>
-            <div>
-              <span className="text-md">
-                NEOM AND MCLAREN RACING ANNOUNCE STRATEGIC TITLE PARTNERSHIP TO
-                DRIVE INNOVATION AND TALENT DEVELOPMENT IN ELECTRIC MOTORSPORT
+            <div className="my-2 mb-4 ">
+              <span className="lg:text-2xl sm:text-md lg:font-normal sm:font-bold  tracking-widest ">
+                {firstElement.title.toUpperCase()}
               </span>
             </div>
-          </div>
-          <div className="">
-            <button className="text-sm">
-              <span>LEARN MORE</span>
-            </button>
+            <div className="my-2 text-justify leading-5">
+              <span className="text-sm ">
+                {renderHTML(
+                  `<div class="noto hyphenate">${firstElement?.desc.substring(
+                    0,
+                    250
+                  )}...</div>`
+                )}
+              </span>
+            </div>
+            <div className="inline-block text-justify relative">
+              <button className="flex justify-center items-center hover:text-yellow-500 mt-4 transform transition +">
+                <span className="text-xs  mr-2 hover:block uppercase">
+                  <Link href={`/news/${firstElement?.id}`}>Read More </Link>
+                </span>
+                <IoIosArrowForward
+                  size={"15px"}
+                  className=" transform transition duration-500 hover:scale-110"
+                />
+              </button>
+            </div>
           </div>
         </div>
+        {/* REMAIN GRID TYPE */}
+        <div className="grid xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-2 gap-14">
+          {newses
+            ?.slice(0, -1)
+            .reverse()
+
+            .map((news) => (
+              <div className="flex flex-col  col-span-1" key={news.id}>
+                <div className="">
+                  <Image
+                    src={news.imgUrl}
+                    alt=""
+                    width="500px"
+                    height="300px"
+                    className="transform transition duration-500 hover:scale-110"
+                  />
+                </div>
+                <div className="mt-2">
+                  <span className="text-xs">{news.date}</span>
+                </div>
+                <div className="my-2 ">
+                  <span className="text-md font-bold">
+                    {news.title.toUpperCase()}
+                  </span>
+                </div>
+                <div className="my-2 text-justify leading-5">
+                  <span className="text-sm  ">
+                    {renderHTML(
+                      `<div class="noto hyphenate">${news?.desc.substring(
+                        0,
+                        250
+                      )}...</div>`
+                    )}
+                  </span>
+                </div>
+                <div className="text-justify ">
+                  <button className="flex justify-center align-center items-center hover:text-yellow-500 mt-4 transform transition ">
+                    <span className="text-xs  mr-2 hover:block uppercase">
+                      <Link href={`/news/${news?.id}`}>Read More </Link>
+                    </span>
+                    <span>
+                      <IoIosArrowForward
+                        size={"15px"}
+                        className=" transform transition duration-500 hover:scale-110"
+                      />
+                    </span>
+                  </button>
+                </div>
+              </div>
+            ))}
+        </div>
       </div>
-      {/* <MdArrowRightAlt className="mr-4 text-2xl " /> */}
       <Footer2 />
     </div>
   );

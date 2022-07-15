@@ -5,6 +5,7 @@ import {
   BiEdit,
   BiHomeAlt,
 } from "react-icons/bi";
+import { GiNewspaper } from "react-icons/gi";
 import {
   RiPagesLine,
   RiLuggageDepositLine,
@@ -29,6 +30,11 @@ const Admin = () => {
       title: "Blogs",
       icon: <RiPagesLine className={icoClass} />,
       to: "/admin/blog",
+    },
+    {
+      title: "News",
+      icon: <GiNewspaper className={icoClass} />,
+      to: "/admin/news",
     },
     {
       title: "CityPulse",

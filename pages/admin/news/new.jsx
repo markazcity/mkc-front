@@ -6,7 +6,7 @@ import { API_KEY } from "@/inc/Const";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-const NewBlog = () => {
+const NewsNews = () => {
   const ReactQuill =
     typeof window === "object" ? require("react-quill") : () => false;
 
@@ -14,7 +14,6 @@ const NewBlog = () => {
   const [body, setBody] = useState(null);
   const [thumb, setThumb] = useState(null);
   const [link, setLink] = useState(null);
-
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -23,7 +22,6 @@ const NewBlog = () => {
   function handleChange(value) {
     setBody(value);
   }
-
   const modules = {
     toolbar: [
       [{ header: "1" }, { header: "2" }, { font: [] }],
@@ -44,17 +42,17 @@ const NewBlog = () => {
     },
   };
 
-  function submitBlog() {
+  function submitNews() {
     if (title != null && body != null && thumb != null) {
       setError(null);
       setLoading(true);
 
       uploadThumb().then((res) => {
         if (res.data.status == "success") {
-          addNewBlog(res.data.file).then((resnew) => {
+          addNewNews(res.data.file).then((resnew) => {
             if (resnew.data.status == "success") {
               setLoading(false);
-              router.push("/admin/blog");
+              router.push("/admin/news");
             } else {
               setError("Something went wrong. Please try again later.");
             }
@@ -73,7 +71,8 @@ const NewBlog = () => {
   }
 
   async function uploadThumb() {
-    const URL = "https://api.markazcity.in/uploadFile.php";
+    // -------------------const URL = "https://api.markazcity.in/uploadFile.php";
+    const URL = "http://localhost/mkc/api/uploadFile.php";
     const formData = new FormData();
     formData.append("api", API_KEY);
     formData.append("file", thumb);
@@ -84,8 +83,9 @@ const NewBlog = () => {
     });
   }
 
-  async function addNewBlog(thumbUrl) {
-    const URL = "https://api.markazcity.in/newBlog.php";
+  async function addNewNews(thumbUrl) {
+    //---------------------------------------- const URL = "https://api.markazcity.in/news/newNews.php";
+    const URL = "http://localhost/mkc/api/news/newNews.php";
     const formData = new FormData();
     formData.append("api", API_KEY);
     formData.append("title", title);
@@ -102,9 +102,9 @@ const NewBlog = () => {
   }
 
   return (
-    <AdminLayout title="New Blog" label="Blog">
+    <AdminLayout title="New News" label="News">
       <Head>
-        <title>New Blog | Markaz Knowledge City</title>
+        <title>New News | Markaz Knowledge City</title>
       </Head>
       {error && (
         <div className="bg-red-200 text-red-700 px-3 py-2 mb-3 rounded">
@@ -118,15 +118,15 @@ const NewBlog = () => {
           setLink(e.target.value.toLowerCase().trim().replace(/\s/g, "-"));
         }}
         className="w-full"
-        placeholder="Blog Title"
+        placeholder="News Title"
       />
       <span className="text-blue-600 italic text-sm">
-        https://markazcity.in/blog/{link ?? ""}
+        https://markazcity.in/news/{link ?? ""}
       </span>{" "}
       <br /> <br />
       <ReactQuill value={body} onChange={handleChange} modules={modules} />
       <br />
-      <h4 className="text-violet-700 mb-2">Blog Thumbnail</h4>
+      <h4 className="text-violet-700 mb-2">News Image</h4>
       <input
         type="file"
         className="w-full m2-4"
@@ -135,7 +135,7 @@ const NewBlog = () => {
         accept="image/jpeg,image/png"
       />
       <span className="text-red-600 text-sm pt-1 inline-block">
-        Image ust be in <b>1000x600</b>px resolution.
+        Image must be in <b>1000x600</b>px resolution.
       </span>
       <br />
       <br />
@@ -143,7 +143,7 @@ const NewBlog = () => {
       <div className="flex justify-end">
         <button
           className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded mt-3"
-          onClick={() => submitBlog()}
+          onClick={() => submitNews()}
         >
           {loading ? (
             <span>
@@ -155,7 +155,7 @@ const NewBlog = () => {
               />
             </span>
           ) : (
-            <span>Add Blog</span>
+            <span>Add News</span>
           )}
         </button>
       </div>
@@ -163,4 +163,4 @@ const NewBlog = () => {
   );
 };
 
-export default NewBlog;
+export default NewsNews;

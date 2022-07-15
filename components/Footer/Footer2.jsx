@@ -45,10 +45,10 @@ const Footer2 = () => {
                 <div className="flex lg:flex-col md:flex-col sm:flex-col lg:mr-auto md:mr-0 sm:mr-4 sm:col-span-2 sm:justify-center pagesLink mt-6">
                   {links.map((link, key) => {
                     return (
-                      <>
+                      <div key={key}>
                         <ul className="space-y-3">
                           <motion.li
-                            key={link.key}
+                            key={key}
                             ref={ref}
                             animate={controls}
                             initial="hidden"
@@ -57,7 +57,7 @@ const Footer2 = () => {
                               visible: { opacity: 1, translateX: 0 },
                               hidden: { opacity: 0, translateX: 50 },
                             }}
-                            className="flex my-3 sm:ml-2"
+                            className="flex my-2 sm:ml-2"
                           >
                             <a
                               className="text-gray-400 hover:text-white transition duration-500 ease-in-out ml-2"
@@ -68,7 +68,7 @@ const Footer2 = () => {
                             </a>
                           </motion.li>
                         </ul>
-                      </>
+                      </div>
                     );
                   })}
                 </div>
@@ -85,7 +85,7 @@ const Footer2 = () => {
               <div className="container flex lg:justify-between sm:justify-center components ">
                 <div className="left flex flex-col text-left mr-4">
                   {componentsLeft.map((left, i) => (
-                    <ul>
+                    <ul key={i}>
                       <motion.li
                         key={i.key}
                         ref={ref}
@@ -107,7 +107,7 @@ const Footer2 = () => {
                 </div>
                 <div className="right flex flex-col text-left">
                   {componentsRight.map((right, i) => (
-                    <ul>
+                    <ul key={i}>
                       <motion.li
                         key={i.key}
                         ref={ref}

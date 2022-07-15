@@ -22,6 +22,7 @@ export default function AdminLayout(props) {
 
   const navigation = [
     { name: "Dashboard", href: "/admin", current: props.label == "Dashboard" },
+    { name: "News", href: "/admin/news", current: props.label == "News" },
     { name: "Blog", href: "/admin/blog", current: props.label == "Blog" },
     {
       name: "Messages",

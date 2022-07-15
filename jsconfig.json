@@ -1,11 +1,12 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".",
-      "paths": {
-        "@/components/*": ["components/*"],
-        "@/head": ["components/Head"],
-        "@/inc/*": ["inc/*"],
-        "@/Admin/*": ["components/Admin/*"]
-      }
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/head": ["components/Head"],
+      "@/inc/*": ["inc/*"],
+      "@/lib/*": ["lib/*"],
+      "@/Admin/*": ["components/Admin/*"]
     }
   }
+}

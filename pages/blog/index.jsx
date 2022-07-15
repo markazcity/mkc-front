@@ -9,6 +9,7 @@ import renderHTML from "react-render-html";
 import Dialog from "@/components/Admin/Dialog";
 import PhotoModal from "@/components/Utils/PhotoModal";
 import Footer2 from "@/components/Footer/Footer2";
+import Image from "next/image";
 
 const getData = async () => {
   const BLOG_URL = ROOT_URL + "blog.php?type=list";
@@ -133,7 +134,15 @@ const Blog = ({ blogData, cityPulseData, galleryData }) => {
                       }') no-repeat center center`,
                       backgroundSize: "cover",
                     }}
-                  ></div>
+                  >
+                    {/* <Image
+                      src={ROOT_URL + featured.thumb}
+                      layout="fill"
+                      // width="300px"
+                      // height="200px"
+                      responsive
+                    /> */}
+                  </div>
                 </div>
               </section>
             ) : (

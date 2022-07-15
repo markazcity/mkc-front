@@ -13,6 +13,7 @@ import HeadTag from "@/head";
 
 import { useState, useEffect } from "react";
 import Footer2 from "@/components/Footer/Footer2";
+import NewsSlider from "@/components/Utils/NewsSlider";
 
 const getData = async () => {
   const DATA_URL = "https://api.markazcity.in/webContents/content.php";
@@ -64,6 +65,9 @@ export default function Home({ data }) {
       <FirstSection />
       <SEOHeading />
       <SecondSection />
+
+      {/* news slider added  */}
+      <NewsSlider show={true} />
 
       <Categories zones={zones} />
 
