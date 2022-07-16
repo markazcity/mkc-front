@@ -86,7 +86,7 @@ const AdminNews = () => {
                           <button
                             onClick={() => {
                               window
-                                .open(`/blog/${news?.news_link}`, "_blank")
+                                .open(`/news/${news?.news_link}`, "_blank")
                                 .focus();
                             }}
                             className="bg-violet-600 hover:bg-violet-700 text-white px-4 py-1 rounded my-2"
