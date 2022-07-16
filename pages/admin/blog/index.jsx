@@ -68,8 +68,10 @@ const Blog = () => {
                       <span className="text-violet-700 text-xl font-bold  py-1 rounded inline-block my-1">
                         {blg.title}
                       </span>
-
                       <hr />
+                      <span className="text-gray-800 font-bold">
+                        {blg?.createdOn.split(" ")[0]}
+                      </span>
 
                       <p className="pt-3">
                         {/* <div dangerouslySetInnerHTML={{__html: blg.body.substring(0,100)+"..."}}>

@@ -77,6 +77,9 @@ const AdminNews = () => {
                         </span>
 
                         <hr />
+                        <span className="text-gray-800 font-bold">
+                          {news?.createdOn.split(" ")[0]}
+                        </span>
 
                         <p className="pt-3">
                           {/* <div dangerouslySetInnerHTML={{__html: news?.body.substring(0,100)+"..."}}></div> */}

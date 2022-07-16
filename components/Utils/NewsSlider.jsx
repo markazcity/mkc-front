@@ -61,7 +61,7 @@ const NewsSlider = ({ show, newsData }) => {
         {show === true && (
           <div className="media-title pb-5 items-center">
             <h2 className="text-3xl text-center font-extrabold my-5 text-minigreen-700">
-              NEWS
+              CITY PULSE
             </h2>{" "}
           </div>
         )}
