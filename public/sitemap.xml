@@ -12,6 +12,11 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 <priority>0.8</priority>
 </url>
 <url>
+<loc>https://markazknowledgecity.com/news</loc>
+<lastmod>2022-03-28T02:30:22+00:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
 <loc>https://markazknowledgecity.com/components</loc>
 <lastmod>2022-03-28T02:30:22+00:00</lastmod>
 <priority>0.8</priority>
