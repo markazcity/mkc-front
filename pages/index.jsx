@@ -64,10 +64,10 @@ export default function Home({ data }) {
 
       <FirstSection />
       <SEOHeading />
-      <SecondSection />
 
       {/* news slider added  */}
       <NewsSlider show={true} />
+      <SecondSection />
 
       <Categories zones={zones} />
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import newses from "@/lib/news";
 import Logo from "@/components/Logo";
+import { ROOT_URL } from "@/inc/Const";
 import { useRouter } from "next/router";
 import MenuBar from "@/components/NavMenu/Menu";
 import Footer2 from "@/components/Footer/Footer2";
@@ -12,10 +13,12 @@ import renderHTML from "react-render-html";
 import { IoIosArrowForward } from "react-icons/io";
 import SocialShare from "@/components/Utils/SocialShare";
 
-const SingleNews = () => {
+const SingleNews = ({ params, newses }) => {
+  console.log(newses, params);
   const router = useRouter();
   const newsId = router.query.id;
-  const news = newses[router.query.id - 1];
+  const news = newses.newses.filter((item) => item.news_link === params.id)[0];
+  // const news = newses[router.query.id - 1];
   return (
     <div>
       <HeadTag title="News - Markaz Knowledge City" />
@@ -42,13 +45,13 @@ const SingleNews = () => {
             {news?.title}
           </h3>{" "}
           <div className="my-4">
-            <span className="text-xs">{news?.date}</span>
+            <span className="text-xs">{news?.createdOn.split(" ")[0]}</span>
           </div>
         </div>
       </div>
       <div>
         <Image
-          src={news?.imgUrl}
+          src={ROOT_URL + news?.thumb}
           // alt=""
           width="1000px"
           height="600px"
@@ -70,7 +73,7 @@ const SingleNews = () => {
         />
         <div className="my-2 text-justify leading-5 items-center px-4 lg:px-0 ">
           <span className="tracking-wider hyphenate text-base">
-            {renderHTML(`<div >${news?.desc}</div>`)}
+            {renderHTML(`<div >${news?.body}</div>`)}
           </span>
         </div>
       </div>
@@ -80,3 +83,37 @@ const SingleNews = () => {
 };
 
 export default SingleNews;
+
+export async function getStaticProps({ params }) {
+  const newses = await getAllPosts();
+
+  if (!newses) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { newses, params },
+    revalidate: 6000,
+  };
+}
+
+export async function getStaticPaths() {
+  const newses = await getAllPosts();
+
+  const paths = newses.newses.map((postItems) => ({
+    params: { id: `${postItems.news_link}` },
+  }));
+
+  return { paths, fallback: "blocking" };
+}
+
+export const getAllPosts = async () => {
+  const finalUrl = ROOT_URL + "news/news.php?type=list";
+
+  const res = await fetch(finalUrl)
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
+  return res;
+};

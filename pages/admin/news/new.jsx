@@ -71,8 +71,8 @@ const NewsNews = () => {
   }
 
   async function uploadThumb() {
-    // -------------------const URL = "https://api.markazcity.in/uploadFile.php";
-    const URL = "http://localhost/mkc/api/uploadFile.php";
+    const URL = "https://api.markazcity.in/uploadFile.php";
+    // const URL = "http://localhost/mkc/api/uploadFile.php";
     const formData = new FormData();
     formData.append("api", API_KEY);
     formData.append("file", thumb);
@@ -84,8 +84,8 @@ const NewsNews = () => {
   }
 
   async function addNewNews(thumbUrl) {
-    //---------------------------------------- const URL = "https://api.markazcity.in/news/newNews.php";
-    const URL = "http://localhost/mkc/api/news/newNews.php";
+    const URL = "https://api.markazcity.in/news/newNews.php";
+    // const URL = "http://localhost/mkc/api/news/newNews.php";
     const formData = new FormData();
     formData.append("api", API_KEY);
     formData.append("title", title);

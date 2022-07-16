@@ -8,8 +8,8 @@ const AdminNews = () => {
   const router = useRouter();
 
   const [error, setError] = useState(null);
-  // const DATA_URL = "https://api.markazcity.in/news/news.php?type=list";
-  const DATA_URL = "http://localhost/mkc/api/news/news.php?type=list";
+  const DATA_URL = "https://api.markazcity.in/news/news.php?type=list";
+  // const DATA_URL = "http://localhost/mkc/api/news/news.php?type=list";
   const [newses, setNewses] = useState(null);
   console.log(newses);
 
@@ -60,8 +60,9 @@ const AdminNews = () => {
                         style={{
                           background:
                             news?.thumb != null && news?.thumb.length > 4
-                              ? // ? `url(https://api.markazcity.in/${news?.thumb})`
-                                `url(http://localhost/mkc/api/${news?.thumb})`
+                              ? // ? `url(http://localhost/mkc/api/${news?.thumb})`
+                                // :
+                                `url(https://api.markazcity.in/${news?.thumb})`
                               : `url(https://via.placeholder.com/350x150)`,
 
                           backgroundSize: "cover",

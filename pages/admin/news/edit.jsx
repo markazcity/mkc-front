@@ -8,6 +8,7 @@ import { ROOT_URL } from "@/inc/Const";
 import Head from "next/head";
 
 const EditNews = () => {
+  // const ROOT_URL = "http://localhost/mkc/api/";
   const ReactQuill =
     typeof window === "object" ? require("react-quill") : () => false;
 
@@ -110,6 +111,7 @@ const EditNews = () => {
 
   async function uploadThumb() {
     const URL = "https://api.markazcity.in/uploadFile.php";
+    // const URL = "http://localhost/mkc/api/uploadFile.php";
     const formData = new FormData();
     formData.append("api", API_KEY);
     formData.append("file", thumb);
@@ -121,7 +123,8 @@ const EditNews = () => {
   }
 
   async function updateNews(thumblink) {
-    const URL = "https://api.markazcity.in/updateNews.php";
+    const URL = "https://api.markazcity.in/news/updateNews.php";
+    // const URL = "http://localhost/mkc/api/news/updateNews.php";
     const formData = new FormData();
     formData.append("api", API_KEY);
     formData.append("id", newsId);

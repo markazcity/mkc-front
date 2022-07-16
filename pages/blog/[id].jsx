@@ -4,7 +4,6 @@ import renderHTML from "react-render-html";
 import Logo from "@/components/Logo";
 import Head from "next/head";
 import MenuBar from "@/components/NavMenu/Menu";
-import Footer from "@/components/Footer/Footer";
 import Footer2 from "@/components/Footer/Footer2";
 
 const SingleBlog = ({ params, blogs }) => {
