@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 import { BiNews } from "react-icons/bi";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { MdArrowForwardIos } from "react-icons/md";
+import { RiArrowRightSLine } from "react-icons/ri";
 import React, { useRef, useState } from "react";
 
 const NewsSlider = ({ show, newsData }) => {
   const DATA_URL = "https://api.markazcity.in/news/news.php?type=list";
 
   const router = useRouter();
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(850);
   const [newses, setNewses] = useState(null);
   const carousel = useRef();
 
@@ -26,25 +26,11 @@ const NewsSlider = ({ show, newsData }) => {
         }
       });
   };
-
+  console.log(width);
   useEffect(() => {
-    // if (newsData != null) {
-    //   if (newsData.status === "HasNews") {
-    //     let tempNews = [];
-    //     newsData.newses.map((blg, index) => {
-    //       if (index != 0) {
-    //         tempNews.push(blg);
-    //         setNewses(tempNews);
-    //       } else {
-    //         setNewses([]);
-    //       }
-    //     });
-    //   }
-    // }
     getData();
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+    // setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   }, []);
-  console.log(newses);
 
   return (
     <>
@@ -60,7 +46,7 @@ const NewsSlider = ({ show, newsData }) => {
           whileTap={{ cursor: "grabbing" }}
           ref={carousel}
           className="carousel cursor-grab overflow-hidden relative"
-          data-aos="fade-left"
+          // data-aos="fade-left"
         >
           <motion.div
             drag="x"
@@ -97,7 +83,7 @@ const NewsSlider = ({ show, newsData }) => {
                           </Link>
                         </span>
                       </Link>{" "}
-                      {/* <MdArrowForwardIos size={"10px"} className="ml-1" /> */}
+                      <RiArrowRightSLine size={"10px"} className="ml-1" />
                     </p>
                   </div>
                 </motion.div>
@@ -112,14 +98,14 @@ const NewsSlider = ({ show, newsData }) => {
 
 export default NewsSlider;
 
-export async function getStaticProps() {
-  const res = await fetch(`https://api.markazcity.in/news/news.php?type=list`);
-  const newsData = await res.json();
-  return {
-    props: {
-      newsData: newsData.data,
-    },
-    revalidate: 1,
-  };
-  console.log("hi");
-}
+// export async function getStaticProps() {
+//   const res = await fetch(`https://api.markazcity.in/news/news.php?type=list`);
+//   const newsData = await res.json();
+//   return {
+//     props: {
+//       newsData: newsData.data,
+//     },
+//     revalidate: 1,
+//   };
+//   console.log("hi");
+// }

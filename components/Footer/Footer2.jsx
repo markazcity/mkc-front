@@ -54,10 +54,10 @@ const Footer2 = () => {
                             initial="hidden"
                             transition={{ duration: 0.3, delay: key * 0.2 }}
                             variants={{
-                              visible: { opacity: 1, translateX: 0 },
-                              hidden: { opacity: 0, translateX: 50 },
+                              visible: { opacity: 1, translateY: 0 },
+                              hidden: { opacity: 0, translateY: 50 },
                             }}
-                            className="flex my-2 sm:ml-2"
+                            className="flex my-2 sm:ml-0"
                           >
                             <a
                               className="text-gray-400 hover:text-white transition duration-500 ease-in-out ml-2"
@@ -93,8 +93,8 @@ const Footer2 = () => {
                         initial="hidden"
                         transition={{ duration: 0.3, delay: i * 0.2 }}
                         variants={{
-                          visible: { opacity: 1, translateX: 0 },
-                          hidden: { opacity: 0, translateX: 30 },
+                          visible: { opacity: 1, translateY: 0 },
+                          hidden: { opacity: 0, translateY: 30 },
                         }}
                         className="flex my-3 "
                       >
