@@ -26,7 +26,6 @@ const NewsSlider = ({ show, newsData }) => {
         }
       });
   };
-  console.log(width);
   useEffect(() => {
     getData();
     // setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
