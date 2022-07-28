@@ -6,11 +6,11 @@ import { useEffect } from "react";
 export const mainMenu = [
   { name: "Home", icon: "", to: "/" },
   { name: "About", icon: "", to: "/about" },
+  // { name: "Events", icon: "", to: "/events" },
   { name: "Components", icon: "", to: "/components" },
   { name: "Blog", icon: "", to: "/blog" },
   { name: "News", icon: "", to: "/news" },
   { name: "Careers", icon: "", to: "/careers" },
-  // {name:"Contact", icon:"", to:"/contact"},
 ];
 
 export const NavMenu = ({ items }) => {

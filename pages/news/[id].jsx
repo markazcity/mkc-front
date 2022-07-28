@@ -21,7 +21,10 @@ const SingleNews = ({ params, newses }) => {
   // const news = newses[router.query.id - 1];
   return (
     <div>
-      <HeadTag title="News - Markaz Knowledge City" />
+      <HeadTag
+        title="News - Markaz Knowledge City"
+        image={ROOT_URL + news?.thumb}
+      />
       <div className="py-5" style={{ backgroundColor: "#F8FAF8" }}>
         <Logo logo="logob" className="z-1" />
         <MenuBar icoColor=" text-black" />

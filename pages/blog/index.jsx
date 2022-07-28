@@ -9,7 +9,6 @@ import renderHTML from "react-render-html";
 import Dialog from "@/components/Admin/Dialog";
 import PhotoModal from "@/components/Utils/PhotoModal";
 import Footer2 from "@/components/Footer/Footer2";
-import Image from "next/image";
 
 const getData = async () => {
   const BLOG_URL = ROOT_URL + "blog.php?type=list";

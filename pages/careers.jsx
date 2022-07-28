@@ -46,11 +46,9 @@ const Carreers = ({ data }) => {
   const [qualification, setQualification] = useState();
   const [cover, setCover] = useState();
   const [resume, setResume] = useState();
-
   const [error, setError] = useState(null);
   const [jobPos, setPos] = useState(null);
   const [loading, setLoading] = useState(false);
-
   const [connError, setConnError] = useState(false);
   const [banner, setBanner] = useState(null);
 
