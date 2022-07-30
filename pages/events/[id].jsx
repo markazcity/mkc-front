@@ -7,7 +7,8 @@ import { ROOT_URL } from "@/inc/Const";
 import renderHTML from "react-render-html";
 import Dialog from "@/components/Admin/Dialog";
 import PhotoModal from "@/components/Utils/PhotoModal";
-import { CgArrowLongRight } from "react-icons/cg";
+import { MdPlace } from "react-icons/md";
+import { AiTwotoneCalendar } from "react-icons/ai";
 import Footer2 from "@/components/Footer/Footer2";
 import Image from "next/image";
 import events from "@/lib/events";
@@ -17,13 +18,14 @@ var qs = require("qs");
 const singleEvents = () => {
   const router = useRouter();
   const event = events[router.query.id - 1];
-  const URL = ROOT_URL + "eventRegistration.php";
+  const URL = ROOT_URL + "events/eventRegistration.php";
 
+  const [id, setId] = useState("6");
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
   const [place, setPlace] = useState();
-  const [error, setError] = useState(null);
+  const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const [connError, setConnError] = useState(false);
 
@@ -37,6 +39,7 @@ const singleEvents = () => {
         email: email,
         phone: phone,
         place: place,
+        id: id,
       }),
       headers: {
         Accept: "application/json",
@@ -49,7 +52,7 @@ const singleEvents = () => {
         document.body.scrollTop = document.documentElement.scrollTop = 10;
 
         if (data.status === "success") {
-          setError("Thanks for applying. We will connect you soon.");
+          setError("Thanks for booking. We will connect you soon.");
           e.target.reset();
         } else {
           setError("Something went wrong. Please try again later.");
@@ -78,22 +81,39 @@ const singleEvents = () => {
         }}
       >
         <h1
-          className="lg:text-5xl text-3xl font-extrabold mb-5 text-center text-white z-10"
+          className="lg:text-5xl text-3xl font-extrabold mb-2 text-center text-white z-10"
           data-aos="zoom-in"
         >
           {event?.title}
+          <div className="mt-6 text-center">
+            <div className="flex items-center justify-center text-lg mb-6 ">
+              <AiTwotoneCalendar size={30} />
+              <div className="ml-2">12-07-2022</div>
+            </div>
+            <div className="flex items-center justify-center text-lg">
+              <MdPlace size={30} />
+              <div className="ml-2">Valencia Galleria</div>
+            </div>
+          </div>
         </h1>{" "}
-        <span className="lg:text-5xl text-3xl font-extrabold mb-5 text-center text-white z-10">
-          12-07-2022
-        </span>
         <br />
       </div>
       <div className=" mb-10 lg:px-56 p-10 text-center">
-        <div className="text-center text-2xl font-bold">
+        <p className=" mb-12 text-md text-justify">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+        <div className="text-center text-2xl font-bold mt-12">
           <h1>Book Your Slot</h1>
         </div>
-        {error && <span>{error}</span>}
-        {error && <span>{error}</span>}
+        {error && <h1 className="my-4 text-bold ">{error}</h1>}
         <form
           action=""
           method="POST"
