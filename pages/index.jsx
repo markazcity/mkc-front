@@ -14,6 +14,7 @@ import HeadTag from "@/head";
 import { useState, useEffect } from "react";
 import Footer2 from "@/components/Footer/Footer2";
 import NewsSlider from "@/components/Utils/NewsSlider";
+import Image from "next/image";
 
 const getData = async () => {
   const DATA_URL = "https://api.markazcity.in/webContents/content.php";
@@ -56,24 +57,19 @@ export default function Home({ data }) {
   return (
     <div>
       <HeadTag></HeadTag>
-
       <div className="absolute top-0 flex justify-between w-full  lg:px-0">
         <Logo logo="logow" className="z-9" />
         <MenuBar />
       </div>
-
       <FirstSection />
       <SEOHeading />
-
-      {/* news slider added  */}
+      {/* news slider added */}
+      {/* <img src={"/assets/img/sadath.jpg"} className="w-full  " /> */}
       <NewsSlider show={true} />
       <SecondSection />
-
       <Categories zones={zones} />
-
       <SectorMarquee />
       {/* <FourthSection/> */}
-
       <SEOHeading />
       <Footer2 />
       {/* <Footer /> */}

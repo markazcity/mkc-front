@@ -15,6 +15,7 @@ const SocialShare = (props) => {
       </TwitterShareButton>
       <WhatsappShareButton
         title={"*" + props.title + "*" + "\n" + "_Read More:_ "}
+        imageUrl={props.imageUrl}
         url={props.url}
       >
         <img src="/assets/icons/wa.png" alt="" />

@@ -14,7 +14,6 @@ import { IoIosArrowForward } from "react-icons/io";
 import SocialShare from "@/components/Utils/SocialShare";
 
 const SingleNews = ({ params, newses }) => {
-  console.log(newses, params);
   const router = useRouter();
   const newsId = router.query.id;
   const news = newses.newses.filter((item) => item.news_link === params.id)[0];
@@ -22,8 +21,9 @@ const SingleNews = ({ params, newses }) => {
   return (
     <div>
       <HeadTag
-        title="News - Markaz Knowledge City"
+        title={news?.title}
         image={ROOT_URL + news?.thumb}
+        // description={news?.body}
       />
       <div className="py-5" style={{ backgroundColor: "#F8FAF8" }}>
         <Logo logo="logob" className="z-1" />
@@ -71,8 +71,9 @@ const SingleNews = ({ params, newses }) => {
           </span>
         </div> */}
         <SocialShare
+          imgUrl={ROOT_URL + news?.thumb}
           title={news?.title}
-          url={`https://markazcity.in/news/${news?.news_link}`}
+          url={`https://www.markazknowledgecity.com/news/${news?.news_link}`}
         />
         <div className="my-2 text-justify leading-5 items-center px-4 lg:px-0 ">
           <span className="tracking-wider hyphenate text-base">

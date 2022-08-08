@@ -23,7 +23,7 @@ const FirstSection = () => {
   }, []);
   return (
     <div
-      className="relative"
+      className="relative "
       id="homeVideo"
       style={{
         width: "100%",
