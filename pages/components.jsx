@@ -10,6 +10,7 @@ import HeadTag from "@/head";
 
 import { useEffect, useState } from "react";
 import Footer2 from "@/components/Footer/Footer2";
+import Living from "@/components/Compos/Living";
 
 const getData = async () => {
   const DATA_URL = "https://api.markazcity.in/webContents/content.php";
@@ -34,6 +35,7 @@ const Components = ({ data }) => {
   const [commerce, setCommerce] = useState(null);
   const [health, setHealth] = useState(null);
   const [agriculture, setAgriculture] = useState(null);
+  const [living, setLiving] = useState(null);
   const [residence, setResidence] = useState(null);
   const [cc, setCC] = useState(null);
 
@@ -50,6 +52,9 @@ const Components = ({ data }) => {
       );
       setResidence(
         data.data.filter((item) => item.wc_category === "residence")
+      );
+      setLiving(
+        data.data.filter((item) => item.wc_category === "living")
       );
       setCC(data.data.filter((item) => item.wc_category === "cc"));
     }
@@ -102,6 +107,9 @@ const Components = ({ data }) => {
           </section>
           <section id="health">
             <Health dataset={health} />
+          </section>
+          <section>
+            <Living dataset={living} />
           </section>
           <section id="commerce">
             <Commerce dataset={commerce} />
