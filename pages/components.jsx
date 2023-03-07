@@ -106,9 +106,9 @@ const Components = ({ data }) => {
           <section id="commerce">
             <Commerce dataset={commerce} />
           </section>
-          <section id="residence" className="overflow-hidden">
+          {/* <section id="residence" className="overflow-hidden">
             <Residence dataset={residence} />
-          </section>
+          </section> */}
           <section>
             <Agriculture dataset={agriculture} />
           </section>
