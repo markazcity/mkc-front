@@ -23,7 +23,7 @@ const Living = (props) => {
         }}
         data-aos="zoom-in"
       >
-        Living
+        House
       </h1>
       {/* LISTS STARTS HERE */}
       <div className="lg:mx-32 3xl:mx-64">
