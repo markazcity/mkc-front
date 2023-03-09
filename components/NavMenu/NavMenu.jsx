@@ -11,6 +11,7 @@ export const mainMenu = [
   { name: "Blog", icon: "", to: "/blog" },
   { name: "News", icon: "", to: "/news" },
   { name: "Careers", icon: "", to: "/careers" },
+  { name: "Civilis", icon: "", to: "https://civilis.markazknowledgecity.com/" },
 ];
 
 export const NavMenu = ({ items }) => {
