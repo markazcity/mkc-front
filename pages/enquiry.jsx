@@ -34,6 +34,72 @@ export async function getStaticProps() {
     };
 }
 
+
+const courses = {
+    'Alif Global School': [
+        {
+            value: 'LKG',
+            label: 'LKG'
+        },
+        {
+            value: 'UKG',
+            label: 'UKG'
+        },
+        {
+            value: 'GRADE 1',
+            label: 'GRADE 1'
+        },
+        {
+            value: 'GRADE 2',
+            label: 'GRADE 2'
+        },
+        {
+            value: 'GRADE 3',
+            label: 'GRADE 3'
+        },
+        {
+            value: 'GRADE 4',
+            label: 'GRADE 4'
+        },
+        {
+            value: 'GRADE 5',
+            label: 'GRADE 5'
+        },
+        {
+            value: 'GRADE 6',
+            label: 'GRADE 6'
+        },
+        {
+            value: 'GRADE 7',
+            label: 'GRADE 7'
+        },
+        {
+            value: 'GRADE 8',
+            label: 'GRADE 8'
+        },
+        {
+            value: 'GRADE 9',
+            label: 'GRADE 9'
+        },
+    ],
+
+    'Hillsinai': [
+        {
+            value: '+1 SCIENCE',
+            label: '+1 SCIENCE'
+        },
+        {
+            value: '+1 COMMERCE',
+            label: '+1 COMMERCE'
+        },
+        {
+            value: '+1 HUMANITIES',
+            label: '+1 HUMANITIES'
+        },
+    ]
+}
+
+
 const Enquiry = ({ data }) => {
     const URL = ROOT_URL + "addJob.php";
 
@@ -56,6 +122,13 @@ const Enquiry = ({ data }) => {
     const [loading, setLoading] = useState(false);
     const [connError, setConnError] = useState(false);
     const [banner, setBanner] = useState(null);
+
+    const [coursesOptions, setCounrseOptions] = useState([]);
+
+    const changeInstitution = (e) => {
+        setInstitute(e.target.value);
+        setCounrseOptions(courses[e.target.value]);
+    }
 
     useEffect(() => {
         if (data != null) {
@@ -151,8 +224,8 @@ const Enquiry = ({ data }) => {
                             />{" "} */}
                             {/* <br /> */}
                             <h3 className="font-bold text-3xl  text-center">
-                                                        Course Enquiry
-                                                    </h3>
+                                Course Enquiry
+                            </h3>
                             <form
                                 action=""
                                 method="POST"
@@ -172,7 +245,7 @@ const Enquiry = ({ data }) => {
                                                     >
                                                         {error ?? "Resp"}
                                                     </div>
-                                                   
+
 
                                                     <div className="flex w-full">
                                                         <SingleInput
@@ -251,7 +324,7 @@ const Enquiry = ({ data }) => {
                                                         </label>
                                                         <select
                                                             id="m_00N5h00000GbwhY"
-                                                            onChange={(e) => setInstitute(e.target.value)}
+                                                            onChange={changeInstitution}
                                                             autoComplete={Math.random()}
                                                             className="mt-1 focus:ring-blue-500 focus:border-violet-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                                             name="00N5h00000GbwhY" title="Service Sub Category"
@@ -276,25 +349,15 @@ const Enquiry = ({ data }) => {
                                                             id="m_00N5h00000Gbwha"
                                                             onChange={(e) => setCourse(e.target.value)}
                                                             autoComplete={Math.random()}
+                                                            defaultValue=""
                                                             className="mt-1 focus:ring-blue-500 focus:border-violet-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                                             name="00N5h00000Gbwha" title="Service Type"
                                                             required
                                                         >
-                                                            <option value="">Select Course </option>
-                                                            <option value="LKG">LKG</option>
-                                                            <option value="UKG">UKG</option>
-                                                            <option value="GRADE 1">GRADE 1</option>
-                                                            <option value="GRADE 2">GRADE 2</option>
-                                                            <option value="GRADE 3">GRADE 3</option>
-                                                            <option value="GRADE 4">GRADE 4</option>
-                                                            <option value="GRADE 5">GRADE 5</option>
-                                                            <option value="GRADE 6">GRADE 6</option>
-                                                            <option value="GRADE 7">GRADE 7</option>
-                                                            <option value="GRADE 8">GRADE 8</option>
-                                                            <option value="GRADE 9">GRADE 9</option>
-                                                            <option value="+1 SCIENCE">+1 SCIENCE</option>
-                                                            <option value="+1 COMMERCE">+1 COMMERCE</option>
-                                                            <option value="+1 HUMANITIES">+1 HUMANITIES</option>
+                                                            <option value="" disabled>Select Course </option>
+                                                            {coursesOptions.map((option, index) => {
+                                                                return <option key={index} value={option.value}>{option.label}</option>
+                                                            })}
                                                         </select>
                                                     </div>
 
