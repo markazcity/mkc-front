@@ -9,6 +9,7 @@ SwiperCore.use([Autoplay]);
 const OurLeaderShip = ({ dataset }) => {
   const data = Array.from(dataset);
 
+
   const leaders = data ?? [
     {
       wc_title: "Shaikh Aboobacker Bin Ahmed",
@@ -25,6 +26,9 @@ const OurLeaderShip = ({ dataset }) => {
       wc_image: "mah.png",
     },
   ];
+
+  console.log(leaders);
+
 
   return dataset != null ? (
     <div id="leadership">
@@ -49,11 +53,11 @@ const OurLeaderShip = ({ dataset }) => {
           <Swiper
             spaceBetween={0}
             slidesPerView={1}
-            loop={true}
+            loop={false}
             speed={2000}
             autoplay={{
               delay: 3000,
-              disableOnInteraction: false,
+              disableOnInteraction: true,
             }}
           >
             {leaders.map((leader, index) => {
