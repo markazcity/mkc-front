@@ -10,8 +10,8 @@ export const mainMenu = [
   { name: "Components", icon: "", to: "/components" },
   { name: "Blog", icon: "", to: "/blog" },
   { name: "News", icon: "", to: "/news" },
-  { name: "Careers", icon: "", to: "https://hirespot.markazknowledgecity.com/application/create" },
-  // { name: "Careers", icon: "", to: "/careers" },
+  // { name: "Careers", icon: "", to: "https://hirespot.markazknowledgecity.com/application/create" },
+  { name: "Careers", icon: "", to: "/careers" },
   { name: "Enquiry", icon: "", to: "/enquiry" },
   // { name: "Civilis", icon: "", to: "https://civilis.markazknowledgecity.com/" }
 ];
